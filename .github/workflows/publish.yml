@@ -1,0 +1,57 @@
+name: Instagramに投稿
+
+on:
+  schedule:
+    # 毎時17分に確認して、各アカウントの投稿時間（accounts/*.json の post_hour_jst）なら投稿する
+    - cron: "17 * * * *"
+  workflow_dispatch:
+    inputs:
+      account:
+        description: "アカウント（空欄ならすべて）"
+        required: false
+        default: ""
+      mode:
+        description: "dry-run＝投稿せずに内容の確認だけ / now＝時間に関係なく今すぐ投稿"
+        type: choice
+        options: [dry-run, now]
+        default: dry-run
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
+      IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
+      ACCOUNT: ${{ inputs.account }}
+      MODE_FLAGS: ${{ inputs.mode == 'now' && '--force' || (inputs.mode == 'dry-run' && '--dry-run' || '') }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 投稿するものがあるか確認
+        id: check
+        run: python -m autopost.publish check --account "$ACCOUNT" $MODE_FLAGS
+
+      - name: 画像を作る準備（画像がまだ無いときだけ）
+        if: steps.check.outputs.needs_render == 'true'
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+          pip install -q -r requirements.txt
+          if [ ! -x /usr/bin/google-chrome ]; then python -m playwright install --with-deps chromium; fi
+
+      - name: 投稿する
+        if: steps.check.outputs.due == 'true'
+        run: python -m autopost.publish run --account "$ACCOUNT" $MODE_FLAGS

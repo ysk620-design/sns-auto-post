@@ -1,0 +1,18 @@
+{
+  "handle": "gensen_otoku",
+  "name": "厳選お得｜子育て家計のお金図鑑",
+  "ig_user_id": "17841471132423675",
+  "token_secret": "IG_TOKEN_GENSEN_OTOKU",
+  "enabled": true,
+  "post_hour_jst": 21,
+  "post_window_hours": 3,
+  "series": "厳選お得ノート",
+  "series_next_no": 1,
+  "theme": {
+    "main": "#1e3b30",
+    "base": "#f7f4ec",
+    "accent": "#c98a1e",
+    "accent_soft": "#f2d38b",
+    "muted": "#8f998f"
+  }
+}
