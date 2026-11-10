@@ -1,0 +1,103 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-14",
+  "type": "carousel",
+  "no": "12",
+  "title": "いってきます",
+  "reel_title": "「いってきます」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「いってきます」を",
+      "ng": "I'll go and come back.",
+      "bottom": "って言ってない？",
+      "sub": "長くて不自然な直訳に…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "I'll go and come back.",
+      "body": "行って、帰ってきます。",
+      "note": "英語には「いってきます」「いってらっしゃい」の決まり文句はありません。出かけるときは「行くね」「またあとで」と軽く言えばOKです。"
+    },
+    {
+      "layout": "cards",
+      "title": "家を出るとき",
+      "cards": [
+        [
+          "I'm off!",
+          "いってきます！"
+        ],
+        [
+          "I'm heading out.",
+          "出かけてくるね。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "見送るとき（いってらっしゃい）",
+      "cards": [
+        [
+          "Have a good day!",
+          "いってらっしゃい！（よい一日を）"
+        ],
+        [
+          "See you later!",
+          "またあとでね！"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "帰ってきたとき（ただいま）",
+      "cards": [
+        [
+          "I'm home!",
+          "ただいま！"
+        ]
+      ],
+      "note": "「おかえり」は How was your day?（今日どうだった？）と声をかけるのが自然です。"
+    },
+    {
+      "layout": "table",
+      "title": "「いってきます」早見表",
+      "rows": [
+        [
+          "いってきます",
+          "I'm off!"
+        ],
+        [
+          "出かけるね",
+          "I'm heading out."
+        ],
+        [
+          "いってらっしゃい",
+          "Have a good day!"
+        ],
+        [
+          "またあとで",
+          "See you later!"
+        ],
+        [
+          "ただいま",
+          "I'm home!"
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "朝、家を出るときに<br>「いってきます！」と言うなら？"
+    }
+  ],
+  "caption": "「いってきます」を \"I'll go and come back.\" と言っていませんか？\n\n✕ I'll go and come back.（行って帰ってきます）\n○ I'm off!（いってきます）\n○ Have a good day!（いってらっしゃい）\n○ I'm home!（ただいま）\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#中学英語",
+    "#おうち英語",
+    "#大人の英語"
+  ],
+  "review_notes": "家族との朝のやりとりなど、実際に家で使っている場面があればキャプションに一言（ここに実体験を一言）。表示の改行を preview.jpg で確認してください。"
+}
