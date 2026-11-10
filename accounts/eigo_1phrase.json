@@ -1,0 +1,18 @@
+{
+  "handle": "eigo_1phrase",
+  "name": "中学英語で話せる｜1日1フレーズ英会話",
+  "ig_user_id": "17841455882695845",
+  "token_secret": "IG_TOKEN_EIGO_1PHRASE",
+  "enabled": true,
+  "post_hour_jst": 7,
+  "post_window_hours": 3,
+  "series": "直訳しがちな英語",
+  "series_next_no": 1,
+  "theme": {
+    "main": "#1f2a44",
+    "base": "#fbf7f0",
+    "accent": "#e8684a",
+    "accent_soft": "#ffb39f",
+    "muted": "#9aa1b0"
+  }
+}
