@@ -48,6 +48,17 @@ def check_account(cfg: dict) -> bool:
                 notice(handle, "分析の権限：OK")
             except InstagramError as e:
                 notice(handle, f"分析の権限：NG（{e}）", "warning")
+        others = [c["handle"].lstrip("@") for c in config.load_accounts().values() if c["handle"] != handle] + ["bluebottle"]
+        for other in others:
+            fields = (f"business_discovery.username({other}){{username,followers_count,media_count,"
+                      f"media.limit(3){{timestamp,media_type,media_product_type,like_count,comments_count}}}}")
+            try:
+                bd = client._call("GET", cfg["ig_user_id"], {"fields": fields}).get("business_discovery", {})
+                items = bd.get("media", {}).get("data", [])
+                notice(handle, f"他アカウント分析（@{other}）：OK（フォロワー {bd.get('followers_count')}・投稿 {bd.get('media_count')}件・"
+                               f"直近3件のいいね {[m.get('like_count') for m in items]}・コメント {[m.get('comments_count') for m in items]}）")
+            except InstagramError as e:
+                notice(handle, f"他アカウント分析（@{other}）：NG（{e}）", "warning")
         return True
     except InstagramError as e:
         notice(handle, f"接続できません：{e}", "error")
