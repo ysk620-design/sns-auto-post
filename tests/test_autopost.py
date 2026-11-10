@@ -45,6 +45,21 @@ class TemplateTest(unittest.TestCase):
         cap = posts.compose_caption({"caption": "本文", "hashtags": ["#a", "#b"], "pr": True})
         self.assertEqual(cap, "【PR】\n本文\n\n#a #b")
 
+    def test_cover_with_big_number_and_badge(self):
+        cfg = config.load_accounts()["gensen_otoku"]
+        data = json.loads((ROOT / "examples/gensen_otoku/post.json").read_text(encoding="utf-8"))
+        html = templates.build_html(data, cfg)
+        self.assertIn('class="big"', html)
+        self.assertIn('class="badge"', html)
+        self.assertIn("<small>円/月</small>", html)
+        self.assertIn("厳選お得 #06", html)
+
+    def test_reel_durations(self):
+        from autopost import reel
+
+        self.assertEqual(reel.durations(7), [2.5, 4.0, 4.0, 4.0, 4.0, 4.5, 3.5])
+        self.assertEqual(reel.default_title({"caption": "一行目\n二行目"}), "一行目")
+
 
 class DueTest(unittest.TestCase):
     def setUp(self):

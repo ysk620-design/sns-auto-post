@@ -40,19 +40,20 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: pip
 
       - name: 投稿するものがあるか確認
         id: check
         run: python -m autopost.publish check --account "$ACCOUNT" $MODE_FLAGS
 
       - uses: actions/cache@v4
-        if: steps.check.outputs.needs_render == 'true'
+        if: steps.check.outputs.due == 'true'
         with:
           path: ~/.local/share/fonts
           key: fonts-noto-cjk-jp-v1
 
-      - name: 画像を作る準備（画像がまだ無いときだけ）
-        if: steps.check.outputs.needs_render == 'true'
+      - name: 画像・リール動画を作る準備
+        if: steps.check.outputs.due == 'true' && !contains(env.MODE_FLAGS, 'dry-run')
         run: |
           bash scripts/setup_fonts.sh
           pip install -q -r requirements.txt

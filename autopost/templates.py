@@ -1,7 +1,8 @@
 """投稿データ（post.json）からスライドのHTMLを組み立てる。
 
 スライドの種類（layout）:
-  cover   表紙（濃い背景）。top / ng / bottom / sub
+  cover   表紙（濃い背景）。kicker（小さな前置き） / top / ng / bottom / big（大きな数字） / sub /
+          badge（期限などのバッジ） / foot（右下の文字。初期値「スワイプ →」）
   callout よくある間違い・ポイントを大きなカードで。label / title / body / note / style(ng|ok)
   cards   フレーズや項目のカード（1〜3個）。title / cards[[大きい文字, 小さい文字]] / note
   points  箇条書き（1〜6個）。title / points / note / numbered
@@ -72,7 +73,8 @@ class _Builder:
     def cover(self, i: int, s: dict) -> str:
         series, no = self.cfg.get("series", ""), self.data.get("no")
         default_tag = f"{series} #{no}" if series and no else series
-        inner = f'<h1 style="font-size:{int(s.get("top_size", 104))}px">{esc(s["top"])}</h1>'
+        inner = f'<p class="kicker">{esc(s["kicker"])}</p>' if s.get("kicker") else ""
+        inner += f'<h1 style="font-size:{int(s.get("top_size", 104))}px">{esc(s["top"])}</h1>'
         if s.get("ng"):
             inner += (
                 '<div class="ngbig"><span class="x">✕</span>'
@@ -80,9 +82,13 @@ class _Builder:
             )
         if s.get("bottom"):
             inner += f'<h1 style="font-size:92px">{esc(s["bottom"])}</h1>'
+        if s.get("big"):
+            inner += f'<p class="big" style="font-size:{int(s.get("big_size", 170))}px">{esc(s["big"])}</p>'
         if s.get("sub"):
             inner += f'<p class="sub">{esc(s["sub"])}</p>'
-        return self.frame(i, "cover", esc(s.get("tag", default_tag)), inner, "スワイプ →")
+        if s.get("badge"):
+            inner += f'<div><span class="badge">{esc(s["badge"])}</span></div>'
+        return self.frame(i, "cover", esc(s.get("tag", default_tag)), inner, esc(s.get("foot", "スワイプ →")))
 
     def callout(self, i: int, s: dict) -> str:
         style = s.get("style", "ng")

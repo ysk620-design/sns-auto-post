@@ -10,9 +10,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: "queue＝キューの投稿 / examples＝見本を作り直す"
+        description: "queue＝キューの投稿 / examples＝見本を作り直す / reel-test＝見本からリール動画を作って確認"
         type: choice
-        options: [queue, examples]
+        options: [queue, examples, reel-test]
         default: queue
 
 permissions:
@@ -56,9 +56,20 @@ jobs:
         run: |
           if [ "$TARGET" = "examples" ]; then
             python -m autopost.render examples --all
+          elif [ "$TARGET" = "reel-test" ]; then
+            mkdir -p out
+            for d in examples/*/; do python -m autopost.reel "$d" "out/$(basename "$d").mp4"; done
           else
             python -m autopost.render queue
           fi
+
+      - name: リール動画を保存（確認用）
+        if: inputs.target == 'reel-test'
+        uses: actions/upload-artifact@v4
+        with:
+          name: reels
+          path: out/*.mp4
+          retention-days: 3
 
       - name: 画像を保存（コミット）
         run: |

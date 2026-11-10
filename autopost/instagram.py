@@ -7,6 +7,7 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from pathlib import Path
 
 API_VERSION = os.environ.get("GRAPH_API_VERSION", "v25.0")
 # 一時的なエラー（混雑・回数制限）。少し待ってやり直す
@@ -23,7 +24,8 @@ class Client:
         self.ig_user_id = str(ig_user_id)
         # Instagramログインのトークン（IG...）と Facebookログインのトークン（EAA...）で窓口が違う
         host = "graph.instagram.com" if self.token.startswith("IG") else "graph.facebook.com"
-        self.base = f"https://{host}/{version or API_VERSION}"
+        self.version = version or API_VERSION
+        self.base = f"https://{host}/{self.version}"
         self.sleep = sleep
 
     def _call(self, method: str, path: str, params: dict | None = None, retries: int = 3) -> dict:
@@ -90,8 +92,44 @@ class Client:
         self.wait_ready(cid)
         return self.publish(cid)
 
-    def recent_media(self, limit: int = 5) -> list[dict]:
-        data = self._call("GET", f"{self.ig_user_id}/media", {"fields": "id,caption,permalink,timestamp", "limit": limit})
+    def publish_reel(self, video_path: Path, caption: str, share_to_feed: bool = False) -> str:
+        """動画ファイルを直接Metaにアップロードしてリールを投稿する（画像の置き場所が不要な方式）。"""
+        res = self._call("POST", f"{self.ig_user_id}/media", {
+            "media_type": "REELS", "upload_type": "resumable", "caption": caption,
+            "share_to_feed": "true" if share_to_feed else "false",
+        })
+        cid = res["id"]
+        uri = res.get("uri") or f"https://rupload.facebook.com/ig-api-upload/{self.version}/{cid}"
+        self._upload(uri, Path(video_path))
+        self.wait_ready(cid, timeout=900, interval=10)
+        return self.publish(cid)
+
+    def publish_reel_url(self, video_url: str, caption: str, share_to_feed: bool = False) -> str:
+        """ネット上の動画URLからリールを投稿する（直接アップロードがうまくいかないときの予備）。"""
+        cid = self.create_container(media_type="REELS", video_url=video_url, caption=caption,
+                                    share_to_feed="true" if share_to_feed else "false")
+        self.wait_ready(cid, timeout=900, interval=10)
+        return self.publish(cid)
+
+    def _upload(self, uri: str, path: Path) -> None:
+        data = path.read_bytes()
+        headers = {"Authorization": f"OAuth {self.token}", "offset": "0", "file_size": str(len(data)),
+                   "Content-Type": "application/octet-stream"}
+        try:
+            req = urllib.request.Request(uri, data=data, method="POST", headers=headers)
+            with urllib.request.urlopen(req, timeout=600) as resp:
+                body = json.loads(resp.read().decode("utf-8") or "{}")
+        except urllib.error.HTTPError as e:
+            raise InstagramError(f"動画のアップロードに失敗しました（HTTP {e.code}）: "
+                                 f"{e.read().decode('utf-8', errors='replace')[:300]}") from None
+        except urllib.error.URLError as e:
+            raise InstagramError(f"動画のアップロードに失敗しました: {e.reason}") from None
+        if body.get("success") is False:
+            raise InstagramError(f"動画のアップロードに失敗しました: {body}")
+
+    def recent_media(self, limit: int = 10) -> list[dict]:
+        data = self._call("GET", f"{self.ig_user_id}/media",
+                          {"fields": "id,caption,permalink,timestamp,media_type", "limit": limit})
         return data.get("data", [])
 
     def permalink(self, media_id: str) -> str | None:

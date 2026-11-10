@@ -14,7 +14,7 @@ from pathlib import Path
 from . import config, posts
 
 LAYOUT_FIELDS = {
-    "cover": ({"top"}, {"ng", "bottom", "sub", "tag", "top_size", "ng_size"}),
+    "cover": ({"top"}, {"kicker", "ng", "bottom", "big", "sub", "badge", "foot", "tag", "top_size", "ng_size", "big_size"}),
     "callout": ({"title"}, {"label", "body", "note", "style", "tag"}),
     "cards": ({"title", "cards"}, {"note", "tag"}),
     "points": ({"title", "points"}, {"note", "tag", "numbered"}),
@@ -22,7 +22,10 @@ LAYOUT_FIELDS = {
     "quiz": ({"question"}, {"answer", "cta", "button", "tag"}),
     "cta": ({"title"}, {"body", "cta", "button", "tag"}),
 }
-POST_FIELDS = {"account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes"}
+POST_FIELDS = {
+    "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
+    "reel", "reel_title",
+}
 NG_WORDS = ["ストーリーズ"]
 MAX_HASHTAGS = 5
 MAX_CAPTION = 2200
@@ -106,6 +109,10 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
                 errors.append(f"ハッシュタグ「{tag}」の形が正しくありません（#から始めて、空白を入れない）")
     if "pr" in data and not isinstance(data["pr"], bool):
         errors.append("pr は true か false にしてください")
+    if "reel" in data and not isinstance(data["reel"], bool):
+        errors.append("reel は true か false にしてください")
+    if "reel_title" in data and (not isinstance(data["reel_title"], str) or len(data["reel_title"]) > 30):
+        errors.append("reel_title（リール上部のタイトル）は30文字以内にしてください")
     if isinstance(caption, str) and len(posts.compose_caption(data)) > MAX_CAPTION:
         errors.append(f"キャプションが長すぎます（ハッシュタグ込みで{MAX_CAPTION}文字まで）")
     return errors

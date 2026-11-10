@@ -18,6 +18,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import time
 import urllib.error
 import urllib.request
@@ -127,6 +128,10 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         state = "作成済み" if not post.needs_render(cfg) else "未作成（投稿時に作ります）"
         print(f"\n▶ {handle}: {post.id}（予定日 {post.data.get('date')}）")
         print(f"  画像: {len(post.data.get('slides', []))}枚・{state}")
+        if (cfg.get("reel") or {}).get("enabled") and post.data.get("reel", True):
+            from . import reel
+
+            print(f"  リール: あり（上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」）")
         print("  キャプション:\n" + "\n".join("    " + line for line in caption.splitlines()))
         return None
 
@@ -140,14 +145,21 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         wait_reachable(url)
 
     client = Client(config.get_token(cfg), cfg["ig_user_id"])
-    # 前回の実行で投稿だけ成功していた場合に、二重投稿しないための確認
-    existing = next((m for m in client.recent_media() if (m.get("caption") or "").strip() == caption.strip()), None)
+    recent = client.recent_media()
+
+    def already_posted(media_types: set[str]) -> dict | None:
+        # 前回の実行で投稿だけ成功していた場合に、二重投稿しないための確認
+        return next((m for m in recent if m.get("media_type") in media_types
+                     and (m.get("caption") or "").strip() == caption.strip()), None)
+
+    existing = already_posted({"CAROUSEL_ALBUM", "IMAGE"})
     if existing:
         print(f"・{handle}: 同じ投稿がすでにInstagramにあるので、記録だけ更新します")
         media_id, permalink = existing["id"], existing.get("permalink")
     else:
         media_id = client.publish_image(urls[0], caption) if len(urls) == 1 else client.publish_carousel(urls, caption)
         permalink = client.permalink(media_id)
+    print(f"✅ {handle}: 投稿しました {permalink or media_id}")
 
     record = {
         "media_id": media_id,
@@ -156,13 +168,50 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         "posted_date": now.date().isoformat(),
         "image_commit": sha,
     }
+
+    reel_error = None
+    reel_cfg = cfg.get("reel") or {}
+    if reel_cfg.get("enabled") and post.data.get("reel", True):
+        try:
+            record.update(publish_reel(client, cfg, post, caption, already_posted({"VIDEO", "REELS"})))
+            print(f"🎬 {handle}: リールを投稿しました {record.get('reel_permalink') or record.get('reel_media_id')}")
+        except Exception as e:  # リールが失敗しても、カルーセルの記録は残す
+            reel_error = str(e)
+            record["reel_error"] = reel_error
+
     dest = config.posted_dir(ROOT) / handle / post.id
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(str(post.folder), str(dest))
     (dest / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     commit_and_push(f"投稿しました: {handle}/{post.id}")
-    print(f"✅ {handle}: 投稿しました {permalink or media_id}")
+    if reel_error:
+        raise RuntimeError(f"カルーセルは投稿できましたが、リールの投稿に失敗しました: {reel_error}")
     return record
+
+
+def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, existing: dict | None) -> dict:
+    """スライドからリール動画を作って投稿する（グリッドに重複しないよう、リールタブだけに出す）。"""
+    if existing:
+        return {"reel_media_id": existing["id"], "reel_permalink": existing.get("permalink")}
+    from . import reel
+
+    reel_cfg = cfg.get("reel") or {}
+    title = post.data.get("reel_title") or reel.default_title(post.data)
+    video = Path(tempfile.mkdtemp()) / "reel.mp4"
+    reel.make_reel(post.folder, title, reel_cfg.get("subtitle", ""), cfg["theme"], video)
+    share = bool(reel_cfg.get("share_to_feed", False))
+    try:
+        reel_id = client.publish_reel(video, caption, share)
+    except InstagramError as e:
+        # 直接アップロードがうまくいかないときは、動画をGitHubに置いてURLで渡す
+        print(f"・直接アップロードに失敗したので、URL方式で再試行します（{e}）")
+        shutil.copy(video, post.folder / "reel.mp4")
+        commit_and_push(f"リール動画を準備: {cfg['handle']}/{post.id}")
+        url = f"https://raw.githubusercontent.com/{repo_slug()}/{git('rev-parse', 'HEAD')}/" \
+              f"{(post.folder / 'reel.mp4').relative_to(ROOT).as_posix()}"
+        wait_reachable(url)
+        reel_id = client.publish_reel_url(url, caption, share)
+    return {"reel_media_id": reel_id, "reel_permalink": client.permalink(reel_id)}
 
 
 def main(argv=None) -> int:

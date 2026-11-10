@@ -2,8 +2,9 @@
   "account": "eigo_1phrase",
   "date": "2026-01-01",
   "type": "carousel",
-  "no": "01",
+  "no": "09",
   "title": "見本：お疲れさま",
+  "reel_title": "「お疲れさま」英語で言える？",
   "slides": [
     {
       "layout": "cover",
@@ -23,27 +24,62 @@
     {
       "layout": "cards",
       "title": "仕事終わりの同僚に",
-      "cards": [["Good work today!", "今日もお疲れさま！"], ["Thanks for today.", "今日はありがとう。"]]
+      "cards": [
+        [
+          "Good work today!",
+          "今日もお疲れさま！"
+        ],
+        [
+          "Thanks for today.",
+          "今日はありがとう。"
+        ]
+      ]
     },
     {
       "layout": "cards",
       "title": "頑張った人をねぎらう",
-      "cards": [["You did a great job!", "よく頑張ったね！"]],
+      "cards": [
+        [
+          "You did a great job!",
+          "よく頑張ったね！"
+        ]
+      ],
       "note": "プレゼンやプロジェクトが終わったあとに。"
     },
     {
       "layout": "cards",
       "title": "先に帰るとき",
-      "cards": [["See you tomorrow!", "お先に失礼します（また明日）"], ["Have a good evening!", "よい夜を！"]]
+      "cards": [
+        [
+          "See you tomorrow!",
+          "お先に失礼します（また明日）"
+        ],
+        [
+          "Have a good evening!",
+          "よい夜を！"
+        ]
+      ]
     },
     {
       "layout": "table",
       "title": "「お疲れさま」早見表",
       "rows": [
-        ["仕事終わり", "Good work today!"],
-        ["感謝をこめて", "Thanks for today."],
-        ["成果をたたえる", "You did a great job!"],
-        ["先に帰る", "See you tomorrow!"]
+        [
+          "仕事終わり",
+          "Good work today!"
+        ],
+        [
+          "感謝をこめて",
+          "Thanks for today."
+        ],
+        [
+          "成果をたたえる",
+          "You did a great job!"
+        ],
+        [
+          "先に帰る",
+          "See you tomorrow!"
+        ]
       ]
     },
     {
@@ -52,5 +88,11 @@
     }
   ],
   "caption": "「お疲れさま」英語で言えますか？\n\n✕ You are tired.（疲れてるね）\n○ Good work today!\n○ You did a great job!\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
-  "hashtags": ["#英会話", "#英語フレーズ", "#中学英語", "#英語学習", "#大人の英語"]
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ]
 }
