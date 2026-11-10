@@ -1,0 +1,102 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-10",
+  "type": "carousel",
+  "no": "09",
+  "title": "マイペース",
+  "reel_title": "「マイペース」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「マイペース」を",
+      "ng": "I'm my pace.",
+      "bottom": "って言ってない？",
+      "sub": "my pace は通じない和製英語…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "I'm my pace.",
+      "body": "私は私のペースです。",
+      "note": "「マイペース」は和製英語で、英語では意味が通じません。「自分のペースでやる」と、動詞を使って言うのが自然です。"
+    },
+    {
+      "layout": "cards",
+      "title": "自分のことを話すとき",
+      "cards": [
+        [
+          "I do things at my own pace.",
+          "自分のペースでやるタイプです。"
+        ],
+        [
+          "I like to take my time.",
+          "じっくりやるのが好きです。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "人のことを言うとき",
+      "cards": [
+        [
+          "She does things her own way.",
+          "彼女はマイペースだね。"
+        ]
+      ],
+      "note": "良い意味でも、ちょっと困った意味でも使えます。"
+    },
+    {
+      "layout": "cards",
+      "title": "相手を急かさないとき",
+      "cards": [
+        [
+          "Take your time.",
+          "ゆっくりでいいよ。"
+        ],
+        [
+          "No rush.",
+          "急がなくて大丈夫。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「マイペース」早見表",
+      "rows": [
+        [
+          "自分のこと",
+          "I do things at my own pace."
+        ],
+        [
+          "じっくり派",
+          "I like to take my time."
+        ],
+        [
+          "人のこと",
+          "She does things her own way."
+        ],
+        [
+          "待つとき",
+          "Take your time."
+        ],
+        [
+          "急かさない",
+          "No rush."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「私はマイペースな性格です」を<br>英語で言うと？"
+    }
+  ],
+  "caption": "「マイペース」を \"I'm my pace.\" と言っていませんか？\n\n✕ I'm my pace.（通じない和製英語）\n○ I do things at my own pace.\n○ Take your time.（ゆっくりでいいよ）\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ]
+}
