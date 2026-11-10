@@ -56,6 +56,7 @@ Actions →「Instagramに投稿」→「Run workflow」
 - **投稿時間**：`accounts/<アカウント>.json` の `post_hour_jst`（日本時間の時。7なら7時台に投稿）
 - **一時停止**：同じファイルの `enabled` を `false` にする
 - **リール**：同じファイルの `reel.enabled`（自動投稿するか）、`reel.subtitle`（上部タイトルの下の一文）、`reel.share_to_feed`（`true` にするとグリッドにも表示）
+- **リールの投稿日時**：同じファイルの `reel.delay_days`（カルーセルの何日後か。1なら翌日）と `reel.post_hour_jst`（日本時間の時。12なら12時台）。どちらも消すと、カルーセルのすぐ後に続けて投稿する
 - **色**：同じファイルの `theme`
 - **投稿方針**：`accounts/<アカウント>.md`
 - **アカウントの追加**：`accounts/` に設定ファイルと方針を足し、`.github/workflows/publish.yml` の env にトークンの行を足す
