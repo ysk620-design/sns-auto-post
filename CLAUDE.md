@@ -21,7 +21,7 @@ Instagramの自動投稿の仕組みです。Claudeが投稿データ（post.jso
    - `date` はその日付、`account` はアカウント名
 3. 形式は `examples/<アカウント>/post.json` を見本にする
 4. シリーズ番号 `no` は、queue と posted の中で一番大きい番号の次（2桁、例 "07"）。どちらにもなければ `accounts/<アカウント>.json` の `series_next_no`
-5. 過去の投稿（queue と posted）とテーマが重ならないようにする
+5. 過去の投稿とテーマが重ならないようにする。queue と posted に加えて、`accounts/<アカウント>.md` の「過去に投稿したテーマ」（自動化より前の投稿）も必ず確認する
 6. `python -m autopost.validate` を実行して、エラーがなくなるまで直す
 7. ブランチ `claude/weekly-<実行日のYYYYMMDD>` にコミットしてプッシュし、プルリクエストを作る
    - タイトル：「週次投稿 MM/DD〜MM/DD」

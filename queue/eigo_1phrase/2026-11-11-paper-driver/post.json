@@ -1,0 +1,104 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-11",
+  "type": "carousel",
+  "no": "10",
+  "title": "ペーパードライバー",
+  "reel_title": "「ペーパードライバー」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「ペーパー<br>ドライバー」を",
+      "ng": "I'm a paper driver.",
+      "ng_size": 62,
+      "bottom": "って言ってない？",
+      "sub": "paper driver は通じない和製英語…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "I'm a paper driver.",
+      "body": "私は紙の運転手です。",
+      "note": "「ペーパードライバー」は和製英語で、英語では通じません。「免許はあるけど、ほとんど運転しない」と説明するのが自然です。"
+    },
+    {
+      "layout": "cards",
+      "title": "自分のことを説明するとき",
+      "cards": [
+        [
+          "I have a license, but I rarely drive.",
+          "免許はあるけど、ほとんど運転しません。"
+        ],
+        [
+          "I haven't driven in years.",
+          "もう何年も運転していません。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "運転を頼まれたとき",
+      "cards": [
+        [
+          "I'm not a confident driver.",
+          "運転にはあまり自信がないんです。"
+        ]
+      ],
+      "note": "やんわり断りたいときに使えます。"
+    },
+    {
+      "layout": "cards",
+      "title": "また運転したいとき",
+      "cards": [
+        [
+          "I need some driving practice.",
+          "運転の練習をしないと。"
+        ],
+        [
+          "I want to get used to driving again.",
+          "また運転に慣れたいです。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「ペーパードライバー」早見表",
+      "rows": [
+        [
+          "ほとんど運転しない",
+          "I rarely drive."
+        ],
+        [
+          "何年も運転してない",
+          "I haven't driven in years."
+        ],
+        [
+          "自信がない",
+          "I'm not a confident driver."
+        ],
+        [
+          "練習したい",
+          "I need some driving practice."
+        ],
+        [
+          "慣れたい",
+          "I want to get used to driving again."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「免許はあるけど、ほとんど運転しない」を<br>英語で言うと？"
+    }
+  ],
+  "caption": "「ペーパードライバー」を \"I'm a paper driver.\" と言っていませんか？\n\n✕ I'm a paper driver.（通じない和製英語）\n○ I have a license, but I rarely drive.\n○ I'm not a confident driver.（運転に自信がない）\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "運転にまつわる実体験（家族の送り迎えなど）があれば、キャプションに一言（ここに実体験を一言）。"
+}

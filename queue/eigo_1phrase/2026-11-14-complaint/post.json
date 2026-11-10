@@ -1,0 +1,104 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-14",
+  "type": "carousel",
+  "no": "13",
+  "title": "クレーム",
+  "reel_title": "「クレーム」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「クレームを<br>言いたい」を",
+      "top_size": 96,
+      "ng": "make a claim",
+      "bottom": "って言ってない？",
+      "sub": "claim は「主張・請求」の意味…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "I want to make a claim.",
+      "body": "主張（請求）をしたいです。",
+      "note": "英語の claim は「主張する」「（保険などを）請求する」という意味。お店などに不満を伝える「クレーム」は complaint（苦情）です。"
+    },
+    {
+      "layout": "cards",
+      "title": "お店で不満を伝えるとき",
+      "cards": [
+        [
+          "I'd like to make a complaint.",
+          "苦情を伝えたいのですが。"
+        ],
+        [
+          "There's a problem with my order.",
+          "注文に問題があります。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "やわらかく伝えるとき",
+      "cards": [
+        [
+          "I'm not happy with this.",
+          "これには満足していません。"
+        ]
+      ],
+      "note": "強く言いすぎたくないときに。"
+    },
+    {
+      "layout": "cards",
+      "title": "人のことを言うとき",
+      "cards": [
+        [
+          "He complains a lot.",
+          "彼はよく文句を言う。"
+        ],
+        [
+          "She's a difficult customer.",
+          "彼女は手ごわいお客さんだ。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「クレーム」早見表",
+      "rows": [
+        [
+          "苦情を言う",
+          "I'd like to make a complaint."
+        ],
+        [
+          "注文の問題",
+          "There's a problem with my order."
+        ],
+        [
+          "やわらかく",
+          "I'm not happy with this."
+        ],
+        [
+          "文句が多い",
+          "He complains a lot."
+        ],
+        [
+          "手ごわい客",
+          "She's a difficult customer."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "お店で「クレームを言いたいのですが」を<br>英語で言うと？"
+    }
+  ],
+  "caption": "「クレーム」を \"claim\" と言っていませんか？\n\n✕ I want to make a claim.（主張・請求の意味に）\n○ I'd like to make a complaint.\n○ There's a problem with my order.\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "職場や買い物での実体験があれば、キャプションに一言（ここに実体験を一言）。"
+}

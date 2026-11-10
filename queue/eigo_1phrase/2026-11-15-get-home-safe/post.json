@@ -1,0 +1,103 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-15",
+  "type": "carousel",
+  "no": "14",
+  "title": "気をつけて帰ってね",
+  "reel_title": "「気をつけて帰ってね」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「気をつけて帰ってね」を",
+      "ng": "Please be careful.",
+      "bottom": "って言ってない？",
+      "sub": "危ないことがあるみたいに聞こえる…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "Please be careful.",
+      "body": "注意してください。",
+      "note": "Be careful. は「危ないから注意して」という警告のニュアンス。別れぎわのあいさつには、相手を気づかう言い方が自然です。"
+    },
+    {
+      "layout": "cards",
+      "title": "帰り道を気づかう",
+      "cards": [
+        [
+          "Get home safe.",
+          "気をつけて帰ってね。"
+        ],
+        [
+          "Text me when you get home.",
+          "着いたら連絡してね。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "別れぎわのあいさつ",
+      "cards": [
+        [
+          "Take care!",
+          "気をつけてね／元気でね！"
+        ]
+      ],
+      "note": "友だちにも仕事相手にも使える便利なひと言です。"
+    },
+    {
+      "layout": "cards",
+      "title": "車や旅行で出かける人に",
+      "cards": [
+        [
+          "Drive safe!",
+          "運転気をつけてね！"
+        ],
+        [
+          "Have a safe trip!",
+          "気をつけて行ってきてね！"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「気をつけて帰ってね」早見表",
+      "rows": [
+        [
+          "帰り道",
+          "Get home safe."
+        ],
+        [
+          "着いたら連絡",
+          "Text me when you get home."
+        ],
+        [
+          "別れぎわ",
+          "Take care!"
+        ],
+        [
+          "車で帰る人",
+          "Drive safe!"
+        ],
+        [
+          "旅行に行く人",
+          "Have a safe trip!"
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "飲み会のあと、友だちに<br>「気をつけて帰ってね」と言うなら？"
+    }
+  ],
+  "caption": "「気をつけて帰ってね」を \"Please be careful.\" と言っていませんか？\n\n✕ Please be careful.（警告っぽく聞こえる）\n○ Get home safe.（気をつけて帰ってね）\n○ Take care!（気をつけてね）\n○ Drive safe!（運転気をつけて）\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "NG例の Be careful. は「危険があるときの注意」のニュアンス、という説明にしています。表示の改行を preview.jpg で確認してください。"
+}
