@@ -25,17 +25,22 @@ concurrency:
 jobs:
   render:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
 
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+          cache: pip
 
-      - name: 日本語フォントを入れる
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+      - uses: actions/cache@v4
+        with:
+          path: ~/.local/share/fonts
+          key: fonts-noto-cjk-jp-v1
+
+      - name: 日本語フォントを用意
+        run: bash scripts/setup_fonts.sh
 
       - name: ライブラリを入れる
         run: |

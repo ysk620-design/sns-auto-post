@@ -26,6 +26,7 @@ concurrency:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     env:
       IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
       IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
@@ -44,11 +45,16 @@ jobs:
         id: check
         run: python -m autopost.publish check --account "$ACCOUNT" $MODE_FLAGS
 
+      - uses: actions/cache@v4
+        if: steps.check.outputs.needs_render == 'true'
+        with:
+          path: ~/.local/share/fonts
+          key: fonts-noto-cjk-jp-v1
+
       - name: 画像を作る準備（画像がまだ無いときだけ）
         if: steps.check.outputs.needs_render == 'true'
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji
+          bash scripts/setup_fonts.sh
           pip install -q -r requirements.txt
           if [ ! -x /usr/bin/google-chrome ]; then python -m playwright install --with-deps chromium; fi
 
