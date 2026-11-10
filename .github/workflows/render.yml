@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 concurrency:
   group: render-${{ github.ref }}
@@ -82,3 +83,20 @@ jobs:
           fi
           git commit -m "スライド画像を作成"
           git push
+
+      - name: プルリクエストに投稿プレビューを貼る
+        if: github.event_name == 'push' && github.ref_name != 'main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # プッシュの直後にプルリクエストが作られることがあるので、少し待つ
+          for i in $(seq 1 12); do
+            pr=$(gh pr list --head "$GITHUB_REF_NAME" --state open --json number --jq '.[0].number')
+            [ -n "$pr" ] && break
+            sleep 15
+          done
+          if [ -z "$pr" ]; then echo "プルリクエストがないのでスキップ"; exit 0; fi
+          git fetch -q --depth=1 origin main
+          python -m autopost.pr_preview "$(git rev-parse HEAD)" > /tmp/preview.md
+          if [ ! -s /tmp/preview.md ]; then echo "新しい投稿はありません"; exit 0; fi
+          gh pr comment "$pr" --body-file /tmp/preview.md --edit-last 2>/dev/null || gh pr comment "$pr" --body-file /tmp/preview.md
