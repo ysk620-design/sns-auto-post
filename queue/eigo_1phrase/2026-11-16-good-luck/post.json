@@ -1,0 +1,103 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-16",
+  "type": "carousel",
+  "no": "15",
+  "title": "頑張って",
+  "reel_title": "「頑張って」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「頑張って」を",
+      "ng": "Fight!",
+      "bottom": "って言ってない？",
+      "sub": "応援のつもりが「けんかしろ」に…<br>正解は<span class=\"hl\">場面で5つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "Fight!",
+      "body": "戦え！",
+      "note": "Fight! は「戦え・けんかしろ」という意味。応援の「ファイト！」は和製英語です。"
+    },
+    {
+      "layout": "cards",
+      "title": "本番前の人に",
+      "cards": [
+        [
+          "Good luck!",
+          "頑張ってね！"
+        ],
+        [
+          "You've got this!",
+          "あなたならできる！"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "努力を続けている人に",
+      "cards": [
+        [
+          "Keep it up!",
+          "その調子で頑張って！"
+        ]
+      ],
+      "note": "頑張っている最中の人に、さらに背中を押すひと言です。"
+    },
+    {
+      "layout": "cards",
+      "title": "不安そうな人に",
+      "cards": [
+        [
+          "I believe in you.",
+          "あなたを信じてるよ。"
+        ],
+        [
+          "Just do your best.",
+          "ベストを尽くせば大丈夫。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「頑張って」早見表",
+      "rows": [
+        [
+          "本番前",
+          "Good luck!"
+        ],
+        [
+          "できるよ",
+          "You've got this!"
+        ],
+        [
+          "その調子",
+          "Keep it up!"
+        ],
+        [
+          "不安そうな人",
+          "I believe in you."
+        ],
+        [
+          "ベストを尽くして",
+          "Just do your best."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "明日テストを受ける友だちに<br>「頑張って！」と言うなら？"
+    }
+  ],
+  "caption": "「頑張って」を \"Fight!\" と言っていませんか？\n\n✕ Fight!（戦え！の意味に）\n○ Good luck!（頑張ってね）\n○ You've got this!（あなたならできる）\n○ Keep it up!（その調子で）\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "表示の改行を preview.jpg で確認してください。子どもの試合・受験の応援など、実際に使った場面があれば一言（ここに実体験を一言）。"
+}

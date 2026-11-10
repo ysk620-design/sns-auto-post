@@ -1,0 +1,98 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-12",
+  "type": "carousel",
+  "no": "11",
+  "title": "アンケート",
+  "reel_title": "「アンケート」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "「アンケートに<br>答えて」を",
+      "top_size": 96,
+      "ng": "Answer the enquete.",
+      "ng_size": 72,
+      "bottom": "って言ってない？",
+      "sub": "アンケートはフランス語由来…<br>正解は<span class=\"hl\">場面で4つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "Answer the enquete.",
+      "body": "アンケートに答えて。（英語では通じない）",
+      "note": "「アンケート」はフランス語の enquête から来た言葉で、英語ではほとんど通じません。英語では survey（調査）と言います。"
+    },
+    {
+      "layout": "cards",
+      "title": "お願いするとき",
+      "cards": [
+        [
+          "Could you fill out this survey?",
+          "このアンケートに記入してもらえますか？"
+        ],
+        [
+          "It only takes a minute.",
+          "1分で終わります。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "答えたと伝えるとき",
+      "cards": [
+        [
+          "I filled out the survey.",
+          "アンケートに答えました。"
+        ]
+      ],
+      "note": "fill out は「（用紙に）記入する」。書類全般に使えます。"
+    },
+    {
+      "layout": "cards",
+      "title": "ネットのアンケート",
+      "cards": [
+        [
+          "Please take our online survey.",
+          "オンラインアンケートにご協力ください。"
+        ]
+      ],
+      "note": "questionnaire（質問票）もありますが、日常会話では survey が一般的です。"
+    },
+    {
+      "layout": "table",
+      "title": "「アンケート」早見表",
+      "rows": [
+        [
+          "お願いする",
+          "Could you fill out this survey?"
+        ],
+        [
+          "すぐ終わる",
+          "It only takes a minute."
+        ],
+        [
+          "答えた",
+          "I filled out the survey."
+        ],
+        [
+          "ネットで",
+          "Please take our online survey."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「アンケートに答えました」を<br>英語で言うと？"
+    }
+  ],
+  "caption": "「アンケート」を \"enquete\" と言っていませんか？\n\n✕ Answer the enquete.（英語では通じない）\n○ Could you fill out this survey?\n○ I filled out the survey.\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#カタカナ英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "保育園や学校のアンケートなど、身近な場面があればキャプションに一言（ここに実体験を一言）。"
+}
