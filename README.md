@@ -13,6 +13,7 @@ GitHub Actions「スライド画像を作る」
         ↓
 GitHub Actions「Instagramに投稿」（毎時チェック）
   各アカウントの投稿時間になったら、その日の分を投稿
+  （カルーセル＋同じ画像から作った無音リール。リールはリールタブだけに表示）
 ```
 
 ## 最初にやること：トークンの登録
@@ -50,6 +51,7 @@ Actions →「Instagramに投稿」→「Run workflow」
 
 - **投稿時間**：`accounts/<アカウント>.json` の `post_hour_jst`（日本時間の時。7なら7時台に投稿）
 - **一時停止**：同じファイルの `enabled` を `false` にする
+- **リール**：同じファイルの `reel.enabled`（自動投稿するか）、`reel.subtitle`（上部タイトルの下の一文）、`reel.share_to_feed`（`true` にするとグリッドにも表示）
 - **色**：同じファイルの `theme`
 - **投稿方針**：`accounts/<アカウント>.md`
 - **アカウントの追加**：`accounts/` に設定ファイルと方針を足し、`.github/workflows/publish.yml` の env にトークンの行を足す
@@ -58,7 +60,7 @@ Actions →「Instagramに投稿」→「Run workflow」
 
 | layout | 用途 | 主な項目 |
 |---|---|---|
-| cover | 表紙 | top / ng / bottom / sub |
+| cover | 表紙 | kicker / top / ng / bottom / big / sub / badge / foot |
 | callout | よくある間違い・ポイント | label / title / body / note / style（ng か ok） |
 | cards | フレーズや項目のカード（1〜3個） | title / cards / note |
 | points | 箇条書き（1〜6個） | title / points / note / numbered |

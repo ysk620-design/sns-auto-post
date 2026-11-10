@@ -6,13 +6,18 @@
   "enabled": true,
   "post_hour_jst": 21,
   "post_window_hours": 3,
-  "series": "厳選お得ノート",
-  "series_next_no": 1,
+  "series": "厳選お得",
+  "series_next_no": 6,
+  "reel": {
+    "enabled": true,
+    "subtitle": "保存して期限までに忘れずに",
+    "share_to_feed": false
+  },
   "theme": {
-    "main": "#1e3b30",
+    "main": "#1d3c32",
     "base": "#f7f4ec",
-    "accent": "#c98a1e",
-    "accent_soft": "#f2d38b",
+    "accent": "#c9932a",
+    "accent_soft": "#efc75e",
     "muted": "#8f998f"
   }
 }
