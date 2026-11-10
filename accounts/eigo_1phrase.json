@@ -10,6 +10,9 @@
   "series_next_no": 9,
   "reel": {
     "enabled": true,
+    "delay_days": 1,
+    "post_hour_jst": 12,
+    "post_window_hours": 3,
     "subtitle": "保存して後で見返してね",
     "share_to_feed": false
   },

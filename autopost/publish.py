@@ -22,6 +22,7 @@ import tempfile
 import time
 import urllib.error
 import urllib.request
+from datetime import timedelta
 from pathlib import Path
 
 from . import config, posts
@@ -83,6 +84,52 @@ def find_due(accounts: dict, now, only: str = "", force: bool = False, dry_run: 
     return due
 
 
+def reel_delayed(cfg: dict) -> bool:
+    """リールをカルーセルとは別の日・時間に投稿する設定か（reel.delay_days / reel.post_hour_jst）。"""
+    r = cfg.get("reel") or {}
+    return bool(r.get("enabled")) and (int(r.get("delay_days", 0)) > 0 or "post_hour_jst" in r)
+
+
+def _published(handle: str, root: Path):
+    folder = config.posted_dir(root) / handle
+    if not folder.is_dir():
+        return
+    for path in sorted(folder.glob("*/published.json")):
+        try:
+            yield path, json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+
+
+def find_due_reels(accounts: dict, now, only: str = "", force: bool = False, dry_run: bool = False,
+                   root: Path = ROOT):
+    """今投稿すべき「あとから出すリール」の (アカウント設定, 投稿済みフォルダ) のリスト（1アカウント1本まで）。"""
+    today = now.date()
+    due = []
+    for handle, cfg in accounts.items():
+        if only and handle != only:
+            continue
+        if not cfg.get("enabled", True) or not (cfg.get("reel") or {}).get("enabled"):
+            continue
+        if not dry_run and not config.get_token(cfg):
+            continue
+        r = cfg["reel"]
+        if not (force or dry_run):
+            start = int(r.get("post_hour_jst", cfg["post_hour_jst"]))
+            window = int(r.get("post_window_hours", cfg["post_window_hours"]))
+            if not start <= now.hour < start + window:
+                continue
+        items = list(_published(handle, root))
+        if not force and any(info.get("reel_posted_date") == today.isoformat() for _, info in items):
+            print(f"・{handle}: 今日のリールはもう投稿済み")
+            continue
+        pending = [path for path, info in items if info.get("reel_status") == "pending"
+                   and str(info.get("reel_due", "")) <= today.isoformat()]
+        if pending:
+            due.append((cfg, pending[0].parent))
+    return due
+
+
 def ensure_rendered(cfg: dict, post: posts.Post) -> posts.Post:
     if post.needs_render(cfg):
         from . import render
@@ -131,7 +178,8 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         if (cfg.get("reel") or {}).get("enabled") and post.data.get("reel", True):
             from . import reel
 
-            print(f"  リール: あり（上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」）")
+            when = "あとで別に投稿" if reel_delayed(cfg) else "続けて投稿"
+            print(f"  リール: あり・{when}（上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」）")
         print("  キャプション:\n" + "\n".join("    " + line for line in caption.splitlines()))
         return None
 
@@ -171,7 +219,12 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
 
     reel_error = None
     reel_cfg = cfg.get("reel") or {}
-    if reel_cfg.get("enabled") and post.data.get("reel", True):
+    if reel_cfg.get("enabled") and post.data.get("reel", True) and reel_delayed(cfg):
+        # リールは別の日・時間に、あとから投稿する（find_due_reels が拾う）
+        record["reel_status"] = "pending"
+        record["reel_due"] = (now.date() + timedelta(days=int(reel_cfg.get("delay_days", 0)))).isoformat()
+        print(f"・{handle}: リールは {record['reel_due']} の {reel_cfg.get('post_hour_jst', cfg['post_hour_jst'])}時台に投稿予定")
+    elif reel_cfg.get("enabled") and post.data.get("reel", True):
         try:
             record.update(publish_reel(client, cfg, post, caption, already_posted({"VIDEO", "REELS"})))
             print(f"🎬 {handle}: リールを投稿しました {record.get('reel_permalink') or record.get('reel_media_id')}")
@@ -214,6 +267,46 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
     return {"reel_media_id": reel_id, "reel_permalink": client.permalink(reel_id)}
 
 
+MAX_REEL_ATTEMPTS = 3
+
+
+def publish_pending_reel(cfg: dict, folder: Path, now, dry_run: bool = False) -> dict | None:
+    """投稿済みのカルーセルから、あとから出すリールを投稿して published.json を更新する。"""
+    handle = cfg["handle"]
+    post = posts.Post.load(folder)
+    caption = posts.compose_caption(post.data)
+    path = folder / "published.json"
+    info = json.loads(path.read_text(encoding="utf-8"))
+    if dry_run:
+        from . import reel
+
+        print(f"\n▶ {handle}: リール {post.id}（カルーセル投稿日 {info.get('posted_date')}）")
+        print(f"  上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」")
+        return None
+
+    client = Client(config.get_token(cfg), cfg["ig_user_id"])
+    existing = next((m for m in client.recent_media() if m.get("media_type") in {"VIDEO", "REELS"}
+                     and (m.get("caption") or "").strip() == caption.strip()), None)
+    error = None
+    try:
+        info.update(publish_reel(client, cfg, post, caption, existing))
+        info.update(reel_status="posted", reel_posted_at=config.now_jst().isoformat(timespec="seconds"),
+                    reel_posted_date=now.date().isoformat())
+        info.pop("reel_error", None)
+        print(f"🎬 {handle}: リールを投稿しました {info.get('reel_permalink') or info.get('reel_media_id')}")
+    except Exception as e:
+        error = str(e)
+        info["reel_error"] = error
+        info["reel_attempts"] = int(info.get("reel_attempts", 0)) + 1
+        if info["reel_attempts"] >= MAX_REEL_ATTEMPTS:
+            info["reel_status"] = "failed"
+    path.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    commit_and_push(f"リールを投稿しました: {handle}/{post.id}" if not error else f"リールの投稿に失敗: {handle}/{post.id}")
+    if error:
+        raise RuntimeError(f"リールの投稿に失敗しました（{info['reel_attempts']}回目）: {error}")
+    return info
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="Instagramに投稿する")
     ap.add_argument("command", choices=["check", "run"])
@@ -226,17 +319,19 @@ def main(argv=None) -> int:
     now = config.now_jst()
     print(f"日本時間 {now:%Y-%m-%d %H:%M}")
     due = find_due(accounts, now, args.account.strip(), args.force, args.dry_run)
+    due_reels = find_due_reels(accounts, now, args.account.strip(), args.force, args.dry_run)
 
     if args.command == "check":
         needs_render = any(post.needs_render(cfg) for cfg, post in due) and not args.dry_run
+        handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels)
         set_output(
-            due=str(bool(due)).lower(),
+            due=str(bool(due or due_reels)).lower(),
             needs_render=str(needs_render).lower(),
-            accounts=",".join(cfg["handle"] for cfg, _ in due),
+            accounts=",".join(handles),
         )
         return 0
 
-    if not due:
+    if not due and not due_reels:
         print("今は投稿するものがありません")
         return 0
     if os.environ.get("GITHUB_ACTIONS") == "true":
@@ -246,6 +341,12 @@ def main(argv=None) -> int:
     for cfg, post in due:
         try:
             publish_one(cfg, post, now, args.dry_run)
+        except (InstagramError, RuntimeError, subprocess.CalledProcessError) as e:
+            print(f"❌ {cfg['handle']}: {e}")
+            failures += 1
+    for cfg, folder in due_reels:
+        try:
+            publish_pending_reel(cfg, folder, now, args.dry_run)
         except (InstagramError, RuntimeError, subprocess.CalledProcessError) as e:
             print(f"❌ {cfg['handle']}: {e}")
             failures += 1

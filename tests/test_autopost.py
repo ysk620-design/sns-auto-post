@@ -112,6 +112,52 @@ class DueTest(unittest.TestCase):
         self.assertEqual(self.due("2026-11-12T07:20"), [])
 
 
+class DelayedReelTest(unittest.TestCase):
+    def setUp(self):
+        self.root = Path(tempfile.mkdtemp())
+        shutil.copytree(ROOT / "accounts", self.root / "accounts")
+        self.accounts = config.load_accounts(self.root)
+
+    def tearDown(self):
+        shutil.rmtree(self.root)
+
+    def add_posted(self, folder, info):
+        d = self.root / "posted" / "eigo_1phrase" / folder
+        d.mkdir(parents=True)
+        (d / "published.json").write_text(json.dumps(info), encoding="utf-8")
+        return d
+
+    def due(self, when, **kw):
+        now = datetime.fromisoformat(when).replace(tzinfo=config.JST)
+        old = dict(os.environ)
+        os.environ.update({"IG_TOKEN_EIGO_1PHRASE": "dummy"})
+        try:
+            return publish.find_due_reels(self.accounts, now, root=self.root, **kw)
+        finally:
+            os.environ.clear()
+            os.environ.update(old)
+
+    def test_accounts_post_reel_next_day_at_noon(self):
+        for cfg in self.accounts.values():
+            self.assertTrue(publish.reel_delayed(cfg))
+            self.assertEqual((cfg["reel"]["delay_days"], cfg["reel"]["post_hour_jst"]), (1, 12))
+
+    def test_pending_reel_is_due_next_day_in_reel_window(self):
+        self.add_posted("2026-11-12-a", {"posted_date": "2026-11-12", "reel_status": "pending", "reel_due": "2026-11-13"})
+        self.assertEqual(self.due("2026-11-12T12:20"), [])  # まだ翌日ではない
+        self.assertEqual(self.due("2026-11-13T07:20"), [])  # リールの時間外
+        due = self.due("2026-11-13T12:20")
+        self.assertEqual([f.name for _, f in due], ["2026-11-12-a"])
+
+    def test_one_reel_per_day_and_skips_posted_or_failed(self):
+        self.add_posted("2026-11-10-x", {"reel_status": "failed", "reel_due": "2026-11-11"})
+        self.add_posted("2026-11-11-y", {"reel_status": "posted", "reel_due": "2026-11-12", "reel_posted_date": "2026-11-13"})
+        self.add_posted("2026-11-12-z", {"reel_status": "pending", "reel_due": "2026-11-13"})
+        self.assertEqual(self.due("2026-11-13T12:20"), [])  # 今日はもう1本投稿済み
+        self.assertEqual([f.name for _, f in self.due("2026-11-14T12:20")], ["2026-11-12-z"])
+        self.assertEqual(len(self.due("2026-11-13T20:20", force=True)), 1)  # 手動の今すぐ投稿
+
+
 class InstagramTest(unittest.TestCase):
     def test_carousel_flow(self):
         calls = []
