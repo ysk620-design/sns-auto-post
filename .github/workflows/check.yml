@@ -1,0 +1,21 @@
+name: 接続テスト
+
+on:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
+      IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Instagramにつながるか確認（投稿はしません）
+        run: python -m autopost.check_api
