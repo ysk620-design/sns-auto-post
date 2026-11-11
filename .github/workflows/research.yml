@@ -1,0 +1,59 @@
+name: 他アカウント調査
+
+# Claude が使う調査用。調べるアカウント名と公開鍵は実行時の入力で渡し、ログには出さない。
+# 結果は公開鍵で暗号化して research-data ブランチに置く（毎回上書き）。
+# くわしくは autopost/research.py の先頭の説明を参照。
+
+on:
+  workflow_dispatch:
+    inputs:
+      targets:
+        description: "調べるユーザーネーム（カンマ区切り。ログには出ません）"
+        required: true
+      pubkey:
+        description: "結果を暗号化する公開鍵（base64）"
+        required: true
+      request_id:
+        description: "依頼を見分けるための英数字（任意）"
+        required: false
+        default: ""
+      limit:
+        description: "1アカウントあたりに取る投稿の数（最大200）"
+        required: false
+        default: "50"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
+      IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 公開データを集めて暗号化（アカウント名や数字はログに出しません）
+        run: python -m autopost.research collect /tmp/research-out
+
+      - name: 暗号化したデータを research-data ブランチに置く
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd /tmp/research-out
+          git init -q -b research-data
+          git add -A
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -q -m "調査データ（暗号化済み）"
+          git push -q -f "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" research-data
