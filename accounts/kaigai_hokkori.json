@@ -1,9 +1,9 @@
 {
   "handle": "kaigai_hokkori",
   "name": "海外の反応｜日本のほっこり話",
-  "ig_user_id": "",
+  "ig_user_id": "17841465396929462",
   "token_secret": "IG_TOKEN_EIGO_1PHRASE",
-  "enabled": false,
+  "enabled": true,
   "format": "story",
   "post_hour_jst": 19,
   "post_window_hours": 3,
