@@ -1,0 +1,131 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-20",
+  "type": "story",
+  "no": "07",
+  "title": "注文をまちがえる料理店",
+  "icon": "coffee",
+  "burst": "LOVE!",
+  "top": "注文をまちがえるのに…",
+  "big": "お客さん満足度<br>99％の店！",
+  "big_size": 104,
+  "chat_title": "<em>注文をまちがえる</em>料理店<br>→ 海外の反応は…",
+  "scenes": [
+    {
+      "title": "東京のある料理店",
+      "mood": "happy",
+      "prop": "noren:食",
+      "say": "ハンバーグください！",
+      "nar": "2017年、東京に期間限定で<br>ちょっと変わったレストランが登場。"
+    },
+    {
+      "title": "ホールスタッフは…",
+      "mood": "happy",
+      "clerk": "happy",
+      "look": {
+        "hair": "#d9d9d9",
+        "shirt": "#ff8fb1"
+      },
+      "prop": "question",
+      "say": "ご注文は…なんでしたっけ？",
+      "nar": "接客するのは、認知症のある<br>おじいちゃん・おばあちゃんたち。"
+    },
+    {
+      "title": "届いたのは…",
+      "mood": "wow",
+      "prop": "coffee",
+      "say": "ホットにストロー！？",
+      "nar": "熱いコーヒーにストローが付いたり、<br>頼んだ料理と違うものが来たり。"
+    },
+    {
+      "title": "それでも…",
+      "mood": "love",
+      "clerk": "happy",
+      "look": {
+        "hair": "#d9d9d9",
+        "shirt": "#ff8fb1"
+      },
+      "prop": "noren:食",
+      "say": "どれもおいしい！",
+      "nar": "お店の約束は、<br>「間違えても、どれもおいしい」。"
+    }
+  ],
+  "comments": [
+    [
+      "🇬🇧",
+      "英国の広告コラムニスト",
+      "3回に1回注文を間違える店に行く？ふつうは行かないよね"
+    ],
+    [
+      "🌏",
+      "来店した海外の客（TikTokより）",
+      "間違えても、そのたびに思いやりで受け止めてもらえる"
+    ],
+    [
+      "🌏",
+      "海外の読者（コメントより）",
+      "思わず笑顔に。希望と幸せをくれるお店だ"
+    ],
+    [
+      "🌏",
+      "海外のSNSより",
+      "これまでで一番やさしいアイデアのひとつ"
+    ]
+  ],
+  "stat": {
+    "l1": "注文を間違えた割合",
+    "n1": "約37%",
+    "l2": "満足したお客さん",
+    "n2": "99%",
+    "msg": "間違いを、みんなで笑って受け止める。<br>このお店は世界的な広告賞も受賞。",
+    "src": "出典：注文をまちがえる料理店、Lonely Planet、NPR ほか"
+  },
+  "cta": "あなたが<br>「優しい国だな」と<br>思った瞬間は？",
+  "reel_script": {
+    "comments": [
+      [
+        "🇬🇧",
+        "英国の広告コラムニスト",
+        "3回に1回間違える店に行く？ふつうは行かないよね"
+      ],
+      [
+        "🌏",
+        "来店した海外の客（TikTokより）",
+        "間違えても、そのたびに思いやりで受け止めてもらえる"
+      ],
+      [
+        "🌏",
+        "海外のSNSより",
+        "これまでで一番やさしいアイデアのひとつ"
+      ]
+    ],
+    "nar": [
+      "注文を間違えるのに、満足度99パーセント。そのお店の秘密とは？",
+      "2017年、東京にちょっと変わったレストランが登場した。",
+      "接客するのは、認知症のあるおじいちゃん、おばあちゃんたち。",
+      "熱いコーヒーにストローが付いてきても、お客さんは笑顔。",
+      "お店の約束は、「間違えても、どれもおいしい」。",
+      "「3回に1回間違える店に行く？ふつうは行かないよね」",
+      "「間違えても、そのたびに思いやりで受け止めてもらえる」",
+      "「これまでで一番やさしいアイデアのひとつ」",
+      "実は間違えた注文は約37パーセント。でも99パーセントのお客さんが満足したんです。",
+      "あなたが「優しい国だな」と思った瞬間は？　コメントで教えてね。"
+    ]
+  },
+  "caption": "注文の約37%を間違えるのに、お客さんの99%が満足。\n東京生まれの「注文をまちがえる料理店」☕\n\n接客するのは認知症のあるおじいちゃん・おばあちゃん。\n間違いをみんなで笑って受け止めるお店に、海外から「一番やさしいアイデア」の声。\n\n💬 あなたが「優しい国だな」と思った瞬間は？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の良いところ",
+    "#ほっこり",
+    "#注文をまちがえる料理店",
+    "#やさしい世界"
+  ],
+  "sources": [
+    "Lonely Planet（37%・99%） https://www.lonelyplanet.com/articles/restaurant-mistaken-orders-tokyo",
+    "Campaign Asia / Dave Trott https://www.campaignasia.com/article/niche-is-good/484522",
+    "Upworthy（TikTokの来店客） https://amplify.upworthy.com/this-restaurant-cant-even-get-your-orders-right-but-customers-still-love-it-for-wholesome-reason",
+    "Being Patient（読者コメント） https://www.beingpatient.com/restaurant-of-mistaken-orders",
+    "News Karnataka（SNSの反応） https://newskarnataka.com/lifestyle/where-wrong-orders-are-welcome-tokyo-cafe-redefines-kindness/22012026/",
+    "カンヌライオンズ受賞 https://theswitchboard.substack.com/p/lessons-from-the-restaurant-of-mistaken"
+  ]
+}
