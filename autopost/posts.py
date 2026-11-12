@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from . import config
+from . import config, story
 
 PACKAGE_DIR = Path(__file__).resolve().parent
 
@@ -48,6 +48,10 @@ class Post:
 
     def needs_render(self, account_cfg: dict) -> bool:
         """画像がまだ無いか、投稿データ・デザインが変わって作り直しが必要か。"""
+        if story.is_story(self.data):
+            from .story import build
+
+            return build.needs_render(self.folder, self.data, account_cfg)
         if self.render_info().get("hash") != render_hash(self.data, account_cfg):
             return True
         return len(self.slide_files()) != len(self.data.get("slides", []))
@@ -82,6 +86,13 @@ def compose_caption(data: dict) -> str:
         body = "【PR】\n" + body
     tags = " ".join(data.get("hashtags", []))
     return f"{body}\n\n{tags}" if tags else body
+
+
+def compose_reel_caption(data: dict, account_cfg: dict) -> str:
+    """リールに載せるキャプション。アカウントの reel.caption_suffix（音声のクレジットなど）を最後に足す。"""
+    suffix = str((account_cfg.get("reel") or {}).get("caption_suffix", "")).strip()
+    caption = compose_caption(data)
+    return f"{caption}\n\n{suffix}" if suffix else caption
 
 
 def list_queue(account: str, root: Path = config.ROOT) -> list[Post]:

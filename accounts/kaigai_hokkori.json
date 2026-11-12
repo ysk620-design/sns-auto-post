@@ -1,0 +1,28 @@
+{
+  "handle": "kaigai_hokkori",
+  "name": "海外の反応｜日本のほっこり話",
+  "ig_user_id": "",
+  "token_secret": "IG_TOKEN_EIGO_1PHRASE",
+  "enabled": false,
+  "format": "story",
+  "post_hour_jst": 19,
+  "post_window_hours": 3,
+  "series": "海外の反応",
+  "series_next_no": 8,
+  "reel": {
+    "enabled": true,
+    "delay_days": 1,
+    "post_hour_jst": 12,
+    "post_window_hours": 3,
+    "share_to_feed": false,
+    "credit": "ナレーション　VOICEVOX:冥鳴ひまり",
+    "caption_suffix": "ナレーション：VOICEVOX:冥鳴ひまり",
+    "voice": {
+      "style_id": 14,
+      "speed": 0.8,
+      "pause": 1.5,
+      "gap": 0.6,
+      "bgm_volume": 0.15
+    }
+  }
+}

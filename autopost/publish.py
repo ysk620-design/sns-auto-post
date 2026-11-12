@@ -25,7 +25,7 @@ import urllib.request
 from datetime import timedelta
 from pathlib import Path
 
-from . import config, posts
+from . import config, posts, story
 from .instagram import Client, InstagramError
 
 ROOT = config.ROOT
@@ -174,8 +174,12 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
     if dry_run:
         state = "作成済み" if not post.needs_render(cfg) else "未作成（投稿時に作ります）"
         print(f"\n▶ {handle}: {post.id}（予定日 {post.data.get('date')}）")
-        print(f"  画像: {len(post.data.get('slides', []))}枚・{state}")
-        if (cfg.get("reel") or {}).get("enabled") and post.data.get("reel", True):
+        count = len(post.slide_files()) if story.is_story(post.data) else len(post.data.get("slides", []))
+        print(f"  画像: {count}枚・{state}")
+        if story.is_story(post.data):
+            if story.reel_wanted(post.data, cfg):
+                print(f"  リール: 読み上げ付き・{'あとで別に投稿' if reel_delayed(cfg) else '続けて投稿'}")
+        elif (cfg.get("reel") or {}).get("enabled") and post.data.get("reel", True):
             from . import reel
 
             when = "あとで別に投稿" if reel_delayed(cfg) else "続けて投稿"
@@ -195,10 +199,10 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
     client = Client(config.get_token(cfg), cfg["ig_user_id"])
     recent = client.recent_media()
 
-    def already_posted(media_types: set[str]) -> dict | None:
+    def already_posted(media_types: set[str], text: str = caption) -> dict | None:
         # 前回の実行で投稿だけ成功していた場合に、二重投稿しないための確認
         return next((m for m in recent if m.get("media_type") in media_types
-                     and (m.get("caption") or "").strip() == caption.strip()), None)
+                     and (m.get("caption") or "").strip() == text.strip()), None)
 
     existing = already_posted({"CAROUSEL_ALBUM", "IMAGE"})
     if existing:
@@ -219,14 +223,17 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
 
     reel_error = None
     reel_cfg = cfg.get("reel") or {}
-    if reel_cfg.get("enabled") and post.data.get("reel", True) and reel_delayed(cfg):
+    wants_reel = bool(reel_cfg.get("enabled")) and post.data.get("reel", True) is not False
+    if wants_reel and reel_delayed(cfg):
         # リールは別の日・時間に、あとから投稿する（find_due_reels が拾う）
         record["reel_status"] = "pending"
         record["reel_due"] = (now.date() + timedelta(days=int(reel_cfg.get("delay_days", 0)))).isoformat()
         print(f"・{handle}: リールは {record['reel_due']} の {reel_cfg.get('post_hour_jst', cfg['post_hour_jst'])}時台に投稿予定")
-    elif reel_cfg.get("enabled") and post.data.get("reel", True):
+    elif wants_reel:
         try:
-            record.update(publish_reel(client, cfg, post, caption, already_posted({"VIDEO", "REELS"})))
+            reel_caption = posts.compose_reel_caption(post.data, cfg)
+            record.update(publish_reel(client, cfg, post, reel_caption,
+                                       already_posted({"VIDEO", "REELS"}, reel_caption)))
             print(f"🎬 {handle}: リールを投稿しました {record.get('reel_permalink') or record.get('reel_media_id')}")
         except Exception as e:  # リールが失敗しても、カルーセルの記録は残す
             reel_error = str(e)
@@ -249,16 +256,24 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
     from . import reel
 
     reel_cfg = cfg.get("reel") or {}
-    title = post.data.get("reel_title") or reel.default_title(post.data)
-    video = Path(tempfile.mkdtemp()) / "reel.mp4"
-    reel.make_reel(post.folder, title, reel_cfg.get("subtitle", ""), cfg["theme"], video)
+    prebuilt = story.is_story(post.data)
+    if prebuilt:
+        # ストーリー形式は、画像と一緒に作ってある読み上げ付きの動画（reel.mp4）をそのまま使う
+        video = post.folder / "reel.mp4"
+        if not video.exists():
+            raise RuntimeError("リール動画（reel.mp4）がありません")
+    else:
+        title = post.data.get("reel_title") or reel.default_title(post.data)
+        video = Path(tempfile.mkdtemp()) / "reel.mp4"
+        reel.make_reel(post.folder, title, reel_cfg.get("subtitle", ""), cfg["theme"], video)
     share = bool(reel_cfg.get("share_to_feed", False))
     try:
         reel_id = client.publish_reel(video, caption, share)
     except InstagramError as e:
         # 直接アップロードがうまくいかないときは、動画をGitHubに置いてURLで渡す
         print(f"・直接アップロードに失敗したので、URL方式で再試行します（{e}）")
-        shutil.copy(video, post.folder / "reel.mp4")
+        if not prebuilt:
+            shutil.copy(video, post.folder / "reel.mp4")
         commit_and_push(f"リール動画を準備: {cfg['handle']}/{post.id}")
         url = f"https://raw.githubusercontent.com/{repo_slug()}/{git('rev-parse', 'HEAD')}/" \
               f"{(post.folder / 'reel.mp4').relative_to(ROOT).as_posix()}"
@@ -274,14 +289,15 @@ def publish_pending_reel(cfg: dict, folder: Path, now, dry_run: bool = False) ->
     """投稿済みのカルーセルから、あとから出すリールを投稿して published.json を更新する。"""
     handle = cfg["handle"]
     post = posts.Post.load(folder)
-    caption = posts.compose_caption(post.data)
+    caption = posts.compose_reel_caption(post.data, cfg)
     path = folder / "published.json"
     info = json.loads(path.read_text(encoding="utf-8"))
     if dry_run:
         from . import reel
 
         print(f"\n▶ {handle}: リール {post.id}（カルーセル投稿日 {info.get('posted_date')}）")
-        print(f"  上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」")
+        if not story.is_story(post.data):
+            print(f"  上部タイトル「{post.data.get('reel_title') or reel.default_title(post.data)}」")
         return None
 
     client = Client(config.get_token(cfg), cfg["ig_user_id"])
@@ -323,10 +339,14 @@ def main(argv=None) -> int:
 
     if args.command == "check":
         needs_render = any(post.needs_render(cfg) for cfg, post in due) and not args.dry_run
+        needs_voice = not args.dry_run and any(
+            story.is_story(post.data) and post.needs_render(cfg) and story.reel_wanted(post.data, cfg)
+            for cfg, post in due)
         handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels)
         set_output(
             due=str(bool(due or due_reels)).lower(),
             needs_render=str(needs_render).lower(),
+            needs_voice=str(needs_voice).lower(),
             accounts=",".join(handles),
         )
         return 0

@@ -59,6 +59,16 @@ jobs:
           pip install -q -r requirements.txt
           if [ ! -x /usr/bin/google-chrome ]; then python -m playwright install --with-deps chromium; fi
 
+      - uses: actions/cache@v4
+        if: steps.check.outputs.needs_voice == 'true'
+        with:
+          path: ~/.cache/voicevox
+          key: voicevox-0.16.2-v1
+
+      - name: 読み上げ音声（VOICEVOX）を用意
+        if: steps.check.outputs.needs_voice == 'true'
+        run: bash scripts/setup_voicevox.sh
+
       - name: 投稿する
         if: steps.check.outputs.due == 'true'
         run: python -m autopost.publish run --account "$ACCOUNT" $MODE_FLAGS

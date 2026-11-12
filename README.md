@@ -75,6 +75,15 @@ Actions →「Instagramに投稿」→「Run workflow」
 
 見本：[examples/eigo_1phrase](examples/eigo_1phrase)、[examples/gensen_otoku](examples/gensen_otoku)
 
+## 海外反応アカウント（ストーリー形式）
+
+@kaigai_hokkori は、話のデータ（場面4つ・海外の声・数字）から、アメコミ風のカルーセルと読み上げ付きのリールを作ります（`autopost/story/`）。
+
+- 読み上げは VOICEVOX（声：冥鳴ひまり）。リールの最後の画面とキャプションに、クレジット「VOICEVOX:冥鳴ひまり」が自動で入ります
+- プルリクエストのプレビューに「読み上げ付きリールを再生する」のリンクが出るので、読み方を確認できます
+- トークンはほかのアカウントと同じもの（`IG_TOKEN_EIGO_1PHRASE`）を使います。Metaのビジネス設定で、このアカウントをシステムユーザー「autopost」に割り当てると投稿できるようになります
+- 投稿を始めるときは `accounts/kaigai_hokkori.json` の `ig_user_id` を入れて `enabled` を true にします
+
 ## 注意
 
 - このリポジトリは公開されています。投稿前の画像や文章も誰でも見られます。トークンは Secrets に保存されるので見えません

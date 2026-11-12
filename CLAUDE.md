@@ -21,7 +21,7 @@ Instagramの自動投稿の仕組みです。Claudeが投稿データ（post.jso
 2. 対象期間は**実行日の2日後から7日間**。そのうち `queue/<アカウント>/` にまだ投稿がない日の分を、1日1投稿で作る
    - フォルダ名：`queue/<アカウント>/<YYYY-MM-DD>-<英小文字とハイフンの短い名前>/post.json`
    - `date` はその日付、`account` はアカウント名
-3. 形式は `examples/<アカウント>/post.json` を見本にする
+3. 形式は `examples/<アカウント>/post.json` を見本にする。`accounts/<アカウント>.json` の `format` が `"story"` のアカウント（海外反応）は、スライドを並べる形ではなく、話のデータから画像と読み上げ付きリールを作る形式なので、項目の書き方は `accounts/<アカウント>.md` に従う（下の「post.json のルール」のうち、スライドの装飾と `reel_title` は当てはまらない）
 4. シリーズ番号 `no` は、queue と posted の中で一番大きい番号の次（2桁、例 "07"）。どちらにもなければ `accounts/<アカウント>.json` の `series_next_no`
 5. 過去の投稿とテーマが重ならないようにする。queue と posted に加えて、`accounts/<アカウント>.md` の「過去に投稿したテーマ」（自動化より前の投稿）も必ず確認する
 6. `python -m autopost.validate` を実行して、エラーがなくなるまで直す
@@ -29,7 +29,7 @@ Instagramの自動投稿の仕組みです。Claudeが投稿データ（post.jso
    - タイトル：「週次投稿 MM/DD〜MM/DD」
    - 本文：アカウントごとの「日付・テーマ」の一覧と、確認してほしい点（各投稿の review_notes の内容）
    - **マージはしない**（本人が確認してマージすると投稿の予定に入る）
-8. プッシュすると GitHub Actions が画像（slideNN.jpg と一覧の preview.jpg）を作ってブランチに追加するので、自分で画像を作る必要はない
+8. プッシュすると GitHub Actions が画像（slideNN.jpg と一覧の preview.jpg。story 形式は読み上げ付きの reel.mp4 も）を作ってブランチに追加するので、自分で画像を作る必要はない
 
 ## post.json のルール
 

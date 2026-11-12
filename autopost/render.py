@@ -4,6 +4,8 @@
   python -m autopost.render                 # queue の投稿のうち、作り直しが必要なものだけ
   python -m autopost.render examples --all  # 見本をすべて作り直す
   python -m autopost.render queue/eigo_1phrase/2026-11-12-xxx
+
+type が "story" の投稿（アメコミ風カルーセル＋読み上げ付きリール）は autopost/story が作る。
 """
 from __future__ import annotations
 
@@ -15,7 +17,7 @@ import os
 import sys
 from pathlib import Path
 
-from . import config, posts, templates
+from . import config, posts, story, templates
 
 # 文字が多くて枠からはみ出すときは、少しずつ縮小して収める
 FIT_JS = """
@@ -82,6 +84,12 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
         browser = await p.chromium.launch(**kwargs)
         page = await browser.new_page(viewport={"width": 1080, "height": 1350})
         for folder, data, cfg in items:
+            if story.is_story(data):
+                from .story import build
+
+                problems += await build.render_story(browser, folder, data, cfg)
+                make_preview(folder)
+                continue
             await page.set_content(templates.build_html(data, cfg), wait_until="load")
             await page.evaluate("document.fonts.ready")
             fit = await page.evaluate(FIT_JS)
@@ -113,6 +121,8 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="投稿データからスライド画像を作る")
     ap.add_argument("targets", nargs="*", default=["queue"], help="queue / examples / 投稿フォルダのパス")
     ap.add_argument("--all", action="store_true", help="作成済みのものも作り直す")
+    ap.add_argument("--check-voice", action="store_true",
+                    help="作らずに、読み上げ音声（VOICEVOX）の準備が必要かだけを調べる")
     args = ap.parse_args(argv)
     accounts = config.load_accounts()
     folders: list[Path] = []
@@ -133,6 +143,13 @@ def main(argv=None) -> int:
             continue
         if args.all or post.needs_render(cfg):
             items.append((folder, post.data, cfg))
+    if args.check_voice:
+        need = any(story.is_story(data) and story.reel_wanted(data, cfg) for _, data, cfg in items)
+        print(f"needs_voice={str(need).lower()}")
+        if os.environ.get("GITHUB_OUTPUT"):
+            with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+                f.write(f"needs_voice={str(need).lower()}\n")
+        return 0
     if not items:
         print("作り直しが必要な投稿はありません")
         return 1 if missing else 0
