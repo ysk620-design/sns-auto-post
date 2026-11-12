@@ -112,6 +112,39 @@ class DueTest(unittest.TestCase):
         self.assertEqual(self.due("2026-11-12T07:20"), [])
 
 
+class BoostTest(DueTest):
+    """立ち上げ期間（boost）は1日に2回投稿する。"""
+
+    def setUp(self):
+        super().setUp()
+        self.accounts["eigo_1phrase"]["boost"] = {"until": "2026-11-13", "post_hours_jst": [7, 20],
+                                                   "reel_hours_jst": [12, 17]}
+
+    def mark_posted(self, name, day):
+        d = self.root / "posted" / "eigo_1phrase" / name
+        d.mkdir(parents=True)
+        (d / "published.json").write_text(json.dumps({"posted_date": day}), encoding="utf-8")
+
+    def test_two_slots_during_boost_then_one(self):
+        self.add_post("2026-11-12-a", "2026-11-12")
+        self.add_post("2026-11-12-b", "2026-11-12")
+        self.assertEqual(len(self.due("2026-11-12T07:20")), 1)
+        self.mark_posted("x1", "2026-11-12")
+        self.assertEqual(self.due("2026-11-12T08:20"), [])   # 朝の分は投稿済み
+        self.assertEqual(self.due("2026-11-12T15:20"), [])   # 時間外
+        self.assertEqual(len(self.due("2026-11-12T20:20")), 1)  # 夜の分
+        self.mark_posted("x2", "2026-11-12")
+        self.assertEqual(self.due("2026-11-12T21:20"), [])
+        # 期間が終わったら、post_hour_jst の1回だけ
+        self.assertEqual(self.due("2026-11-14T20:20"), [])
+        self.assertEqual(len(self.due("2026-11-14T07:20")), 1)
+
+    def test_reel_slots_during_boost(self):
+        cfg = self.accounts["eigo_1phrase"]
+        self.assertEqual(publish.daily_slots(cfg, datetime(2026, 11, 13).date(), reel=True)[0], [12, 17])
+        self.assertEqual(publish.daily_slots(cfg, datetime(2026, 11, 14).date(), reel=True)[0], [12])
+
+
 class DelayedReelTest(unittest.TestCase):
     def setUp(self):
         self.root = Path(tempfile.mkdtemp())

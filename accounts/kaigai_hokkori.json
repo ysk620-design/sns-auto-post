@@ -1,11 +1,11 @@
 {
   "handle": "kaigai_hokkori",
   "name": "海外の反応｜日本のほっこり話",
-  "ig_user_id": "",
+  "ig_user_id": "17841465396929462",
   "token_secret": "IG_TOKEN_EIGO_1PHRASE",
-  "enabled": false,
+  "enabled": true,
   "format": "story",
-  "post_hour_jst": 19,
+  "post_hour_jst": 20,
   "post_window_hours": 3,
   "series": "海外の反応",
   "series_next_no": 8,
@@ -24,5 +24,16 @@
       "gap": 0.6,
       "bgm_volume": 0.15
     }
+  },
+  "boost": {
+    "until": "2026-11-16",
+    "post_hours_jst": [
+      7,
+      20
+    ],
+    "reel_hours_jst": [
+      12,
+      18
+    ]
   }
 }
