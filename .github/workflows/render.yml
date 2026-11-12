@@ -51,6 +51,20 @@ jobs:
       - name: 投稿データをチェック
         run: python -m autopost.validate
 
+      - name: 読み上げ音声が必要か調べる
+        id: voice
+        run: python -m autopost.render queue --check-voice
+
+      - uses: actions/cache@v4
+        if: steps.voice.outputs.needs_voice == 'true'
+        with:
+          path: ~/.cache/voicevox
+          key: voicevox-0.16.2-v1
+
+      - name: 読み上げ音声（VOICEVOX）を用意
+        if: steps.voice.outputs.needs_voice == 'true'
+        run: bash scripts/setup_voicevox.sh
+
       - name: 画像を作る
         env:
           TARGET: ${{ inputs.target || 'queue' }}
