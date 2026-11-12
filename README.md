@@ -81,8 +81,9 @@ Actions →「Instagramに投稿」→「Run workflow」
 
 - 読み上げは VOICEVOX（声：冥鳴ひまり）。リールの最後の画面とキャプションに、クレジット「VOICEVOX:冥鳴ひまり」が自動で入ります
 - プルリクエストのプレビューに「読み上げ付きリールを再生する」のリンクが出るので、読み方を確認できます
-- トークンはほかのアカウントと同じもの（`IG_TOKEN_EIGO_1PHRASE`）を使います。Metaのビジネス設定で、このアカウントをシステムユーザー「autopost」に割り当てると投稿できるようになります
-- 投稿を始めるときは `accounts/kaigai_hokkori.json` の `ig_user_id` を入れて `enabled` を true にします
+- トークンはほかのアカウントと同じもの（`IG_TOKEN_EIGO_1PHRASE`）を使います
+
+立ち上げのときなどに1日2本にしたいときは、`accounts/<アカウント>.json` に `"boost": {"until": "最終日", "post_hours_jst": [7, 20], "reel_hours_jst": [12, 18]}` を書きます。
 
 ## 注意
 
