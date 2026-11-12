@@ -55,6 +55,38 @@ def set_output(**values) -> None:
             f.write("\n".join(lines) + "\n")
 
 
+def daily_slots(cfg: dict, today, reel: bool = False) -> tuple[list[int], int]:
+    """その日の投稿時間（開始時のリスト）と、1回あたりの時間幅。
+
+    accounts/*.json の "boost"（{"until": "2026-11-16", "post_hours_jst": [7, 20], "reel_hours_jst": [12, 17]}）が
+    あれば、until の日までは1日に複数回投稿する。それ以外は1日1回。
+    """
+    r = cfg.get("reel") or {}
+    if reel:
+        hours = [int(r.get("post_hour_jst", cfg["post_hour_jst"]))]
+        window = int(r.get("post_window_hours", cfg["post_window_hours"]))
+    else:
+        hours, window = [int(cfg["post_hour_jst"])], int(cfg["post_window_hours"])
+    boost = cfg.get("boost") or {}
+    key = "reel_hours_jst" if reel else "post_hours_jst"
+    if boost.get(key) and today.isoformat() <= str(boost.get("until", "")):
+        hours = sorted(int(h) for h in boost[key])
+    return hours, window
+
+
+def current_slot(hours: list[int], window: int, hour: int) -> int | None:
+    """今が何回目の投稿時間か（0から）。どの時間にも入っていなければ None。"""
+    for i, start in enumerate(hours):
+        if start <= hour < start + window:
+            return i
+    return None
+
+
+def posted_count(handle: str, day, root: Path, reel: bool = False) -> int:
+    key = "reel_posted_date" if reel else "posted_date"
+    return sum(1 for _, info in _published(handle, root) if info.get(key) == day.isoformat())
+
+
 def find_due(accounts: dict, now, only: str = "", force: bool = False, dry_run: bool = False, root: Path = ROOT):
     """今投稿すべき (アカウント設定, 投稿) のリスト。"""
     today = now.date()
@@ -69,12 +101,15 @@ def find_due(accounts: dict, now, only: str = "", force: bool = False, dry_run: 
             print(f"・{handle}: トークン（{cfg.get('token_secret')}）が未登録なのでスキップ")
             continue
         if not (force or dry_run):
-            start, window = int(cfg["post_hour_jst"]), int(cfg["post_window_hours"])
-            if not start <= now.hour < start + window:
-                print(f"・{handle}: 投稿時間外（{start}時〜{start + window}時）")
+            hours, window = daily_slots(cfg, today)
+            slot = current_slot(hours, window, now.hour)
+            if slot is None:
+                times = "・".join(f"{h}時〜{h + window}時" for h in hours)
+                print(f"・{handle}: 投稿時間外（{times}）")
                 continue
-            if posts.posted_on(handle, today, root):
-                print(f"・{handle}: 今日はもう投稿済み")
+            # 1回目の時間なら今日1本まで、2回目の時間なら今日2本まで
+            if posted_count(handle, today, root) > slot:
+                print(f"・{handle}: この時間の分はもう投稿済み")
                 continue
         post = posts.next_post(handle, today, root)
         if post is None:
@@ -113,15 +148,15 @@ def find_due_reels(accounts: dict, now, only: str = "", force: bool = False, dry
             continue
         if not dry_run and not config.get_token(cfg):
             continue
-        r = cfg["reel"]
+        slot = 0
         if not (force or dry_run):
-            start = int(r.get("post_hour_jst", cfg["post_hour_jst"]))
-            window = int(r.get("post_window_hours", cfg["post_window_hours"]))
-            if not start <= now.hour < start + window:
+            hours, window = daily_slots(cfg, today, reel=True)
+            slot = current_slot(hours, window, now.hour)
+            if slot is None:
                 continue
         items = list(_published(handle, root))
-        if not force and any(info.get("reel_posted_date") == today.isoformat() for _, info in items):
-            print(f"・{handle}: 今日のリールはもう投稿済み")
+        if not force and posted_count(handle, today, root, reel=True) > slot:
+            print(f"・{handle}: この時間のリールはもう投稿済み")
             continue
         pending = [path for path, info in items if info.get("reel_status") == "pending"
                    and str(info.get("reel_due", "")) <= today.isoformat()]
