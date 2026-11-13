@@ -1,0 +1,106 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-20",
+  "type": "carousel",
+  "no": "19",
+  "title": "バイキング",
+  "reel_title": "「バイキング」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "食べ放題のことを<br>「バイキング」で",
+      "ng": "Let's go to a viking.",
+      "bottom": "って言ってない？",
+      "sub": "viking は「北欧の海賊」の意味。<br>ネイティブは<b>海賊を想像</b>しちゃうかも<br>正解は<span class=\"hl\">場面で4つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "Let's go to a viking.",
+      "body": "海賊のところに行こう。",
+      "note": "Viking は昔の北欧の海賊のこと。料理を好きなだけ取って食べるスタイルは buffet（ビュッフェ）と言います。"
+    },
+    {
+      "layout": "cards",
+      "title": "ホテルの朝食で",
+      "cards": [
+        [
+          "Is breakfast a buffet?",
+          "朝食はビュッフェですか？"
+        ],
+        [
+          "The breakfast buffet is great!",
+          "朝食ビュッフェ最高！"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "食べ放題のお店で",
+      "cards": [
+        [
+          "It's all-you-can-eat.",
+          "食べ放題です。"
+        ],
+        [
+          "Let's go to a buffet!",
+          "食べ放題に行こう！"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "料金や時間を聞く",
+      "cards": [
+        [
+          "How much is the buffet?",
+          "ビュッフェはいくらですか？"
+        ],
+        [
+          "Is there a time limit?",
+          "時間制限はありますか？"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「バイキング」早見表",
+      "rows": [
+        [
+          "朝食は？",
+          "Is breakfast a buffet?"
+        ],
+        [
+          "食べ放題",
+          "It's all-you-can-eat."
+        ],
+        [
+          "行こう",
+          "Let's go to a buffet!"
+        ],
+        [
+          "料金",
+          "How much is the buffet?"
+        ],
+        [
+          "時間制限",
+          "Is there a time limit?"
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "旅行先のホテルで<br>「朝食はバイキングですか？」と聞くなら？"
+    }
+  ],
+  "caption": "食べ放題を \"viking\" と言っていませんか？\n\n✕ Let's go to a viking.（海賊のところへ？）\n○ Let's go to a buffet!\n○ It's all-you-can-eat.\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#旅行英語",
+    "#大人の英語"
+  ],
+  "review_notes": "表紙の sub が3行なので、はみ出して小さくなっていたら「ネイティブは…」の行を削ってください。【実体験】海外のホテルで朝食ビュッフェを使った経験があれば、キャプションに一言（ここに実体験を一言）。"
+}

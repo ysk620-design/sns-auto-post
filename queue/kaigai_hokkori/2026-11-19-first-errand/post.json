@@ -1,0 +1,143 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-19",
+  "type": "story",
+  "no": "10",
+  "title": "はじめてのおつかい",
+  "icon": "bag",
+  "burst": "CUTE!",
+  "top": "小さな子がひとりで…",
+  "big": "世界が見守った<br>大冒険！",
+  "big_size": 104,
+  "chat_title": "日本の<em>はじめてのおつかい</em><br>→ 海外の反応は…",
+  "scenes": [
+    {
+      "title": "海外で配信スタート",
+      "mood": "wow",
+      "prop": "phone",
+      "say": "小さな子がひとりで！？",
+      "nar": "2022年、日本の番組が<br>Netflixで世界に配信された。"
+    },
+    {
+      "title": "小さな冒険へ",
+      "mood": "think",
+      "clerk": "happy",
+      "kid": true,
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#ffcc33"
+      },
+      "prop": "bag",
+      "say": "いってきまーす！",
+      "nar": "家からお店まで、ひとりで歩く。<br>頼まれたものを忘れないように。"
+    },
+    {
+      "title": "見守る大人たち",
+      "mood": "happy",
+      "clerk": "think",
+      "kid": true,
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#ffcc33"
+      },
+      "prop": "bag",
+      "say": "これください！",
+      "nar": "撮影スタッフは通行人のふり。<br>話しかけずに、そっと見守る。"
+    },
+    {
+      "title": "ただいま！",
+      "mood": "love",
+      "clerk": "happy",
+      "kid": true,
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#ffcc33"
+      },
+      "prop": "bag",
+      "say": "ただいまー！",
+      "nar": "おつかい成功！<br>画面の前で、思わず笑顔に。"
+    }
+  ],
+  "comments": [
+    [
+      "🇺🇸",
+      "Netflix公式（2022年のSNS投稿）",
+      "これまで見た中で、いちばん心温まる番組"
+    ],
+    [
+      "🇺🇸",
+      "シアトルのライター",
+      "かんたんなおつかいも、子どもにとっては英雄の旅"
+    ],
+    [
+      "🇺🇸",
+      "米メディアのライター",
+      "「かわいい」では言い足りない"
+    ],
+    [
+      "🌏",
+      "海外の視聴者（Twitterより）",
+      "日本は、人が地域を歩いて暮らせる街のつくりになっている"
+    ],
+    [
+      "🌏",
+      "海外の視聴者（Twitterより）",
+      "子どもはずっと撮影スタッフに見守られている"
+    ]
+  ],
+  "stat": {
+    "l1": "日本での放送開始は",
+    "n1": "1991年",
+    "l2": "撮ったおつかいで放送されるのは",
+    "n2": "6〜10本に1本",
+    "msg": "30年以上、子どもの小さな冒険を<br>街の大人たちと見守ってきた番組。",
+    "src": "出典：Netflix Tudum、Mothership、ParentMap、The Daily Beast"
+  },
+  "cta": "あなたの<br>はじめてのおつかいの<br>思い出は？",
+  "reel_script": {
+    "comments": [
+      [
+        "🇺🇸",
+        "Netflix公式",
+        "いちばん心温まる番組"
+      ],
+      [
+        "🇺🇸",
+        "シアトルのライター",
+        "子どもにとっては英雄の旅"
+      ],
+      [
+        "🌏",
+        "海外の視聴者",
+        "ずっとスタッフに見守られている"
+      ]
+    ],
+    "nar": [
+      "小さな子がひとりで買い物に。世界が見守った、大冒険とは？",
+      "2022年、日本の番組が、ネットフリックスで世界に配信された。",
+      "家からお店まで、ひとりで歩く。頼まれたものを忘れないように。",
+      "撮影スタッフは通行人のふり。話しかけずに、そっと見守る。",
+      "おつかい成功！画面の前で、思わず笑顔に。",
+      "ネットフリックス公式も、「いちばん心温まる番組」",
+      "シアトルのライターは、「子どもにとっては英雄の旅」",
+      "海外の視聴者からは、「ずっとスタッフに見守られている」",
+      "実は放送開始は1991年。撮ったおつかいの、6本から10本に1本だけが放送されるんです。",
+      "あなたのはじめてのおつかいの思い出は？　コメントで教えてね。"
+    ]
+  },
+  "caption": "小さな子が、ひとりでおつかいへ。\n日本の「はじめてのおつかい」が Netflix で世界に配信されると…🛍️\n\nNetflix公式も「これまで見た中で、いちばん心温まる番組」。\n撮影スタッフは通行人のふりをして、そっと見守っています。\n\n💬 あなたのはじめてのおつかいの思い出は？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の良いところ",
+    "#ほっこり",
+    "#はじめてのおつかい",
+    "#子育て"
+  ],
+  "sources": [
+    "Netflix Tudum（1991年から放送・スタッフは通行人のふり・6〜10本に1本） https://www.netflix.com/tudum/articles/how-is-old-enough-made",
+    "Mothership（Netflix公式の投稿・Twitterの声） https://mothership.sg/2022/04/old-enough-netflix/",
+    "ParentMap（シアトルのライター Gemma Alexander） https://www.parentmap.com/home-life/japanese-tv-show-old-enough-netflix-whats-fuss-about/",
+    "The Daily Beast（''Adorable' is an understatement'） https://www.thedailybeast.com/obsessed/netflixs-most-addictive-show-is-old-enough-about-cute-japanese-toddlers-running-errands"
+  ],
+  "review_notes": "【出典・確認日：2026-11-13】1991年放送開始・撮影したおつかいの6〜10本に1本が放送・スタッフが通行人のふりで話しかけないのは Netflix Tudum の記事。海外の声：Netflix公式の2022年4月11日の投稿（'the most wholesome show you've ever seen'）と Twitter の声は Mothership、ライターは ParentMap と The Daily Beast。番組では安全面をめぐる議論もあったので、キャプションでは「見守っている」点を書いています。場面は再現で、特定の回の子どもではありません。番組名（日本テレビ）を出すのが気になる場合はご確認ください。【読み方】「ネットフリックス」「通行人（つうこうにん）」を確認してください。系統：やさしさ（見守り）。"
+}
