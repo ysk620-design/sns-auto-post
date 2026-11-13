@@ -1,0 +1,107 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-18",
+  "type": "carousel",
+  "no": "17",
+  "title": "スマート",
+  "reel_title": "「スマート」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "細い人をほめて<br>「スマートだね」を",
+      "ng": "You're smart.",
+      "bottom": "って言ってない？",
+      "sub": "smart は「頭がいい」の意味。<br>ネイティブには<b>話がかみ合わない</b>かも<br>正解は<span class=\"hl\">場面で4つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "You look smart.",
+      "body": "頭がよさそうに見えるね。／きちんとした服装だね。",
+      "note": "英語の smart は「頭がいい」「（服装が）きちんとしている」という意味。体型が「細い・すらっとしている」ことは表しません。"
+    },
+    {
+      "layout": "cards",
+      "title": "すらっとした体型をほめる",
+      "cards": [
+        [
+          "You look slim.",
+          "すらっとしてるね。"
+        ],
+        [
+          "You're so tall and slim!",
+          "背が高くてすらっとしてる！"
+        ]
+      ],
+      "note": "体型の話題は相手によっては気にすることも。親しい人だけに。"
+    },
+    {
+      "layout": "cards",
+      "title": "おしゃれな見た目をほめる",
+      "cards": [
+        [
+          "You look great!",
+          "すてきだね！"
+        ],
+        [
+          "I love your style.",
+          "あなたのファッション好き。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "本当の smart の使い方",
+      "cards": [
+        [
+          "She's really smart.",
+          "彼女は本当に頭がいい。"
+        ],
+        [
+          "That's a smart idea!",
+          "それは賢いアイデアだね！"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「スマート」早見表",
+      "rows": [
+        [
+          "すらっとしてる",
+          "You look slim."
+        ],
+        [
+          "背が高くて細い",
+          "You're so tall and slim!"
+        ],
+        [
+          "すてき",
+          "You look great!"
+        ],
+        [
+          "おしゃれ",
+          "I love your style."
+        ],
+        [
+          "頭がいい",
+          "She's really smart."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "すらっとした友だちに<br>「スマートだね！」と言うなら？"
+    }
+  ],
+  "caption": "細い人に \"You're smart.\" と言っていませんか？\n\n✕ You're smart.（頭がいいね）\n○ You look slim.\n○ You look great!\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "表紙の sub が3行なので、はみ出して小さくなっていたら「ネイティブには…」の行を削ってください。体型をほめる表現は相手を選ぶ旨を場面①の note に入れています。【実体験】和製英語で通じなかった経験があれば、キャプションに一言（ここに実体験を一言）。"
+}

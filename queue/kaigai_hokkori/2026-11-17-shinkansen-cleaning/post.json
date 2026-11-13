@@ -1,0 +1,127 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-17",
+  "type": "story",
+  "no": "08",
+  "title": "新幹線の7分清掃",
+  "icon": "shinkansen",
+  "burst": "WOW!",
+  "top": "新幹線が着いたら…",
+  "big": "たった7分で<br>まさかの変身！",
+  "big_size": 104,
+  "chat_title": "<em>新幹線の7分清掃</em><br>→ 海外の反応は…",
+  "scenes": [
+    {
+      "title": "東京駅のホームで",
+      "mood": "think",
+      "prop": "shinkansen",
+      "say": "次の出発まで12分？",
+      "nar": "東京駅に着いた新幹線。<br>折り返しの出発まで、わずか12分。"
+    },
+    {
+      "title": "ずらりと並ぶ人たち",
+      "mood": "wow",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#e85a8f"
+      },
+      "prop": "broom",
+      "say": "ありがとうございました",
+      "nar": "ホームに並んだ清掃スタッフが、<br>降りる乗客に一礼。"
+    },
+    {
+      "title": "7分間の勝負",
+      "mood": "wow",
+      "prop": "trash",
+      "say": "座席がくるっと回った！",
+      "nar": "1人で1両・約100席を担当。<br>ゴミ集めも座席の向きも7分で。"
+    },
+    {
+      "title": "出発の前に",
+      "mood": "love",
+      "prop": "shinkansen",
+      "say": "ピカピカになってる！",
+      "nar": "最後にもう一度、ホームで一礼。<br>車内は新品のような姿に。"
+    }
+  ],
+  "comments": [
+    [
+      "🇺🇸",
+      "米国のジャーナリスト（動画の制作者）",
+      "清掃の仕事でも、みんな自分の仕事に誇りを持っている"
+    ],
+    [
+      "🇨🇦",
+      "カナダの旅行ブロガー",
+      "まさに「7分間の奇跡」。降りる乗客一人ひとりにお礼を言う"
+    ],
+    [
+      "🇺🇸",
+      "日本在住20年以上の米国人編集者",
+      "ほかの場所なら、この清掃は1時間以上かかるかも"
+    ],
+    [
+      "🇮🇹",
+      "イタリアの声（Japan Todayより）",
+      "乗客にも運転士にも、お互いにもおじぎしてるんだよね？"
+    ]
+  ],
+  "stat": {
+    "l1": "清掃に使える時間は",
+    "n1": "約7分",
+    "l2": "1人が担当するのは1両",
+    "n2": "約100席",
+    "msg": "降りる人へのおじぎから、出発まで。<br>毎日くり返される「7分の仕事」。",
+    "src": "出典：Japan Today、The Japan Times、Quartz ほか"
+  },
+  "cta": "あなたが<br>「プロだな」と思った<br>日本の仕事は？",
+  "reel_script": {
+    "comments": [
+      [
+        "🇺🇸",
+        "米国のジャーナリスト",
+        "清掃の仕事でも、みんな誇りを持っている"
+      ],
+      [
+        "🇨🇦",
+        "カナダの旅行ブロガー",
+        "まさに7分間の奇跡"
+      ],
+      [
+        "🇺🇸",
+        "日本在住の米国人編集者",
+        "ほかの場所なら1時間以上かかるかも"
+      ]
+    ],
+    "nar": [
+      "新幹線が駅に着いたら、たった7分で、まさかの変身？",
+      "東京駅に着いた新幹線。折り返しの出発まで、わずか12分。",
+      "ホームに並んだ清掃スタッフが、降りる乗客に一礼。",
+      "ひとりで1車両、約100席。ゴミ集めも、座席の向きも、7分で。",
+      "最後にもう一度一礼。車内は、新品のようにピカピカに。",
+      "アメリカのジャーナリストいわく、「清掃の仕事でも、みんな誇りを持っている」",
+      "カナダの旅行ブロガーは、「まさに7分間の奇跡」",
+      "日本に住むアメリカ人の編集者は、「ほかの場所なら1時間以上かかるかも」",
+      "実は清掃に使える時間は約7分。ひとりで約100席を担当するんです。",
+      "あなたが「プロだな」と思った日本の仕事は？　コメントで教えてね。"
+    ]
+  },
+  "caption": "新幹線が東京駅に着いてから、次の出発までわずか12分。\nそのうち清掃に使えるのは約7分🚄\n\n降りる乗客に一礼し、1人で約100席をピカピカに。\n海外の旅行ブロガーは「まさに7分間の奇跡」。\n\n💬 あなたが「プロだな」と思った日本の仕事は？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の良いところ",
+    "#ほっこり",
+    "#新幹線",
+    "#おもてなし"
+  ],
+  "sources": [
+    "Japan Today（7分・1両100席・12分・おじぎ） https://www.japantoday.com/category/lifestyle/view/shinkansen-cleaning-crew-have-just-7-minutes-to-get-train-ready",
+    "The Japan Times（約7分・降りる乗客への一礼） https://www.japantimes.co.jp/news/2013/01/04/business/cleaning-angels-reinforce-positive-image-of-japanese-workers",
+    "Quartz（米国のジャーナリスト Charli James の言葉・1人1両100席） https://qz.com/434004/this-viral-video-shows-japans-bullet-trains-being-cleaned-in-7-minutes-flat",
+    "The Way Of Words（カナダの旅行ブロガー） https://www.thewayofwords.com/japan-travel-culture/tessei-shinkansen-cleaning-crews.php",
+    "LIVE JAPAN（日本在住20年以上の米国人編集者） https://livejapan.com/en/in-tohoku/in-pref-akita/in-akita-suburbs/article-a3000185",
+    "Japan Today（イタリアの声） https://www.japantoday.com/category/lifestyle/view/why-do-japanese-cleaning-crews-bow-at-trains"
+  ],
+  "review_notes": "【出典・確認日：2026-11-13】7分・1両約100席・駅に12分は Japan Today と Quartz（2015年ごろの記事。JR東海の東京駅・TESSEIの例）。ふきだし・場面は再現です（実際のスタッフの言葉ではありません）。海外の声：①米国のジャーナリスト Charli James（Quartz）②カナダの旅行ブロガー（The Way Of Words。バンクーバーのスカイトレインと比べている。『seven-minute miracle』『politely thank each one』）③LIVE JAPAN の米国人英語編集者 ④Japan Today 記事内のイタリアからの声。【読み方】「1両」はリールでは「ひとりで1車両」に言い換えています。「一礼（いちれい）」が正しく読まれるか確認してください。系統：マナー／プロの仕事。"
+}

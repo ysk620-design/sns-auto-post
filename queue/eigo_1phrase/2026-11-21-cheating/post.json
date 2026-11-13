@@ -1,0 +1,104 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-21",
+  "type": "carousel",
+  "no": "20",
+  "title": "カンニング",
+  "reel_title": "「カンニング」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "テストの不正を<br>「カンニング」で",
+      "ng": "He did cunning.",
+      "bottom": "って言ってない？",
+      "sub": "cunning は「ずる賢い」の意味。<br>英語では<b>通じない</b>かも<br>正解は<span class=\"hl\">場面で4つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "He did cunning.",
+      "body": "（文として通じない）",
+      "note": "cunning は「ずる賢い」という意味の形容詞で、「〜をする」の形では使いません。テストでの不正は cheat（ずるをする）を使います。"
+    },
+    {
+      "layout": "cards",
+      "title": "テストでの不正",
+      "cards": [
+        [
+          "He cheated on the test.",
+          "彼はテストでカンニングした。"
+        ],
+        [
+          "No cheating!",
+          "カンニング禁止！"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "ゲームやスポーツで",
+      "cards": [
+        [
+          "That's cheating!",
+          "それはずるいよ！"
+        ],
+        [
+          "Don't cheat!",
+          "ずるしないで！"
+        ]
+      ],
+      "note": "子どもとのゲームでもよく使います。"
+    },
+    {
+      "layout": "cards",
+      "title": "本当の cunning の使い方",
+      "cards": [
+        [
+          "He's a cunning man.",
+          "彼はずる賢い男だ。"
+        ]
+      ],
+      "note": "物語の悪役などに使う、少しかたい言葉。"
+    },
+    {
+      "layout": "table",
+      "title": "「カンニング」早見表",
+      "rows": [
+        [
+          "テストで不正",
+          "He cheated on the test."
+        ],
+        [
+          "カンニング禁止",
+          "No cheating!"
+        ],
+        [
+          "ずるい！",
+          "That's cheating!"
+        ],
+        [
+          "ずるしないで",
+          "Don't cheat!"
+        ],
+        [
+          "ずる賢い",
+          "He's a cunning man."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "トランプで相手が<br>ズルをした！なんて言う？"
+    }
+  ],
+  "caption": "テストの不正を \"cunning\" と言っていませんか？\n\n✕ He did cunning.（通じない）\n○ He cheated on the test.\n○ That's cheating!\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "cheat は浮気の意味でも使われますが、投稿では触れていません。【実体験】ここに実体験を一言（子どもとのゲームで使えた、など）。"
+}

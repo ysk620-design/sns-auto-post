@@ -1,0 +1,103 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-19",
+  "type": "carousel",
+  "no": "18",
+  "title": "ナイーブ",
+  "reel_title": "「ナイーブ」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "繊細な人のことを<br>「ナイーブ」で",
+      "ng": "He's naive.",
+      "bottom": "って言ってない？",
+      "sub": "naive は「世間知らず」の意味。<br>本人に言うと<b>失礼に聞こえる</b>かも<br>正解は<span class=\"hl\">場面で4つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "He's naive.",
+      "body": "彼は世間知らずだ。／考えが甘い。",
+      "note": "英語の naive は「経験が少なくてだまされやすい」「考えが甘い」という少し悪い意味。日本語の「繊細」「傷つきやすい」とは違います。"
+    },
+    {
+      "layout": "cards",
+      "title": "傷つきやすい人のことを",
+      "cards": [
+        [
+          "He's sensitive.",
+          "彼は繊細だ。"
+        ],
+        [
+          "She gets hurt easily.",
+          "彼女は傷つきやすい。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "気をつかう人をほめる",
+      "cards": [
+        [
+          "She's very thoughtful.",
+          "彼女はとても気がきく。"
+        ]
+      ],
+      "note": "相手の気持ちを考えられる、といういい意味。"
+    },
+    {
+      "layout": "cards",
+      "title": "自分のことを言う",
+      "cards": [
+        [
+          "I'm a little shy.",
+          "ちょっと人見知りなんです。"
+        ],
+        [
+          "I worry too much.",
+          "気にしすぎるタイプなんです。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「ナイーブ」早見表",
+      "rows": [
+        [
+          "繊細",
+          "He's sensitive."
+        ],
+        [
+          "傷つきやすい",
+          "She gets hurt easily."
+        ],
+        [
+          "気がきく",
+          "She's very thoughtful."
+        ],
+        [
+          "人見知り",
+          "I'm a little shy."
+        ],
+        [
+          "気にしすぎ",
+          "I worry too much."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「わたし、ナイーブなんです」<br>を英語で言うなら？"
+    }
+  ],
+  "caption": "「繊細」のつもりで \"naive\" と言っていませんか？\n\n✕ He's naive.（世間知らずだ）\n○ He's sensitive.\n○ She gets hurt easily.\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#和製英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "表紙の sub が3行なので、はみ出して小さくなっていたら「本人に言うと…」の行を削ってください。クイズの答えは I'm sensitive. / I get hurt easily. などを想定しています。【実体験】ここに実体験を一言（使ってしまった・言われた経験など）。"
+}
