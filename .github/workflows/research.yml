@@ -1,4 +1,4 @@
-name: 他アカウント調査
+name: 他アカウント調査・自分の分析
 
 # Claude が使う調査用。調べるアカウント名と公開鍵は実行時の入力で渡し、ログには出さない。
 # 結果は公開鍵で暗号化して research-data ブランチに置く（毎回上書き）。
@@ -7,9 +7,14 @@ name: 他アカウント調査
 on:
   workflow_dispatch:
     inputs:
+      mode:
+        description: "research（他アカウント調査）か insights（自分のアカウントの分析）"
+        required: false
+        default: "research"
       targets:
-        description: "調べるユーザーネーム（カンマ区切り。ログには出ません）"
-        required: true
+        description: "調べるユーザーネーム（カンマ区切り。ログには出ません。insights では不要）"
+        required: false
+        default: ""
       pubkey:
         description: "結果を暗号化する公開鍵（base64）"
         required: true
@@ -21,6 +26,10 @@ on:
         description: "1アカウントあたりに取る投稿の数（最大200）"
         required: false
         default: "50"
+      days:
+        description: "insights で集める日数（最大28）"
+        required: false
+        default: "7"
 
 permissions:
   contents: write
