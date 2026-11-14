@@ -99,7 +99,9 @@ def list_queue(account: str, root: Path = config.ROOT) -> list[Post]:
     folder = config.queue_dir(root) / account
     if not folder.is_dir():
         return []
-    return [Post.load(p) for p in sorted(folder.iterdir()) if (p / "post.json").is_file()]
+    items = [Post.load(p) for p in folder.iterdir() if (p / "post.json").is_file()]
+    # 同じ日に2本あるときは、シリーズ番号の小さい順に投稿する
+    return sorted(items, key=lambda p: (str(p.data.get("date", "")), str(p.data.get("no", "")), p.id))
 
 
 def all_queue_posts(root: Path = config.ROOT) -> list[Post]:
