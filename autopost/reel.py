@@ -1,4 +1,4 @@
-"""スライド画像からリール動画（1080×1920・BGM付き・約22秒）を作る。
+"""スライド画像からリール動画（1080×1920・BGM付き・約30秒）を作る。
 
 最初に全画面のつかみ画面、そのあと上に固定タイトル、その下でスライドが横に切り替わる形。
 """
@@ -44,11 +44,11 @@ HOOK = 1.6  # 最初のつかみ画面の秒数
 def durations(n: int) -> list[float]:
     """表紙のあとの各スライドの表示秒数（表紙はつかみ画面に置きかえるので数に入れない）。
 
-    1枚を読み切れる長さ（約3.5秒、まとめ表は4.5秒）にする。全体で約22秒。
+    1枚を読み切れる長さ（約5秒、まとめ表は6秒）にする。全体で約30秒。
     """
     if n <= 1:
         return [3.0] * n
-    return [3.5] + [3.5] * (n - 3) + [4.5, 2.5] if n >= 3 else [3.5, 2.5]
+    return [5.0] + [5.0] * (n - 3) + [6.0, 3.0] if n >= 3 else [5.0, 3.0]
 
 
 def default_title(data: dict) -> str:
@@ -147,7 +147,7 @@ def _bgm(total: float, out: Path, volume: float = 0.5) -> bool:
 
 
 def make_reel(folder: Path, title: str, subtitle: str, theme: dict, out_path: Path, data: dict | None = None) -> Path:
-    """つかみ画面（1.6秒）→ 表紙以外のスライドを短めに切り替え → BGM付き、の約22秒のリールを作る。"""
+    """つかみ画面（1.6秒）→ 表紙以外のスライドを短めに切り替え → BGM付き、の約30秒のリールを作る。"""
     import json
 
     from PIL import Image, ImageDraw
