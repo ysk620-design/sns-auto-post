@@ -300,7 +300,7 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
     else:
         title = post.data.get("reel_title") or reel.default_title(post.data)
         video = Path(tempfile.mkdtemp()) / "reel.mp4"
-        reel.make_reel(post.folder, title, reel_cfg.get("subtitle", ""), cfg["theme"], video)
+        reel.make_reel(post.folder, title, reel_cfg.get("subtitle", ""), cfg["theme"], video, post.data)
     share = bool(reel_cfg.get("share_to_feed", False))
     try:
         reel_id = client.publish_reel(video, caption, share)

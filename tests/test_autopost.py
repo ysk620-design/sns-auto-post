@@ -57,7 +57,8 @@ class TemplateTest(unittest.TestCase):
     def test_reel_durations(self):
         from autopost import reel
 
-        self.assertEqual(reel.durations(7), [2.5, 4.0, 4.0, 4.0, 4.0, 4.5, 3.5])
+        self.assertEqual(reel.durations(6), [2.3, 2.0, 2.0, 2.0, 2.6, 1.8])
+        self.assertLess(reel.HOOK + sum(reel.durations(6)), 16)
         self.assertEqual(reel.default_title({"caption": "一行目\n二行目"}), "一行目")
 
 
