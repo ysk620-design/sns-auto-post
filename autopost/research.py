@@ -19,6 +19,11 @@ Instagram の「ビジネス発見」の仕組みで、フォロワー数と、�
      → 集めたデータ（JSON）を表示する
 
 結果をもとに書く投稿方針などには、ほかのアカウントの名前やキャプションを書き写さない。
+
+自分のアカウントの分析（週1回の報告用）：
+  ワークフローの入力 mode を "insights" にすると、targets は使わず、enabled のアカウントそれぞれの
+  リーチ・保存数・シェア数などのインサイトを集めて、同じように暗号化する（days で集める日数を指定）。
+  インサイトの数字も、ファイル・ログ・プルリクエストには書かない。
 """
 from __future__ import annotations
 
@@ -127,6 +132,100 @@ def collect(client: Client, ig_user_id: str, usernames: list[str], limit: int) -
     return {"fetched_at": config.now_jst().isoformat(timespec="seconds"), "accounts": accounts}
 
 
+# ---------- 自分のアカウントのインサイト ----------
+
+MEDIA_METRICS = ["reach", "saved", "shares", "views", "total_interactions", "likes", "comments"]
+REEL_METRICS = ["ig_reels_avg_watch_time"]
+ACCOUNT_METRICS = ["reach", "views", "profile_views", "accounts_engaged", "total_interactions",
+                   "follows_and_unfollows", "profile_links_taps"]
+
+
+def _values(resp: dict) -> dict:
+    out = {}
+    for item in resp.get("data") or []:
+        if "total_value" in item:
+            tv = item["total_value"]
+            if tv.get("breakdowns"):
+                out[item["name"]] = {
+                    "total": tv.get("value"),
+                    "breakdown": {",".join(r.get("dimension_values") or []): r.get("value")
+                                  for b in tv["breakdowns"] for r in b.get("results") or []},
+                }
+            else:
+                out[item["name"]] = tv.get("value")
+        elif item.get("values"):
+            out[item["name"]] = item["values"][-1].get("value")
+    return out
+
+
+def _metrics(client: Client, path: str, metrics: list[str], extra: dict | None = None) -> tuple[dict, dict]:
+    """まとめて取り、だめなら1つずつ取る。（値, 取れなかった理由）を返す。"""
+    params = {"metric": ",".join(metrics), **(extra or {})}
+    try:
+        return _values(client._call("GET", path, params)), {}
+    except InstagramError:
+        pass
+    vals, errs = {}, {}
+    for m in metrics:
+        try:
+            vals.update(_values(client._call("GET", path, {**params, "metric": m})))
+        except InstagramError as e:
+            errs[m] = str(e)[:160]
+    return vals, errs
+
+
+def collect_insights(client: Client, ig_user_id: str, days: int, now: datetime) -> dict:
+    until = int(now.timestamp())
+    since = until - days * 86400
+    profile = client._call("GET", ig_user_id, {"fields": "username,followers_count,follows_count,media_count"})
+    period = {"period": "day", "metric_type": "total_value", "since": since, "until": until}
+    account, account_errors = _metrics(client, f"{ig_user_id}/insights", ACCOUNT_METRICS, period)
+    try:
+        resp = client._call("GET", f"{ig_user_id}/insights",
+                            {**period, "metric": "reach", "breakdown": "follow_type"})
+        account["reach_by_follow_type"] = _values(resp).get("reach")
+    except InstagramError as e:
+        account_errors["reach_by_follow_type"] = str(e)[:160]
+    try:  # フォロワー数の日ごとの増減（直近30日まで）
+        resp = client._call("GET", f"{ig_user_id}/insights", {"metric": "follower_count", "period": "day",
+                                                               "since": max(since, until - 29 * 86400),
+                                                               "until": until})
+        account["follower_count_daily"] = [(v.get("end_time", "")[:10], v.get("value"))
+                                           for d in resp.get("data") or [] for v in d.get("values") or []]
+    except InstagramError as e:
+        account_errors["follower_count_daily"] = str(e)[:160]
+
+    media = []
+    resp = client._call("GET", f"{ig_user_id}/media", {
+        "fields": "id,caption,timestamp,media_type,media_product_type,like_count,comments_count,permalink",
+        "limit": 50})
+    for m in resp.get("data") or []:
+        ts = datetime.fromisoformat(m["timestamp"].replace("+0000", "+00:00"))
+        if ts.timestamp() < since - 7 * 86400:  # 報告期間の少し前までの投稿も、伸び続けていることがあるので見る
+            continue
+        metrics = MEDIA_METRICS + (REEL_METRICS if m.get("media_product_type") == "REELS" else [])
+        m["insights"], errs = _metrics(client, f"{m['id']}/insights", metrics)
+        if errs:
+            m["insight_errors"] = errs
+        media.append(m)
+    return {**profile, "account": account, "account_errors": account_errors, "media": media}
+
+
+def run_insights(days: int) -> dict:
+    now = datetime.now().astimezone()
+    out = {"fetched_at": config.now_jst().isoformat(timespec="seconds"), "days": days, "accounts": []}
+    for handle, cfg in config.load_accounts().items():
+        token = config.get_token(cfg)
+        if not cfg.get("enabled", True) or not token or not cfg.get("ig_user_id"):
+            continue
+        try:
+            out["accounts"].append({"ok": True, **collect_insights(Client(token, cfg["ig_user_id"]),
+                                                                   cfg["ig_user_id"], days, now)})
+        except InstagramError as e:
+            out["accounts"].append({"ok": False, "username": handle, "error": str(e)[:300]})
+    return out
+
+
 def _event_inputs() -> dict:
     path = os.environ.get("GITHUB_EVENT_PATH")
     if path and Path(path).exists():
@@ -136,8 +235,19 @@ def _event_inputs() -> dict:
 
 def run_collect(out_dir: Path) -> int:
     inputs = _event_inputs()
-    usernames = parse_targets(inputs.get("targets", ""))
     pub_pem = base64.b64decode(inputs.get("pubkey", "") or b"")
+    if inputs.get("mode") == "insights":
+        if b"PUBLIC KEY" not in pub_pem:
+            print("::error::pubkey（公開鍵）を入力してください")
+            return 1
+        days = max(1, min(int(inputs.get("days") or 7), 28))
+        result = run_insights(days)
+        encrypt(gzip.compress(json.dumps(result, ensure_ascii=False).encode()), pub_pem, out_dir)
+        ok = sum(1 for a in result["accounts"] if a["ok"])
+        _write_meta(out_dir, inputs, pub_pem, len(result["accounts"]), ok)
+        print(f"::notice title=インサイト::{len(result['accounts'])}アカウント中 {ok}件のデータを暗号化しました")
+        return 0
+    usernames = parse_targets(inputs.get("targets", ""))
     if not usernames or b"PUBLIC KEY" not in pub_pem:
         print("::error::targets（ユーザーネーム）と pubkey（公開鍵）を入力してください")
         return 1
@@ -150,17 +260,22 @@ def run_collect(out_dir: Path) -> int:
     result = collect(client, cfg["ig_user_id"], usernames, limit)
     encrypt(gzip.compress(json.dumps(result, ensure_ascii=False).encode()), pub_pem, out_dir)
     ok = sum(1 for a in result["accounts"] if a["ok"])
+    _write_meta(out_dir, inputs, pub_pem, len(usernames), ok)
+    # ログには件数だけを出す（アカウント名や数字は出さない）
+    print(f"::notice title=他アカウント調査::{len(usernames)}件中 {ok}件のデータを暗号化しました")
+    return 0
+
+
+def _write_meta(out_dir: Path, inputs: dict, pub_pem: bytes, total: int, ok: int) -> None:
     meta = {
         "request_id": re.sub(r"[^A-Za-z0-9_-]", "", str(inputs.get("request_id") or ""))[:40],
         "created_at": datetime.now().astimezone().isoformat(timespec="seconds"),
-        "total": len(usernames),
+        "mode": inputs.get("mode") or "research",
+        "total": total,
         "ok": ok,
         "pubkey_sha256": hashlib.sha256(pub_pem).hexdigest(),
     }
     (out_dir / "meta.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n")
-    # ログには件数だけを出す（アカウント名や数字は出さない）
-    print(f"::notice title=他アカウント調査::{len(usernames)}件中 {ok}件のデータを暗号化しました")
-    return 0
 
 
 def main(argv: list[str]) -> int:
