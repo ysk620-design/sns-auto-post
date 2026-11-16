@@ -46,8 +46,10 @@ class Client:
                 except ValueError:
                     err = {"message": body[:300]}
                 transient = e.code >= 500 or err.get("is_transient") or err.get("code") in TRANSIENT_CODES
+                # 「Fatal（code=-1）」は時間をおくと通ることが多い（2026年11月に何度か発生）ので、少し待ってやり直す
+                transient = transient or err.get("code") == -1
                 if transient and attempt < retries - 1:
-                    self.sleep(10 * (attempt + 1))
+                    self.sleep((60 if err.get("code") == -1 else 10) * (attempt + 1))
                     continue
                 raise InstagramError(
                     f"Instagram APIエラー（HTTP {e.code}）: {err.get('message')}"
