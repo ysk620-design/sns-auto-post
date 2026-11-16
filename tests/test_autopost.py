@@ -52,7 +52,8 @@ class TemplateTest(unittest.TestCase):
         self.assertIn('class="big"', html)
         self.assertIn('class="badge"', html)
         self.assertIn("<small>円/月</small>", html)
-        self.assertIn("厳選お得 #06", html)
+        self.assertIn(">厳選お得<", html)
+        self.assertNotIn("#06", html)
 
     def test_reel_durations(self):
         from autopost import reel

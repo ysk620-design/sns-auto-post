@@ -41,10 +41,10 @@ def build(sha: str, slug: str) -> str:
         day = f"{d.month}/{d.day}（{WEEKDAYS[d.weekday()]}）" if isinstance(d, date) else str(post.data.get("date"))
         cfg = accounts.get(post.account, {})
         series = cfg.get("series", "")
-        no = post.data.get("no")
+
         head = f"### {day} @{post.account}"
-        if series and no:
-            head += f"　{series} #{no}"
+        if series:
+            head += f"　{series}"
         if post.data.get("title"):
             head += f"「{post.data['title']}」"
         rel = post.folder.relative_to(config.ROOT).as_posix()
