@@ -100,8 +100,8 @@ def list_queue(account: str, root: Path = config.ROOT) -> list[Post]:
     if not folder.is_dir():
         return []
     items = [Post.load(p) for p in folder.iterdir() if (p / "post.json").is_file()]
-    # 同じ日に2本あるときは、シリーズ番号の小さい順に投稿する
-    return sorted(items, key=lambda p: (str(p.data.get("date", "")), str(p.data.get("no", "")), p.id))
+    # 日付の順。同じ日に2本あるときはフォルダ名の順
+    return sorted(items, key=lambda p: (str(p.data.get("date", "")), p.id))
 
 
 def all_queue_posts(root: Path = config.ROOT) -> list[Post]:

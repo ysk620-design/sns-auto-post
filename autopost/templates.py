@@ -71,8 +71,7 @@ class _Builder:
         return f'<p class="note">{esc(s["note"])}</p>' if s.get("note") else ""
 
     def cover(self, i: int, s: dict) -> str:
-        series, no = self.cfg.get("series", ""), self.data.get("no")
-        default_tag = f"{series} #{no}" if series and no else series
+        default_tag = self.cfg.get("series", "")  # 通し番号は付けない
         inner = f'<p class="kicker">{esc(s["kicker"])}</p>' if s.get("kicker") else ""
         inner += f'<h1 style="font-size:{int(s.get("top_size", 104))}px">{esc(s["top"])}</h1>'
         if s.get("ng"):

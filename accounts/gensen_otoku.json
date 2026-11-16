@@ -7,7 +7,6 @@
   "post_hour_jst": 21,
   "post_window_hours": 3,
   "series": "厳選お得",
-  "series_next_no": 6,
   "reel": {
     "enabled": true,
     "delay_days": 1,
@@ -22,5 +21,12 @@
     "accent": "#c9932a",
     "accent_soft": "#efc75e",
     "muted": "#8f998f"
+  },
+  "boost": {
+    "until": "2026-11-17",
+    "reel_hours_jst": [
+      12,
+      18
+    ]
   }
 }
