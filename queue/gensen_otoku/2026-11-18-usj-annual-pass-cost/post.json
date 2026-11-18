@@ -9,11 +9,13 @@
       "layout": "cover",
       "kicker": "USJ｜ホリデー・キッズフリー・パス",
       "top": "家族4人で<br>ユニバ行き放題が",
-      "top_size": 80,
+      "top_size": 64,
       "big": "月5,000<small>円</small>",
       "sub": "キッズフリー・パスの日に<br>年パスにすると<b>14,800円おトク</b>",
       "badge": "⏰ 12月30日入場分まで",
-      "foot": "計算の内訳 →"
+      "foot": "計算の内訳 →",
+      "art": "ticket",
+      "big_size": 150
     },
     {
       "layout": "callout",

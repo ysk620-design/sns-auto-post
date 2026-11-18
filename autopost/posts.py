@@ -60,7 +60,7 @@ class Post:
 def template_fingerprint() -> str:
     """デザイン（templates.py と style.css）が変わったら作り直すための指紋。"""
     h = hashlib.sha256()
-    for name in ("templates.py", "style.css"):
+    for name in ("templates.py", "style.css", "cover_art.py"):
         h.update((PACKAGE_DIR / name).read_bytes())
     return h.hexdigest()[:12]
 

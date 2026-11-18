@@ -46,3 +46,13 @@ td:last-child{border-radius:0 24px 24px 0;font-weight:900;font-size:38px}
 .quiz .ans{margin-top:28px;font-size:34px;color:var(--accent-soft);font-weight:700}
 .cta{font-size:44px;line-height:1.8;font-weight:700;margin-top:40px}
 .lead{font-size:40px;line-height:1.75;color:#3a4459;font-weight:500}
+/* 表紙のイラスト（cover の art） */
+.art{position:absolute;left:0;top:0;width:1080px;height:1350px;z-index:0;pointer-events:none}
+.withart .body{position:relative;z-index:1}
+.withart .tag,.withart .foot{z-index:2}
+.withart.top{justify-content:flex-start;padding-top:150px}
+.light.withart{padding:250px 150px 120px}
+.light h1,.light .sub{color:var(--main)}
+.light .kicker{color:var(--accent)}
+.light .big,.light .sub b{color:var(--accent)}
+.light .badge{background:var(--main);color:var(--accent-soft)}

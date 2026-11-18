@@ -13,10 +13,10 @@ from pathlib import Path
 
 import re
 
-from . import config, posts, story
+from . import config, cover_art, posts, story
 
 LAYOUT_FIELDS = {
-    "cover": ({"top"}, {"kicker", "ng", "bottom", "big", "sub", "badge", "foot", "tag", "top_size", "ng_size", "big_size"}),
+    "cover": ({"top"}, {"kicker", "ng", "bottom", "big", "sub", "badge", "foot", "tag", "top_size", "ng_size", "big_size", "art", "art_labels"}),
     "callout": ({"title"}, {"label", "body", "note", "style", "tag"}),
     "cards": ({"title", "cards"}, {"note", "tag"}),
     "points": ({"title", "points"}, {"note", "tag", "numbered"}),
@@ -53,6 +53,12 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
     unknown = set(s) - required - optional - {"layout"}
     if unknown:
         errors.append(f"{i}枚目（{layout}）: 使えない項目があります: {', '.join(sorted(unknown))}")
+    if layout == "cover" and "art" in s and s["art"] not in cover_art.ARTS:
+        errors.append(f"{i}枚目（cover）: art は {' / '.join(cover_art.ARTS)} のどれかにしてください")
+    if layout == "cover" and "art_labels" in s:
+        lb = s["art_labels"]
+        if not (isinstance(lb, list) and len(lb) == 2 and all(isinstance(x, str) and len(x) <= 7 for x in lb)):
+            errors.append(f"{i}枚目（cover）: art_labels は7文字以内の文字を2つにしてください")
     if layout == "callout" and s.get("style", "ng") not in ("ng", "ok"):
         errors.append(f"{i}枚目（callout）: style は ng か ok にしてください")
     if layout == "cards":

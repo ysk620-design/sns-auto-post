@@ -217,3 +217,20 @@ class InstagramTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CoverArtTest(unittest.TestCase):
+    def test_art_is_drawn_and_validated(self):
+        from autopost import templates, validate, cover_art
+        cfg = {"display_handle": "@x", "series": "S",
+               "theme": {"main": "#111111", "base": "#eeeeee", "accent": "#aa0000", "accent_soft": "#ffcc00", "muted": "#888888"}}
+        for art in cover_art.ARTS:
+            html = templates.build_html({"slides": [{"layout": "cover", "top": "T", "art": art}]}, cfg)
+            self.assertIn('class="art', html)
+            self.assertIn("withart", html)
+        errs = []
+        validate._check_slide(1, {"layout": "cover", "top": "T", "art": "mario"}, errs)
+        self.assertTrue(errs)
+        errs = []
+        validate._check_slide(1, {"layout": "cover", "top": "T", "art": "food", "art_labels": ["300円", "800円"]}, errs)
+        self.assertEqual(errs, [])
