@@ -394,11 +394,24 @@ def main(argv=None) -> int:
         git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
     failures = 0
     for cfg, post in due:
-        try:
-            publish_one(cfg, post, now, args.dry_run)
-        except (InstagramError, RuntimeError, subprocess.CalledProcessError) as e:
-            print(f"❌ {cfg['handle']}: {e}")
-            failures += 1
+        for attempt in range(3):
+            try:
+                publish_one(cfg, post, now, args.dry_run)
+                break
+            except InstagramError as e:
+                # 「Fatal（code=-1）」はMeta側の一時的なエラー。数分おくと通ることが多いので、5分待って最初からやり直す
+                # （投稿済みかどうかは publish_one の中で確認するので、二重投稿にはならない）
+                if "code=-1" in str(e) and attempt < 2:
+                    print(f"・{cfg['handle']}: 一時的なエラーのため5分後にやり直します（{e}）")
+                    time.sleep(300)
+                    continue
+                print(f"❌ {cfg['handle']}: {e}")
+                failures += 1
+                break
+            except (RuntimeError, subprocess.CalledProcessError) as e:
+                print(f"❌ {cfg['handle']}: {e}")
+                failures += 1
+                break
     for cfg, folder in due_reels:
         try:
             publish_pending_reel(cfg, folder, now, args.dry_run)

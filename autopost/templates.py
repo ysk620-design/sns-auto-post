@@ -2,7 +2,9 @@
 
 スライドの種類（layout）:
   cover   表紙（濃い背景）。kicker（小さな前置き） / top / ng / bottom / big（大きな数字） / sub /
-          badge（期限などのバッジ） / foot（右下の文字。初期値「スワイプ →」）
+          badge（期限などのバッジ） / foot（右下の文字。初期値「スワイプ →」） /
+          art（オリジナルのイラスト。food / ticket / park / calendar。cover_art.py の説明を参照） /
+          art_labels（food の値段の札2つ）
   callout よくある間違い・ポイントを大きなカードで。label / title / body / note / style(ng|ok)
   cards   フレーズや項目のカード（1〜3個）。title / cards[[大きい文字, 小さい文字]] / note
   points  箇条書き（1〜6個）。title / points / note / numbered
@@ -16,6 +18,8 @@ from __future__ import annotations
 import html
 import re
 from pathlib import Path
+
+from . import cover_art
 
 CSS = (Path(__file__).resolve().parent / "style.css").read_text(encoding="utf-8")
 CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩"
@@ -87,7 +91,12 @@ class _Builder:
             inner += f'<p class="sub">{esc(s["sub"])}</p>'
         if s.get("badge"):
             inner += f'<div><span class="badge">{esc(s["badge"])}</span></div>'
-        return self.frame(i, "cover", esc(s.get("tag", default_tag)), inner, esc(s.get("foot", "スワイプ →")))
+        html_ = self.frame(i, "cover", esc(s.get("tag", default_tag)), inner, esc(s.get("foot", "スワイプ →")))
+        art = s.get("art")
+        if art in cover_art.ARTS:
+            pic = cover_art.svg(art, self.cfg["theme"], s.get("art_labels"))
+            html_ = html_.replace('<section class="s cover">', f'<section class="s cover {cover_art.ART_CLASS[art]}">{pic}', 1)
+        return html_
 
     def callout(self, i: int, s: dict) -> str:
         style = s.get("style", "ng")
