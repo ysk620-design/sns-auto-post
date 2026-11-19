@@ -1,0 +1,20 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-22",
+  "title": "ネイティブ度テスト（食事編）",
+  "reel_style": "quiz",
+  "reel_questions": [1, 2, 3],
+  "reel_title": "ネイティブ度テスト｜何問わかる？",
+  "slides": [
+    {"layout": "cover", "kicker": "ネイティブ度テスト", "top": "5問中、<br>何問わかる？", "sub": "全問正解は<span class=\"hl\">ネイティブに道を聞かれるレベル</span>", "foot": "スタート →"},
+    {"layout": "cards", "tag": "Q1", "title": "「お腹いっぱい」を英語で言うと？", "cards": [["A. My stomach is full.", ""], ["B. I'm full.", ""], ["C. I'm many.", ""]]},
+    {"layout": "cards", "tag": "Q2", "title": "「お会計お願いします」は？", "cards": [["A. Check, please.", ""], ["B. Account, please.", ""], ["C. Pay, please.", ""]]},
+    {"layout": "cards", "tag": "Q3", "title": "「おかわり自由」は？", "cards": [["A. Free change", ""], ["B. Okawari OK", ""], ["C. Free refills", ""]]},
+    {"layout": "cards", "tag": "Q4", "title": "「持ち帰りで」は？", "cards": [["A. Take out.", ""], ["B. To go, please.", ""], ["C. Bring home.", ""]]},
+    {"layout": "cards", "tag": "Q5", "title": "「ごちそうさまでした（おいしかった）」は？", "cards": [["A. It was delicious, thank you.", ""], ["B. Gochisousama.", ""], ["C. I finished.", ""]]},
+    {"layout": "table", "tag": "答え合わせ", "title": "答え合わせ", "rows": [["Q1　B", "I'm full.（stomach は言わなくてOK）"], ["Q2　A", "Check, please.（会計＝check）"], ["Q3　C", "Free refills（おかわり＝refill）"], ["Q4　B", "To go, please.（テイクアウトより自然）"], ["Q5　A", "It was delicious, thank you."]]},
+    {"layout": "cta", "title": "あなたのネイティブ度は？", "body": "0〜1問：機内食の \"Chicken or fish?\" で固まるレベル<br>2〜3問：ホームステイ3日目レベル<br>4問：現地のカフェで常連扱いレベル<br>5問：ネイティブに道を聞かれるレベル", "cta": "全問正解したら、友だちにシェアして勝負してね"}
+  ],
+  "caption": "test",
+  "hashtags": ["#英会話"]
+}

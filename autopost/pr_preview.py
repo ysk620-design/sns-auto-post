@@ -53,8 +53,12 @@ def build(sha: str, slug: str) -> str:
             lines += [f"リール上部のタイトル：「{post.data['reel_title']}」", ""]
         lines += [f"![{post.id}](https://raw.githubusercontent.com/{slug}/{sha}/{rel}/preview.jpg)", ""]
         if (post.folder / "reel.mp4").exists():
-            lines += [f"🎬 [読み上げ付きリールを再生する](https://github.com/{slug}/blob/{sha}/{rel}/reel.mp4)"
-                      "（読み方がおかしくないか、音を出して確認してください）", ""]
+            if post.data.get("reel_style") == "quiz":
+                lines += [f"🎬 [クイズリールを再生する](https://github.com/{slug}/blob/{sha}/{rel}/reel.mp4)"
+                          "（問題と正解の表示が合っているか確認してください）", ""]
+            else:
+                lines += [f"🎬 [読み上げ付きリールを再生する](https://github.com/{slug}/blob/{sha}/{rel}/reel.mp4)"
+                          "（読み方がおかしくないか、音を出して確認してください）", ""]
         lines += ["<details><summary>キャプション</summary>", "", "```", posts.compose_caption(post.data), "```", "",
                   "</details>", ""]
         if post.data.get("review_notes"):
