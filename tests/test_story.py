@@ -52,8 +52,18 @@ class StoryTest(unittest.TestCase):
 
     def test_render_hash_ignores_caption_but_not_story(self):
         base = build.render_hash(self.data, self.cfg)
-        self.assertEqual(base, build.render_hash(dict(self.data, caption="別の文", date="2027-01-01"), self.cfg))
+        self.assertEqual(base, build.render_hash(dict(self.data, caption="別の文"), self.cfg))
         self.assertNotEqual(base, build.render_hash(dict(self.data, top="別の表紙"), self.cfg))
+        self.assertNotEqual(base, build.render_hash(dict(self.data, color="purple" if design.palette_name(self.data) != "purple" else "green"), self.cfg))
+
+    def test_palette_rotates_by_date_and_can_be_fixed(self):
+        names = {design.palette_name({"date": f"2026-12-0{d}"}) for d in range(1, 6)}
+        self.assertEqual(names, set(design.PALETTES))
+        self.assertEqual(design.palette_name({"date": "2026-12-01", "color": "teal"}), "teal")
+        html = design.carousel(dict(self.data, color="green"), "n", "@h")
+        self.assertIn("#16a86c", html)
+        self.assertNotIn("#ff4a3d 0 6deg", html)
+        self.assertEqual(len(design.reel_motion(self.data)), 1 + len(self.data["scenes"]) + len(self.data["comments"]) + 2)
 
 
 if __name__ == "__main__":

@@ -47,12 +47,19 @@ def reel_wanted(data: dict, cfg: dict) -> bool:
     return bool((cfg.get("reel") or {}).get("enabled")) and data.get("reel", True) is not False
 
 
+def _palette(data: dict) -> str:
+    from .design import palette_name
+
+    return palette_name(data)
+
+
 def render_payload(data: dict, cfg: dict) -> dict:
     """画像と動画の中身を決める項目（ここが変わったら作り直す）。"""
     keys = ("icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script")
     reel_cfg = cfg.get("reel") or {}
     return {
         "story": {k: data.get(k) for k in keys},
+        "palette": _palette(data),
         "name": cfg.get("name"),
         "display_handle": cfg.get("display_handle"),
         "reel": reel_wanted(data, cfg),
