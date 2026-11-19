@@ -26,7 +26,7 @@ LAYOUT_FIELDS = {
 }
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
-    "reel", "reel_title",
+    "reel", "reel_title", "reel_style", "reel_questions",
 }
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
@@ -226,6 +226,13 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
         errors.append("pr は true か false にしてください")
     if "reel" in data and not isinstance(data["reel"], bool):
         errors.append("reel は true か false にしてください")
+    if "reel_style" in data and data["reel_style"] != "quiz":
+        errors.append("reel_style は quiz だけ使えます（テスト回のクイズリール）")
+    if data.get("reel_style") == "quiz":
+        from . import quizreel
+        errors += [f"クイズリール: {e}" for e in quizreel.validate(data)]
+    elif "reel_questions" in data:
+        errors.append("reel_questions は reel_style が quiz のときだけ書けます")
     if "reel_title" in data and (not isinstance(data["reel_title"], str) or len(data["reel_title"]) > 30):
         errors.append("reel_title（リール上部のタイトル）は30文字以内にしてください")
     if isinstance(caption, str) and len(posts.compose_caption(data)) > MAX_CAPTION:

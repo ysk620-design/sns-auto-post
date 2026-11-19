@@ -104,6 +104,16 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
                 "zoom": [f["zoom"] for f in fit],
                 "rendered_at": config.now_jst().isoformat(timespec="seconds"),
             }
+            old_reel = folder / "reel.mp4"
+            if old_reel.exists():
+                old_reel.unlink()
+            if posts.quiz_reel_wanted(data, cfg):
+                # テスト回は、文字をしぼったクイズリールを画像と一緒に作っておく（PRで確認できるように）
+                from . import quizreel, reel
+
+                title = data.get("reel_title") or reel.default_title(data)
+                handle = cfg.get("display_handle", "@" + cfg["handle"])
+                info["reel_seconds"] = quizreel.make_quiz_reel(data, cfg["theme"], title, handle, old_reel)
             (folder / "render.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             make_preview(folder)
             rel = folder.relative_to(config.ROOT) if folder.is_relative_to(config.ROOT) else folder
@@ -112,7 +122,8 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
                     problems.append(f"{rel}: {idx}枚目の文字が多すぎて収まりません。文を短くしてください")
                 elif f["zoom"] < 0.85:
                     print(f"⚠️ {rel}: {idx}枚目は文字が多いので{int(f['zoom'] * 100)}%に縮小しました")
-            print(f"🖼  {rel}: {len(sections)}枚")
+            extra = f"・クイズリール{info['reel_seconds']}秒" if "reel_seconds" in info else ""
+            print(f"🖼  {rel}: {len(sections)}枚{extra}")
         await browser.close()
     return problems
 

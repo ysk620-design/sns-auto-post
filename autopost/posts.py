@@ -54,13 +54,21 @@ class Post:
             return build.needs_render(self.folder, self.data, account_cfg)
         if self.render_info().get("hash") != render_hash(self.data, account_cfg):
             return True
+        if quiz_reel_wanted(self.data, account_cfg) and not (self.folder / "reel.mp4").exists():
+            return True
         return len(self.slide_files()) != len(self.data.get("slides", []))
+
+
+def quiz_reel_wanted(data: dict, account_cfg: dict) -> bool:
+    """テスト回のクイズリールを、画像と一緒に作っておくか。"""
+    return (data.get("reel_style") == "quiz" and bool((account_cfg.get("reel") or {}).get("enabled"))
+            and data.get("reel", True) is not False)
 
 
 def template_fingerprint() -> str:
     """デザイン（templates.py と style.css）が変わったら作り直すための指紋。"""
     h = hashlib.sha256()
-    for name in ("templates.py", "style.css", "cover_art.py"):
+    for name in ("templates.py", "style.css", "cover_art.py", "quizreel.py", "readtime.py"):
         h.update((PACKAGE_DIR / name).read_bytes())
     return h.hexdigest()[:12]
 
@@ -75,6 +83,9 @@ def render_hash(data: dict, account_cfg: dict) -> str:
         "display_handle": account_cfg.get("display_handle"),
         "template": template_fingerprint(),
     }
+    if data.get("reel_style") == "quiz":
+        payload["quiz_reel"] = {"style": "quiz", "questions": data.get("reel_questions"), "title": data.get("reel_title"),
+                                "on": quiz_reel_wanted(data, account_cfg)}
     raw = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
     return hashlib.sha256(raw).hexdigest()[:16]
 

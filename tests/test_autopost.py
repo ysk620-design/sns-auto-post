@@ -263,3 +263,44 @@ class StoryShareTest(unittest.TestCase):
         client._call = fake_call
         self.assertEqual(client.publish_story_image("https://x/story.jpg"), "s1")
         self.assertEqual(calls[0]["media_type"], "STORIES")
+
+
+class ReadTimeTest(unittest.TestCase):
+    def test_counts_and_seconds(self):
+        from autopost import readtime as r
+        self.assertEqual(r.count("I'm full."), (0, 2))
+        jp, en = r.count("「お腹いっぱい」は？")
+        self.assertEqual((jp, en), (7, 0))  # 「お腹いっぱいは」の7字。かっこ・記号は数えない
+        self.assertEqual(r.count("60,000円")[0], 3.5)  # 数字は0.5字
+        # 12字（2秒）＋ 英語5語（3秒）＋ 目の移動0.8秒
+        self.assertAlmostEqual(r.screen_seconds("あいうえおかきくけこさし", "one two three four five"), 5.8)
+        self.assertEqual(r.screen_seconds("あ"), r.MIN_SEC)
+
+
+class QuizReelTest(unittest.TestCase):
+    def setUp(self):
+        self.data = json.loads((Path(__file__).parent / "quiz_sample.json").read_text(encoding="utf-8"))
+
+    def test_parse_and_plan(self):
+        from autopost import quizreel
+        qs, levels, errors = quizreel.parse(self.data)
+        self.assertEqual(errors, [])
+        self.assertEqual([q["answer"] for q in qs], [1, 0, 2, 1, 0])
+        self.assertEqual(qs[0]["choices"][1], "I'm full.")
+        self.assertEqual(len(levels), 4)
+        screens = quizreel.plan(self.data)
+        self.assertEqual([s["kind"] for s in screens], ["question", "answer"] * 3 + ["end"])
+        # 問題の画面は「読む時間＋選ぶ間」なので、正解の画面より長い
+        self.assertGreater(screens[0]["sec"], screens[1]["sec"])
+        self.data["reel_questions"] = [1, 2, 3, 4, 5]
+        self.assertTrue(quizreel.plan(self.data)[-1]["full"])
+
+    def test_validate_catches_broken_quiz(self):
+        from autopost import quizreel
+        self.assertEqual(quizreel.validate(self.data), [])
+        broken = json.loads(json.dumps(self.data))
+        broken["slides"][6]["rows"] = broken["slides"][6]["rows"][:4]
+        broken["reel_questions"] = [6]
+        errors = quizreel.validate(broken)
+        self.assertTrue(any("Q5" in e for e in errors))
+        self.assertTrue(any("reel_questions" in e for e in errors))

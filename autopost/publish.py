@@ -310,7 +310,14 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
     from . import reel
 
     reel_cfg = cfg.get("reel") or {}
-    prebuilt = story.is_story(post.data)
+    prebuilt = story.is_story(post.data) or (post.data.get("reel_style") == "quiz" and (post.folder / "reel.mp4").exists())
+    if post.data.get("reel_style") == "quiz" and not prebuilt:
+        from . import quizreel
+
+        title = post.data.get("reel_title") or reel.default_title(post.data)
+        quizreel.make_quiz_reel(post.data, cfg["theme"], title, cfg.get("display_handle", "@" + cfg["handle"]),
+                                post.folder / "reel.mp4")
+        prebuilt = True
     if prebuilt:
         # ストーリー形式は、画像と一緒に作ってある読み上げ付きの動画（reel.mp4）をそのまま使う
         video = post.folder / "reel.mp4"
