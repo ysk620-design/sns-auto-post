@@ -25,7 +25,7 @@ import urllib.request
 from datetime import timedelta
 from pathlib import Path
 
-from . import config, posts, story
+from . import config, posts, story, story_share
 from .instagram import Client, InstagramError
 
 ROOT = config.ROOT
@@ -224,10 +224,18 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
 
     post = ensure_rendered(cfg, post)
     files = post.slide_files()
+    story_file = None
+    if story_share.wanted(cfg) and files:
+        try:
+            story_file = story_share.make_story_image(files[0], post.folder / "story.jpg",
+                                                      cfg.get("display_handle", "@" + handle), cfg.get("theme"))
+        except Exception as e:  # ストーリーズの画像が作れなくても、投稿は続ける
+            print(f"⚠️ {handle}: ストーリーズの画像を作れませんでした: {e}")
     commit_and_push(f"画像を準備: {handle}/{post.id}")
     sha = git("rev-parse", "HEAD")
     slug = repo_slug()
-    urls = [f"https://raw.githubusercontent.com/{slug}/{sha}/{f.relative_to(ROOT).as_posix()}" for f in files]
+    raw = lambda f: f"https://raw.githubusercontent.com/{slug}/{sha}/{f.relative_to(ROOT).as_posix()}"  # noqa: E731
+    urls = [raw(f) for f in files]
     for url in urls:
         wait_reachable(url)
 
@@ -255,6 +263,17 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         "posted_date": now.date().isoformat(),
         "image_commit": sha,
     }
+
+    # ストーリーズでもお知らせする（失敗しても投稿の記録は残す。再実行で二重に出さないよう、新しく投稿したときだけ）
+    if story_file and not existing:
+        try:
+            story_url = raw(story_file)
+            wait_reachable(story_url)
+            record["story_media_id"] = client.publish_story_image(story_url)
+            print(f"📣 {handle}: ストーリーズでもお知らせしました")
+        except Exception as e:
+            record["story_error"] = str(e)
+            print(f"⚠️ {handle}: ストーリーズの投稿に失敗しました（投稿はできています）: {e}")
 
     reel_error = None
     reel_cfg = cfg.get("reel") or {}

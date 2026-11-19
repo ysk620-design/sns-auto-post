@@ -234,3 +234,32 @@ class CoverArtTest(unittest.TestCase):
         errs = []
         validate._check_slide(1, {"layout": "cover", "top": "T", "art": "food", "art_labels": ["300円", "800円"]}, errs)
         self.assertEqual(errs, [])
+
+
+class StoryShareTest(unittest.TestCase):
+    def test_story_image_and_publish(self):
+        import tempfile
+        from PIL import Image
+        from autopost import story_share
+        with tempfile.TemporaryDirectory() as d:
+            cover = Path(d) / "slide01.jpg"
+            Image.new("RGB", (1080, 1350), "#336699").save(cover)
+            out = story_share.make_story_image(cover, Path(d) / "story.jpg", "@x", {"main": "#1d3c32", "accent_soft": "#efc75e"})
+            with Image.open(out) as im:
+                self.assertEqual(im.size, (1080, 1920))
+        self.assertTrue(story_share.wanted({}))
+        self.assertFalse(story_share.wanted({"story_share": False}))
+        calls = []
+
+        def fake_call(method, path, params=None, retries=3):
+            calls.append(params)
+            if path.endswith("/media") and method == "POST":
+                return {"id": "c1"}
+            if path.endswith("/media_publish"):
+                return {"id": "s1"}
+            return {"status_code": "FINISHED"}
+
+        client = Client("EAAdummy", "123", sleep=lambda s: None)
+        client._call = fake_call
+        self.assertEqual(client.publish_story_image("https://x/story.jpg"), "s1")
+        self.assertEqual(calls[0]["media_type"], "STORIES")

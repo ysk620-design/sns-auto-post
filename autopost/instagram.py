@@ -86,6 +86,11 @@ class Client:
         self.wait_ready(cid)
         return self.publish(cid)
 
+    def publish_story_image(self, url: str) -> str:
+        cid = self.create_container(media_type="STORIES", image_url=url)
+        self.wait_ready(cid)
+        return self.publish(cid)
+
     def publish_carousel(self, urls: list[str], caption: str) -> str:
         children = [self.create_container(image_url=u, is_carousel_item="true") for u in urls]
         for child in children:
