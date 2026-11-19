@@ -31,6 +31,7 @@ POST_FIELDS = {
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
     "icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script",
+    "color",
 }
 SCENE_FIELDS = {"title", "mood", "say", "nar", "prop", "clerk", "police", "kid", "look"}
 NG_WORDS = ["ストーリーズ"]
@@ -103,6 +104,10 @@ def _check_comments(items, errors: list[str], where: str, lo: int, hi: int, limi
 
 
 def _validate_story(data: dict, errors: list[str]) -> None:
+    if "color" in data:
+        from .story import design
+        if data["color"] not in design.PALETTES:
+            errors.append(f"color は {' / '.join(design.PALETTES)} のどれかにしてください")
     unknown = set(data) - STORY_FIELDS
     if unknown:
         errors.append(f"使えない項目があります: {', '.join(sorted(unknown))}")

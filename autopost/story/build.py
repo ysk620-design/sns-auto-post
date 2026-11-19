@@ -13,6 +13,8 @@ from . import design, reel_wanted, render_payload, tts, voice_settings
 
 SR = 44100
 LEAD = 0.15  # 画面が切り替わってから声が出るまで（秒）
+FPS = 30
+ZOOM = 0.06  # 1画面のあいだに寄る（引く）割合
 
 # 枠からはみ出した文字がないかを調べる
 OVERFLOW_JS = """
@@ -59,7 +61,7 @@ def _wav_to_float(raw: bytes):
     return w.astype(np.float32) / 32768
 
 
-def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path) -> float:
+def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path, motion: list[bool] | None = None) -> float:
     """画面PNG（01..NN）と台本から、読み上げ＋BGM付きの mp4 を作る。長さ（秒）を返す。"""
     import numpy as np
     from scipy.io import wavfile
@@ -86,18 +88,33 @@ def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path) -> 
     bgm = make_bgm(total)[:len(nar)]
     mix = np.clip(np.stack([nar, nar], 1) + bgm * float(voice["bgm_volume"]), -1, 1)
 
+    motion = motion or [False] * len(pngs)
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
         wavfile.write(tmp / "mix.wav", SR, (mix * 32767).astype(np.int16))
-        with open(tmp / "frames.txt", "w", encoding="utf-8") as f:
-            for png, d in zip(pngs, durs):
-                f.write(f"file '{png.resolve()}'\nduration {d}\n")
-            f.write(f"file '{pngs[-1].resolve()}'\n")
+        enc = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p", "-r", str(FPS)]
+        parts = []
+        zoom_in = True
+        for idx, (png, d, move) in enumerate(zip(pngs, durs, motion)):
+            n = max(1, round(d * FPS))
+            clip = tmp / f"part{idx:02d}.mp4"
+            if move:
+                # ゆっくりズーム（画面ごとに寄る・引くを交互に）。拡大してから縮めると、動きがなめらかになる
+                z = f"1+{ZOOM}*on/{n}" if zoom_in else f"{1 + ZOOM}-{ZOOM}*on/{n}"
+                zoom_in = not zoom_in
+                vf = (f"scale=2160:3840,zoompan=z='{z}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
+                      f":d={n}:s=1080x1920:fps={FPS}")
+                cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(png), "-vf", vf, "-frames:v", str(n)]
+            else:
+                cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-loop", "1", "-i", str(png), "-vf", "scale=1080:1920",
+                       "-frames:v", str(n)]
+            subprocess.run(cmd + enc + [str(clip)], check=True)
+            parts.append(clip)
+        (tmp / "parts.txt").write_text("".join(f"file '{c}'\n" for c in parts), encoding="utf-8")
         subprocess.run(
-            [ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(tmp / "frames.txt"),
-             "-i", str(tmp / "mix.wav"), "-vf", "fps=30,format=yuv420p", "-c:v", "libx264", "-preset", "veryfast",
-             "-crf", "22", "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-shortest", "-movflags", "+faststart",
-             str(out)],
+            [ffmpeg_exe(), "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(tmp / "parts.txt"),
+             "-i", str(tmp / "mix.wav"), "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ar", "44100",
+             "-shortest", "-movflags", "+faststart", str(out)],
             check=True,
         )
     return total
@@ -151,7 +168,7 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
                 if bad:
                     problems.append(f"{rel}: リールの{idx}画面目の文字が枠に収まりません。文を短くしてください")
             info["reel_seconds"] = round(make_reel_video(tmp, data["reel_script"]["nar"], voice_settings(cfg),
-                                                         folder / "reel.mp4"), 1)
+                                                         folder / "reel.mp4", design.reel_motion(reel_data)), 1)
 
     (folder / "render.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     extra = f"・リール{info['reel_seconds']}秒" if "reel_seconds" in info else ""

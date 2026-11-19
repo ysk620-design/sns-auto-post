@@ -7,6 +7,34 @@ from .art import guy, burst, icon
 
 REAL = "実話をもとに再現"
 
+# 投稿ごとの色（プロフィールの一覧で同じ見た目が続かないように、日付で順番に変える。color で指定もできる）
+# 名前: (集中線の色1, 色2, 2つめの背景の色1, 色2)
+PALETTES = {
+    "red": ("#ff4a3d", "#ff6d3d", "#2b6cff", "#4a8bff"),
+    "green": ("#16a86c", "#2fc485", "#2b6cff", "#4a8bff"),
+    "pink": ("#ff4f8f", "#ff75a8", "#2b6cff", "#4a8bff"),
+    "purple": ("#7b4fe8", "#9670ff", "#ff7a1a", "#ff9a45"),
+    "teal": ("#0f9fb0", "#2bbccc", "#ff5a3d", "#ff7d5e"),
+}
+ORDER = ("red", "green", "purple", "pink", "teal")
+
+
+def palette_name(p: dict) -> str:
+    if p.get("color") in PALETTES:
+        return p["color"]
+    from datetime import date
+    try:
+        n = date.fromisoformat(str(p.get("date", ""))[:10]).toordinal()
+    except ValueError:
+        n = 0
+    return ORDER[n % len(ORDER)]
+
+
+def _colored(css: str, p: dict) -> str:
+    c1, c2, b1, b2 = PALETTES[palette_name(p)]
+    return (css.replace("#ff4a3d 0 6deg,#ff6d3d 6deg", f"{c1} 0 6deg,{c2} 6deg")
+               .replace("#2b6cff 0 6deg,#4a8bff 6deg", f"{b1} 0 6deg,{b2} 6deg"))
+
 FONT = '*{margin:0;padding:0;box-sizing:border-box}body{font-family:"Noto Sans CJK JP","Noto Color Emoji",sans-serif;color:#111}'
 COMMON = '''
 .logo{position:absolute;top:50px;left:60px;background:#ffe14d;border:6px solid #111;border-radius:999px;padding:8px 30px;font-size:32px;font-weight:900;box-shadow:6px 6px 0 #111;z-index:5}
@@ -125,7 +153,12 @@ def carousel(p, name, handle):
   <div style="margin-top:40px"><span class="btn">フォローする</span></div>
   <div style="position:absolute;right:50px;bottom:60px">{guy("happy",300)}</div>
   <div class="foot" style="color:#111;-webkit-text-stroke:0">{handle}</div></section>''')
-    return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{CSS}</style></head><body>{"".join(S)}</body></html>'
+    return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{_colored(CSS, p)}</style></head><body>{"".join(S)}</body></html>'
+
+def reel_motion(p):
+    """リールの各画面にゆっくりズームを付けるか（チャット画面は文字が増えていくので付けない）。"""
+    return [True] * (1 + len(p["scenes"])) + [False] * len(p["comments"]) + [True, True]
+
 
 def reel_pages(p, name, handle, credit=""):
     C, sc = p["comments"], p["scenes"]
@@ -146,5 +179,5 @@ def reel_pages(p, name, handle, credit=""):
   <div class="p" style="position:absolute;left:70px;right:70px;top:420px;padding:56px"><div style="font-size:64px;font-weight:900;line-height:1.5">{p["cta"]}</div>
   <div style="font-size:42px;font-weight:900;color:#ff3d5a;margin-top:26px">💬 コメントで教えて！</div></div>
   <div style="position:absolute;left:0;right:0;top:960px;text-align:center">{guy("happy",380)}</div>{cr}</section>''')
-    return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{CSS}{RC}</style></head><body>{"".join(P)}</body></html>'
+    return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{_colored(CSS + RC, p)}</style></head><body>{"".join(P)}</body></html>'
 
