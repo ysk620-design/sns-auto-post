@@ -264,8 +264,9 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         "image_commit": sha,
     }
 
-    # ストーリーズでもお知らせする（失敗しても投稿の記録は残す。再実行で二重に出さないよう、新しく投稿したときだけ）
-    if story_file and not existing:
+    # ストーリーズでもお知らせする（失敗しても投稿の記録は残す）。
+    # Instagram側のエラーで「投稿はできていたのにエラーが返った」ときも、その投稿が直前のもの（3時間以内）なら出す
+    if story_file and (not existing or posted_recently(existing, hours=3)):
         try:
             story_url = raw(story_file)
             wait_reachable(story_url)
@@ -301,6 +302,18 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
     if reel_error:
         raise RuntimeError(f"カルーセルは投稿できましたが、リールの投稿に失敗しました: {reel_error}")
     return record
+
+
+def posted_recently(media: dict, hours: float) -> bool:
+    """Instagram の投稿（timestamp つき）が、今から hours 時間以内のものか。"""
+    from datetime import datetime
+
+    ts = str(media.get("timestamp") or "")
+    try:
+        when = datetime.strptime(ts, "%Y-%m-%dT%H:%M:%S%z")
+    except ValueError:
+        return False
+    return (config.now_jst() - when).total_seconds() <= hours * 3600
 
 
 def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, existing: dict | None) -> dict:

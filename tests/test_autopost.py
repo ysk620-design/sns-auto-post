@@ -304,3 +304,14 @@ class QuizReelTest(unittest.TestCase):
         errors = quizreel.validate(broken)
         self.assertTrue(any("Q5" in e for e in errors))
         self.assertTrue(any("reel_questions" in e for e in errors))
+
+
+class PostedRecentlyTest(unittest.TestCase):
+    def test_posted_recently(self):
+        from datetime import timedelta
+        from autopost import config, publish
+        now = config.now_jst()
+        fmt = "%Y-%m-%dT%H:%M:%S%z"
+        self.assertTrue(publish.posted_recently({"timestamp": (now - timedelta(minutes=20)).strftime(fmt)}, 3))
+        self.assertFalse(publish.posted_recently({"timestamp": (now - timedelta(hours=5)).strftime(fmt)}, 3))
+        self.assertFalse(publish.posted_recently({}, 3))
