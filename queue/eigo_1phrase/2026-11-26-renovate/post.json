@@ -1,0 +1,102 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-26",
+  "type": "carousel",
+  "title": "リフォーム",
+  "reel_title": "「リフォーム」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "家の改装を<br>「リフォーム」で",
+      "ng": "I reformed my house.",
+      "bottom": "って言ってない？",
+      "sub": "reform は「制度や人を改める」の意味。<br>ネイティブには<b>家を改心させた？</b>と聞こえるかも<br>正解は<span class=\"hl\">場面で3つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "I reformed my house.",
+      "body": "家を改心させた。",
+      "note": "reform は制度や組織、人の行いを「改める」という意味。家をきれいに直すときは renovate や remodel を使います。"
+    },
+    {
+      "layout": "cards",
+      "title": "家全体を改装した",
+      "cards": [
+        [
+          "We renovated our house.",
+          "家をリフォームしました。"
+        ],
+        [
+          "It's under renovation.",
+          "今リフォーム中です。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "キッチンなど一部を",
+      "cards": [
+        [
+          "We remodeled the kitchen.",
+          "キッチンをリフォームしました。"
+        ]
+      ],
+      "note": "remodel は間取りや形を変えるときによく使います。"
+    },
+    {
+      "layout": "cards",
+      "title": "ちょっとした手直し",
+      "cards": [
+        [
+          "We're fixing up the house.",
+          "家を手直ししているところです。"
+        ],
+        [
+          "We had the bathroom redone.",
+          "お風呂をやり直してもらいました。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「リフォーム」早見表",
+      "rows": [
+        [
+          "家全体",
+          "We renovated our house."
+        ],
+        [
+          "工事中",
+          "It's under renovation."
+        ],
+        [
+          "キッチン",
+          "We remodeled the kitchen."
+        ],
+        [
+          "手直し中",
+          "We're fixing up the house."
+        ],
+        [
+          "業者に頼んだ",
+          "We had the bathroom redone."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「キッチンをリフォームしたよ」と<br>英語で言うなら？"
+    }
+  ],
+  "caption": "家の「リフォーム」を reform と言っていませんか？\n\n✕ I reformed my house.（家を改心させた）\n○ We renovated our house.\n○ We remodeled the kitchen.\n\n場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "renovate（全体をきれいに改装）／remodel（形や間取りを変える）の違いは、ざっくりした目安として紹介しています。【実体験】ここに実体験を一言（家の工事を英語で説明したことがある、など）。"
+}

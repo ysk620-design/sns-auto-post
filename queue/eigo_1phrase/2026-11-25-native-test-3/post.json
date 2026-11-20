@@ -1,0 +1,159 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-25",
+  "type": "carousel",
+  "title": "ネイティブ度テスト③（クーラーほか）",
+  "reel_title": "ネイティブ度テスト｜3問わかる？",
+  "reel_style": "quiz",
+  "reel_questions": [
+    1,
+    2,
+    3
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "ネイティブ度テスト",
+      "top": "5問中、何問わかる？<br>おしゃれ・暮らし編",
+      "sub": "全問正解は<span class=\"hl\">ネイティブの友だちにツッコめるレベル</span>",
+      "foot": "スタート →"
+    },
+    {
+      "layout": "cards",
+      "tag": "Q1",
+      "title": "「クーラーをつけて」を英語で言うと？",
+      "cards": [
+        [
+          "A. Turn on the AC.",
+          ""
+        ],
+        [
+          "B. Turn on the cooler.",
+          ""
+        ],
+        [
+          "C. Open the cooler.",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q2",
+      "title": "服の「ワンピース」を英語で言うと？",
+      "cards": [
+        [
+          "A. a one-piece",
+          ""
+        ],
+        [
+          "B. a one dress",
+          ""
+        ],
+        [
+          "C. a dress",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q3",
+      "title": "有名人に「サインください」",
+      "cards": [
+        [
+          "A. Can I have your sign?",
+          ""
+        ],
+        [
+          "B. Can I get your autograph?",
+          ""
+        ],
+        [
+          "C. Sign me, please.",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q4",
+      "title": "「マニキュア」を英語で言うと？",
+      "cards": [
+        [
+          "A. manicure",
+          ""
+        ],
+        [
+          "B. nail cure",
+          ""
+        ],
+        [
+          "C. nail polish",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q5",
+      "title": "細い人に「スマートだね」と言うなら？",
+      "cards": [
+        [
+          "A. You look slim.",
+          ""
+        ],
+        [
+          "B. You look smart.",
+          ""
+        ],
+        [
+          "C. You are smart body.",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "tag": "答え合わせ",
+      "title": "正解はこちら",
+      "rows": [
+        [
+          "Q1　A",
+          "Turn on the AC.（cooler はクーラーボックス）"
+        ],
+        [
+          "Q2　C",
+          "a dress（one-piece は水着の意味が強い）"
+        ],
+        [
+          "Q3　B",
+          "Can I get your autograph?（sign は「看板・合図」）"
+        ],
+        [
+          "Q4　C",
+          "nail polish（manicure は爪のお手入れ全体）"
+        ],
+        [
+          "Q5　A",
+          "You look slim.（復習。smart は「賢い・きちんとした」）"
+        ]
+      ]
+    },
+    {
+      "layout": "cta",
+      "title": "あなたのネイティブ度は？",
+      "body": "0〜1問　機内食の「Chicken or fish?」で固まるレベル<br>2〜3問　英語の道案内にうなずけるレベル<br>4問　海外旅行でスモールトークができるレベル<br>5問　ネイティブの友だちにツッコめるレベル",
+      "cta": "全問正解したら、友だちにシェアして勝負してね"
+    }
+  ],
+  "caption": "5問中、何問わかる？おしゃれ・暮らし編\nクーラー・ワンピース・サインなど、暮らしのカタカナ語から5問\n\n💬 何問わかった？コメントで教えて\n📤 全問正解したら友だちにシェアして勝負\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語クイズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "テスト回3本目（リールは Q1〜Q3 の約45秒版）。正解の位置は A/C/B/C/A。Q5 は過去の投稿（スマート）からの復習問題です。Q2 の one-piece は「ワンピースの水着」の意味で使われることが多い、という説明にしています（one-piece dress という言い方もあるため「間違い」と言い切らず、解説で補足）。"
+}
