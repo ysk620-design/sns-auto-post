@@ -9,8 +9,9 @@
       "layout": "cover",
       "top": "家の改装を<br>「リフォーム」で",
       "ng": "I reformed my house.",
+      "ng_size": 70,
       "bottom": "って言ってない？",
-      "sub": "reform は「制度や人を改める」の意味。<br>ネイティブには<b>家を改心させた？</b>と聞こえるかも<br>正解は<span class=\"hl\">場面で3つ</span>"
+      "sub": "reform は「人や制度を改める」の意味。<br>ネイティブには<b>家を改心させた？</b>と聞こえる<br>正解は<span class=\"hl\">場面で5つ</span>"
     },
     {
       "layout": "callout",

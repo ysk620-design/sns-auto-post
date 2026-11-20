@@ -13,15 +13,15 @@
   "slides": [
     {
       "layout": "cover",
-      "kicker": "ネイティブ度テスト",
-      "top": "5問中、何問わかる？<br>おしゃれ・暮らし編",
-      "sub": "全問正解は<span class=\"hl\">ネイティブの友だちにツッコめるレベル</span>",
+      "kicker": "ネイティブ度テスト｜暮らし編",
+      "top": "5問中、<br>何問わかる？",
+      "sub": "クーラー、ワンピース、マニキュア…<br>全問正解は<br><span class=\"hl\">ネイティブの友だちにツッコめるレベル</span>",
       "foot": "スタート →"
     },
     {
       "layout": "cards",
       "tag": "Q1",
-      "title": "「クーラーをつけて」を英語で言うと？",
+      "title": "「クーラーをつけて」を<br>英語で言うと？",
       "cards": [
         [
           "A. Turn on the AC.",
@@ -40,7 +40,7 @@
     {
       "layout": "cards",
       "tag": "Q2",
-      "title": "服の「ワンピース」を英語で言うと？",
+      "title": "服の「ワンピース」を<br>英語で言うと？",
       "cards": [
         [
           "A. a one-piece",
@@ -59,18 +59,18 @@
     {
       "layout": "cards",
       "tag": "Q3",
-      "title": "有名人に「サインください」",
+      "title": "「マニキュア」を<br>英語で言うと？",
       "cards": [
         [
-          "A. Can I have your sign?",
+          "A. manicure",
           ""
         ],
         [
-          "B. Can I get your autograph?",
+          "B. nail polish",
           ""
         ],
         [
-          "C. Sign me, please.",
+          "C. nail cure",
           ""
         ]
       ]
@@ -78,18 +78,18 @@
     {
       "layout": "cards",
       "tag": "Q4",
-      "title": "「マニキュア」を英語で言うと？",
+      "title": "有名人に<br>「サインください」",
       "cards": [
         [
-          "A. manicure",
+          "A. Can I have your sign?",
           ""
         ],
         [
-          "B. nail cure",
+          "B. Sign me, please.",
           ""
         ],
         [
-          "C. nail polish",
+          "C. Can I get your autograph?",
           ""
         ]
       ]
@@ -97,7 +97,7 @@
     {
       "layout": "cards",
       "tag": "Q5",
-      "title": "細い人に「スマートだね」と言うなら？",
+      "title": "細い人に<br>「スマートだね」と言うなら？",
       "cards": [
         [
           "A. You look slim.",
@@ -120,19 +120,19 @@
       "rows": [
         [
           "Q1　A",
-          "Turn on the AC.（cooler はクーラーボックス）"
+          "Turn on the AC.（cooler は保冷箱）"
         ],
         [
           "Q2　C",
-          "a dress（one-piece は水着の意味が強い）"
+          "a dress（one-piece は水着の印象）"
         ],
         [
           "Q3　B",
-          "Can I get your autograph?（sign は「看板・合図」）"
+          "nail polish（manicure は爪のお手入れ）"
         ],
         [
           "Q4　C",
-          "nail polish（manicure は爪のお手入れ全体）"
+          "Can I get your autograph?（sign は「看板・合図」）"
         ],
         [
           "Q5　A",
@@ -143,11 +143,11 @@
     {
       "layout": "cta",
       "title": "あなたのネイティブ度は？",
-      "body": "0〜1問　機内食の「Chicken or fish?」で固まるレベル<br>2〜3問　英語の道案内にうなずけるレベル<br>4問　海外旅行でスモールトークができるレベル<br>5問　ネイティブの友だちにツッコめるレベル",
+      "body": "0〜1問　機内食の「Chicken or fish?」で固まるレベル<br>2〜3問　英語の道案内にうなずけるレベル<br>4問　旅先で世間話ができるレベル<br>5問　ネイティブの友だちにツッコめるレベル",
       "cta": "全問正解したら、友だちにシェアして勝負してね"
     }
   ],
-  "caption": "5問中、何問わかる？おしゃれ・暮らし編\nクーラー・ワンピース・サインなど、暮らしのカタカナ語から5問\n\n💬 何問わかった？コメントで教えて\n📤 全問正解したら友だちにシェアして勝負\n👤 毎日投稿中 → @eigo_1phrase",
+  "caption": "5問中、何問わかる？\n全問正解は「ネイティブの友だちにツッコめるレベル」！\n\nクーラー・ワンピース・マニキュアなど、暮らしのカタカナ語から5問。\n\n💬 何問わかった？コメントで教えて\n📤 全問正解したら友だちにシェアして勝負\n👤 毎日投稿中 → @eigo_1phrase",
   "hashtags": [
     "#英会話",
     "#英語クイズ",
@@ -155,5 +155,5 @@
     "#英語学習",
     "#大人の英語"
   ],
-  "review_notes": "テスト回3本目（リールは Q1〜Q3 の約45秒版）。正解の位置は A/C/B/C/A。Q5 は過去の投稿（スマート）からの復習問題です。Q2 の one-piece は「ワンピースの水着」の意味で使われることが多い、という説明にしています（one-piece dress という言い方もあるため「間違い」と言い切らず、解説で補足）。"
+  "review_notes": "テスト回3本目（リールは Q1〜Q3）。正解の位置は A/C/B/C/A。Q5 は過去の投稿（スマート）からの復習問題です。Q2 の one-piece は「ワンピースの水着」の意味で使われることが多い、という説明にしています（one-piece dress という言い方もあるため、解説は「水着の印象」にとどめています）。"
 }

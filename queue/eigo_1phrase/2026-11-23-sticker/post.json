@@ -9,6 +9,7 @@
       "layout": "cover",
       "top": "ステッカーのことを<br>「シール」で",
       "ng": "Can I have a seal?",
+      "ng_size": 80,
       "bottom": "って言ってない？",
       "sub": "seal は「アザラシ」や「封印」の意味。<br>ネイティブは<b>アザラシを想像</b>しちゃうかも<br>正解は<span class=\"hl\">場面で6つ</span>"
     },
@@ -95,7 +96,7 @@
     },
     {
       "layout": "quiz",
-      "question": "子どもに「ごほうびのシールだよ」と<br>英語で言うなら？"
+      "question": "「ごほうびのシールだよ」を<br>英語で言うなら？"
     }
   ],
   "caption": "「シール」をそのまま seal と言っていませんか？\n\n✕ Can I have a seal?（アザラシをもらえる？）\n○ Here's a sticker for you!\n○ Peel off the sticker.\n\n子どもとの会話でよく使う場面をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
