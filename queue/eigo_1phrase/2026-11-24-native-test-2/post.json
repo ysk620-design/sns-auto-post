@@ -1,0 +1,157 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-24",
+  "type": "carousel",
+  "title": "ネイティブ度テスト②（ペットボトルほか）",
+  "reel_title": "ネイティブ度テスト｜これわかる？",
+  "reel_style": "quiz",
+  "reel_questions": [
+    4
+  ],
+  "slides": [
+    {
+      "layout": "cover",
+      "kicker": "ネイティブ度テスト｜身の回り編",
+      "top": "5問中、<br>何問わかる？",
+      "sub": "ホッチキス、ベビーカー、ペットボトル…<br>全問正解は<br><span class=\"hl\">空港でネイティブに頼られるレベル</span>",
+      "foot": "スタート →"
+    },
+    {
+      "layout": "cards",
+      "tag": "Q1",
+      "title": "「ホッチキス」を<br>英語で言うと？",
+      "cards": [
+        [
+          "A. a Hotchkiss",
+          ""
+        ],
+        [
+          "B. a stapler",
+          ""
+        ],
+        [
+          "C. a paper pin",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q2",
+      "title": "「ベビーカー」を<br>英語で言うと？",
+      "cards": [
+        [
+          "A. a baby car",
+          ""
+        ],
+        [
+          "B. a baby cart",
+          ""
+        ],
+        [
+          "C. a stroller",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q3",
+      "title": "「コンビニ」を<br>英語で言うと？",
+      "cards": [
+        [
+          "A. a convenience store",
+          ""
+        ],
+        [
+          "B. a combini",
+          ""
+        ],
+        [
+          "C. a handy shop",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q4",
+      "title": "「ペットボトル」を<br>英語で言うと？",
+      "cards": [
+        [
+          "A. a pet bottle",
+          ""
+        ],
+        [
+          "B. a plastic bottle",
+          ""
+        ],
+        [
+          "C. a pet water",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "tag": "Q5",
+      "title": "「私はマイペースです」を<br>英語で言うと？",
+      "cards": [
+        [
+          "A. I'm my pace.",
+          ""
+        ],
+        [
+          "B. I'm a my pace man.",
+          ""
+        ],
+        [
+          "C. I do things at my own pace.",
+          ""
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "tag": "答え合わせ",
+      "title": "正解はこちら",
+      "rows": [
+        [
+          "Q1　B",
+          "a stapler（ホッチキスは人名由来）"
+        ],
+        [
+          "Q2　C",
+          "a stroller（英国では pushchair）"
+        ],
+        [
+          "Q3　A",
+          "a convenience store（略さずに言う）"
+        ],
+        [
+          "Q4　B",
+          "a plastic bottle（pet bottle は動物用に聞こえる）"
+        ],
+        [
+          "Q5　C",
+          "I do things at my own pace.（復習。my pace だけでは通じない）"
+        ]
+      ]
+    },
+    {
+      "layout": "cta",
+      "title": "あなたのネイティブ度は？",
+      "body": "0〜1問　「Pardon?」しか言えないレベル<br>2〜3問　指さしで注文できるレベル<br>4問　海外ドラマが半分わかるレベル<br>5問　空港でネイティブに頼られるレベル",
+      "cta": "全問正解したら、友だちにシェアして勝負してね"
+    }
+  ],
+  "caption": "5問中、何問わかる？\n全問正解は「空港でネイティブに頼られるレベル」！\n\nホッチキス・ベビーカー・ペットボトルなど、身の回りのカタカナ語から5問。\n\n💬 何問わかった？コメントで教えて\n📤 全問正解したら友だちにシェアして勝負\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語クイズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "テスト回2本目（リールは Q4 だけの短い版。「動物用のボトルに聞こえる」意外さが一番大きいので Q4 を選んでいます）。正解の位置は B/C/A/B/C。Q5 は過去の投稿（マイペース）からの復習問題です。"
+}

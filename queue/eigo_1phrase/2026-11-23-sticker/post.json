@@ -1,0 +1,111 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-23",
+  "type": "carousel",
+  "title": "シール",
+  "reel_title": "「シール」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "ステッカーのことを<br>「シール」で",
+      "ng": "Can I have a seal?",
+      "ng_size": 80,
+      "bottom": "って言ってない？",
+      "sub": "seal は「アザラシ」や「封印」の意味。<br>ネイティブは<b>アザラシを想像</b>しちゃうかも<br>正解は<span class=\"hl\">場面で6つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "Can I have a seal?",
+      "body": "アザラシをもらえますか？",
+      "note": "seal は動物のアザラシや、手紙の封・はんこのこと。貼って楽しむシールは sticker と言います。"
+    },
+    {
+      "layout": "cards",
+      "title": "子どもにあげるとき",
+      "cards": [
+        [
+          "Here's a sticker for you!",
+          "シールをどうぞ！"
+        ],
+        [
+          "Pick one sticker.",
+          "シールを1枚選んでね。"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "シールを集めている",
+      "cards": [
+        [
+          "She collects stickers.",
+          "あの子はシールを集めてるの。"
+        ],
+        [
+          "Where's your sticker book?",
+          "シール帳はどこ？"
+        ]
+      ],
+      "note": "シール帳は sticker book と言います。"
+    },
+    {
+      "layout": "cards",
+      "title": "貼る・はがす",
+      "cards": [
+        [
+          "Don't put stickers on the wall.",
+          "壁にシールを貼らないで。"
+        ],
+        [
+          "Peel off the sticker.",
+          "シールをはがして。"
+        ]
+      ]
+    },
+    {
+      "layout": "table",
+      "title": "「シール」早見表",
+      "rows": [
+        [
+          "あげる",
+          "Here's a sticker for you!"
+        ],
+        [
+          "選ばせる",
+          "Pick one sticker."
+        ],
+        [
+          "集めている",
+          "She collects stickers."
+        ],
+        [
+          "シール帳",
+          "a sticker book"
+        ],
+        [
+          "貼らないで",
+          "Don't put stickers on the wall."
+        ],
+        [
+          "はがす",
+          "Peel off the sticker."
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "「ごほうびのシールだよ」を<br>英語で言うなら？"
+    }
+  ],
+  "caption": "「シール」をそのまま seal と言っていませんか？\n\n✕ Can I have a seal?（アザラシをもらえる？）\n○ Here's a sticker for you!\n○ Peel off the sticker.\n\n子どもとの会話でよく使う場面をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 毎日投稿中 → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語フレーズ",
+    "#中学英語",
+    "#英語学習",
+    "#大人の英語"
+  ],
+  "review_notes": "seal は「封・はんこ」の意味もあり、文脈によっては「封を貼る」と受け取られることもありますが、投稿ではわかりやすく「アザラシ」の意味を中心にしています。【実体験】ここに実体験を一言（子どもとシールで遊んだときに使えた、など）。"
+}
