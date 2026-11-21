@@ -153,7 +153,17 @@ def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -
         return None
     post = ensure_rendered(cfg, post)
     image = post.folder / "slide01.jpg"
-    reel.make_still_reel(image, post.folder / "reel.mp4")
+    if post.data.get("reel_style") == "quiz":
+        # クイズリール（画像と一緒に作ってある reel.mp4）。ストーリーズ用には表紙を縦長にした画像を使う
+        if not (post.folder / "reel.mp4").exists():
+            from . import quizreel
+
+            quizreel.make_quiz_reel(post.data, cfg["theme"], post.data.get("reel_title") or post.data.get("title", ""),
+                                    cfg.get("display_handle", "@" + handle), post.folder / "reel.mp4")
+        image = story_share.make_story_image(image, post.folder / "story.jpg", cfg.get("display_handle", "@" + handle),
+                                             cfg.get("theme"))
+    else:
+        reel.make_still_reel(image, post.folder / "reel.mp4")
     commit_and_push(f"画像を準備: {handle}/{post.id}")
     sha = git("rev-parse", "HEAD")
     raw = lambda f: f"https://raw.githubusercontent.com/{repo_slug()}/{sha}/{f.relative_to(ROOT).as_posix()}"  # noqa: E731
