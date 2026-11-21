@@ -122,6 +122,8 @@ def all_queue_posts(root: Path = config.ROOT) -> list[Post]:
 def next_post(account: str, today: date, root: Path = config.ROOT) -> Post | None:
     """今日投稿してよい投稿のうち、一番古いもの。"""
     for post in list_queue(account, root):
+        if post.data.get("type") == "reel_only":
+            continue  # リールだけの投稿は、決まった時刻に別で出す（publish.find_due_reel_only）
         if post.date and post.date <= today:
             return post
     return None
