@@ -1,0 +1,81 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-11-23",
+  "type": "reel_only",
+  "post_hour_jst": 8,
+  "title": "期限を過ぎると消えるお金",
+  "slides": [
+    {
+      "layout": "matome",
+      "kicker": "保存版｜申請期限",
+      "title": "期限を過ぎると<br><span class=\"hl\">消える</span>子育てのお金",
+      "sub": "「あとでやろう」で、もらえなくなるもの",
+      "items": [
+        [
+          "児童手当（生まれた・転入）",
+          "15日以内",
+          "遅れた月の分はもらえない"
+        ],
+        [
+          "保育の給付（認可外など）",
+          "使う前に申請",
+          "さかのぼれない"
+        ],
+        [
+          "特別児童扶養手当",
+          "早めに",
+          "申請した翌月分からしか出ない"
+        ],
+        [
+          "妊婦のための支援給付",
+          "2年",
+          "胎児の心拍の確認から"
+        ],
+        [
+          "出産育児一時金",
+          "2年",
+          "出産の翌日から"
+        ],
+        [
+          "出産手当金",
+          "2年",
+          "休んだ日ごとに"
+        ],
+        [
+          "高額療養費",
+          "2年",
+          "診療月の翌月1日から"
+        ],
+        [
+          "学校・園でのケガの給付",
+          "2年",
+          "診療月ごとに"
+        ],
+        [
+          "東京都の無痛分娩助成",
+          "1年",
+          "出産の翌日から"
+        ],
+        [
+          "医療費控除・還付申告",
+          "5年",
+          "翌年1月1日から"
+        ]
+      ],
+      "note": "※2026年11月時点。自治体や加入している健康保険によって違う場合があります。期限が近いものから手続きを",
+      "head": [
+        "お金",
+        "期限"
+      ]
+    }
+  ],
+  "caption": "「あとでやろう」と思っているうちに、もらえなくなるお金があります。\n\n✅ 児童手当は、生まれた日・引っ越した日の翌日から15日以内\n✅ 保育の給付は、使い始める前に申請（さかのぼれません）\n✅ 健康保険の給付は2年、医療費控除は5年が期限\n\n⚠️ 自治体や健康保険によって違うことがあります。期限が近いものから確認してください。\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#申請期限",
+    "#児童手当",
+    "#高額療養費",
+    "#子育てママ",
+    "#子育て家計"
+  ],
+  "review_notes": "【リールだけの投稿・11/23 8時台】確認日 2026-11-21。出典：児童手当15日以内（宮城県 https://www.pref.miyagi.jp/soshiki/kosodate/child-allowance.html）／施設等利用給付はさかのぼれない（中央区 https://www.city.chuo.lg.jp/kosodate/hoiku/youzikyoiku_hoiku-mushoka/tetudukinituite.html）／特別児童扶養手当は請求月の翌月分から（大阪府 https://www.pref.osaka.lg.jp/kateishien/teate/tokubetsujihu.html）／妊婦のための支援給付 2年（仙台市 https://www.city.sendai.jp/kodomo-kyufu/syussanouenkosodatekyufukin.html）／健康保険給付の時効2年（協会けんぽ https://www.kyoukaikenpo.or.jp/~/media/Files/yamagata/kouhou/20170223pannhuretto/59222771E50D43ED9EE89F7215038475.pdf）／災害共済給付2年（JSC https://www.jpnsport.go.jp/anzen/Portals/0/anzen/kyufu_1/pdf/03_R8_seikyugaido.pdf）／無痛分娩1年（東京都 https://www.metro.tokyo.lg.jp/information/press/2025/09/2025091908）／還付申告5年（国税庁の制度）。"
+}
