@@ -119,6 +119,86 @@ def find_due(accounts: dict, now, only: str = "", force: bool = False, dry_run: 
     return due
 
 
+def find_due_reel_only(accounts: dict, now, only: str = "", force: bool = False, dry_run: bool = False,
+                       root: Path = ROOT):
+    """リールだけの投稿（type "reel_only"）のうち、今出すもの。1回の実行で1アカウント1本まで。"""
+    today = now.date()
+    due = []
+    for handle, cfg in accounts.items():
+        if only and handle != only:
+            continue
+        if not cfg.get("enabled", True):
+            continue
+        if not dry_run and not config.get_token(cfg):
+            continue
+        for post in posts.list_queue(handle, root):
+            if post.data.get("type") != "reel_only" or not post.date or post.date > today:
+                continue
+            hour = int(post.data.get("post_hour_jst", 0))
+            if force or dry_run or post.date < today or now.hour >= hour:
+                due.append((cfg, post))
+                break
+    return due
+
+
+def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict | None:
+    """1枚まとめの画像をリールにして投稿する（プロフィールの一覧にも出す）。"""
+    from . import reel
+
+    handle = cfg["handle"]
+    caption = posts.compose_caption(post.data)
+    if dry_run:
+        print(f"\n▶ {handle}: リールだけの投稿 {post.id}（{post.data.get('post_hour_jst')}時台）")
+        print(caption)
+        return None
+    post = ensure_rendered(cfg, post)
+    image = post.folder / "slide01.jpg"
+    reel.make_still_reel(image, post.folder / "reel.mp4")
+    commit_and_push(f"画像を準備: {handle}/{post.id}")
+    sha = git("rev-parse", "HEAD")
+    raw = lambda f: f"https://raw.githubusercontent.com/{repo_slug()}/{sha}/{f.relative_to(ROOT).as_posix()}"  # noqa: E731
+
+    client = Client(config.get_token(cfg), cfg["ig_user_id"])
+    existing = next((m for m in client.recent_media() if m.get("media_type") in {"VIDEO", "REELS"}
+                     and (m.get("caption") or "").strip() == caption.strip()), None)
+    if existing:
+        print(f"・{handle}: 同じリールがすでにInstagramにあるので、記録だけ更新します")
+        reel_id = existing["id"]
+    else:
+        try:
+            reel_id = client.publish_reel(post.folder / "reel.mp4", caption, True)
+        except InstagramError as e:
+            print(f"・直接アップロードに失敗したので、URL方式で再試行します（{e}）")
+            url = raw(post.folder / "reel.mp4")
+            wait_reachable(url)
+            reel_id = client.publish_reel_url(url, caption, True)
+    record = {
+        "kind": "reel_only",
+        "reel_media_id": reel_id,
+        "reel_permalink": client.permalink(reel_id),
+        "posted_at": config.now_jst().isoformat(timespec="seconds"),
+        "reel_only_date": now.date().isoformat(),
+        "image_commit": sha,
+    }
+    print(f"🎬 {handle}: リールを投稿しました {record['reel_permalink'] or reel_id}")
+    # 縦長の画像なので、そのままストーリーズでもお知らせする
+    if story_share.wanted(cfg) and (not existing or posted_recently(existing, hours=3)):
+        try:
+            url = raw(image)
+            wait_reachable(url)
+            record["story_media_id"] = client.publish_story_image(url)
+            print(f"📣 {handle}: ストーリーズでもお知らせしました")
+        except Exception as e:
+            record["story_error"] = str(e)
+            print(f"⚠️ {handle}: ストーリーズの投稿に失敗しました（リールは投稿できています）: {e}")
+    dest = config.posted_dir(ROOT) / handle / post.id
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    shutil.move(str(post.folder), str(dest))
+    (dest / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    commit_and_push(f"投稿しました: {handle}/{post.id}")
+    return record
+
+
 def reel_delayed(cfg: dict) -> bool:
     """リールをカルーセルとは別の日・時間に投稿する設定か（reel.delay_days / reel.post_hour_jst）。"""
     r = cfg.get("reel") or {}
@@ -410,32 +490,34 @@ def main(argv=None) -> int:
     print(f"日本時間 {now:%Y-%m-%d %H:%M}")
     due = find_due(accounts, now, args.account.strip(), args.force, args.dry_run)
     due_reels = find_due_reels(accounts, now, args.account.strip(), args.force, args.dry_run)
+    due_only = find_due_reel_only(accounts, now, args.account.strip(), args.force, args.dry_run)
 
     if args.command == "check":
-        needs_render = any(post.needs_render(cfg) for cfg, post in due) and not args.dry_run
+        needs_render = any(post.needs_render(cfg) for cfg, post in due + due_only) and not args.dry_run
         needs_voice = not args.dry_run and any(
             story.is_story(post.data) and post.needs_render(cfg) and story.reel_wanted(post.data, cfg)
             for cfg, post in due)
-        handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels)
+        handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels + due_only)
         set_output(
-            due=str(bool(due or due_reels)).lower(),
+            due=str(bool(due or due_reels or due_only)).lower(),
             needs_render=str(needs_render).lower(),
             needs_voice=str(needs_voice).lower(),
             accounts=",".join(handles),
         )
         return 0
 
-    if not due and not due_reels:
+    if not due and not due_reels and not due_only:
         print("今は投稿するものがありません")
         return 0
     if os.environ.get("GITHUB_ACTIONS") == "true":
         git("config", "user.name", "github-actions[bot]")
         git("config", "user.email", "41898282+github-actions[bot]@users.noreply.github.com")
     failures = 0
-    for cfg, post in due:
+    jobs = [(publish_one, cfg, post) for cfg, post in due] + [(publish_reel_only, cfg, post) for cfg, post in due_only]
+    for func, cfg, post in jobs:
         for attempt in range(3):
             try:
-                publish_one(cfg, post, now, args.dry_run)
+                func(cfg, post, now, args.dry_run)
                 break
             except InstagramError as e:
                 # 「Fatal（code=-1）」はMeta側の一時的なエラー。数分おくと通ることが多いので、5分待って最初からやり直す

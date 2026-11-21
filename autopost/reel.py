@@ -229,3 +229,29 @@ def main(argv=None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+STILL_SECONDS = 7.0  # 1枚まとめのリールの長さ。止めて読む・保存する・ループして見る前提なので短くする
+
+
+def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS) -> Path:
+    """縦長の1枚画像（1080×1920）をBGM付きのリールにする。"""
+    import numpy as np
+    from scipy.io import wavfile
+
+    from .story.bgm import SR, make_bgm
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        bgm = make_bgm(seconds + 0.5)[: int(SR * seconds)] * 0.45
+        fade = int(SR * 0.6)
+        bgm[-fade:] *= np.linspace(1, 0, fade)[:, None]
+        wavfile.write(tmp / "bgm.wav", SR, (np.clip(bgm, -1, 1) * 32767).astype(np.int16))
+        subprocess.run(
+            [ffmpeg_exe(), "-y", "-loglevel", "error", "-loop", "1", "-i", str(image), "-i", str(tmp / "bgm.wav"),
+             "-vf", "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+             "-t", str(seconds), "-r", "30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
+             "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-shortest", "-movflags", "+faststart", str(out_path)],
+            check=True,
+        )
+    return out_path

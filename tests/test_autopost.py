@@ -315,3 +315,34 @@ class PostedRecentlyTest(unittest.TestCase):
         self.assertTrue(publish.posted_recently({"timestamp": (now - timedelta(minutes=20)).strftime(fmt)}, 3))
         self.assertFalse(publish.posted_recently({"timestamp": (now - timedelta(hours=5)).strftime(fmt)}, 3))
         self.assertFalse(publish.posted_recently({}, 3))
+
+
+class ReelOnlyTest(unittest.TestCase):
+    def test_validate_and_schedule(self):
+        import shutil, tempfile
+        from datetime import datetime
+        from autopost import config, posts, publish, validate
+        data = json.loads((Path(__file__).parent / "matome_sample.json").read_text(encoding="utf-8"))
+        accounts = config.load_accounts()
+        self.assertEqual(validate.validate_post(data, accounts), [])
+        bad = dict(data, post_hour_jst=None)
+        self.assertTrue(validate.validate_post(bad, accounts))
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            q = root / "queue" / "gensen_otoku"
+            (q / "2026-11-21-a").mkdir(parents=True)
+            (q / "2026-11-21-a" / "post.json").write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            tz = config.now_jst().tzinfo
+            cfg = {"gensen_otoku": dict(accounts["gensen_otoku"])}
+            early = datetime(2026, 11, 21, 18, 30, tzinfo=tz)
+            late = datetime(2026, 11, 21, 19, 20, tzinfo=tz)
+            # 時刻前は出さない（トークンの確認だけ差しかえて確かめる）
+            orig = config.get_token
+            config.get_token = lambda c: "x"
+            try:
+                self.assertEqual(publish.find_due_reel_only(cfg, early, root=root), [])
+                self.assertEqual(len(publish.find_due_reel_only(cfg, late, root=root)), 1)
+            finally:
+                config.get_token = orig
+            # 通常の投稿の順番には入らない
+            self.assertIsNone(posts.next_post("gensen_otoku", late.date(), root))

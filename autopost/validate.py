@@ -23,10 +23,11 @@ LAYOUT_FIELDS = {
     "table": ({"title", "rows"}, {"tag", "foot"}),
     "quiz": ({"question"}, {"answer", "cta", "button", "tag"}),
     "cta": ({"title"}, {"body", "cta", "button", "tag"}),
+    "matome": ({"title", "items"}, {"kicker", "sub", "head", "note", "big", "big_label", "rank"}),
 }
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
-    "reel", "reel_title", "reel_style", "reel_questions",
+    "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst",
 }
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
@@ -70,6 +71,14 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
         pts = s.get("points")
         if not isinstance(pts, list) or not 1 <= len(pts) <= 6 or not all(isinstance(p, str) for p in pts):
             errors.append(f"{i}枚目（points）: points は文字を1〜6個にしてください")
+    if layout == "matome":
+        items = s.get("items")
+        if not isinstance(items, list) or not 6 <= len(items) <= 14:
+            errors.append(f"{i}枚目（matome）: items は6〜14行にしてください")
+        elif not all(isinstance(it, list) and len(it) == 3 and all(isinstance(x, str) and x for x in it) for it in items):
+            errors.append(f"{i}枚目（matome）: items は [状況, 金額, 制度名] の3つを並べてください")
+        if "head" in s and not (isinstance(s["head"], list) and len(s["head"]) == 2):
+            errors.append(f"{i}枚目（matome）: head は列の見出しを2つにしてください")
     if layout == "table":
         rows = s.get("rows")
         if not isinstance(rows, list) or not 1 <= len(rows) <= 6:
@@ -193,8 +202,17 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
     slides = data.get("slides")
     if kind == "story":
         _validate_story(data, errors)
-    elif kind not in ("carousel", "image"):
-        errors.append("type は carousel か image にしてください")
+    elif kind not in ("carousel", "image", "reel_only"):
+        errors.append("type は carousel・image・reel_only のどれかにしてください")
+    if kind == "reel_only":
+        h = data.get("post_hour_jst")
+        if not (isinstance(h, int) and 0 <= h <= 23):
+            errors.append("type が reel_only のときは、post_hour_jst（投稿する時。0〜23）を書いてください")
+        if not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
+                and slides[0].get("layout") == "matome"):
+            errors.append("type が reel_only のときは、slides を matome の1枚にしてください")
+    elif "post_hour_jst" in data:
+        errors.append("post_hour_jst は type が reel_only のときだけ書けます")
     if kind == "story":
         pass
     elif not isinstance(slides, list) or not slides:
@@ -202,7 +220,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
     else:
         if kind == "carousel" and not 2 <= len(slides) <= 10:
             errors.append("カルーセルは2〜10枚にしてください")
-        if kind == "image" and len(slides) != 1:
+        if kind in ("image", "reel_only") and len(slides) != 1:
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)

@@ -49,6 +49,8 @@ def build(sha: str, slug: str) -> str:
             head += f"「{post.data['title']}」"
         rel = post.folder.relative_to(config.ROOT).as_posix()
         lines += [head, ""]
+        if post.data.get("type") == "reel_only":
+            lines += [f"🎬 リールだけの投稿（1枚まとめ・約7秒）：{post.data.get('post_hour_jst')}時台に投稿", ""]
         if post.data.get("reel_title"):
             lines += [f"リール上部のタイトル：「{post.data['reel_title']}」", ""]
         lines += [f"![{post.id}](https://raw.githubusercontent.com/{slug}/{sha}/{rel}/preview.jpg)", ""]
