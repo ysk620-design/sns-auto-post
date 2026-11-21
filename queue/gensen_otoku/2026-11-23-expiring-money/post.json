@@ -3,79 +3,67 @@
   "date": "2026-11-23",
   "type": "reel_only",
   "post_hour_jst": 8,
-  "title": "期限を過ぎると消えるお金",
+  "title": "期限を過ぎると消えるお金（児童手当は1か月遅れで1.5万円）",
   "slides": [
     {
       "layout": "matome",
       "kicker": "保存版｜申請期限",
-      "title": "期限を過ぎると<br><span class=\"hl\">消える</span>子育てのお金",
-      "sub": "「あとでやろう」で、もらえなくなるもの",
+      "title": "期限を過ぎると<br><span class=\"hl\">消える</span>お金",
+      "big_label": "児童手当の申請が1か月遅れると",
+      "big": "1.5<small>万円</small>消える",
+      "sub": "「あとでやろう」で、もらえなくなる金額",
+      "rank": true,
+      "head": [
+        "お金（期限）",
+        "消える額"
+      ],
       "items": [
         [
-          "児童手当（生まれた・転入）",
-          "15日以内",
-          "遅れた月の分はもらえない"
+          "出産育児一時金（出産の翌日から2年）",
+          "50万円",
+          "2年を過ぎると請求できない"
         ],
         [
-          "保育の給付（認可外など）",
-          "使う前に申請",
-          "さかのぼれない"
+          "高額療養費（診療月の翌月から2年）",
+          "約21万円",
+          "医療費100万円の入院の例"
         ],
         [
-          "特別児童扶養手当",
-          "早めに",
-          "申請した翌月分からしか出ない"
-        ],
-        [
-          "妊婦のための支援給付",
-          "2年",
+          "妊婦のための支援給付（2年）",
+          "10万円",
           "胎児の心拍の確認から"
         ],
         [
-          "出産育児一時金",
-          "2年",
+          "東京都の無痛分娩助成（1年）",
+          "最大10万円",
           "出産の翌日から"
         ],
         [
-          "出産手当金",
-          "2年",
-          "休んだ日ごとに"
+          "特別児童扶養手当（1級）",
+          "月5.8万円ずつ",
+          "申請した翌月分からしか出ない"
         ],
         [
-          "高額療養費",
-          "2年",
-          "診療月の翌月1日から"
+          "認可外保育の給付（3〜5歳）",
+          "月最大4万円ずつ",
+          "使う前の申請が必要（さかのぼれない）"
         ],
         [
-          "学校・園でのケガの給付",
-          "2年",
-          "診療月ごとに"
-        ],
-        [
-          "東京都の無痛分娩助成",
-          "1年",
-          "出産の翌日から"
-        ],
-        [
-          "医療費控除・還付申告",
-          "5年",
-          "翌年1月1日から"
+          "児童手当（0〜2歳）",
+          "月1.5万円ずつ",
+          "生まれた・転入の翌日から15日以内"
         ]
       ],
-      "note": "※2026年11月時点。自治体や加入している健康保険によって違う場合があります。期限が近いものから手続きを",
-      "head": [
-        "お金",
-        "期限"
-      ]
+      "note": "※自治体や加入している健康保険によって違う場合があります。高額療養費の例は年収約370〜770万円の区分（30万円−8.7万円）。2026年11月時点"
     }
   ],
-  "caption": "「あとでやろう」と思っているうちに、もらえなくなるお金があります。\n\n✅ 児童手当は、生まれた日・引っ越した日の翌日から15日以内\n✅ 保育の給付は、使い始める前に申請（さかのぼれません）\n✅ 健康保険の給付は2年、医療費控除は5年が期限\n\n⚠️ 自治体や健康保険によって違うことがあります。期限が近いものから確認してください。\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "caption": "期限を過ぎると、もらえるはずのお金が消えます。\n児童手当は、申請が1か月遅れるだけで1.5万円（0〜2歳の場合）。\n\n✅ 出産育児一時金・高額療養費は2年が期限\n✅ 保育の給付は、使い始める前に申請（さかのぼれません）\n\n⚠️ 自治体や健康保険によって違うことがあります。期限が近いものから確認してください。\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
   "hashtags": [
     "#申請期限",
     "#児童手当",
-    "#高額療養費",
+    "#出産育児一時金",
     "#子育てママ",
     "#子育て家計"
   ],
-  "review_notes": "【リールだけの投稿・11/23 8時台】確認日 2026-11-21。出典：児童手当15日以内（宮城県 https://www.pref.miyagi.jp/soshiki/kosodate/child-allowance.html）／施設等利用給付はさかのぼれない（中央区 https://www.city.chuo.lg.jp/kosodate/hoiku/youzikyoiku_hoiku-mushoka/tetudukinituite.html）／特別児童扶養手当は請求月の翌月分から（大阪府 https://www.pref.osaka.lg.jp/kateishien/teate/tokubetsujihu.html）／妊婦のための支援給付 2年（仙台市 https://www.city.sendai.jp/kodomo-kyufu/syussanouenkosodatekyufukin.html）／健康保険給付の時効2年（協会けんぽ https://www.kyoukaikenpo.or.jp/~/media/Files/yamagata/kouhou/20170223pannhuretto/59222771E50D43ED9EE89F7215038475.pdf）／災害共済給付2年（JSC https://www.jpnsport.go.jp/anzen/Portals/0/anzen/kyufu_1/pdf/03_R8_seikyugaido.pdf）／無痛分娩1年（東京都 https://www.metro.tokyo.lg.jp/information/press/2025/09/2025091908）／還付申告5年（国税庁の制度）。"
+  "review_notes": "【リールだけの投稿・11/23 8時台】確認日 2026-11-21。出典：児童手当15日以内（宮城県 https://www.pref.miyagi.jp/soshiki/kosodate/child-allowance.html）／施設等利用給付はさかのぼれない（中央区 https://www.city.chuo.lg.jp/kosodate/hoiku/youzikyoiku_hoiku-mushoka/tetudukinituite.html）／特別児童扶養手当は請求月の翌月分から（大阪府 https://www.pref.osaka.lg.jp/kateishien/teate/tokubetsujihu.html）／妊婦のための支援給付 2年（仙台市 https://www.city.sendai.jp/kodomo-kyufu/syussanouenkosodatekyufukin.html）／健康保険給付の時効2年（協会けんぽ https://www.kyoukaikenpo.or.jp/~/media/Files/yamagata/kouhou/20170223pannhuretto/59222771E50D43ED9EE89F7215038475.pdf）／災害共済給付2年（JSC https://www.jpnsport.go.jp/anzen/Portals/0/anzen/kyufu_1/pdf/03_R8_seikyugaido.pdf）／無痛分娩1年（東京都 https://www.metro.tokyo.lg.jp/information/press/2025/09/2025091908）／還付申告5年（国税庁の制度）。【計算】高額療養費の例 300,000−87,430＝212,570→約21万円。特別児童扶養手当1級 58,450円。認可外 40,300円。児童手当 0〜2歳 15,000円。"
 }

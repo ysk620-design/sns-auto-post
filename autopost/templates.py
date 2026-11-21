@@ -12,7 +12,8 @@
   quiz    復習クイズ＋フォローの呼びかけ。question / answer / cta / button
   cta     コメント募集などの締め。title / body / cta / button
   matome  1枚まとめ（縦長 1080×1920。リールだけの投稿 type "reel_only" で使う）。kicker / title / sub /
-          head（列の見出し2つ。初期値 ["こんなとき", "目安"]） / items[[状況, 金額, 制度名]]（8〜14行） / note（注意書き）
+          head（列の見出し2つ。初期値 ["こんなとき", "目安"]） / items[[状況, 金額, 制度名]]（6〜14行） / note（注意書き） /
+          big（見出しの大きな数字。例 "約222<small>万円</small>"） / big_label（big の前の小さな文字） / rank（true なら上から3行を強調）
 どのスライドも tag（左上の小見出し）を指定できる。
 """
 from __future__ import annotations
@@ -157,16 +158,20 @@ class _Builder:
         rows = ""
         for k, item in enumerate(s["items"], 1):
             sit, amount, name = (list(item) + ["", "", ""])[:3]
-            rows += (f'<div class="mrow"><span class="mno">{k}</span><div class="msit"><b>{esc(sit)}</b>'
+            top = " top" if s.get("rank") and k <= 3 else ""
+            rows += (f'<div class="mrow{top}"><span class="mno">{k}</span><div class="msit"><b>{esc(sit)}</b>'
                      f'<small>{esc(name)}</small></div><div class="mamt">{esc(amount)}</div></div>')
         kicker = f'<p class="mkick">{esc(s["kicker"])}</p>' if s.get("kicker") else ""
         sub = f'<p class="msub">{esc(s["sub"])}</p>' if s.get("sub") else ""
+        if s.get("big"):
+            label = f'<span class="mbl">{esc(s["big_label"])}</span>' if s.get("big_label") else ""
+            sub = f'<p class="mbig">{label}{esc(s["big"])}</p>' + sub
         note = f'<p class="mnote">{esc(s["note"])}</p>' if s.get("note") else ""
         return (
             f'<section class="s matome"><div class="body"><div class="mhead">{kicker}<h1>{esc(s["title"])}</h1>{sub}</div>'
             f'<div class="mcols"><span>{esc(head[0])}</span><span>{esc(head[1])}</span></div>'
             f'{rows}{note}</div>'
-            f'<div class="mfoot"><span>{self.handle}</span><span>📌 保存して見返してね</span></div></section>'
+            f'<div class="mfoot"><span>{self.handle}</span><span>保存して見返してね</span></div></section>'
         )
 
 

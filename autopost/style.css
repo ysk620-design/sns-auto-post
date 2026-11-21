@@ -73,3 +73,9 @@ td:last-child{border-radius:0 24px 24px 0;font-weight:900;font-size:38px}
 .mamt small{font-size:26px}
 .mnote{font-size:25px;color:var(--muted);margin:12px 6px 0;line-height:1.5;font-weight:700}
 .mfoot{position:absolute;left:60px;right:60px;bottom:240px;display:flex;justify-content:space-between;font-size:32px;font-weight:900;color:var(--main)}
+.mbig{margin:10px 0 0;font-size:150px;font-weight:900;line-height:1.05;color:var(--accent-soft);letter-spacing:-.02em}
+.mbig small{font-size:64px;margin-left:4px}
+.mbl{display:block;font-size:38px;font-weight:900;color:#fff;letter-spacing:0;margin-bottom:6px}
+.mrow.top{box-shadow:0 0 0 5px var(--accent-soft) inset,0 3px 0 rgba(0,0,0,.06)}
+.mrow.top .mno{background:var(--accent);}
+.mrow.top .mamt{font-size:54px}
