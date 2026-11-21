@@ -61,7 +61,10 @@ def parse(data: dict) -> tuple[list[dict], list[str], list[str]]:
             if m:
                 letter = "ABC"["ABCＡＢＣ".index(m.group(2)) % 3]
                 answers[int(m.group(1))] = (LETTERS.index(letter), _plain(row[1]) if len(row) > 1 else "")
-    for n in range(1, 6):
+    count = max(qs) if qs else 0
+    if count < 2:
+        errors.append("問題のスライド（layout cards・tag「Q1」「Q2」…）が2枚以上必要です")
+    for n in range(1, count + 1):
         if n not in qs:
             errors.append(f"Q{n} のスライド（layout cards・tag「Q{n}」）がありません")
         elif len(qs[n]["choices"]) != 3 or not all(qs[n]["choices"]):
@@ -78,7 +81,7 @@ def parse(data: dict) -> tuple[list[dict], list[str], list[str]]:
     last = slides[-1] if slides else {}
     if last.get("layout") == "cta" and last.get("body"):
         levels = [x.strip() for x in re.split(r"<br\s*/?>|\n", str(last["body"]), flags=re.I) if _plain(x)]
-    if len(levels) < 2:
+    if len(levels) < 2 and data.get("type") != "reel_only":
         errors.append("最後のスライド（layout cta）の body に、判定の段階を <br> 区切りで書いてください")
     return out, [_plain(x) for x in levels], errors
 
@@ -91,8 +94,10 @@ def pick(data: dict) -> list[int]:
 def validate(data: dict) -> list[str]:
     _, _, errors = parse(data)
     p = data.get("reel_questions", DEFAULT_PICK)
-    if not (isinstance(p, list) and p and all(isinstance(x, int) and 1 <= x <= 5 for x in p) and len(set(p)) == len(p)):
-        errors.append("reel_questions は 1〜5 の問題番号のリストにしてください（例 [1, 2, 3]）")
+    count = len(parse(data)[0])
+    if not (isinstance(p, list) and p and all(isinstance(x, int) and 1 <= x <= max(count, 1) for x in p)
+            and len(set(p)) == len(p)):
+        errors.append(f"reel_questions は 1〜{max(count, 1)} の問題番号のリストにしてください（例 [1, 2, 3]）")
     return errors
 
 
@@ -110,11 +115,17 @@ def plan(data: dict) -> list[dict]:
         right = q["choices"][q["answer"]]
         screens.append({"kind": "answer", "q": q, "i": i, "n": len(chosen),
                         "sec": readtime.screen_seconds(right, q["explain"], minimum=2.5)})
-    if len(chosen) == 5:
+    standalone = data.get("type") == "reel_only"
+    full = len(chosen) == len(questions)
+    if standalone:
+        # リールだけの投稿：カルーセルがないので、コメントを呼びかけて終わる
+        lines = [data.get("quiz_end_title") or "何問わかった？", "コメントで教えてね", "ほかの話もプロフィールから"]
+    elif full and levels:
         lines = ["あなたのネイティブ度は？"] + levels
     else:
         lines = ["続きの問題と判定は", "プロフィールの投稿で", "全問わかるか挑戦してね"]
-    screens.append({"kind": "end", "lines": lines, "full": len(chosen) == 5,
+        full = False
+    screens.append({"kind": "end", "lines": lines, "full": full and not standalone,
                     "sec": readtime.screen_seconds(lines, extra=1.0, minimum=3.5)})
     return screens
 
@@ -170,7 +181,7 @@ class _Painter:
         d.rectangle((0, 0, W, 250), fill=self.t["main"])
         f, lines = self.fit(d, self.title, 54, 36, W - 120, 1)
         d.text((W // 2, 140), lines[0] if lines else "", font=f, fill="#ffffff", anchor="mm")
-        d.text((W // 2, H - 250), self.handle, font=self.font(34), fill=self.t["muted"], anchor="mm")
+        d.text((W // 2, H - 160), self.handle, font=self.font(34), fill=self.t["muted"], anchor="mm")
         return img, d
 
     def question(self, s: dict, reveal: bool, out: Path) -> dict:

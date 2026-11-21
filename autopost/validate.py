@@ -27,7 +27,7 @@ LAYOUT_FIELDS = {
 }
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
-    "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst",
+    "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst", "quiz_end_title",
 }
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
@@ -183,7 +183,9 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
     if not isinstance(data, dict):
         return ["post.json の形式が正しくありません"]
     wanted = (accounts.get(data.get("account")) or {}).get("format", "slides")
-    if story.is_story(data) != (wanted == "story"):
+    if data.get("type") == "reel_only":
+        pass  # リールだけの投稿は、どのアカウントでも使える
+    elif story.is_story(data) != (wanted == "story"):
         errors.append('このアカウントは type を "story" にしてください' if wanted == "story"
                       else 'type "story" は、format が "story" のアカウントでしか使えません')
     unknown = set() if story.is_story(data) else set(data) - POST_FIELDS
@@ -208,8 +210,10 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
         h = data.get("post_hour_jst")
         if not (isinstance(h, int) and 0 <= h <= 23):
             errors.append("type が reel_only のときは、post_hour_jst（投稿する時。0〜23）を書いてください")
-        if not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
-                and slides[0].get("layout") == "matome"):
+        if data.get("reel_style") == "quiz":
+            pass  # クイズリールだけを出す（問題のスライドの形は quizreel.validate が確かめる）
+        elif not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
+                  and slides[0].get("layout") == "matome"):
             errors.append("type が reel_only のときは、slides を matome の1枚にしてください")
     elif "post_hour_jst" in data:
         errors.append("post_hour_jst は type が reel_only のときだけ書けます")
@@ -220,7 +224,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
     else:
         if kind == "carousel" and not 2 <= len(slides) <= 10:
             errors.append("カルーセルは2〜10枚にしてください")
-        if kind in ("image", "reel_only") and len(slides) != 1:
+        if (kind == "image" or (kind == "reel_only" and data.get("reel_style") != "quiz")) and len(slides) != 1:
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)
