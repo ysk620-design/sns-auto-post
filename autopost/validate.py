@@ -32,7 +32,7 @@ POST_FIELDS = {
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
     "icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script",
-    "color",
+    "color", "comment_reel", "comment_reel_hook", "comment_reel_title",
 }
 SCENE_FIELDS = {"title", "mood", "say", "nar", "prop", "clerk", "police", "kid", "look"}
 NG_WORDS = ["ストーリーズ"]

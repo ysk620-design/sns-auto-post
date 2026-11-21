@@ -66,4 +66,7 @@ def render_payload(data: dict, cfg: dict) -> dict:
         "voice": voice_settings(cfg),
         "credit": reel_cfg.get("credit", ""),
         "template": fingerprint(),
+        "comment_reel": {"on": bool((cfg.get("reel2") or {}).get("enabled")) and data.get("comment_reel", True) is not False,
+                         "title": data.get("title"), "hook": data.get("comment_reel_hook"),
+                         "head": data.get("comment_reel_title")},
     }

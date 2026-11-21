@@ -181,3 +181,73 @@ def reel_pages(p, name, handle, credit=""):
   <div style="position:absolute;left:0;right:0;top:960px;text-align:center">{guy("happy",380)}</div>{cr}</section>''')
     return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{_colored(CSS + RC, p)}</style></head><body>{"".join(P)}</body></html>'
 
+
+
+# ---------- コメントだけのリール（2本目） ----------
+COMMENT_REEL_MAX = 3  # コメントの数（約20秒におさめる）
+
+
+def _plain_text(t: str) -> str:
+    import re
+    return re.sub(r"<[^>]+>", "", str(t or "")).replace("\u3000", " ").strip()
+
+
+def comment_reel_items(p: dict) -> list:
+    """コメントだけのリールで使うコメント。本編のリールで読んでいない声を先に選び、足りなければ本編の声で埋める。"""
+    from difflib import SequenceMatcher
+
+    import re
+
+    used = [_plain_text(c[2]) for c in (p.get("reel_script") or {}).get("comments") or []]
+    fresh, seen = [], []
+    last = ""
+    for c in p.get("comments") or []:
+        c = list(c)
+        # 「同じ保護者」のように前のコメントを受けた呼び方は、単独で出しても分かるよう元の呼び方にする
+        if c[1].startswith("同じ") and last:
+            c[1] = last
+        else:
+            last = re.sub(r"[（(].*?[）)]", "", c[1]).strip()
+        text = _plain_text(c[2])
+        same = any(SequenceMatcher(None, text, u).ratio() > 0.55 for u in used)
+        (seen if same else fresh).append(c)
+    return (fresh + seen)[:COMMENT_REEL_MAX]
+
+
+def comment_reel_script(p: dict) -> list[str]:
+    """読み上げの台本：最初の一言 → コメント → 最後の一言。"""
+    import re
+
+    hook = p.get("comment_reel_hook") or f"{_plain_text(p.get('title'))}。海外の反応は？"
+    lines = [hook]
+    for _flag, who, text in comment_reel_items(p):
+        who = re.sub(r"[（(].*?[）)]", "", who).strip()
+        lines.append(f"{who}は、「{_plain_text(text)}」")
+    lines.append("このお話の続きは、プロフィールから見てね。")
+    return lines
+
+
+def comment_reel_pages(p, name, handle, credit=""):
+    """コメントだけのリールの画面（最初の一言 → コメントが1つずつ増えるチャット → 最後）。"""
+    C = comment_reel_items(p)
+    hook_title = p.get("comment_reel_title") or f"{_plain_text(p.get('title'))}<br>海外の反応は？"
+    P = [f'''<section class="s" style="height:1920px"><div class="logo" style="top:200px">🌏 {name}</div>
+  <div class="real" style="top:206px">海外の反応だけ</div>
+  <div style="position:absolute;left:70px;right:70px;top:520px;text-align:center">
+    <div class="t w" style="font-size:96px;line-height:1.3">{hook_title}</div>
+    <div style="margin-top:60px">{guy("wow", 420)}</div></div>
+  <div class="foot" style="bottom:300px">{handle}</div></section>''']
+    head = f'<div class="hd"><div class="logo">🌏 {name}</div><h1>{p["chat_title"]}</h1></div>'
+    for k in range(1, len(C) + 1):
+        rows = "".join(f'<div class="row{" r" if i%2 else ""}{" new" if i==k-1 else ""}"><div class="fl">{f}</div><div class="bb"><small>{n}</small>{t}</div></div>' for i, (f, n, t) in enumerate(C[:k]))
+        P.append(f'<section class="chat">{head}<div class="list">{rows}</div></section>')
+    cr = f'<div style="position:absolute;left:0;right:0;bottom:330px;text-align:center;font-size:28px;font-weight:700">{credit}</div>' if credit else ""
+    P.append(f'''<section class="s yel" style="height:1920px"><div class="logo" style="top:200px">🌏 {name}</div>
+  <div class="p" style="position:absolute;left:70px;right:70px;top:460px;padding:56px;text-align:center"><div style="font-size:66px;font-weight:900;line-height:1.5">このお話の続きは<br>プロフィールから</div>
+  <div style="font-size:46px;font-weight:900;color:#ff3d5a;margin-top:26px">▶ {handle}</div></div>
+  <div style="position:absolute;left:0;right:0;top:1000px;text-align:center">{guy("happy",380)}</div>{cr}</section>''')
+    return f'<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>{_colored(CSS + RC, p)}</style></head><body>{"".join(P)}</body></html>'
+
+
+def comment_reel_motion(p):
+    return [True] + [False] * len(comment_reel_items(p)) + [True]

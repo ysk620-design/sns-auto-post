@@ -364,6 +364,12 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
         record["reel_status"] = "pending"
         record["reel_due"] = (now.date() + timedelta(days=int(reel_cfg.get("delay_days", 0)))).isoformat()
         print(f"・{handle}: リールは {record['reel_due']} の {reel_cfg.get('post_hour_jst', cfg['post_hour_jst'])}時台に投稿予定")
+        reel2 = cfg.get("reel2") or {}
+        if reel2.get("enabled") and (post.folder / COMMENT_REEL).exists():
+            # 2本目（海外のコメントだけのリール）は、さらに別の日に出す（find_due_reel2 が拾う）
+            record["reel2_status"] = "pending"
+            record["reel2_due"] = (now.date() + timedelta(days=int(reel2.get("delay_days", 2)))).isoformat()
+            print(f"・{handle}: コメントのリールは {record['reel2_due']} の {reel2.get('post_hour_jst', 18)}時台に投稿予定")
     elif wants_reel:
         try:
             reel_caption = posts.compose_reel_caption(post.data, cfg)
@@ -437,6 +443,91 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
 
 
 MAX_REEL_ATTEMPTS = 3
+COMMENT_REEL = "reel_comments.mp4"
+
+
+def find_due_reel2(accounts: dict, now, only: str = "", force: bool = False, dry_run: bool = False,
+                   root: Path = ROOT):
+    """今投稿すべき「海外のコメントだけのリール」（2本目）。1アカウント1日1本まで。"""
+    today = now.date()
+    due = []
+    for handle, cfg in accounts.items():
+        reel2 = cfg.get("reel2") or {}
+        if (only and handle != only) or not cfg.get("enabled", True) or not reel2.get("enabled"):
+            continue
+        if not dry_run and not config.get_token(cfg):
+            continue
+        hour, window = int(reel2.get("post_hour_jst", 18)), int(reel2.get("post_window_hours", 3))
+        if not (force or dry_run) and not (hour <= now.hour < hour + window):
+            continue
+        items = list(_published(handle, root))
+        if not force and any(info.get("reel2_posted_date") == today.isoformat() for _, info in items):
+            continue
+        pending = sorted(path for path, info in items if info.get("reel2_status") == "pending"
+                         and str(info.get("reel2_due", "")) <= today.isoformat())
+        if pending:
+            due.append((cfg, pending[0].parent))
+    return due
+
+
+def compose_comment_reel_caption(data: dict, cfg: dict) -> str:
+    handle = cfg.get("display_handle", "@" + cfg["handle"])
+    title = re.sub(r"<[^>]+>", "", str(data.get("title", "")))
+    suffix = str((cfg.get("reel") or {}).get("caption_suffix", "")).strip()
+    tags = " ".join(data.get("hashtags") or [])
+    parts = [f"{title}、海外の反応だけを集めました🌏", f"お話の続きはプロフィールから👉 {handle}"]
+    if suffix:
+        parts.append(suffix)
+    if tags:
+        parts.append(tags)
+    return "\n\n".join(parts)
+
+
+def publish_pending_reel2(cfg: dict, folder: Path, now, dry_run: bool = False) -> dict | None:
+    """投稿済みの話から、海外のコメントだけのリール（reel_comments.mp4）を投稿する。"""
+    handle = cfg["handle"]
+    post = posts.Post.load(folder)
+    caption = compose_comment_reel_caption(post.data, cfg)
+    path = folder / "published.json"
+    info = json.loads(path.read_text(encoding="utf-8"))
+    if dry_run:
+        print(f"\n▶ {handle}: コメントのリール {post.id}")
+        print(caption)
+        return None
+    video = folder / COMMENT_REEL
+    client = Client(config.get_token(cfg), cfg["ig_user_id"])
+    existing = next((m for m in client.recent_media() if m.get("media_type") in {"VIDEO", "REELS"}
+                     and (m.get("caption") or "").strip() == caption.strip()), None)
+    error = None
+    try:
+        if existing:
+            reel_id = existing["id"]
+        else:
+            try:
+                reel_id = client.publish_reel(video, caption, False)
+            except InstagramError as e:
+                print(f"・直接アップロードに失敗したので、URL方式で再試行します（{e}）")
+                url = f"https://raw.githubusercontent.com/{repo_slug()}/{git('rev-parse', 'HEAD')}/" \
+                      f"{video.relative_to(ROOT).as_posix()}"
+                wait_reachable(url)
+                reel_id = client.publish_reel_url(url, caption, False)
+        info.update(reel2_status="posted", reel2_media_id=reel_id, reel2_permalink=client.permalink(reel_id),
+                    reel2_posted_at=config.now_jst().isoformat(timespec="seconds"),
+                    reel2_posted_date=now.date().isoformat())
+        info.pop("reel2_error", None)
+        print(f"🎬 {handle}: コメントのリールを投稿しました {info.get('reel2_permalink') or reel_id}")
+    except Exception as e:
+        error = str(e)
+        info["reel2_error"] = error
+        info["reel2_attempts"] = int(info.get("reel2_attempts", 0)) + 1
+        if info["reel2_attempts"] >= MAX_REEL_ATTEMPTS:
+            info["reel2_status"] = "failed"
+    path.write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    commit_and_push(f"コメントのリールを投稿しました: {handle}/{post.id}" if not error
+                    else f"コメントのリールの投稿に失敗: {handle}/{post.id}")
+    if error:
+        raise RuntimeError(f"コメントのリールの投稿に失敗しました（{info['reel2_attempts']}回目）: {error}")
+    return info
 
 
 def publish_pending_reel(cfg: dict, folder: Path, now, dry_run: bool = False) -> dict | None:
@@ -491,22 +582,23 @@ def main(argv=None) -> int:
     due = find_due(accounts, now, args.account.strip(), args.force, args.dry_run)
     due_reels = find_due_reels(accounts, now, args.account.strip(), args.force, args.dry_run)
     due_only = find_due_reel_only(accounts, now, args.account.strip(), args.force, args.dry_run)
+    due_reel2 = find_due_reel2(accounts, now, args.account.strip(), args.force, args.dry_run)
 
     if args.command == "check":
         needs_render = any(post.needs_render(cfg) for cfg, post in due + due_only) and not args.dry_run
         needs_voice = not args.dry_run and any(
             story.is_story(post.data) and post.needs_render(cfg) and story.reel_wanted(post.data, cfg)
             for cfg, post in due)
-        handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels + due_only)
+        handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels + due_only + due_reel2)
         set_output(
-            due=str(bool(due or due_reels or due_only)).lower(),
+            due=str(bool(due or due_reels or due_only or due_reel2)).lower(),
             needs_render=str(needs_render).lower(),
             needs_voice=str(needs_voice).lower(),
             accounts=",".join(handles),
         )
         return 0
 
-    if not due and not due_reels and not due_only:
+    if not due and not due_reels and not due_only and not due_reel2:
         print("今は投稿するものがありません")
         return 0
     if os.environ.get("GITHUB_ACTIONS") == "true":
@@ -533,6 +625,12 @@ def main(argv=None) -> int:
                 print(f"❌ {cfg['handle']}: {e}")
                 failures += 1
                 break
+    for cfg, folder in due_reel2:
+        try:
+            publish_pending_reel2(cfg, folder, now, args.dry_run)
+        except (InstagramError, RuntimeError, subprocess.CalledProcessError) as e:
+            print(f"❌ {cfg['handle']}: {e}")
+            failures += 1
     for cfg, folder in due_reels:
         try:
             publish_pending_reel(cfg, folder, now, args.dry_run)

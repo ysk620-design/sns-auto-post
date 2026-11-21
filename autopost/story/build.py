@@ -41,12 +41,23 @@ def render_hash(data: dict, cfg: dict) -> str:
     return _hash(data, cfg)
 
 
+COMMENT_REEL = "reel_comments.mp4"
+
+
+def comment_reel_wanted(data: dict, cfg: dict) -> bool:
+    """海外のコメントだけを集めた2本目のリールを作るか（accounts/<アカウント>.json の reel2.enabled）。"""
+    return (reel_wanted(data, cfg) and bool((cfg.get("reel2") or {}).get("enabled"))
+            and data.get("comment_reel", True) is not False and len(data.get("comments") or []) >= 3)
+
+
 def needs_render(folder: Path, data: dict, cfg: dict) -> bool:
     info_path = folder / "render.json"
     info = json.loads(info_path.read_text(encoding="utf-8")) if info_path.exists() else {}
     if info.get("hash") != render_hash(data, cfg):
         return True
     if len(list(folder.glob("slide*.jpg"))) != info.get("slides"):
+        return True
+    if comment_reel_wanted(data, cfg) and not (folder / COMMENT_REEL).exists():
         return True
     return reel_wanted(data, cfg) and not (folder / "reel.mp4").exists()
 
@@ -144,7 +155,7 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
     rel = folder.relative_to(config.ROOT) if folder.is_relative_to(config.ROOT) else folder
     problems: list[str] = []
 
-    for old in list(folder.glob("slide*.jpg")) + [folder / "reel.mp4"]:
+    for old in list(folder.glob("slide*.jpg")) + [folder / "reel.mp4", folder / COMMENT_REEL]:
         if old.exists():
             old.unlink()
     overflow = await _shoot(browser, design.carousel(data, name, handle), 1350, folder, "slide", "jpg")
@@ -170,7 +181,21 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
             info["reel_seconds"] = round(make_reel_video(tmp, data["reel_script"]["nar"], voice_settings(cfg),
                                                          folder / "reel.mp4", design.reel_motion(reel_data)), 1)
 
+        if comment_reel_wanted(data, cfg):
+            # 2本目：海外のコメントだけを集めた短いリール
+            with tempfile.TemporaryDirectory() as tmp:
+                tmp = Path(tmp)
+                over = await _shoot(browser, design.comment_reel_pages(data, name, handle, credit), 1920, tmp, "", "png")
+                for idx, bad in enumerate(over, 1):
+                    if bad:
+                        problems.append(f"{rel}: コメントのリールの{idx}画面目の文字が枠に収まりません。文を短くしてください")
+                info["comment_reel_seconds"] = round(make_reel_video(
+                    tmp, design.comment_reel_script(data), voice_settings(cfg), folder / COMMENT_REEL,
+                    design.comment_reel_motion(data)), 1)
+
     (folder / "render.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     extra = f"・リール{info['reel_seconds']}秒" if "reel_seconds" in info else ""
+    if "comment_reel_seconds" in info:
+        extra += f"・コメントのリール{info['comment_reel_seconds']}秒"
     print(f"🖼  {rel}: {slides}枚{extra}")
     return problems

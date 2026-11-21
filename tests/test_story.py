@@ -68,3 +68,41 @@ class StoryTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CommentReelTest(unittest.TestCase):
+    def test_items_prefer_unused_and_resolve_names(self):
+        from autopost.story import design
+        p = {"title": "テスト", "chat_title": "x",
+             "comments": [["🇺🇸", "米国の母親（記事より）", "こんなの初めて見た"], ["🇺🇸", "同じ母親", "子どもも大喜び"],
+                          ["🇬🇧", "英国の旅行者", "信じられない"], ["🇫🇷", "フランスの学生", "日本に住みたい"]],
+             "reel_script": {"comments": [["🇺🇸", "米国の母親", "こんなの初めて見た"]], "nar": []}}
+        items = design.comment_reel_items(p)
+        self.assertEqual([c[2] for c in items], ["子どもも大喜び", "信じられない", "日本に住みたい"])
+        self.assertEqual(items[0][1], "米国の母親")  # 「同じ母親」を元の呼び方に
+        script = design.comment_reel_script(p)
+        self.assertEqual(len(script), len(items) + 2)
+        self.assertTrue(script[0].startswith("テスト"))
+        self.assertEqual(len(design.comment_reel_motion(p)), len(items) + 2)
+
+    def test_due_reel2(self):
+        import json as _json, tempfile
+        from datetime import datetime
+        from pathlib import Path
+        from autopost import config, publish
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            f = root / "posted" / "kaigai_hokkori" / "2026-11-22-a"
+            f.mkdir(parents=True)
+            (f / "published.json").write_text(_json.dumps({"reel2_status": "pending", "reel2_due": "2026-11-24"}))
+            cfg = {"kaigai_hokkori": {"handle": "kaigai_hokkori", "enabled": True,
+                                      "reel2": {"enabled": True, "post_hour_jst": 18, "post_window_hours": 3}}}
+            tz = config.now_jst().tzinfo
+            orig = config.get_token
+            config.get_token = lambda c: "x"
+            try:
+                self.assertEqual(publish.find_due_reel2(cfg, datetime(2026, 11, 24, 12, tzinfo=tz), root=root), [])
+                self.assertEqual(publish.find_due_reel2(cfg, datetime(2026, 11, 23, 19, tzinfo=tz), root=root), [])
+                self.assertEqual(len(publish.find_due_reel2(cfg, datetime(2026, 11, 24, 18, 20, tzinfo=tz), root=root)), 1)
+            finally:
+                config.get_token = orig

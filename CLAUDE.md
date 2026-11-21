@@ -30,7 +30,7 @@ Instagramの自動投稿の仕組みです。Claudeが投稿データ（post.jso
    - 本文：アカウントごとの「日付・テーマ」の一覧と、確認してほしい点（各投稿の review_notes の内容）
    - **マージはしない**（本人が確認してマージすると投稿の予定に入る）
 8. 投稿するときは、表紙をストーリーズでも自動でお知らせする（止めるときは `accounts/<アカウント>.json` に `"story_share": false`）。post.json に書くことはない
-9. プッシュすると GitHub Actions が画像（slideNN.jpg と一覧の preview.jpg。story 形式は読み上げ付きの reel.mp4 も）を作ってブランチに追加するので、自分で画像を作る必要はない
+9. プッシュすると GitHub Actions が画像（slideNN.jpg と一覧の preview.jpg。story 形式は読み上げ付きの reel.mp4 と、コメントだけの reel_comments.mp4 も）を作ってブランチに追加するので、自分で画像を作る必要はない
 
 ## post.json のルール
 
