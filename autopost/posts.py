@@ -81,6 +81,7 @@ def render_hash(data: dict, account_cfg: dict) -> str:
         "theme": account_cfg.get("theme"),
         "series": account_cfg.get("series"),
         "display_handle": account_cfg.get("display_handle"),
+        "matome_follow": account_cfg.get("matome_follow"),
         "template": template_fingerprint(),
     }
     if data.get("reel_style") == "quiz":

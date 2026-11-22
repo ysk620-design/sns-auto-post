@@ -23,7 +23,7 @@ LAYOUT_FIELDS = {
     "table": ({"title", "rows"}, {"tag", "foot"}),
     "quiz": ({"question"}, {"answer", "cta", "button", "tag"}),
     "cta": ({"title"}, {"body", "cta", "button", "tag"}),
-    "matome": ({"title", "items"}, {"kicker", "sub", "head", "note", "big", "big_label", "rank"}),
+    "matome": ({"title", "items"}, {"kicker", "sub", "head", "note", "big", "big_label", "rank", "follow"}),
 }
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",

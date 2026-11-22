@@ -13,7 +13,8 @@
   cta     コメント募集などの締め。title / body / cta / button
   matome  1枚まとめ（縦長 1080×1920。リールだけの投稿 type "reel_only" で使う）。kicker / title / sub /
           head（列の見出し2つ。初期値 ["こんなとき", "目安"]） / items[[状況, 金額, 制度名]]（6〜14行） / note（注意書き） /
-          big（見出しの大きな数字。例 "約222<small>万円</small>"） / big_label（big の前の小さな文字） / rank（true なら上から3行を強調）
+          big（見出しの大きな数字。例 "約222<small>万円</small>"） / big_label（big の前の小さな文字） / rank（true なら上から3行を強調） /
+          follow（一番下のフォローのお誘い。省略すると accounts/*.json の matome_follow）
 どのスライドも tag（左上の小見出し）を指定できる。
 """
 from __future__ import annotations
@@ -167,11 +168,13 @@ class _Builder:
             label = f'<span class="mbl">{esc(s["big_label"])}</span>' if s.get("big_label") else ""
             sub = f'<p class="mbig">{label}{esc(s["big"])}</p>' + sub
         note = f'<p class="mnote">{esc(s["note"])}</p>' if s.get("note") else ""
+        # 一番下のフォローのお誘い（1枚で満足して終わらないように）。accounts/*.json の matome_follow で変えられる
+        follow = s.get("follow") or self.cfg.get("matome_follow") or "フォローで毎日1枚、見逃さない"
         return (
             f'<section class="s matome"><div class="body"><div class="mhead">{kicker}<h1>{esc(s["title"])}</h1>{sub}</div>'
             f'<div class="mcols"><span>{esc(head[0])}</span><span>{esc(head[1])}</span></div>'
             f'{rows}{note}</div>'
-            f'<div class="mfoot"><span>{self.handle}</span><span>保存して見返してね</span></div></section>'
+            f'<div class="mfoot"><b>{esc(follow)}</b><span>{self.handle}　｜　保存して見返してね</span></div></section>'
         )
 
 
