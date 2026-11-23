@@ -1,4 +1,148 @@
 {
-  "note": "リールのBGMに使うフリー音源の一覧。音楽ファイルはリポジトリに置かず、GitHub Actions が配布元からダウンロードしてキャッシュにだけ保存する（再配布の禁止を守るため）。曲を足すときは、配布元の利用規約（商用OK・クレジット不要・SNSの動画OK）を確認し、checked に確認日を書く。moods: bright（明るい）/ calm（落ち着いた・読み上げの後ろ）/ quiz（ワクワク）",
-  "tracks": []
+  "note": "リールのBGMに使うフリー音源の一覧。音楽ファイルはリポジトリに置かず、GitHub Actions が配布元からダウンロードしてキャッシュにだけ保存する（再配布の禁止を守るため）。曲を足すときは、配布元の利用規約（商用OK・クレジット不要・動画OK）を確認し、checked に確認日を書く。moods: bright（明るい・1枚まとめやカルーセルのリール）/ calm（落ち着いた・読み上げの後ろ）/ quiz（ワクワク・クイズ）。start（秒）を書かないと、曲の中で一番盛り上がる所を自動で選ぶ",
+  "sources": [
+    {
+      "name": "甘茶の音楽工房",
+      "url": "https://amachamusic.chagasi.com/",
+      "terms": "https://amachamusic.chagasi.com/terms.html",
+      "checked": "2026-11-24",
+      "summary": "商用・個人利用OK、著作権表示（クレジット）は必須ではない、動画での利用OK、加工（フェード・テンポ変更など）OK。音源の販売・二次配布は禁止、直リンクでの使用は禁止（ダウンロードして使う）、使った作品のContent ID・JASRAC等への登録は禁止"
+    }
+  ],
+  "tracks": [
+    {
+      "id": "happytime",
+      "title": "ハッピータイム",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_happytime.html",
+      "url": "https://amachamusic.chagasi.com/mp3/happytime.mp3",
+      "moods": [
+        "bright"
+      ],
+      "genre": "ポップ（明るい）"
+    },
+    {
+      "id": "lovelyflower",
+      "title": "ラブリーフラワー",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_lovelyflower.html",
+      "url": "https://amachamusic.chagasi.com/mp3/lovelyflower.mp3",
+      "moods": [
+        "bright"
+      ],
+      "genre": "ポップ（明るい）"
+    },
+    {
+      "id": "natsuironocampus",
+      "title": "夏色のキャンパス",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_natsuironocampus.html",
+      "url": "https://amachamusic.chagasi.com/mp3/natsuironocampus.mp3",
+      "moods": [
+        "bright"
+      ],
+      "genre": "ポップ（おしゃれ）"
+    },
+    {
+      "id": "wintercarnival",
+      "title": "ウィンター・カーニバル",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_wintercarnival.html",
+      "url": "https://amachamusic.chagasi.com/mp3/wintercarnival.mp3",
+      "moods": [
+        "bright"
+      ],
+      "genre": "イージーリスニング（明るい）"
+    },
+    {
+      "id": "picopicodisco",
+      "title": "ピコピコディスコ",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_picopicodisco.html",
+      "url": "https://amachamusic.chagasi.com/mp3/picopicodisco.mp3",
+      "moods": [
+        "bright",
+        "quiz"
+      ],
+      "genre": "テクノ・エレクトロ（明るい）"
+    },
+    {
+      "id": "fruitsparfait",
+      "title": "フルーツパフェ",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_fruitsparfait.html",
+      "url": "https://amachamusic.chagasi.com/mp3/fruitsparfait.mp3",
+      "moods": [
+        "bright",
+        "quiz"
+      ],
+      "genre": "テクノ・エレクトロ（コミカル）"
+    },
+    {
+      "id": "sanjinooyatsu",
+      "title": "3時のおやつ",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_sanjinooyatsu.html",
+      "url": "https://amachamusic.chagasi.com/mp3/sanjinooyatsu.mp3",
+      "moods": [
+        "quiz"
+      ],
+      "genre": "テクノ・エレクトロ（コミカル）"
+    },
+    {
+      "id": "retroparty",
+      "title": "レトロパーティー",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_retroparty.html",
+      "url": "https://amachamusic.chagasi.com/mp3/retroparty.mp3",
+      "moods": [
+        "quiz"
+      ],
+      "genre": "テクノ・エレクトロ（コミカル）"
+    },
+    {
+      "id": "ukiukilalala",
+      "title": "ウキウキららら",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_ukiukilalala.html",
+      "url": "https://amachamusic.chagasi.com/mp3/ukiukilalala.mp3",
+      "moods": [
+        "quiz"
+      ],
+      "genre": "イージーリスニング（コミカル）"
+    },
+    {
+      "id": "houkagonoyuzora",
+      "title": "放課後の夕空",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_houkagonoyuzora.html",
+      "url": "https://amachamusic.chagasi.com/mp3/houkagonoyuzora.mp3",
+      "moods": [
+        "calm"
+      ],
+      "genre": "ポップ（ほのぼの）"
+    },
+    {
+      "id": "yuruyakanaasayake",
+      "title": "ゆるやかな朝焼け",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_yuruyakanaasayake.html",
+      "url": "https://amachamusic.chagasi.com/mp3/yuruyakanaasayake.mp3",
+      "moods": [
+        "calm"
+      ],
+      "genre": "イージーリスニング（ほのぼの）"
+    },
+    {
+      "id": "houkagonoumibe",
+      "title": "放課後の海辺",
+      "artist": "甘茶の音楽工房",
+      "page": "https://amachamusic.chagasi.com/music_houkagonoumibe.html",
+      "url": "https://amachamusic.chagasi.com/mp3/houkagonoumibe.mp3",
+      "moods": [
+        "calm"
+      ],
+      "genre": "イージーリスニング（ほのぼの）"
+    }
+  ]
 }

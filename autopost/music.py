@@ -56,12 +56,45 @@ def pick(key: str, mood: str | None = None) -> dict | None:
     return cands[idx]
 
 
+def best_start(t: dict, seconds: float) -> float:
+    """曲の中で、seconds 秒のあいだ一番にぎやかな（音が大きい）所の始まり（秒）。サビを狙うため。
+    落ち着いた曲（calm）は最初から。曲より長く使うときも最初から（くり返す）。"""
+    if "start" in t:
+        return float(t["start"])
+    if "calm" in (t.get("moods") or []):
+        return 0.0
+    import numpy as np
+
+    from .reel import ffmpeg_exe
+
+    sr = 8000
+    raw = subprocess.run([ffmpeg_exe(), "-loglevel", "error", "-i", str(track_path(t)), "-ac", "1", "-ar", str(sr),
+                          "-f", "s16le", "-"], capture_output=True, check=True).stdout
+    x = np.frombuffer(raw, np.int16).astype(np.float32) / 32768
+    dur = len(x) / sr
+    if dur < seconds + 8:
+        return 0.0
+    hop = sr // 2  # 0.5秒ごと
+    n = len(x) // hop
+    rms = np.sqrt((x[:n * hop].reshape(n, hop) ** 2).mean(axis=1))
+    win = max(1, int(seconds * 2))
+    best, best_v = 0.0, -1.0
+    for i in range(n - win):
+        start = i * 0.5
+        if start < 4 or start + seconds > dur - 3:
+            continue  # 曲の頭（前奏）と終わりは避ける
+        v = float(rms[i:i + win].mean())
+        if v > best_v:
+            best, best_v = start, v
+    return best
+
+
 def render_wav(t: dict, seconds: float, out_wav: Path, volume: float = 0.5) -> Path:
-    """曲の聞きどころ（start 秒から）を seconds 秒切り出して、音量をそろえ、最初と最後をフェードした wav にする。
+    """曲の聞きどころを seconds 秒切り出して、音量をそろえ、最初と最後をフェードした wav にする。
     曲が短いときはくり返す。"""
     from .reel import ffmpeg_exe
 
-    start = float(t.get("start", 0))
+    start = best_start(t, seconds)
     fade_out = min(1.2, seconds / 4)
     af = (f"loudnorm=I=-16:TP=-1.5:LRA=11,volume={volume},"
           f"afade=t=in:st=0:d=0.25,afade=t=out:st={max(0.0, seconds - fade_out):.2f}:d={fade_out:.2f}")
