@@ -50,7 +50,12 @@ def build(sha: str, slug: str) -> str:
         rel = post.folder.relative_to(config.ROOT).as_posix()
         lines += [head, ""]
         if post.data.get("type") == "reel_only":
-            lines += [f"🎬 リールだけの投稿（1枚まとめ・約7秒）：{post.data.get('post_hour_jst')}時台に投稿", ""]
+            if post.data.get("reel_style") == "quiz":
+                lines += [f"🎬 リールだけの投稿（クイズ）：{post.data.get('post_hour_jst')}時台に投稿", ""]
+            else:
+                from .reel import still_seconds
+                sec = still_seconds(cfg, d) if isinstance(d, date) else 7
+                lines += [f"🎬 リールだけの投稿（1枚まとめ・{sec:g}秒）：{post.data.get('post_hour_jst')}時台に投稿", ""]
         if post.data.get("reel_title"):
             lines += [f"リール上部のタイトル：「{post.data['reel_title']}」", ""]
         lines += [f"![{post.id}](https://raw.githubusercontent.com/{slug}/{sha}/{rel}/preview.jpg)", ""]

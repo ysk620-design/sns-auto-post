@@ -234,6 +234,18 @@ if __name__ == "__main__":
 STILL_SECONDS = 7.0  # 1枚まとめのリールの長さ。止めて読む・保存する・ループして見る前提なので短くする
 
 
+def still_seconds(cfg: dict, day) -> float:
+    """1枚まとめのリールの長さ。accounts/*.json の reel_only_seconds（例 [5, 7]）を2日ずつ順番に使う。
+    読みきれない短さの方が、もう一度見る・保存するが増えるかを比べるため。
+    （1日おきにすると、1日おきに試すデザインの違いと重なって比べられなくなるので、2日ずつにする）"""
+    choices = cfg.get("reel_only_seconds") or [STILL_SECONDS]
+    try:
+        idx = (day.toordinal() // 2) % len(choices)
+    except AttributeError:
+        idx = 0
+    return float(choices[idx])
+
+
 def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS) -> Path:
     """縦長の1枚画像（1080×1920）をBGM付きのリールにする。"""
     import numpy as np

@@ -14,16 +14,42 @@ import asyncio
 import json
 import math
 import os
+import subprocess
 import sys
 from pathlib import Path
 
-from . import config, posts, story, templates
+from . import art, config, posts, story, templates
 
 # 文字が多くて枠からはみ出すときは、少しずつ縮小して収める
 FIT_JS = """
 () => {
   const out = [];
   for (const s of document.querySelectorAll('section.s')) {
+    if (s.classList.contains('pp')) {
+      // にぎやかな1枚まとめ：タイトルは3行まで、中身は枠に収まるまで文字と絵を小さくする
+      const wrap = s.querySelector('.ppwrap');
+      const title = s.querySelector('.pptitle');
+      let k = 1, tk = 1;
+      const set = () => { s.style.setProperty('--k', String(k)); s.style.setProperty('--tk', String(tk)); };
+      set();
+      const lines = () => title.getBoundingClientRect().height / (parseFloat(getComputedStyle(title).fontSize) * 1.1);
+      while (title && lines() > 3.2 && tk > 0.7) { tk = Math.round((tk - 0.04) * 100) / 100; set(); }
+      const over = () => wrap.scrollHeight > wrap.clientHeight + 1;
+      // 1行に収めたい短い言葉（日本語・英語・名前）は、少しだけ小さくして1行にする。無理なら折り返す
+      for (const el of s.querySelectorAll('.ppl b, .ppr b, .ppit span, .ppt h3 span')) {
+        el.style.whiteSpace = 'nowrap';
+        let sc = 1;
+        while (el.scrollWidth > el.clientWidth + 1 && sc > 0.72) { sc = Math.round((sc - 0.04) * 100) / 100; el.style.setProperty('--s', String(sc)); }
+        if (el.scrollWidth > el.clientWidth + 1) { el.style.whiteSpace = ''; el.style.setProperty('--s', '0.88'); }
+      }
+      // タイトル（つかみ）はなるべく大きいままにして、先に中身を少し小さくする
+      while (over() && k > 0.84) { k = Math.round((k - 0.02) * 100) / 100; set(); }
+      while (over() && tk > 0.88) { tk = Math.round((tk - 0.02) * 100) / 100; set(); }
+      while (over() && k > 0.6) { k = Math.round((k - 0.02) * 100) / 100; set(); }
+      while (over() && tk > 0.62) { tk = Math.round((tk - 0.04) * 100) / 100; set(); }
+      out.push({zoom: Math.min(k, tk), overflow: over()});
+      continue;
+    }
     const b = s.querySelector('.body');
     if (!b) { out.push({zoom: 1, overflow: false}); continue; }
     const cs = getComputedStyle(s);
@@ -129,12 +155,28 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
     return problems
 
 
+def changed_from_main(folder: Path) -> bool:
+    """main ブランチと比べて post.json が追加・変更されているか（main が取れないときは True）。"""
+    rel = (folder / "post.json").relative_to(config.ROOT).as_posix()
+
+    def run(*args):
+        r = subprocess.run(["git", *args], cwd=config.ROOT, capture_output=True, text=True)
+        return r.stdout.strip() if r.returncode == 0 else None
+
+    if run("rev-parse", "--verify", "-q", "origin/main") is None:
+        return True
+    return run("hash-object", rel) != run("rev-parse", f"origin/main:{rel}")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description="投稿データからスライド画像を作る")
     ap.add_argument("targets", nargs="*", default=["queue"], help="queue / examples / 投稿フォルダのパス")
     ap.add_argument("--all", action="store_true", help="作成済みのものも作り直す")
     ap.add_argument("--check-voice", action="store_true",
                     help="作らずに、読み上げ音声（VOICEVOX）の準備が必要かだけを調べる")
+    ap.add_argument("--changed-only", action="store_true",
+                    help="main と比べて追加・変更された投稿だけを作る（プルリクエストのブランチ用。"
+                         "デザインの変更で全部を作り直すと、投稿済みのフォルダとぶつかるため）")
     args = ap.parse_args(argv)
     accounts = config.load_accounts()
     folders: list[Path] = []
@@ -146,6 +188,7 @@ def main(argv=None) -> int:
         else:
             folders.append(Path(t).resolve())
     items, missing = [], 0
+    loaded = []
     for folder in folders:
         post = posts.Post.load(folder)
         cfg = accounts.get(post.account)
@@ -153,8 +196,15 @@ def main(argv=None) -> int:
             print(f"❌ {folder}: アカウント「{post.account}」の設定がありません")
             missing += 1
             continue
+        if args.changed_only and "queue" in folder.parts and not changed_from_main(folder):
+            continue
+        loaded.append((post, cfg))
+    if not args.check_voice:
+        # 1枚まとめに入れる絵で足りないものを、先にまとめて作る（GEMINI_API_KEY があるときだけ）
+        art.ensure([(post.data, cfg) for post, cfg in loaded])
+    for post, cfg in loaded:
         if args.all or post.needs_render(cfg):
-            items.append((folder, post.data, cfg))
+            items.append((post.folder, post.data, cfg))
     if args.check_voice:
         need = any(story.is_story(data) and story.reel_wanted(data, cfg) for _, data, cfg in items)
         print(f"needs_voice={str(need).lower()}")

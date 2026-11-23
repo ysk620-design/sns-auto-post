@@ -6,8 +6,9 @@
   "title": "子どもが0円・半額になる乗り物（JR・新幹線は幼児2人まで0円）",
   "slides": [
     {
-      "layout": "matome",
+      "layout": "pop",
       "kicker": "保存版｜帰省・おでかけ",
+      "bubble": "帰省の前に\nチェック！",
       "title": "子どもが<span class=\"hl\">0円・半額</span>に<br>なる乗り物",
       "big_label": "JR・新幹線は、小学校に入る前の子なら",
       "big": "2<small>人まで</small>0円",
@@ -17,47 +18,56 @@
         "子どもの料金"
       ],
       "items": [
-        [
-          "JR・新幹線（1〜5歳）",
-          "0円",
-          "大人1人につき2人まで・ひざの上で"
-        ],
-        [
-          "JAL国内線（3歳未満）",
-          "0円",
-          "大人のひざの上で"
-        ],
-        [
-          "ANA国内線（0〜1歳）",
-          "0円",
-          "2026年5月から、2歳以上は座席の料金が必要"
-        ],
-        [
-          "東京メトロ・都営地下鉄（幼児）",
-          "0円",
-          "2人まで（小学生は半額）"
-        ],
-        [
-          "都営バス（幼児）",
-          "0円",
-          "2人まで（小学生は110円）"
-        ],
-        [
-          "高速バス（JRバスの例）",
-          "幼児1人まで0円",
-          "2人目からは子どもの運賃"
-        ],
-        [
-          "小田急線（小学生）",
-          "IC運賃 一律50円",
-          "どこまで乗っても"
-        ],
-        [
-          "新幹線（小学生）",
-          "大人の半額",
-          "グリーン券は大人と同じ額"
-        ]
+        {
+          "left": "JR・新幹線（1〜5歳）",
+          "left_sub": "大人1人に2人まで・ひざの上",
+          "right": "0円",
+          "icon": "a white Japanese bullet train"
+        },
+        {
+          "left": "JAL国内線（3歳未満）",
+          "left_sub": "大人のひざの上で",
+          "right": "0円",
+          "icon": "a passenger airplane"
+        },
+        {
+          "left": "ANA国内線（0〜1歳）",
+          "left_sub": "2026年5月から2歳以上は座席料金",
+          "right": "0円",
+          "icon": "a small airplane taking off over clouds"
+        },
+        {
+          "left": "地下鉄（メトロ・都営）",
+          "left_sub": "幼児2人まで（小学生は半額）",
+          "right": "0円",
+          "icon": "a subway train"
+        },
+        {
+          "left": "都営バス（幼児）",
+          "left_sub": "2人まで（小学生は110円）",
+          "right": "0円",
+          "icon": "a green city bus"
+        },
+        {
+          "left": "高速バス（JRバスの例）",
+          "left_sub": "2人目からは子どもの運賃",
+          "right": "幼児1人まで0円",
+          "icon": "a long-distance highway coach bus"
+        },
+        {
+          "left": "小田急線（小学生）",
+          "left_sub": "どこまで乗っても",
+          "right": "IC運賃 一律50円",
+          "icon": "a blue commuter train"
+        },
+        {
+          "left": "新幹線（小学生）",
+          "left_sub": "グリーン券は大人と同じ額",
+          "right": "大人の半額",
+          "icon": "a child holding a train ticket"
+        }
       ],
+      "arrow": false,
       "note": "※2026年11月時点。会社や路線で違う場合があります。子どもが1人で座席を使うときは、子どもの運賃・料金が必要です"
     }
   ],
@@ -69,5 +79,5 @@
     "#子育て家計",
     "#子育てママ"
   ],
-  "review_notes": "【リールだけの投稿・11/27 19時台】確認日 2026-11-22。出典：JR東日本 https://www.jreast.co.jp/en/kippu/06.html ／JR東海 https://travel.jr-central.co.jp/plan/tokushu/shinkansen/childfare/ ／ANA https://www.ana.co.jp/ja/jp/guide/reservation/domestic/child-info/ ・ https://www.ana.co.jp/biz/notice/pdf/20250520_ja_01.pdf ／JAL https://www.jal.co.jp/jp/ja/dom/special/babysupport/ ／高速バス https://www.kousokubus.net/BusRsv/ja/faq ／都営バス https://www.kotsu.metro.tokyo.jp/bus/fare/regular.html ／東京メトロ https://www.tokyometro.jp/ticket/guide/age/index.html ／小田急 https://www.odakyu.jp/personal/child/ ／年末年始ののぞみ全席指定 https://railway.jr-central.co.jp/nozomi/ （2026/12/25〜2027/1/5）。【確認してほしい点】JALのひざの上の人数の上限は未確認。ここに実体験を一言（子連れ帰省の工夫など）もよいです"
+  "review_notes": "【リールだけの投稿・11/27 19時台】確認日 2026-11-22。出典：JR東日本 https://www.jreast.co.jp/en/kippu/06.html ／JR東海 https://travel.jr-central.co.jp/plan/tokushu/shinkansen/childfare/ ／ANA https://www.ana.co.jp/ja/jp/guide/reservation/domestic/child-info/ ・ https://www.ana.co.jp/biz/notice/pdf/20250520_ja_01.pdf ／JAL https://www.jal.co.jp/jp/ja/dom/special/babysupport/ ／高速バス https://www.kousokubus.net/BusRsv/ja/faq ／都営バス https://www.kotsu.metro.tokyo.jp/bus/fare/regular.html ／東京メトロ https://www.tokyometro.jp/ticket/guide/age/index.html ／小田急 https://www.odakyu.jp/personal/child/ ／年末年始ののぞみ全席指定 https://railway.jr-central.co.jp/nozomi/ （2026/12/25〜2027/1/5）。【確認してほしい点】JALのひざの上の人数の上限は未確認。ここに実体験を一言（子連れ帰省の工夫など）もよいです 【新しいデザイン（pop）の試し：同じ19時台の前と比べるため、この回だけ新デザインにしました】"
 }

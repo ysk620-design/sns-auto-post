@@ -6,57 +6,74 @@
   "title": "1枚まとめ：気持ちを伝えるの直訳しがちな英語",
   "slides": [
     {
-      "layout": "matome",
+      "layout": "pop",
       "kicker": "保存版｜気持ちを伝える",
+      "bubble": "そのまま訳すと\n別の意味に！",
       "title": "それ、<span class=\"hl\">通じません</span><br>気持ちの言いかえ8選",
       "sub": "そのまま訳すと、ちがう意味に聞こえるかも",
       "head": [
-        "日本語でよく言う",
+        "日本語",
         "自然な英語"
       ],
       "items": [
-        [
-          "「楽しかった！」",
-          "I had a great time!",
-          "✕ I was fun.（私はおもしろい人）"
-        ],
-        [
-          "「ショック！」",
-          "I'm so upset.",
-          "✕ I'm shock."
-        ],
-        [
-          "「感動した」",
-          "I was so moved.",
-          "✕ I touched."
-        ],
-        [
-          "「ホッとした」",
-          "What a relief!",
-          "✕ I'm hot."
-        ],
-        [
-          "「ウケる！」",
-          "That's hilarious!",
-          "✕ It's receiving!"
-        ],
-        [
-          "「しんどい」",
-          "I'm exhausted.",
-          "✕ I'm hard."
-        ],
-        [
-          "「ドキドキする」",
-          "I'm nervous.",
-          "✕ My heart is doki-doki."
-        ],
-        [
-          "「メンタルが弱い」",
-          "I stress out easily.",
-          "✕ My mental is weak."
-        ]
+        {
+          "left": "楽しかった！",
+          "ng": "I was fun.（私はおもしろい人）",
+          "right": "I had a great time!",
+          "right_sub": "アイ ハッド ア グレイト タイム",
+          "icon": "party confetti and balloons"
+        },
+        {
+          "left": "ショック！",
+          "ng": "I'm shock.",
+          "right": "I'm so upset.",
+          "right_sub": "アイム ソー アップセット",
+          "icon": "a gray rain cloud with a lightning bolt"
+        },
+        {
+          "left": "感動した",
+          "ng": "I touched.",
+          "right": "I was so moved.",
+          "right_sub": "アイ ワズ ソー ムーヴド",
+          "icon": "a cute character with happy tears"
+        },
+        {
+          "left": "ホッとした",
+          "ng": "I'm hot.",
+          "right": "What a relief!",
+          "right_sub": "ワット ア リリーフ",
+          "icon": "a relieved character wiping sweat"
+        },
+        {
+          "left": "ウケる！",
+          "ng": "It's receiving!",
+          "right": "That's hilarious!",
+          "right_sub": "ザッツ ヒラリアス",
+          "icon": "a laughing character with tears of joy"
+        },
+        {
+          "left": "しんどい",
+          "ng": "I'm hard.",
+          "right": "I'm exhausted.",
+          "right_sub": "アイム イグゾースティッド",
+          "icon": "an empty battery"
+        },
+        {
+          "left": "ドキドキする",
+          "ng": "My heart is doki-doki.",
+          "right": "I'm nervous.",
+          "right_sub": "アイム ナーヴァス",
+          "icon": "a pounding red heart"
+        },
+        {
+          "left": "メンタルが弱い",
+          "ng": "My mental is weak.",
+          "right": "I stress out easily.",
+          "right_sub": "アイ ストレス アウト イージリー",
+          "icon": "a fragile glass heart with a bandage"
+        }
       ],
-      "note": "※場面によって、ほかの言い方もあります"
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
     }
   ],
   "caption": "「楽しかった」を「I was fun.」と言っていませんか？\n8つのうち、いくつ言えた？\n\n✕ I was fun.（私はおもしろい人） → ○ I had a great time!\n✕ I'm shock. → ○ I'm so upset.\n✕ I touched. → ○ I was so moved.\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
@@ -67,5 +84,5 @@
     "#大人の英語",
     "#英語学習"
   ],
-  "review_notes": "【リールだけの投稿・11/28 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。"
+  "review_notes": "【リールだけの投稿・11/28 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。 【新しいデザイン（pop）に作り直し】中身は同じで、カタカナの読みと絵（Gemini）を足しました。"
 }

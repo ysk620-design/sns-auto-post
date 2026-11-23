@@ -24,7 +24,12 @@ LAYOUT_FIELDS = {
     "quiz": ({"question"}, {"answer", "cta", "button", "tag"}),
     "cta": ({"title"}, {"body", "cta", "button", "tag"}),
     "matome": ({"title", "items"}, {"kicker", "sub", "head", "note", "big", "big_label", "rank", "follow"}),
+    "pop": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "head", "rank", "arrow", "note",
+                                 "follow", "bg", "ask", "tag"}),
+    "tiles": ({"title", "tiles"}, {"kicker", "bubble", "sub", "cols", "summary", "note", "follow", "bg", "ask", "tag"}),
+    "tier": ({"title", "tiers"}, {"kicker", "bubble", "sub", "note", "follow", "bg", "ask", "tag"}),
 }
+TALL_LAYOUTS = ("matome", "pop", "tiles", "tier")  # 縦長の1枚（リールだけの投稿で使う）
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
     "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst", "quiz_end_title",
@@ -83,6 +88,124 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
         rows = s.get("rows")
         if not isinstance(rows, list) or not 1 <= len(rows) <= 6:
             errors.append(f"{i}枚目（table）: rows は1〜6行にしてください")
+    if layout in ("pop", "tiles", "tier"):
+        _check_pop(i, layout, s, errors)
+
+
+def _plain_len(value) -> int:
+    return len(re.sub(r"<[^>]+>", "", str(value)))
+
+
+def _short(value, limit: int, where: str, errors: list[str], required: bool = False) -> None:
+    if value is None or value == "":
+        if required:
+            errors.append(f"{where} がありません")
+        return
+    if not isinstance(value, str):
+        errors.append(f"{where} は文字で書いてください")
+    elif _plain_len(value) > limit:
+        errors.append(f"{where}「{value}」が長すぎます（{limit}文字まで）")
+
+
+def _check_art_text(value, where: str, errors: list[str]) -> None:
+    """icon / bg は Gemini に渡す英語の説明。"""
+    if value is None:
+        return
+    if not isinstance(value, str) or not value.strip() or not value.isascii() or len(value) > 160:
+        errors.append(f"{where} は英語の短い説明（160文字まで）にしてください。例 \"an empty wallet with a moth flying out\"")
+
+
+def _check_pop(i: int, layout: str, s: dict, errors: list[str]) -> None:
+    where = f"{i}枚目（{layout}）"
+    _short(s.get("title"), 40, f"{where}: title", errors, True)
+    _short(s.get("kicker"), 24, f"{where}: kicker", errors)
+    _short(s.get("bubble"), 24, f"{where}: bubble", errors)
+    _short(s.get("sub"), 34, f"{where}: sub", errors)
+    _short(s.get("ask"), 16, f"{where}: ask", errors)
+    _short(s.get("note"), 80, f"{where}: note", errors)
+    _check_art_text(s.get("bg"), f"{where}: bg", errors)
+    if layout == "pop":
+        items = s.get("items")
+        if not isinstance(items, list) or not 5 <= len(items) <= 12:
+            errors.append(f"{where}: items は5〜12行にしてください")
+        if not isinstance(items, list):
+            items = []
+        for k, it in enumerate(items, 1):
+            w = f"{where} の{k}行目"
+            if not isinstance(it, dict):
+                errors.append(f"{w}: {{\"left\": …, \"right\": …}} の形で書いてください")
+                continue
+            extra = set(it) - {"left", "right", "left_sub", "right_sub", "ng", "icon"}
+            if extra:
+                errors.append(f"{w}: 使えない項目があります: {', '.join(sorted(extra))}")
+            _short(it.get("left"), 16, f"{w}の left", errors, True)
+            _short(it.get("right"), 30, f"{w}の right", errors, True)
+            _short(it.get("left_sub"), 24, f"{w}の left_sub", errors)
+            _short(it.get("right_sub"), 26, f"{w}の right_sub", errors)
+            _short(it.get("ng"), 26, f"{w}の ng", errors)
+            _check_art_text(it.get("icon"), f"{w}の icon", errors)
+        if "head" in s and not (isinstance(s["head"], list) and len(s["head"]) == 2
+                                and all(isinstance(x, str) and 0 < len(x) <= 12 for x in s["head"])):
+            errors.append(f"{where}: head は列の見出し（12文字まで）を2つにしてください")
+    if layout == "tiles":
+        tiles = s.get("tiles")
+        if not isinstance(tiles, list) or not 4 <= len(tiles) <= 12:
+            errors.append(f"{where}: tiles は4〜12個にしてください")
+        if not isinstance(tiles, list):
+            tiles = []
+        for k, t in enumerate(tiles, 1):
+            w = f"{where} の{k}個目"
+            if not isinstance(t, dict):
+                errors.append(f"{w}: {{\"label\": …, \"icon\": …, \"a\": …, \"b\": …}} の形で書いてください")
+                continue
+            extra = set(t) - {"label", "icon", "a", "b"}
+            if extra:
+                errors.append(f"{w}: 使えない項目があります: {', '.join(sorted(extra))}")
+            _short(t.get("label"), 10, f"{w}の label", errors, True)
+            _short(t.get("a"), 14, f"{w}の a", errors)
+            _short(t.get("b"), 26, f"{w}の b", errors)
+            _check_art_text(t.get("icon"), f"{w}の icon", errors)
+        if "cols" in s and s["cols"] not in (2, 3):
+            errors.append(f"{where}: cols は 2 か 3 にしてください")
+        sm = s.get("summary")
+        if sm is not None and not (isinstance(sm, dict) and set(sm) <= {"label", "big"} and sm.get("big")):
+            errors.append(f"{where}: summary は {{\"label\": …, \"big\": …}} の形で書いてください")
+        elif isinstance(sm, dict):
+            _short(sm.get("label"), 20, f"{where}: summary の label", errors)
+            _short(sm.get("big"), 14, f"{where}: summary の big", errors)
+    if layout == "tier":
+        tiers = s.get("tiers")
+        if not isinstance(tiers, list) or not 3 <= len(tiers) <= 6:
+            errors.append(f"{where}: tiers は3〜6段にしてください")
+        if not isinstance(tiers, list):
+            tiers = []
+        for k, t in enumerate(tiers, 1):
+            w = f"{where} の{k}段目"
+            if not isinstance(t, dict):
+                errors.append(f"{w}: {{\"rank\": \"S\", \"items\": [...]}} の形で書いてください")
+                continue
+            extra = set(t) - {"rank", "label", "items", "color"}
+            if extra:
+                errors.append(f"{w}: 使えない項目があります: {', '.join(sorted(extra))}")
+            _short(t.get("rank"), 3, f"{w}の rank", errors, True)
+            _short(t.get("label"), 14, f"{w}の label", errors)
+            if "color" in t and not (isinstance(t["color"], str) and re.fullmatch(r"#[0-9a-fA-F]{6}", t["color"])):
+                errors.append(f"{w}: color は #ff5a5f のような色で書いてください")
+            its = t.get("items")
+            if not isinstance(its, list) or not 1 <= len(its) <= 5:
+                errors.append(f"{w}: items は1〜5個にしてください")
+                continue
+            for m, it in enumerate(its, 1):
+                ww = f"{w}の{m}個目"
+                if not isinstance(it, dict):
+                    errors.append(f"{ww}: {{\"name\": …, \"icon\": …}} の形で書いてください")
+                    continue
+                extra = set(it) - {"name", "icon", "note"}
+                if extra:
+                    errors.append(f"{ww}: 使えない項目があります: {', '.join(sorted(extra))}")
+                _short(it.get("name"), 9, f"{ww}の name", errors, True)
+                _short(it.get("note"), 12, f"{ww}の note", errors)
+                _check_art_text(it.get("icon"), f"{ww}の icon", errors)
 
 
 def _text_ok(value, errors: list[str], where: str, limit: int | None = None) -> None:
@@ -213,8 +336,8 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
         if data.get("reel_style") == "quiz":
             pass  # クイズリールだけを出す（問題のスライドの形は quizreel.validate が確かめる）
         elif not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
-                  and slides[0].get("layout") == "matome"):
-            errors.append("type が reel_only のときは、slides を matome の1枚にしてください")
+                  and slides[0].get("layout") in TALL_LAYOUTS):
+            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier のどれか1枚にしてください")
     elif "post_hour_jst" in data:
         errors.append("post_hour_jst は type が reel_only のときだけ書けます")
     if kind == "story":
@@ -228,6 +351,8 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)
+            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier") and kind != "reel_only":
+                errors.append(f"{i}枚目: {s['layout']} は縦長なので、type が reel_only の投稿でだけ使えます")
     caption = data.get("caption")
     if not isinstance(caption, str) or not caption.strip():
         errors.append("caption（本文）がありません")

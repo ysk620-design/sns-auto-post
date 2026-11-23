@@ -7,7 +7,7 @@ from dataclasses import dataclass
 from datetime import date
 from pathlib import Path
 
-from . import config, story
+from . import art, config, story
 
 PACKAGE_DIR = Path(__file__).resolve().parent
 
@@ -65,12 +65,21 @@ def quiz_reel_wanted(data: dict, account_cfg: dict) -> bool:
             and data.get("reel", True) is not False)
 
 
-def template_fingerprint() -> str:
-    """デザイン（templates.py と style.css）が変わったら作り直すための指紋。"""
+def _fingerprint(names: tuple[str, ...]) -> str:
     h = hashlib.sha256()
-    for name in ("templates.py", "style.css", "cover_art.py", "quizreel.py", "readtime.py"):
+    for name in names:
         h.update((PACKAGE_DIR / name).read_bytes())
     return h.hexdigest()[:12]
+
+
+def template_fingerprint() -> str:
+    """デザイン（templates.py と style.css など）が変わったら作り直すための指紋。"""
+    return _fingerprint(("templates.py", "style.css", "cover_art.py", "pop.py", "pop.css"))
+
+
+def quiz_fingerprint() -> str:
+    """クイズリールの作り方が変わったら、テスト回だけ作り直すための指紋。"""
+    return _fingerprint(("quizreel.py", "readtime.py"))
 
 
 def render_hash(data: dict, account_cfg: dict) -> str:
@@ -84,9 +93,12 @@ def render_hash(data: dict, account_cfg: dict) -> str:
         "matome_follow": account_cfg.get("matome_follow"),
         "template": template_fingerprint(),
     }
+    if any(isinstance(s, dict) and s.get("layout") in art.POP_LAYOUTS for s in data.get("slides") or []):
+        # 絵（アイコン・背景）があとからできたら作り直す
+        payload["art"] = art.state(data, account_cfg)
     if data.get("reel_style") == "quiz":
         payload["quiz_reel"] = {"style": "quiz", "questions": data.get("reel_questions"), "title": data.get("reel_title"),
-                                "on": quiz_reel_wanted(data, account_cfg)}
+                                "on": quiz_reel_wanted(data, account_cfg), "code": quiz_fingerprint()}
     raw = json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8")
     return hashlib.sha256(raw).hexdigest()[:16]
 

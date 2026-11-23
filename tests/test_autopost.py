@@ -346,3 +346,103 @@ class ReelOnlyTest(unittest.TestCase):
                 config.get_token = orig
             # 通常の投稿の順番には入らない
             self.assertIsNone(posts.next_post("gensen_otoku", late.date(), root))
+
+
+class PopTest(unittest.TestCase):
+    """にぎやかな1枚まとめ（pop / tiles / tier）と、その絵（art / imagegen）。"""
+
+    def setUp(self):
+        self.accounts = config.load_accounts()
+        self.cfg = self.accounts["eigo_1phrase"]
+
+    def _post(self, slide):
+        return {"account": "eigo_1phrase", "date": "2026-11-29", "type": "reel_only", "post_hour_jst": 18,
+                "slides": [slide], "caption": "テスト", "hashtags": []}
+
+    def _pop(self, n=6):
+        return {"layout": "pop", "title": "英語で出てこない<br>ひと言10選",
+                "items": [{"left": f"日本語{i}", "right": "No way!", "right_sub": "ノー ウェイ",
+                           "icon": "a surprised little character"} for i in range(n)]}
+
+    def test_validate_pop_tiles_tier(self):
+        self.assertEqual(validate.validate_post(self._post(self._pop()), self.accounts), [])
+        tiles = {"layout": "tiles", "title": "日本では無料", "cols": 3, "summary": {"label": "合計", "big": "0円"},
+                 "tiles": [{"label": "お冷や", "icon": "a glass of water", "a": "日本：無料", "b": "海外：有料"}] * 6}
+        self.assertEqual(validate.validate_post(self._post(tiles), self.accounts), [])
+        tier = {"layout": "tier", "title": "Tier表",
+                "tiers": [{"rank": r, "items": [{"name": "温水便座", "icon": "a toilet"}]} for r in "SABC"]}
+        self.assertEqual(validate.validate_post(self._post(tier), self.accounts), [])
+        bad = self._pop(3)
+        bad["items"][0]["icon"] = "日本語の説明"
+        bad["items"][1]["left"] = "とても長い日本語の言い方がここに入ります"
+        errors = " ".join(validate.validate_post(self._post(bad), self.accounts))
+        self.assertIn("5〜12行", errors)
+        self.assertIn("英語の短い説明", errors)
+        self.assertIn("長すぎます", errors)
+        carousel = self._post(self._pop())
+        carousel["type"] = "carousel"
+        carousel["slides"].append({"layout": "cta", "title": "x"})
+        self.assertIn("reel_only", " ".join(validate.validate_post(carousel, self.accounts)))
+
+    def test_html_number_and_missing_art(self):
+        html = templates.build_html(self._post(self._pop()), self.cfg)
+        self.assertIn('<span class="ppnum">10</span>選', html)
+        self.assertIn("フォローで", html)
+        self.assertNotIn("data:image", html.split("<body>")[1][:100])
+
+    def test_art_paths_rotation_and_state(self):
+        from autopost import art
+
+        self.assertEqual(art.slug("A Cup of Coffee"), art.slug("a cup  of coffee"))
+        self.assertTrue(art.slug("a cup of coffee").startswith("a-cup-of-coffee-"))
+        data = self._post(self._pop())
+        icons, bgs = art.wanted(data, self.cfg)
+        self.assertEqual(icons, ["a surprised little character"])
+        self.assertEqual(len(bgs), 1)  # 背景は accounts の art.backgrounds から日替わり
+        data2 = json.loads(json.dumps(data))
+        data2["date"] = "2026-11-30"
+        self.assertNotEqual(art.wanted(data2, self.cfg)[1], bgs)
+        with tempfile.TemporaryDirectory() as tmp:
+            old = art.ASSETS
+            art.ASSETS = Path(tmp)
+            try:
+                self.assertEqual(art.state(data, self.cfg), [])
+                p = art.icon_path(icons[0], self.cfg)
+                p.parent.mkdir(parents=True)
+                p.write_bytes(b"x")
+                self.assertEqual(art.state(data, self.cfg), [p.name])
+                h1 = posts.render_hash(data, self.cfg)
+                p.unlink()
+                self.assertNotEqual(posts.render_hash(data, self.cfg), h1)  # 絵ができたら作り直す
+                self.assertEqual(art.ensure([(data, self.cfg)], log=lambda *a: None), 0)  # キーが無いときは何もしない
+            finally:
+                art.ASSETS = old
+
+    def test_slice_sheet(self):
+        from PIL import Image, ImageDraw
+
+        from autopost import imagegen
+
+        with tempfile.TemporaryDirectory() as tmp:
+            sheet = Path(tmp) / "sheet.jpg"
+            im = Image.new("RGB", (900, 600), "white")
+            d = ImageDraw.Draw(im)
+            for i in range(5):  # 3列×2行に5個（最後のマスは空）
+                r, c = divmod(i, 3)
+                d.ellipse((c * 300 + 90, r * 300 + 90, c * 300 + 210, r * 300 + 210), fill=(200, 80 + i * 20, 60))
+            im.save(sheet)
+            pieces = imagegen.slice_sheet(sheet, 5, 3, 2)
+            self.assertEqual(len(pieces), 5)
+            self.assertTrue(all(p is not None and p.size == (360, 360) for p in pieces))
+            self.assertEqual(imagegen.grid_for(5), (3, 2, "3:2"))
+            self.assertEqual(imagegen.grid_for(10), (4, 3, "4:3"))
+
+    def test_still_seconds_two_days_each(self):
+        from datetime import date
+
+        from autopost import reel
+
+        cfg = {"reel_only_seconds": [5, 7]}
+        got = [reel.still_seconds(cfg, date(2026, 11, d)) for d in range(24, 30)]
+        self.assertEqual(got, [5, 5, 7, 7, 5, 5])
+        self.assertEqual(reel.still_seconds({}, date(2026, 11, 24)), 7.0)

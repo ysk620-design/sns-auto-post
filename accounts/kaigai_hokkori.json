@@ -40,7 +40,21 @@
     "base": "#fff6e0",
     "accent": "#d9382e",
     "accent_soft": "#ffd23f",
-    "muted": "#8a7a66"
+    "muted": "#8a7a66",
+    "ink": "#1f2a5a",
+    "hot": "#e0352b"
   },
-  "matome_follow": "フォローで、日本のほっこり話を毎日"
+  "matome_follow": "フォローで、日本のほっこり話を毎日",
+  "art": {
+    "style": "clay",
+    "backgrounds": [
+      "A quiet street in Kyoto with traditional wooden houses and paper lanterns",
+      "Mount Fuji with pink cherry blossoms under a clear blue sky",
+      "A clean Tokyo shopping street at dusk with warm soft lights"
+    ]
+  },
+  "reel_only_seconds": [
+    5,
+    7
+  ]
 }

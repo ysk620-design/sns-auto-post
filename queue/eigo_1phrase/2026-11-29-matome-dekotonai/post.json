@@ -1,0 +1,32 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：英語で出てこないひと言10選",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "日本語でよく言うのに…",
+      "bubble": "直訳すると\n通じない！",
+      "title": "<span class=\"hl\">英語で出てこない</span><br>ひと言10選",
+      "head": ["日本語", "自然な英語"],
+      "items": [
+        {"left": "うそでしょ！", "ng": "Lie!", "right": "No way!", "right_sub": "ノー ウェイ", "icon": "a surprised little character with a wide open mouth"},
+        {"left": "お腹ペコペコ", "ng": "My stomach is peko-peko.", "right": "I'm starving.", "right_sub": "アイム スターヴィング", "icon": "a rumbling stomach with a hamburger thought bubble"},
+        {"left": "金欠なんだ", "ng": "Money shortage.", "right": "I'm broke.", "right_sub": "アイム ブローク", "icon": "an empty wallet with a moth flying out"},
+        {"left": "もうくたくた", "ng": "I'm kutakuta.", "right": "I'm beat.", "right_sub": "アイム ビート", "icon": "a tired sleepy character resting on a pillow"},
+        {"left": "任せて！", "ng": "Leave it!", "right": "I got you.", "right_sub": "アイ ガッチュー", "icon": "a thumbs-up hand"},
+        {"left": "ドンマイ！", "ng": "Don't mind!", "right": "No worries!", "right_sub": "ノー ウォーリーズ", "icon": "a friendly hand gently patting a shoulder"},
+        {"left": "お疲れさま！", "ng": "You're tired!", "right": "Good work today!", "right_sub": "グッド ワーク トゥデイ", "icon": "two coffee mugs clinking together"},
+        {"left": "いただきます", "ng": "I receive.", "right": "Let's eat!", "right_sub": "レッツ イート", "icon": "a bowl of rice with chopsticks"},
+        {"left": "よろしくね（初対面）", "ng": "Please treat me well.", "right": "Nice to meet you!", "right_sub": "ナイス トゥ ミーチュー", "icon": "two hands shaking"},
+        {"left": "がんばって！", "ng": "Work hard!", "right": "You got this!", "right_sub": "ユー ガット ディス", "icon": "a cheering megaphone with confetti"}
+      ],
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
+    }
+  ],
+  "caption": "日本語では毎日言うのに、英語だと出てこないひと言。\n10個のうち、いくつ言えた？\n\n✕ Don't mind! → ○ No worries!\n✕ You're tired! → ○ Good work today!\n✕ Please treat me well. → ○ Nice to meet you!\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": ["#英会話", "#英語フレーズ", "#日常英会話", "#大人の英語", "#英語学習"],
+  "review_notes": "【新しいデザイン（pop）の試作・リールだけ・11/29 18時台】伸びている1枚まとめの型（大きい中央タイトル・巨大な数字・1行ごとの絵・写真の背景）で作った最初の回。絵（ねんど風のアイコン）と背景は Gemini で自動作成。読み（カタカナ）は目安として添えています。「よろしくね」は場面で言い方が変わるので（初対面）と書きました。"
+}

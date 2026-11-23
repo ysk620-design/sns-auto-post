@@ -1,0 +1,90 @@
+/* ---------- にぎやかな1枚まとめ（pop / tiles / tier・縦長 1080×1920）----------
+   上 150px と下 300px はリールの画面の文字やボタンに重なるので、中身は ppwrap の中だけに置く。
+   プロフィールの一覧（3:4）では上下が切れるので、タイトルは 230px より下から始める。
+   --k（中身）と --tk（タイトル）は、はみ出すときに render.py が小さくする倍率 */
+.s.pp{height:1920px;padding:0;display:block;--k:1;--tk:1;background:linear-gradient(170deg,var(--accent-soft) 0%,var(--base) 48%,#ffffff 100%)}
+.ppbg{position:absolute;inset:0;background-size:cover;background-position:center}
+.ppbg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.10) 0%,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 72%,rgba(0,0,0,.22) 100%)}
+.ppbg.none{background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.7) 0 120px,transparent 121px),radial-gradient(circle at 85% 40%,rgba(255,255,255,.45) 0 160px,transparent 161px)}
+.ppbg.none::after{display:none}
+.ppwrap{position:absolute;left:38px;right:38px;top:150px;bottom:300px;display:flex;flex-direction:column;gap:calc(14px*var(--k))}
+
+/* 見出し */
+.pphead{position:relative;display:flex;flex-direction:column;align-items:center;gap:calc(10px*var(--tk))}
+.pptop{height:74px;width:100%;display:flex;align-items:center;justify-content:center}
+.pphead.hasbubble .pptop{justify-content:flex-start;padding-left:6px}
+.ppkick{background:var(--brand);color:#fff;font-weight:900;font-size:32px;line-height:1.2;padding:10px 34px;border-radius:999px;border:4px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.22);letter-spacing:.02em}
+.ppcard{width:100%;background:rgba(255,255,255,.96);border-radius:38px;padding:calc(22px*var(--tk)) 26px calc(20px*var(--tk));box-shadow:0 12px 30px rgba(0,0,0,.20);text-align:center}
+.pptitle{font-size:calc(100px*var(--tk));line-height:1.1;font-weight:900;color:var(--ink);letter-spacing:-.03em;text-wrap:balance;word-break:auto-phrase}
+.pptitle .hl{background:none;color:var(--hot);padding:0;border-radius:0}
+.ppnum{display:inline-block;font-size:1.7em;color:var(--hot);line-height:.92;vertical-align:-.04em;letter-spacing:-.05em;margin:0 .03em;text-shadow:0 5px 0 rgba(0,0,0,.10)}
+.ppbig{margin-top:6px;font-size:calc(124px*var(--tk));font-weight:900;color:var(--hot);line-height:1.02;letter-spacing:-.03em}
+.ppbig small{font-size:.45em;margin-left:4px}
+.ppbl{display:block;font-size:calc(34px*var(--tk));color:var(--ink);letter-spacing:0;margin-bottom:2px}
+.ppsub{background:var(--brand);color:#fff;font-weight:900;font-size:calc(32px*var(--tk));line-height:1.3;padding:12px 64px;clip-path:polygon(0 0,100% 0,calc(100% - 26px) 50%,100% 100%,0 100%,26px 50%);text-align:center;max-width:100%}
+.ppbubble{position:absolute;top:-6px;right:0;max-width:340px;background:#fff;color:var(--ink);font-weight:900;font-size:30px;line-height:1.28;padding:12px 24px;border-radius:28px;border:4px solid var(--ink);transform:rotate(4deg);box-shadow:0 6px 16px rgba(0,0,0,.2);text-align:center;z-index:3}
+.ppbubble::after{content:"";position:absolute;left:44px;bottom:-24px;border-left:12px solid transparent;border-right:12px solid transparent;border-top:22px solid var(--ink)}
+
+/* リスト（pop） */
+.pplist{flex:1 1 auto;display:flex;flex-direction:column;gap:calc(7px*var(--k));background:rgba(255,255,255,.90);border-radius:32px;padding:calc(12px*var(--k)) 12px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.ppcols{display:flex;gap:12px;padding-left:calc(14px + 56px*var(--k))}
+.ppcols span{flex:1;text-align:center;font-weight:900;font-size:calc(26px*var(--k));line-height:1.3;color:#fff;background:var(--ink);border-radius:999px;padding:5px 0}
+.ppcols span+span{background:var(--hot)}
+.pprow{flex:1 1 auto;display:flex;align-items:center;gap:calc(12px*var(--k));background:#fff;border-radius:20px;padding:calc(4px*var(--k)) 14px calc(4px*var(--k)) 10px;border:2px solid #e3e9f3}
+.ppn{flex:0 0 auto;width:calc(56px*var(--k));height:calc(56px*var(--k));border-radius:50%;background:var(--ink);color:#fff;font-weight:900;font-size:calc(32px*var(--k));display:flex;align-items:center;justify-content:center}
+.ppi{flex:0 0 auto;width:calc(82px*var(--k));height:calc(82px*var(--k));border-radius:16px;overflow:hidden;background:#fff}
+.ppi.empty{background:transparent}
+.ppi img{width:100%;height:100%;object-fit:cover;display:block}
+.ppl{flex:var(--lg,.42) 1 0;min-width:0;display:flex;flex-direction:column}
+.ppl b{font-size:calc(40px*var(--k)*var(--s,1));font-weight:900;color:var(--ink);line-height:1.18;letter-spacing:-.01em;text-wrap:balance;word-break:auto-phrase}
+.ppl small{font-size:calc(24px*var(--k));font-weight:700;color:#8a93a6;margin-top:2px;line-height:1.2}
+.ppl small.ng{color:#7d8597}
+.ppl small.ng i{font-style:normal;color:var(--hot);font-weight:900;margin-right:4px}
+.ppa{flex:0 0 auto;font-size:calc(40px*var(--k));font-weight:900;color:#ff7a00;line-height:1}
+.ppr{flex:var(--rg,.58) 1 0;min-width:0;display:flex;flex-direction:column}
+.ppr b{font-size:calc(42px*var(--k)*var(--s,1));font-weight:900;color:var(--hot);line-height:1.14;letter-spacing:-.01em;text-wrap:balance;word-break:auto-phrase}
+.ppr small{font-size:calc(24px*var(--k));font-weight:700;color:#2f6fd6;margin-top:2px;line-height:1.2}
+.pprow:nth-child(even){background:#f7f9fd}
+.pprow.top{border-width:4px}
+.pprow.m1{border-color:#f2c230;background:#fffbea}
+.pprow.m2{border-color:#c3ccd6}
+.pprow.m3{border-color:#e0a46e}
+.pprow.m1 .ppn{background:radial-gradient(circle at 35% 30%,#fff3b0,#f5c400 55%,#c99700)}
+.pprow.m2 .ppn{background:radial-gradient(circle at 35% 30%,#ffffff,#c4ccd4 55%,#8f9aa6)}
+.pprow.m3 .ppn{background:radial-gradient(circle at 35% 30%,#ffe0c4,#d98b4a 55%,#a75f22)}
+.pprow.top .ppn{width:calc(66px*var(--k));height:calc(66px*var(--k));font-size:calc(38px*var(--k));text-shadow:0 2px 0 rgba(0,0,0,.25)}
+.pprow.top .ppr b{font-size:calc(48px*var(--k)*var(--s,1))}
+.ppnote{font-size:calc(22px*var(--k));font-weight:700;color:#6b7385;line-height:1.4;padding:0 8px}
+.ppnote.box{background:rgba(255,255,255,.9);border-radius:16px;padding:8px 16px}
+
+/* 絵のマス目（tiles） */
+.pptiles{flex:1 1 auto;display:grid;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr));grid-auto-rows:minmax(0,1fr);gap:calc(12px*var(--k))}
+.ppt{display:flex;flex-direction:column;background:#fff;border-radius:22px;overflow:hidden;border:4px solid var(--c);box-shadow:0 6px 16px rgba(0,0,0,.16);min-height:0}
+.ppt h3{display:flex;align-items:center;gap:8px;background:var(--c);color:#fff;font-size:calc(29px*var(--k));font-weight:900;padding:6px 10px;line-height:1.15}
+.ppt h3 i{font-style:normal;flex:0 0 auto;width:calc(40px*var(--k));height:calc(40px*var(--k));border-radius:50%;background:#fff;color:var(--c);display:flex;align-items:center;justify-content:center;font-size:calc(25px*var(--k))}
+.ppt h3 span{min-width:0;font-size:calc(1em*var(--s,1))}
+.ppt .pic{flex:1 1 auto;min-height:calc(120px*var(--k));background:#fff center/contain no-repeat;margin:2px 4px 0}
+.ppt .pic.none{background:linear-gradient(135deg,#f3f5f9,#e6ebf3)}
+.ppt .a{margin:2px auto 0;background:var(--hot);color:#fff;font-weight:900;font-size:calc(26px*var(--k));line-height:1.3;border-radius:10px;padding:2px 12px;text-align:center}
+.ppt .b{margin:4px 8px 8px;text-align:center;font-weight:800;font-size:calc(22px*var(--k));color:#3a4459;line-height:1.25;text-wrap:balance}
+.ppsum{flex:0 0 auto;display:flex;align-items:center;justify-content:center;gap:20px;background:#fffbe6;border:4px solid #ffd23f;border-radius:24px;padding:8px 22px;box-shadow:0 6px 16px rgba(0,0,0,.14)}
+.ppsum span{font-size:calc(30px*var(--k));font-weight:900;color:var(--ink);line-height:1.25}
+.ppsum b{font-size:calc(66px*var(--k));font-weight:900;color:var(--hot);line-height:1.05;letter-spacing:-.02em}
+.ppsum b small{font-size:.5em}
+
+/* ティア表（tier） */
+.pptier{flex:1 1 auto;display:flex;flex-direction:column;gap:calc(10px*var(--k))}
+.pptr{flex:1 1 auto;display:flex;background:rgba(255,255,255,.95);border-radius:22px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.16);border:4px solid var(--c)}
+.pptr .rk{flex:0 0 calc(168px*var(--k));display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--c);color:#fff;padding:6px 8px}
+.pptr .rk b{font-size:calc(100px*var(--k));font-weight:900;line-height:1;text-shadow:0 4px 0 rgba(0,0,0,.16)}
+.pptr .rk small{font-size:calc(22px*var(--k));font-weight:800;text-align:center;line-height:1.25;margin-top:4px}
+.pptr .its{flex:1;display:flex;align-items:center;justify-content:space-evenly;gap:6px;padding:8px 10px;min-width:0}
+.ppit{flex:1 1 0;display:flex;flex-direction:column;align-items:center;min-width:0}
+.ppit img{width:calc(116px*var(--k));height:calc(116px*var(--k));border-radius:18px;object-fit:cover}
+.ppit span{font-size:calc(25px*var(--k)*var(--s,1));font-weight:900;color:var(--ink);text-align:center;line-height:1.2;margin-top:4px;max-width:100%;text-wrap:balance;word-break:auto-phrase}
+.ppit small{font-size:calc(19px*var(--k));font-weight:700;color:#6f788b;text-align:center;line-height:1.2}
+
+/* 一番下（フォローのお誘い） */
+.ppfoot{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--brand);color:#fff;border-radius:26px;padding:10px 20px 10px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
+.ppfoot b{font-size:38px;font-weight:900;color:#ffd23f;letter-spacing:.01em;line-height:1.22}
+.ppfoot span{font-size:23px;font-weight:700;opacity:.92;line-height:1.3}
