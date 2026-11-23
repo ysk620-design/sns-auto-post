@@ -73,6 +73,15 @@ jobs:
         if: steps.voice.outputs.needs_voice == 'true'
         run: bash scripts/setup_voicevox.sh
 
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/music
+          key: music-${{ hashFiles('music/tracks.json') }}
+          restore-keys: music-
+
+      - name: BGMの曲を用意（フリー音源。リポジトリには置かない）
+        run: python -m autopost.music download || true
+
       - name: 画像を作る
         env:
           TARGET: ${{ inputs.target || 'queue' }}

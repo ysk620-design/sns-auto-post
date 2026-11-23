@@ -130,8 +130,8 @@ def hook_frame(data: dict, title: str, theme: dict, font_path: str, out: Path) -
     img.save(out)
 
 
-def _bgm(total: float, out: Path, volume: float = 0.5) -> bool:
-    """オリジナルのBGM（自作なので著作権の心配なし）を書き出す。numpy などが無ければ無音にする。"""
+def _bgm(total: float, out: Path, volume: float = 0.5, key: str = "") -> bool:
+    """BGMを書き出す。フリー音源（music.py）があればそれを、無ければ自作のBGMを使う。numpy などが無ければ無音にする。"""
     try:
         import numpy as np
         from scipy.io import wavfile
@@ -139,7 +139,12 @@ def _bgm(total: float, out: Path, volume: float = 0.5) -> bool:
         from .story.bgm import SR, make_bgm
     except ImportError:
         return False
-    mix = make_bgm(total)[: int(SR * total)] * volume
+    from . import music
+
+    mix = music.bgm_array(key, total, volume) if key else None
+    if mix is None:
+        mix = make_bgm(total)[: int(SR * total)] * volume
+    mix = mix[: int(SR * total)]
     fade = int(SR * 0.8)
     mix[-fade:] *= np.linspace(1, 0, fade)[:, None]
     wavfile.write(out, SR, (np.clip(mix, -1, 1) * 32767).astype(np.int16))
@@ -188,7 +193,7 @@ def make_reel(folder: Path, title: str, subtitle: str, theme: dict, out_path: Pa
         args = [ffmpeg_exe(), "-y", "-loglevel", "error"]
         for frame, dur in zip(frames, durs):
             args += ["-loop", "1", "-t", str(dur), "-i", str(frame)]
-        if _bgm(total + 0.5, music):
+        if _bgm(total + 0.5, music, key=Path(folder).name):
             args += ["-i", str(music)]
         else:
             args += ["-f", "lavfi", "-t", "120", "-i", "anullsrc=r=44100:cl=stereo"]
@@ -253,9 +258,14 @@ def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS)
 
     from .story.bgm import SR, make_bgm
 
+    from . import music
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        bgm = make_bgm(seconds + 0.5)[: int(SR * seconds)] * 0.45
+        bgm = music.bgm_array(Path(image).parent.name, seconds, 0.6)
+        if bgm is None:
+            bgm = make_bgm(seconds + 0.5)[: int(SR * seconds)] * 0.45
+        bgm = bgm[: int(SR * seconds)]
         fade = int(SR * 0.6)
         bgm[-fade:] *= np.linspace(1, 0, fade)[:, None]
         wavfile.write(tmp / "bgm.wav", SR, (np.clip(bgm, -1, 1) * 32767).astype(np.int16))

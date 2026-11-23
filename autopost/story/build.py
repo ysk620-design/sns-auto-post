@@ -85,7 +85,12 @@ def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path, mot
         t += d
     nar = nar[:int(SR * total)]
     nar *= 0.9 / max(float(np.max(np.abs(nar))), 1e-6)
-    bgm = make_bgm(total)[:len(nar)]
+    from .. import music
+
+    # 読み上げの邪魔をしない、落ち着いた曲を選ぶ（フリー音源が無ければ自作のBGM）
+    real = music.bgm_array(Path(out).parent.name, total, 1.0, mood="calm")
+    bgm = (real * 0.55 if real is not None else make_bgm(total))
+    bgm = np.pad(bgm, ((0, max(0, len(nar) - len(bgm))), (0, 0)))[:len(nar)]
     mix = np.clip(np.stack([nar, nar], 1) + bgm * float(voice["bgm_volume"]), -1, 1)
 
     motion = motion or [False] * len(pngs)

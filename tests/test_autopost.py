@@ -446,3 +446,31 @@ class PopTest(unittest.TestCase):
         got = [reel.still_seconds(cfg, date(2026, 11, d)) for d in range(24, 30)]
         self.assertEqual(got, [5, 5, 7, 7, 5, 5])
         self.assertEqual(reel.still_seconds({}, date(2026, 11, 24)), 7.0)
+
+
+class MusicTest(unittest.TestCase):
+    def test_pick_is_stable_and_falls_back(self):
+        from autopost import music
+
+        old_file, old_env = music.TRACKS_FILE, os.environ.get("MUSIC_CACHE")
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                music.TRACKS_FILE = Path(tmp) / "tracks.json"
+                os.environ["MUSIC_CACHE"] = str(Path(tmp) / "cache")
+                self.assertIsNone(music.pick("2026-11-29-x"))  # 一覧が無ければ自作のBGM
+                music.TRACKS_FILE.write_text(json.dumps({"tracks": [
+                    {"id": "a", "url": "https://example.com/a.mp3", "moods": ["bright"]},
+                    {"id": "b", "url": "https://example.com/b.mp3", "moods": ["calm"]}]}), encoding="utf-8")
+                self.assertIsNone(music.pick("2026-11-29-x"))  # まだダウンロードしていない
+                (Path(tmp) / "cache").mkdir()
+                for t in ("a", "b"):
+                    (Path(tmp) / "cache" / f"{t}.mp3").write_bytes(b"0" * 60_000)
+                first = music.pick("2026-11-29-x")["id"]
+                self.assertEqual(music.pick("2026-11-29-x")["id"], first)
+                self.assertEqual(music.pick("x", mood="calm")["id"], "b")
+            finally:
+                music.TRACKS_FILE = old_file
+                if old_env is None:
+                    os.environ.pop("MUSIC_CACHE", None)
+                else:
+                    os.environ["MUSIC_CACHE"] = old_env
