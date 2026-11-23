@@ -348,7 +348,7 @@ def make_quiz_reel(data: dict, theme: dict, title: str, handle: str, out_path: P
 
         from . import music
 
-        bgm = music.bgm_array(Path(out_path).parent.name, total, 0.3, mood="quiz")
+        bgm = music.bgm_array(Path(out_path).parent.name, total, 0.45, mood="quiz")
         if bgm is None:
             bgm = make_bgm(total + 0.5)[: int(SR * total)] * 0.3
         bgm = bgm[: int(SR * total)]

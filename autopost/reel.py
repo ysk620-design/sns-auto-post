@@ -141,7 +141,8 @@ def _bgm(total: float, out: Path, volume: float = 0.5, key: str = "") -> bool:
         return False
     from . import music
 
-    mix = music.bgm_array(key, total, volume, mood="bright") if key else None
+    # フリー音源は音量をそろえてある（-16 LUFS）ので、自作のBGMより少し大きめにする
+    mix = music.bgm_array(key, total, min(1.0, volume * 1.8), mood="bright") if key else None
     if mix is None:
         mix = make_bgm(total)[: int(SR * total)] * volume
     mix = mix[: int(SR * total)]
@@ -262,7 +263,7 @@ def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS)
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)
-        bgm = music.bgm_array(Path(image).parent.name, seconds, 0.6, mood="bright")
+        bgm = music.bgm_array(Path(image).parent.name, seconds, 1.0, mood="bright")
         if bgm is None:
             bgm = make_bgm(seconds + 0.5)[: int(SR * seconds)] * 0.45
         bgm = bgm[: int(SR * seconds)]
