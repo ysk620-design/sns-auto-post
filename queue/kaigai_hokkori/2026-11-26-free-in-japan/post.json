@@ -12,18 +12,57 @@
       "title": "日本では<span class=\"hl\">無料</span>なのに<br>海外では<span class=\"hl\">有料</span>なもの",
       "cols": 3,
       "tiles": [
-        {"label": "お冷や", "icon": "a glass of ice water on a small coaster", "a": "日本：無料", "b": "ドイツ：無料で出す決まりなし"},
-        {"label": "駅のトイレ", "icon": "a clean white toilet with a gold coin beside it", "a": "日本：無料", "b": "ドイツの駅：1回1ユーロ"},
-        {"label": "デパートのトイレ", "icon": "a small saucer with coins next to a restroom door", "a": "日本：無料", "b": "ドイツ：チップ50〜75セントが多い"},
-        {"label": "救急車", "icon": "a white ambulance", "a": "日本：無料", "b": "アメリカ：平均1,000ドル超"},
-        {"label": "チップ", "icon": "a glass tip jar with coins", "a": "日本：いらない", "b": "アメリカ：会計の15〜20%"},
-        {"label": "ホテルの歯ブラシ", "icon": "a toothbrush and toothpaste set", "a": "日本：無料が多い", "b": "韓国：無料で置けない決まり（2024年〜）"}
+        {
+          "label": "お冷や",
+          "icon": "a glass of ice water on a small coaster",
+          "a": "日本：無料",
+          "b": "ドイツ：無料で出す決まりなし"
+        },
+        {
+          "label": "駅のトイレ",
+          "icon": "a clean white toilet with a gold coin beside it",
+          "a": "日本：無料",
+          "b": "ドイツの駅：1回1ユーロほど"
+        },
+        {
+          "label": "デパートのトイレ",
+          "icon": "a small saucer with coins next to a restroom door",
+          "a": "日本：無料",
+          "b": "ドイツ：チップ50〜75セントが多い"
+        },
+        {
+          "label": "救急車",
+          "icon": "a white ambulance",
+          "a": "日本：無料",
+          "b": "アメリカ：平均1,000ドル超"
+        },
+        {
+          "label": "チップ",
+          "icon": "a glass tip jar with coins",
+          "a": "日本：いらない",
+          "b": "アメリカ：会計の15〜20%"
+        },
+        {
+          "label": "ホテルの歯ブラシ",
+          "icon": "a toothbrush and toothpaste set",
+          "a": "日本：無料が多い",
+          "b": "韓国：無料で置けない決まり（2024年〜）"
+        }
       ],
-      "summary": {"label": "日本なら、ほぼ全部", "big": "0円"},
+      "summary": {
+        "label": "日本なら、ほぼ全部",
+        "big": "0円"
+      },
       "note": "※国や店によって違います。日本の救急車も、緊急でないと判断されると一部の地域で病院の費用がかかります"
     }
   ],
-  "caption": "日本では当たり前に無料なのに、海外ではお金がかかるもの。\n\nドイツの駅のトイレは1回1ユーロ、アメリカの救急車は平均1,000ドル超。\nアメリカのレストランでは、会計の15〜20%のチップが目安です。\n\n💬 海外でびっくりしたことはある？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
-  "hashtags": ["#海外の反応", "#海外旅行", "#日本の良いところ", "#海外生活", "#カルチャーショック"],
+  "caption": "日本では当たり前に無料なのに、海外ではお金がかかるもの。\n\nドイツの駅のトイレは1回1ユーロほど、アメリカの救急車は平均1,000ドル超。\nアメリカのレストランでは、会計の15〜20%のチップが目安です。\n\n💬 海外でびっくりしたことはある？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#海外旅行",
+    "#日本の良いところ",
+    "#海外生活",
+    "#カルチャーショック"
+  ],
   "review_notes": "【新しい型（tiles・絵のマス目）の試作・リールだけ・11/26 18時台】確認日 2026-11-24。出典：ドイツの駅のトイレ1ユーロ＝ドイツ鉄道の駅公式サイト（Sanifair） https://www.bahnhof.de/en/nuernberg-hbf/sanifair-nuernberg-hbf ／デパートなどのトイレのチップ50〜75セント＝The Local（2026年1月） https://www.thelocal.de/20260122/explained-the-rules-and-etiquette-for-using-germanys-public-toilets ／ドイツの飲食店に無料の水を出す義務はない＝ https://www.beverage-world.com/en/newsdetail/free-tap-water-in-german-restaurants ／アメリカの救急車の平均（基本的な救急搬送で平均1,179ドル）＝GoodRx（民間） https://www.goodrx.com/insurance/health-insurance/how-much-does-an-ambulance-cost ／チップ15〜20%＝YouGov https://yougov.com/en-us/articles/49619-are-young-people-bad-tippers-how-americans-tip-restaurants ／韓国のホテルの使い捨てアメニティ無料提供の禁止（2024年3月29日〜、50室以上）＝相鉄ホテルのお知らせ https://sotetsu-hotels.com/en/splaisir/myeong-dong/news/121/ ／日本の救急車は原則無料（一部地域で選定療養費）＝埼玉県 https://www.pref.saitama.lg.jp/a0404/tekiseiriyou.html 。公的な調査でない出典が入るので、方針（公的な調査だけ）に合うか確認してください。"
 }
