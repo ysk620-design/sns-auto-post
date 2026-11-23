@@ -113,7 +113,8 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
 
                 title = data.get("reel_title") or reel.default_title(data)
                 handle = cfg.get("display_handle", "@" + cfg["handle"])
-                info["reel_seconds"] = quizreel.make_quiz_reel(data, cfg["theme"], title, handle, old_reel)
+                info["reel_seconds"] = quizreel.make_quiz_reel(data, cfg["theme"], title, handle, old_reel,
+                                                               follow=cfg.get("matome_follow") or "")
             (folder / "render.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
             make_preview(folder)
             rel = folder.relative_to(config.ROOT) if folder.is_relative_to(config.ROOT) else folder

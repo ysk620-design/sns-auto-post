@@ -101,8 +101,8 @@ def validate(data: dict) -> list[str]:
     return errors
 
 
-def plan(data: dict) -> list[dict]:
-    """リールの画面の並びと秒数。"""
+def plan(data: dict, follow: str = "") -> list[dict]:
+    """リールの画面の並びと秒数。follow は最後の画面に出すフォローのお誘い（accounts/*.json の matome_follow）。"""
     questions, levels, errors = parse(data)
     if errors:
         raise RuntimeError("クイズリールを作れません: " + " / ".join(errors))
@@ -119,14 +119,17 @@ def plan(data: dict) -> list[dict]:
     full = len(chosen) == len(questions)
     if standalone:
         # リールだけの投稿：カルーセルがないので、コメントを呼びかけて終わる
-        lines = [data.get("quiz_end_title") or "何問わかった？", "コメントで教えてね", "ほかの話もプロフィールから"]
+        lines = [data.get("quiz_end_title") or "何問わかった？", "コメントで教えてね"]
+        if not follow:
+            lines.append("ほかの話もプロフィールから")
     elif full and levels:
         lines = ["あなたのネイティブ度は？"] + levels
     else:
         lines = ["続きの問題と判定は", "プロフィールの投稿で", "全問わかるか挑戦してね"]
         full = False
-    screens.append({"kind": "end", "lines": lines, "full": full and not standalone,
-                    "sec": readtime.screen_seconds(lines, extra=1.0, minimum=3.5)})
+    # フォローのお誘いも読み終わるまで映す
+    screens.append({"kind": "end", "lines": lines, "full": full and not standalone, "follow": follow,
+                    "sec": readtime.screen_seconds(lines, follow, extra=0.5 if follow else 1.0, minimum=3.5)})
     return screens
 
 
@@ -248,7 +251,8 @@ class _Painter:
         img = Image.new("RGB", (W, H), self.t["main"])
         d = ImageDraw.Draw(img)
         lines = s["lines"]
-        y = 420
+        follow = s.get("follow") or ""
+        y = 520 if follow else 420
         head = self.font(66)
         d.text((W // 2, y), lines[0], font=head, fill="#ffffff", anchor="mm")
         y += 140
@@ -258,8 +262,25 @@ class _Painter:
                 d.text((W // 2, y), w, font=f, fill=self.t["accent_soft"] if s["full"] else "#ffffff", anchor="mm")
                 y += int(f.size * 1.45)
             y += 34
-        tail = "何問わかった？コメントで教えてね" if s["full"] else "▶ " + self.handle
-        d.text((W // 2, min(y + 80, 1500)), tail, font=self.font(42), fill="#ffffff", anchor="mm")
+        if not follow:
+            tail = "何問わかった？コメントで教えてね" if s["full"] else "▶ " + self.handle
+            d.text((W // 2, min(y + 80, 1500)), tail, font=self.font(42), fill="#ffffff", anchor="mm")
+            img.save(out)
+            return
+        if s["full"]:
+            d.text((W // 2, y + 30), "何問わかった？コメントで教えてね", font=self.font(40), fill="#ffffff", anchor="mm")
+            y += 90
+        # フォローのボタン（見終わった人に、フォローする理由を最後に見せる）
+        by = min(y + 110, 1380)
+        f, wl = self.fit(d, follow, 50, 36, W - 260, 2)
+        lh = int(f.size * 1.4)
+        bh = lh * len(wl) + 150
+        d.rounded_rectangle((90, by, W - 90, by + bh), radius=44, fill=self.t["accent_soft"])
+        ty = by + 50 + lh // 2
+        for w in wl:
+            d.text((W // 2, ty), w, font=f, fill=self.t["main"], anchor="mm")
+            ty += lh
+        d.text((W // 2, ty + 20), "＋ " + self.handle + " をフォロー", font=self.font(38), fill=self.t["main"], anchor="mm")
         img.save(out)
 
 
@@ -290,7 +311,7 @@ def _sfx(screens: list[dict], total: float, sr: int = 44100):
     return out
 
 
-def make_quiz_reel(data: dict, theme: dict, title: str, handle: str, out_path: Path) -> float:
+def make_quiz_reel(data: dict, theme: dict, title: str, handle: str, out_path: Path, follow: str = "") -> float:
     """クイズリールを書き出して、長さ（秒）を返す。"""
     import numpy as np
     from scipy.io import wavfile
@@ -298,7 +319,7 @@ def make_quiz_reel(data: dict, theme: dict, title: str, handle: str, out_path: P
     from .reel import ffmpeg_exe
     from .story.bgm import SR, make_bgm
 
-    screens = plan(data)
+    screens = plan(data, follow)
     total = sum(s["sec"] for s in screens)
     painter = _Painter(theme, title, handle)
     with tempfile.TemporaryDirectory() as tmp:

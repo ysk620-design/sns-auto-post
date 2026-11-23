@@ -159,7 +159,8 @@ def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -
             from . import quizreel
 
             quizreel.make_quiz_reel(post.data, cfg["theme"], post.data.get("reel_title") or post.data.get("title", ""),
-                                    cfg.get("display_handle", "@" + handle), post.folder / "reel.mp4")
+                                    cfg.get("display_handle", "@" + handle), post.folder / "reel.mp4",
+                                    follow=cfg.get("matome_follow") or "")
         image = story_share.make_story_image(image, post.folder / "story.jpg", cfg.get("display_handle", "@" + handle),
                                              cfg.get("theme"))
     else:
@@ -419,7 +420,7 @@ def publish_reel(client: Client, cfg: dict, post: posts.Post, caption: str, exis
 
         title = post.data.get("reel_title") or reel.default_title(post.data)
         quizreel.make_quiz_reel(post.data, cfg["theme"], title, cfg.get("display_handle", "@" + cfg["handle"]),
-                                post.folder / "reel.mp4")
+                                post.folder / "reel.mp4", follow=cfg.get("matome_follow") or "")
         prebuilt = True
     if prebuilt:
         # ストーリー形式は、画像と一緒に作ってある読み上げ付きの動画（reel.mp4）をそのまま使う
