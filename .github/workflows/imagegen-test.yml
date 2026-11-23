@@ -19,6 +19,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: ライブラリを入れる
+        run: pip install -q numpy scipy Pillow
       - name: 試しに絵を作る
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}

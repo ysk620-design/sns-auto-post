@@ -101,7 +101,9 @@ def generate(prompt: str, out_path: Path, aspect: str = "1:1", size: str = "1K",
         return None
     text = prompt.strip() + NO_TEXT
     for model in models or MODELS.get(kind, MODELS["icons"]):
-        for attempt in range(2):
+        want = size
+        for attempt in range(3):
+            size = want
             status, res = _post(f"{API}/interactions", {
                 "model": model, "input": text,
                 "response_format": {"type": "image", "mime_type": "image/jpeg", "aspect_ratio": aspect,
@@ -125,6 +127,9 @@ def generate(prompt: str, out_path: Path, aspect: str = "1:1", size: str = "1K",
                 out_path.write_bytes(img)
                 log(f"  ✅ {model}（{how}）→ {out_path.name}（{len(img) // 1024}KB）")
                 return out_path
+            if status == 400 and "size" in _error_text(res).lower() and want != "1K":
+                want = "1K"  # この大きさに対応していないモデルは、1K でやり直す
+                continue
             if status in (429, 500, 503, 0) and attempt == 0:
                 time.sleep(8)  # 混雑・一時的な失敗は少し待って1回だけやり直す
                 continue
