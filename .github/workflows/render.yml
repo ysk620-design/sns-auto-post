@@ -7,6 +7,8 @@ on:
       - "accounts/*.json"
       - "autopost/templates.py"
       - "autopost/style.css"
+      - "autopost/pop.py"
+      - "autopost/pop.css"
   workflow_dispatch:
     inputs:
       target:
@@ -51,9 +53,15 @@ jobs:
       - name: 投稿データをチェック
         run: python -m autopost.validate
 
+      - name: main と比べる準備（プルリクエストのブランチでは、追加・変更した投稿だけを作る）
+        if: github.ref_name != 'main'
+        run: git fetch -q --depth=1 origin main:refs/remotes/origin/main
+
       - name: 読み上げ音声が必要か調べる
         id: voice
-        run: python -m autopost.render queue --check-voice
+        env:
+          CHANGED: ${{ github.ref_name != 'main' && '--changed-only' || '' }}
+        run: python -m autopost.render queue --check-voice $CHANGED
 
       - uses: actions/cache@v4
         if: steps.voice.outputs.needs_voice == 'true'
@@ -65,9 +73,20 @@ jobs:
         if: steps.voice.outputs.needs_voice == 'true'
         run: bash scripts/setup_voicevox.sh
 
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/music
+          key: music-${{ hashFiles('music/tracks.json') }}
+          restore-keys: music-
+
+      - name: BGMの曲を用意（フリー音源。リポジトリには置かない）
+        run: python -m autopost.music download || true
+
       - name: 画像を作る
         env:
           TARGET: ${{ inputs.target || 'queue' }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CHANGED: ${{ github.ref_name != 'main' && '--changed-only' || '' }}
         run: |
           if [ "$TARGET" = "examples" ]; then
             python -m autopost.render examples --all
@@ -75,7 +94,7 @@ jobs:
             mkdir -p out
             for d in examples/*/; do python -m autopost.reel "$d" "out/$(basename "$d").mp4"; done
           else
-            python -m autopost.render queue
+            python -m autopost.render queue $CHANGED
           fi
 
       - name: リール動画を保存（確認用）
@@ -90,7 +109,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A queue examples
+          git add -A queue examples assets
           if git diff --cached --quiet; then
             echo "変更はありません"
             exit 0

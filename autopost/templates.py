@@ -15,6 +15,7 @@
           head（列の見出し2つ。初期値 ["こんなとき", "目安"]） / items[[状況, 金額, 制度名]]（6〜14行） / note（注意書き） /
           big（見出しの大きな数字。例 "約222<small>万円</small>"） / big_label（big の前の小さな文字） / rank（true なら上から3行を強調） /
           follow（一番下のフォローのお誘い。省略すると accounts/*.json の matome_follow）
+  pop / tiles / tier  にぎやかな1枚まとめ（縦長 1080×1920。絵と背景付き）。項目は pop.py の説明を参照
 どのスライドも tag（左上の小見出し）を指定できる。
 """
 from __future__ import annotations
@@ -23,9 +24,10 @@ import html
 import re
 from pathlib import Path
 
-from . import cover_art
+from . import cover_art, pop
 
-CSS = (Path(__file__).resolve().parent / "style.css").read_text(encoding="utf-8")
+_HERE = Path(__file__).resolve().parent
+CSS = (_HERE / "style.css").read_text(encoding="utf-8") + (_HERE / "pop.css").read_text(encoding="utf-8")
 CIRCLED = "①②③④⑤⑥⑦⑧⑨⑩"
 
 # 投稿データの中で使ってよいHTMLタグ（それ以外は文字としてそのまま表示する）
@@ -68,6 +70,7 @@ class _Builder:
         self.handle = esc(cfg["display_handle"])
         self.n = len(data["slides"])
         self.scene = 0
+        self.esc = esc
 
     def frame(self, i: int, cls: str, tag: str, inner: str, foot_right: str = "→", foot: bool = True) -> str:
         pg = f'<div class="pg">{i}/{self.n}</div>' if i > 1 else ""
@@ -178,7 +181,17 @@ class _Builder:
         )
 
 
-LAYOUTS = ("cover", "callout", "cards", "points", "table", "quiz", "cta", "matome")
+    def pop(self, i: int, s: dict) -> str:
+        return pop.pop(self, i, s)
+
+    def tiles(self, i: int, s: dict) -> str:
+        return pop.tiles(self, i, s)
+
+    def tier(self, i: int, s: dict) -> str:
+        return pop.tier(self, i, s)
+
+
+LAYOUTS = ("cover", "callout", "cards", "points", "table", "quiz", "cta", "matome", "pop", "tiles", "tier")
 
 
 def build_html(data: dict, cfg: dict) -> str:

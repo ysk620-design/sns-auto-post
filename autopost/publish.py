@@ -164,7 +164,8 @@ def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -
         image = story_share.make_story_image(image, post.folder / "story.jpg", cfg.get("display_handle", "@" + handle),
                                              cfg.get("theme"))
     else:
-        reel.make_still_reel(image, post.folder / "reel.mp4")
+        seconds = reel.still_seconds(cfg, post.date or now.date())
+        reel.make_still_reel(image, post.folder / "reel.mp4", seconds=seconds)
     commit_and_push(f"画像を準備: {handle}/{post.id}")
     sha = git("rev-parse", "HEAD")
     raw = lambda f: f"https://raw.githubusercontent.com/{repo_slug()}/{sha}/{f.relative_to(ROOT).as_posix()}"  # noqa: E731
@@ -191,6 +192,11 @@ def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -
         "reel_only_date": now.date().isoformat(),
         "image_commit": sha,
     }
+    if post.data.get("reel_style") != "quiz":
+        record["reel_seconds"] = reel.still_seconds(cfg, post.date or now.date())
+    layout = ((post.data.get("slides") or [{}])[0] or {}).get("layout")
+    if layout:
+        record["layout"] = layout  # デザイン（matome / pop / tiles / tier）ごとに伸び方を比べるため
     print(f"🎬 {handle}: リールを投稿しました {record['reel_permalink'] or reel_id}")
     # 縦長の画像なので、そのままストーリーズでもお知らせする
     if story_share.wanted(cfg) and (not existing or posted_recently(existing, hours=3)):
@@ -257,6 +263,9 @@ def find_due_reels(accounts: dict, now, only: str = "", force: bool = False, dry
 
 
 def ensure_rendered(cfg: dict, post: posts.Post) -> posts.Post:
+    from . import art
+
+    art.ensure([(post.data, cfg)])  # 1枚まとめの絵がまだ無ければ作る（作れなければ絵なし）
     if post.needs_render(cfg):
         from . import render
 
@@ -269,6 +278,8 @@ def ensure_rendered(cfg: dict, post: posts.Post) -> posts.Post:
 
 def commit_and_push(message: str) -> None:
     git("add", "-A", "queue", "posted")
+    if (ROOT / "assets").exists():
+        git("add", "-A", "assets")
     if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode != 0:
         git("commit", "-m", message)
     for attempt in range(5):

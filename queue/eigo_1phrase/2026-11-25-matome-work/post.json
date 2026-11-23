@@ -6,57 +6,74 @@
   "title": "1枚まとめ：職場の直訳しがちな英語",
   "slides": [
     {
-      "layout": "matome",
+      "layout": "pop",
       "kicker": "保存版｜職場",
+      "bubble": "外国人の同僚に\n伝わらない？",
       "title": "それ、<span class=\"hl\">通じません</span><br>職場の言いかえ8選",
       "sub": "外国人の同僚に言うと、意味が伝わらないかも",
       "head": [
-        "日本語でよく言う",
+        "日本語",
         "自然な英語"
       ],
       "items": [
-        [
-          "「ちょっといいですか」",
-          "Do you have a minute?",
-          "✕ Is it good a little?"
-        ],
-        [
-          "「お先に失礼します」",
-          "I'm heading out.",
-          "✕ I'm rude first."
-        ],
-        [
-          "「了解です」",
-          "Got it.",
-          "✕ Understanding."
-        ],
-        [
-          "「確認します」",
-          "Let me check.",
-          "✕ I confirm."
-        ],
-        [
-          "「残業します」",
-          "I'm working late.",
-          "✕ I do overwork."
-        ],
-        [
-          "「ノルマ」",
-          "a quota",
-          "✕ a norma"
-        ],
-        [
-          "「サラリーマン」",
-          "an office worker",
-          "✕ a salaryman"
-        ],
-        [
-          "「アポを取る」",
-          "set up a meeting",
-          "✕ take an appo"
-        ]
+        {
+          "left": "ちょっといいですか",
+          "ng": "Is it good a little?",
+          "right": "Do you have a minute?",
+          "right_sub": "ドゥ ユー ハヴ ア ミニット",
+          "icon": "a small stopwatch showing one minute"
+        },
+        {
+          "left": "お先に失礼します",
+          "ng": "I'm rude first.",
+          "right": "I'm heading out.",
+          "right_sub": "アイム ヘディング アウト",
+          "icon": "a waving hand next to an office door"
+        },
+        {
+          "left": "了解です",
+          "ng": "Understanding.",
+          "right": "Got it.",
+          "right_sub": "ガット イット",
+          "icon": "a green check mark"
+        },
+        {
+          "left": "確認します",
+          "ng": "I confirm.",
+          "right": "Let me check.",
+          "right_sub": "レット ミー チェック",
+          "icon": "a magnifying glass over a document"
+        },
+        {
+          "left": "残業します",
+          "ng": "I do overwork.",
+          "right": "I'm working late.",
+          "right_sub": "アイム ワーキング レイト",
+          "icon": "a laptop on a desk with a crescent moon"
+        },
+        {
+          "left": "ノルマ",
+          "ng": "a norma",
+          "right": "a quota",
+          "right_sub": "ア クォータ",
+          "icon": "a target with an arrow in the bullseye"
+        },
+        {
+          "left": "サラリーマン",
+          "ng": "a salaryman",
+          "right": "an office worker",
+          "right_sub": "アン オフィス ワーカー",
+          "icon": "a briefcase with a necktie"
+        },
+        {
+          "left": "アポを取る",
+          "ng": "take an appo",
+          "right": "set up a meeting",
+          "right_sub": "セット アップ ア ミーティング",
+          "icon": "a calendar with a red pin"
+        }
       ],
-      "note": "※場面によって、ほかの言い方もあります"
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
     }
   ],
   "caption": "職場の「いつもの一言」、英語でそのまま訳していませんか？\n8つのうち、いくつ言えた？\n\n✕ Is it good a little? → ○ Do you have a minute?\n✕ I'm rude first. → ○ I'm heading out.\n✕ Understanding. → ○ Got it.\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
@@ -67,5 +84,5 @@
     "#大人の英語",
     "#ビジネス英語"
   ],
-  "review_notes": "【リールだけの投稿・11/25 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。"
+  "review_notes": "【リールだけの投稿・11/25 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。 【新しいデザイン（pop）に作り直し】中身は同じで、カタカナの読みと絵（Gemini）を足しました。"
 }

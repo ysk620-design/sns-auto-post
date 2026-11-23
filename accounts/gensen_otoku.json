@@ -29,5 +29,17 @@
       18
     ]
   },
-  "matome_follow": "フォローで、子育てのお得を毎日1枚"
+  "matome_follow": "フォローで、子育てのお得を毎日1枚",
+  "art": {
+    "style": "clay",
+    "backgrounds": [
+      "A bright and cozy Japanese living room with sunlight and green plants",
+      "A sunny Japanese park with cherry blossoms and a colorful playground",
+      "A warm wooden kitchen table with a piggy bank and notebooks in soft morning light"
+    ]
+  },
+  "reel_only_seconds": [
+    5,
+    7
+  ]
 }

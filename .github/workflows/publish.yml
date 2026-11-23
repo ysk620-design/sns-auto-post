@@ -29,6 +29,7 @@ jobs:
     timeout-minutes: 45
     env:
       IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
       ACCOUNT: ${{ inputs.account }}
       MODE_FLAGS: ${{ inputs.mode == 'now' && '--force' || (inputs.mode == 'dry-run' && '--dry-run' || '') }}
@@ -68,6 +69,17 @@ jobs:
       - name: 読み上げ音声（VOICEVOX）を用意
         if: steps.check.outputs.needs_voice == 'true'
         run: bash scripts/setup_voicevox.sh
+
+      - uses: actions/cache@v4
+        if: steps.check.outputs.due == 'true' && !contains(env.MODE_FLAGS, 'dry-run')
+        with:
+          path: ~/.cache/music
+          key: music-${{ hashFiles('music/tracks.json') }}
+          restore-keys: music-
+
+      - name: BGMの曲を用意（フリー音源。リポジトリには置かない）
+        if: steps.check.outputs.due == 'true' && !contains(env.MODE_FLAGS, 'dry-run')
+        run: python -m autopost.music download || true
 
       - name: 投稿する
         if: steps.check.outputs.due == 'true'

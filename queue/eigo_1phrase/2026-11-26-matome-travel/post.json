@@ -6,57 +6,75 @@
   "title": "1枚まとめ：旅行・ホテルの直訳しがちな英語",
   "slides": [
     {
-      "layout": "matome",
+      "layout": "pop",
       "kicker": "保存版｜旅行・ホテル",
+      "bubble": "ホテルや駅で\n困らないように",
       "title": "それ、<span class=\"hl\">通じません</span><br>旅行の言いかえ8選",
       "sub": "ホテルや駅で、そのまま言うと困るかも",
       "head": [
-        "日本語でよく言う",
+        "日本語",
         "自然な英語"
       ],
       "items": [
-        [
-          "「フロント」",
-          "the front desk",
-          "✕ the front"
-        ],
-        [
-          "「スーツケース」",
-          "a suitcase",
-          "✕ a trunk"
-        ],
-        [
-          "「ペンション」",
-          "a guesthouse",
-          "✕ a pension（年金のこと）"
-        ],
-        [
-          "「レンタカーを借りる」",
-          "rent a car",
-          "✕ borrow a rent-a-car"
-        ],
-        [
-          "「荷物を預かって」",
-          "Can you hold my bags?",
-          "✕ Keep my baggage."
-        ],
-        [
-          "「両替したい」",
-          "change money",
-          "✕ I want to change."
-        ],
-        [
-          "「この席、空いてますか」",
-          "Is this seat taken?",
-          "✕ Is this seat empty?"
-        ],
-        [
-          "「部屋に鍵を置き忘れた」",
-          "I locked myself out.",
-          "✕ I forgot key in room."
-        ]
+        {
+          "left": "フロント",
+          "ng": "the front",
+          "right": "the front desk",
+          "right_sub": "ザ フロント デスク",
+          "icon": "a golden hotel reception bell"
+        },
+        {
+          "left": "スーツケース",
+          "ng": "a trunk",
+          "right": "a suitcase",
+          "right_sub": "ア スーツケース",
+          "icon": "a colorful suitcase with travel stickers"
+        },
+        {
+          "left": "ペンション",
+          "ng": "a pension（年金のこと）",
+          "right": "a guesthouse",
+          "right_sub": "ア ゲストハウス",
+          "icon": "a cozy small guesthouse with a red roof"
+        },
+        {
+          "left": "レンタカーを借りる",
+          "ng": "borrow a rent-a-car",
+          "right": "rent a car",
+          "right_sub": "レント ア カー",
+          "icon": "a small rental car with a key"
+        },
+        {
+          "left": "荷物を預かって",
+          "ng": "Keep my baggage.",
+          "right": "Can you hold my bags?",
+          "right_sub": "キャン ユー ホールド マイ バッグズ",
+          "icon": "a luggage tag on a travel bag"
+        },
+        {
+          "left": "両替したい",
+          "ng": "I want to change.",
+          "right": "change money",
+          "right_sub": "チェンジ マニー",
+          "icon": "coins and banknotes with exchange arrows"
+        },
+        {
+          "left": "この席、空いてますか",
+          "ng": "Is this seat empty?",
+          "right": "Is this seat taken?",
+          "right_sub": "イズ ディス シート テイクン",
+          "icon": "an empty cafe chair"
+        },
+        {
+          "left": "部屋に鍵を置き忘れた",
+          "ng": "I forgot key in room.",
+          "right": "I locked myself out.",
+          "right_sub": "アイ ロックト マイセルフ アウト",
+          "icon": "a door key with a question mark"
+        }
       ],
-      "note": "※場面によって、ほかの言い方もあります"
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります",
+      "bg": "A bright airport departure hall with big windows and airplanes outside"
     }
   ],
   "caption": "海外旅行のホテルや駅で、そのまま訳して言っていませんか？\n8つのうち、いくつ言えた？\n\n✕ the front → ○ the front desk\n✕ a trunk → ○ a suitcase\n✕ a pension（年金のこと） → ○ a guesthouse\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
@@ -67,5 +85,5 @@
     "#大人の英語",
     "#海外旅行英語"
   ],
-  "review_notes": "【リールだけの投稿・11/26 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。"
+  "review_notes": "【リールだけの投稿・11/26 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。 【新しいデザイン（pop）に作り直し】中身は同じで、カタカナの読みと絵（Gemini）を足しました。"
 }

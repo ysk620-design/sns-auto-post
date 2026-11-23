@@ -6,57 +6,74 @@
   "title": "1枚まとめ：買い物の直訳しがちな英語",
   "slides": [
     {
-      "layout": "matome",
+      "layout": "pop",
       "kicker": "保存版｜買い物",
+      "bubble": "店員さんが\n「？」になる",
       "title": "それ、<span class=\"hl\">通じません</span><br>買い物の言いかえ8選",
       "sub": "海外のお店で言うと、店員さんが「？」となるかも",
       "head": [
-        "日本語でよく言う",
+        "日本語",
         "自然な英語"
       ],
       "items": [
-        [
-          "「見ているだけです」",
-          "I'm just looking.",
-          "✕ I'm only seeing."
-        ],
-        [
-          "「試着していいですか」",
-          "Can I try this on?",
-          "✕ Can I fitting?"
-        ],
-        [
-          "「バーゲン」",
-          "a sale",
-          "✕ a bargain（掘り出し物のこと）"
-        ],
-        [
-          "「ポイントカード」",
-          "a rewards card",
-          "✕ a point card"
-        ],
-        [
-          "「レジはどこですか」",
-          "Where's the checkout?",
-          "✕ Where's the regi?"
-        ],
-        [
-          "「袋はいりません」",
-          "I don't need a bag.",
-          "✕ No vinyl bag."
-        ],
-        [
-          "「プレゼント用に包んで」",
-          "Can you gift-wrap it?",
-          "✕ Wrap for present."
-        ],
-        [
-          "「安くなりますか」",
-          "Is there a discount?",
-          "✕ Make it cheap."
-        ]
+        {
+          "left": "見ているだけです",
+          "ng": "I'm only seeing.",
+          "right": "I'm just looking.",
+          "right_sub": "アイム ジャスト ルッキング",
+          "icon": "a pair of binoculars"
+        },
+        {
+          "left": "試着していいですか",
+          "ng": "Can I fitting?",
+          "right": "Can I try this on?",
+          "right_sub": "キャン アイ トライ ディス オン",
+          "icon": "a fitting room with a curtain"
+        },
+        {
+          "left": "バーゲン",
+          "ng": "a bargain（掘り出し物のこと）",
+          "right": "a sale",
+          "right_sub": "ア セール",
+          "icon": "a red sale price tag"
+        },
+        {
+          "left": "ポイントカード",
+          "ng": "a point card",
+          "right": "a rewards card",
+          "right_sub": "ア リウォーズ カード",
+          "icon": "a loyalty card with star stamps"
+        },
+        {
+          "left": "レジはどこですか",
+          "ng": "Where's the regi?",
+          "right": "Where's the checkout?",
+          "right_sub": "ウェアズ ザ チェックアウト",
+          "icon": "a cash register"
+        },
+        {
+          "left": "袋はいりません",
+          "ng": "No vinyl bag.",
+          "right": "I don't need a bag.",
+          "right_sub": "アイ ドント ニード ア バッグ",
+          "icon": "a reusable eco bag"
+        },
+        {
+          "left": "プレゼント用に包んで",
+          "ng": "Wrap for present.",
+          "right": "Can you gift-wrap it?",
+          "right_sub": "キャン ユー ギフトラップ イット",
+          "icon": "a wrapped gift box with a ribbon"
+        },
+        {
+          "left": "安くなりますか",
+          "ng": "Make it cheap.",
+          "right": "Is there a discount?",
+          "right_sub": "イズ ゼア ア ディスカウント",
+          "icon": "a price tag with a down arrow"
+        }
       ],
-      "note": "※場面によって、ほかの言い方もあります"
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
     }
   ],
   "caption": "海外のお店で、日本語をそのまま英語にしていませんか？\n8つのうち、いくつ言えた？\n\n✕ I'm only seeing. → ○ I'm just looking.\n✕ Can I fitting? → ○ Can I try this on?\n✕ a bargain（掘り出し物のこと） → ○ a sale\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
@@ -67,5 +84,5 @@
     "#大人の英語",
     "#海外旅行英語"
   ],
-  "review_notes": "【リールだけの投稿・11/27 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。"
+  "review_notes": "【リールだけの投稿・11/27 18時台・1枚まとめ（7秒）】英語での初めての1枚まとめ。お金のアカウントで伸びた型を試す。 【新しいデザイン（pop）に作り直し】中身は同じで、カタカナの読みと絵（Gemini）を足しました。"
 }

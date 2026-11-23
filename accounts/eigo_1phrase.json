@@ -22,5 +22,17 @@
     "accent_soft": "#ffb39f",
     "muted": "#9aa1b0"
   },
-  "matome_follow": "フォローで、通じる英語を毎日1枚"
+  "matome_follow": "フォローで、通じる英語を毎日1枚",
+  "art": {
+    "style": "clay",
+    "backgrounds": [
+      "A charming street in London with red double-decker buses and old brick buildings",
+      "A cozy New York street with yellow taxis and brownstone buildings in autumn",
+      "A bright airport departure hall with big windows and airplanes outside"
+    ]
+  },
+  "reel_only_seconds": [
+    5,
+    7
+  ]
 }
