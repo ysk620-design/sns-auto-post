@@ -55,10 +55,14 @@ def _palette(data: dict) -> str:
 
 def render_payload(data: dict, cfg: dict) -> dict:
     """画像と動画の中身を決める項目（ここが変わったら作り直す）。"""
-    keys = ("icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script")
+    from .. import art
+
+    keys = ("icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script",
+            "art")
     reel_cfg = cfg.get("reel") or {}
     return {
         "story": {k: data.get(k) for k in keys},
+        "comic": [p.name for p in art.story_paths(data) if p.exists()],  # 漫画の絵があとからできたら作り直す
         "palette": _palette(data),
         "name": cfg.get("name"),
         "display_handle": cfg.get("display_handle"),

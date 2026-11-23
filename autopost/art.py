@@ -1,8 +1,10 @@
-"""1枚まとめ（pop / tiles / tier）に入れる絵（アイコン・背景）の用意と読み込み。
+"""1枚まとめ（pop / tiles / tier）に入れる絵（アイコン・背景）と、海外反応の漫画の絵の用意と読み込み。
 
 - アイコン: assets/icons/<タッチ>/<名前>.jpg。投稿の icon（英語の短い説明）から名前を作るので、
   同じ説明なら前に作った絵を使い回す（お金がかからない）
 - 背景:    assets/bg/<名前>.jpg。スライドの bg（英語の説明）か、accounts/*.json の art.backgrounds から日替わり
+- 漫画: assets/story/<名前>/p1〜p6.jpg（表紙・場面4つ・締め）。投稿の art（登場人物と表紙・締めの説明）と
+  各場面の art から、1回で6コマを描かせて切り分ける（人物の見た目がそろう）
 - 無い絵は、GitHub Actions で画像を作るとき（GEMINI_API_KEY があるとき）に Gemini でまとめて作る。
   キーが無いときや失敗したときは、絵なしで作る（あとで絵ができたら、自動で作り直される）
 """
@@ -21,6 +23,7 @@ POP_LAYOUTS = ("pop", "tiles", "tier")
 # 1回の実行で作ってよい数の上限（設定ミスでお金を使いすぎないように）
 MAX_ICONS_PER_RUN = 72
 MAX_BGS_PER_RUN = 8
+MAX_COMICS_PER_RUN = 10
 
 
 def slug(text: str) -> str:
@@ -104,6 +107,59 @@ def state(data: dict, cfg: dict) -> list[str]:
     return [p.name for p in paths if p.exists()]
 
 
+# ---------- 海外反応のストーリー（漫画の6コマ） ----------
+
+def story_panels_wanted(data: dict) -> list[str] | None:
+    """漫画の6コマ（表紙・場面4つ・締め）の説明。art が書かれていない投稿は None（今までの絵）。"""
+    a = data.get("art")
+    scenes = data.get("scenes") or []
+    if not isinstance(a, dict) or not a.get("cast") or len(scenes) != 4:
+        return None
+    descs = [a.get("cover")] + [sc.get("art") if isinstance(sc, dict) else None for sc in scenes] + [a.get("end")]
+    if not all(isinstance(d, str) and d.strip() for d in descs):
+        return None
+    return [d.strip() for d in descs]
+
+
+def story_dir(data: dict, root: Path | None = None) -> Path | None:
+    descs = story_panels_wanted(data)
+    if descs is None:
+        return None
+    key = hashlib.sha1(("\n".join([data["art"]["cast"].strip()] + descs)).encode("utf-8")).hexdigest()[:12]
+    return (root or ASSETS) / "story" / key
+
+
+def story_paths(data: dict) -> list[Path]:
+    d = story_dir(data)
+    return [d / f"p{i}.jpg" for i in range(1, 7)] if d else []
+
+
+def story_missing(data: dict) -> bool:
+    paths = story_paths(data)
+    return bool(paths) and not all(p.exists() for p in paths)
+
+
+def story_uris(data: dict) -> list[str]:
+    """6コマの絵（data URI）。1コマでも足りなければ空（今までの絵で作る。絵柄が混ざらないように）。"""
+    paths = story_paths(data)
+    return [data_uri(p) for p in paths] if paths and all(p.exists() for p in paths) else []
+
+
+def cleanup_story(data: dict) -> None:
+    """投稿が済んだストーリーの漫画の絵を消す（スライドとリールに入っているので、もう使わない）。"""
+    import shutil
+
+    d = story_dir(data)
+    if d and d.exists():
+        shutil.rmtree(d)
+
+
+def missing_any(data: dict, cfg: dict) -> bool:
+    """作る予定の絵（アイコン・背景・漫画）に、まだ無いものがあるか。"""
+    icons, bgs = missing(data, cfg)
+    return bool(icons or bgs) or story_missing(data)
+
+
 def data_uri(path: Path) -> str:
     if not path.exists():
         return ""
@@ -137,7 +193,8 @@ def ensure(items: list[tuple[dict, dict]], log=print) -> int:
         models.setdefault(st, (cfg.get("art") or {}).get("icon_models"))
         need_bgs += [b for b in bgs if b not in need_bgs]
         bg_models = bg_models or (cfg.get("art") or {}).get("bg_models")
-    total = sum(len(v) for v in need_icons.values()) + len(need_bgs)
+    need_story = [(data, cfg) for data, cfg in items if story_missing(data)]
+    total = sum(len(v) for v in need_icons.values()) + len(need_bgs) + len(need_story) * 6
     if not total:
         return 0
     if not imagegen.api_key():
@@ -158,6 +215,16 @@ def ensure(items: list[tuple[dict, dict]], log=print) -> int:
         log(f"🎨 背景を作ります: {desc[:60]}")
         if imagegen.generate_background(desc, bg_path(desc), models=bg_models, log=log):
             made += 1
+    for data, cfg in need_story[:MAX_COMICS_PER_RUN]:
+        log(f"🎨 漫画（6コマ）を作ります: {data.get('title') or data.get('top', '')}")
+        acfg = cfg.get("art") or {}
+        failed = story_dir(data) / "failed-sheet.jpg"  # コマ割りに失敗したときの元の絵（原因を見るため）
+        n = imagegen.generate_comic(data["art"]["cast"], story_panels_wanted(data), story_paths(data),
+                                    models=acfg.get("comic_models"), style=acfg.get("comic_style", ""),
+                                    fail_sheet=failed, log=log)
+        if n and failed.exists():
+            failed.unlink()
+        made += n
     if total > made:
-        log(f"⚠️ 絵が{total - made}個できませんでした（その部分は絵なしで作ります）")
+        log(f"⚠️ 絵が{total - made}個できませんでした（その部分は今までの絵で作ります）")
     return made

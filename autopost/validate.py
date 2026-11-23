@@ -37,9 +37,9 @@ POST_FIELDS = {
 STORY_FIELDS = {
     "account", "date", "type", "no", "title", "caption", "hashtags", "pr", "review_notes", "reel", "sources",
     "icon", "burst", "top", "big", "big_size", "chat_title", "scenes", "comments", "stat", "cta", "reel_script",
-    "color",
+    "color", "art",
 }
-SCENE_FIELDS = {"title", "mood", "say", "nar", "prop", "clerk", "police", "kid", "look"}
+SCENE_FIELDS = {"title", "mood", "say", "nar", "prop", "clerk", "police", "kid", "look", "art", "say_side"}
 NG_WORDS = ["ストーリーズ"]
 MAX_HASHTAGS = 5
 MAX_CAPTION = 2200
@@ -235,6 +235,29 @@ def _check_comments(items, errors: list[str], where: str, lo: int, hi: int, limi
         _text_ok(c[2], errors, f"{where}の{i}個目（コメント）", limit)
 
 
+def _check_story_art(data: dict, scenes: list, errors: list[str]) -> None:
+    """漫画の絵（Gemini）の説明。art を書いたら、表紙・4場面・締めの6コマすべてに説明が必要。"""
+    a = data.get("art")
+    if a is None:
+        if any(isinstance(sc, dict) and "art" in sc for sc in scenes):
+            errors.append("場面に art を書くときは、投稿の art（cast・cover・end）も書いてください")
+        return
+    if not isinstance(a, dict) or set(a) != {"cast", "cover", "end"}:
+        errors.append("art は cast（登場人物の見た目）・cover（表紙のコマ）・end（締めのコマ）の3つを書いてください")
+    for key, limit in (("cast", 420), ("cover", 300), ("end", 300)):
+        v = a.get(key) if isinstance(a, dict) else None
+        if v is not None and (not isinstance(v, str) or not v.strip() or not v.isascii() or len(v) > limit):
+            errors.append(f"art の {key} は英語で書いてください（{limit}文字まで）")
+    for i, sc in enumerate(scenes, 1):
+        if not isinstance(sc, dict):
+            continue
+        v = sc.get("art")
+        if not isinstance(v, str) or not v.strip() or not v.isascii() or len(v) > 300:
+            errors.append(f"場面{i}: art（このコマの絵の説明）を英語で書いてください（300文字まで）")
+        if "say_side" in sc and sc["say_side"] not in ("left", "right"):
+            errors.append(f"場面{i}: say_side は left か right にしてください（話している人がいる側）")
+
+
 def _validate_story(data: dict, errors: list[str]) -> None:
     if "color" in data:
         from .story import design
@@ -276,6 +299,7 @@ def _validate_story(data: dict, errors: list[str]) -> None:
         if not isinstance(look, dict) or set(look) - {"hair", "shirt"} or \
                 not all(isinstance(v, str) and re.fullmatch(r"#[0-9a-fA-F]{6}", v) for v in look.values()):
             errors.append(f"場面{i}: look は hair と shirt を #2b2b2b のような色で書いてください")
+    _check_story_art(data, scenes, errors)
     _check_comments(data.get("comments"), errors, "comments（海外の声）", 3, 6, 44)
     st = data.get("stat")
     if not isinstance(st, dict) or set(st) != {"l1", "n1", "l2", "n2", "msg", "src"}:
