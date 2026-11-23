@@ -474,3 +474,74 @@ class MusicTest(unittest.TestCase):
                     os.environ.pop("MUSIC_CACHE", None)
                 else:
                     os.environ["MUSIC_CACHE"] = old_env
+
+
+class ComicTest(unittest.TestCase):
+    """海外反応の漫画（Gemini で描いた6コマ）。"""
+
+    def setUp(self):
+        self.accounts = config.load_accounts()
+        self.data = json.loads((ROOT / "examples/kaigai_hokkori/post.json").read_text(encoding="utf-8"))
+        self.data["art"] = {"cast": "Emma: a cheerful American woman with wavy blonde hair and a green sweater",
+                            "cover": "Emma gasps in surprise at a ticket counter", "end": "Emma waves goodbye, smiling"}
+        for i, sc in enumerate(self.data["scenes"]):
+            sc["art"] = f"Emma on the right in scene {i + 1}"
+            sc.pop("say_side", None)
+
+    def test_validate(self):
+        from autopost import art
+
+        self.assertEqual(validate.validate_post(self.data, self.accounts), [])
+        self.assertEqual(len(art.story_panels_wanted(self.data)), 6)
+        bad = json.loads(json.dumps(self.data))
+        bad["scenes"][1]["art"] = "日本語の説明"
+        bad["scenes"][2]["say_side"] = "up"
+        del bad["art"]["end"]
+        errors = " ".join(validate.validate_post(bad, self.accounts))
+        self.assertIn("cast", errors)
+        self.assertIn("場面2: art", errors)
+        self.assertIn("say_side", errors)
+        self.assertIsNone(art.story_panels_wanted(bad))
+        plain = json.loads(json.dumps(self.data))
+        del plain["art"]
+        for sc in plain["scenes"]:
+            del sc["art"]
+        self.assertEqual(validate.validate_post(plain, self.accounts), [])
+        self.assertEqual(art.story_paths(plain), [])  # art が無ければ今までの絵
+
+    def test_slice_grid(self):
+        from PIL import Image, ImageDraw
+
+        from autopost import imagegen
+
+        def sheet(cols, rows, path):
+            im = Image.new("RGB", (1200, 1200), "white")
+            d = ImageDraw.Draw(im)
+            g, m = 30, 20
+            pw, ph = (1200 - 2 * m - (cols - 1) * g) / cols, (1200 - 2 * m - (rows - 1) * g) / rows
+            for r in range(rows):
+                for c in range(cols):
+                    x0, y0 = m + c * (pw + g), m + r * (ph + g)
+                    d.rectangle([x0, y0, x0 + pw, y0 + ph], fill=(90 + 30 * c, 120, 60 + 40 * r), outline="black", width=5)
+            im.save(path)
+
+        with tempfile.TemporaryDirectory() as tmp:
+            sheet(2, 3, Path(tmp) / "ok.png")
+            sheet(3, 2, Path(tmp) / "ng.png")
+            pieces = imagegen.slice_grid(Path(tmp) / "ok.png", 2, 3)
+            self.assertEqual(len(pieces), 6)
+            self.assertTrue(all(1.3 < p.width / p.height < 1.7 for p in pieces))
+            self.assertEqual(imagegen.slice_grid(Path(tmp) / "ng.png", 2, 3), [])  # コマ割りが違えば失敗
+
+    def test_design_uses_panels(self):
+        from autopost.story import design
+
+        cfg = self.accounts["kaigai_hokkori"]
+        panels = [f"data:image/jpeg;base64,P{i}" for i in range(6)]
+        html = design.carousel(self.data, cfg["name"], "@x", panels)
+        self.assertEqual(html.count('class="p stage art"'), 4)
+        self.assertIn("P0", html)
+        self.assertIn("P5", html)
+        self.assertNotIn("stage art", design.carousel(self.data, cfg["name"], "@x", []))
+        reel = self.data | {"comments": self.data["reel_script"]["comments"]}
+        self.assertEqual(design.reel_pages(reel, cfg["name"], "@x", "", panels).count('class="p stage art"'), 4)

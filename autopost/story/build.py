@@ -152,12 +152,15 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
     for old in list(folder.glob("slide*.jpg")) + [folder / "reel.mp4"]:
         if old.exists():
             old.unlink()
-    overflow = await _shoot(browser, design.carousel(data, name, handle), 1350, folder, "slide", "jpg")
+    from .. import art
+
+    panels = art.story_uris(data)  # 漫画の6コマ（そろっていなければ今までの絵）
+    overflow = await _shoot(browser, design.carousel(data, name, handle, panels), 1350, folder, "slide", "jpg")
     for idx, bad in enumerate(overflow, 1):
         if bad:
             problems.append(f"{rel}: {idx}枚目の文字が枠に収まりません（{', '.join(sorted(set(bad)))}）。文を短くしてください")
     slides = len(list(folder.glob("slide*.jpg")))
-    info = {"hash": render_hash(data, cfg), "slides": slides,
+    info = {"hash": render_hash(data, cfg), "slides": slides, "comic": bool(panels),
             "rendered_at": config.now_jst().isoformat(timespec="seconds")}
 
     if reel_wanted(data, cfg):
@@ -168,7 +171,7 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
         credit = (cfg.get("reel") or {}).get("credit", "")
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
-            over = await _shoot(browser, design.reel_pages(reel_data, name, handle, credit), 1920, tmp, "", "png")
+            over = await _shoot(browser, design.reel_pages(reel_data, name, handle, credit, panels), 1920, tmp, "", "png")
             for idx, bad in enumerate(over, 1):
                 if bad:
                     problems.append(f"{rel}: リールの{idx}画面目の文字が枠に収まりません。文を短くしてください")

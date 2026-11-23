@@ -9,13 +9,19 @@
   "big": "本場の和牛で<br>まさかの結末！",
   "big_size": 108,
   "chat_title": "牛肉が苦手な外国人が<br><em>本場の和牛</em>を食べたら…",
+  "art": {
+    "cast": "Mark: a tall American tourist in his 40s with short sandy-blond hair, light skin, a green polo shirt and a camera strap around his neck. The chef: a Japanese teppanyaki chef in his 50s in a white chef's coat and tall white hat.",
+    "cover": "Mark at a teppanyaki counter, eyes wide and mouth open in amazement as a sizzling marbled steak is served in front of him",
+    "end": "Mark and the chef smiling and giving a thumbs up together over the teppanyaki counter"
+  },
   "scenes": [
     {
       "title": "初めての日本旅行",
       "mood": "think",
       "prop": "question",
       "say": "牛肉はあまり食べないんだ",
-      "nar": "海外から来たツアー客。<br>申込書には「牛肉は食べません」。"
+      "nar": "海外から来たツアー客。<br>申込書には「牛肉は食べません」。",
+      "art": "Mark on the right in a Japanese hotel lobby, holding a tour booking form with a hesitant, thoughtful look"
     },
     {
       "title": "神戸の鉄板焼き店へ",
@@ -27,21 +33,25 @@
       },
       "prop": "wagyu",
       "say": "神戸ビーフです",
-      "nar": "店には認定の証明書と、<br>牛1頭ごとの10桁の番号が。"
+      "nar": "店には認定の証明書と、<br>牛1頭ごとの10桁の番号が。",
+      "art": "At a teppanyaki counter in Kobe, the chef on the left proudly presents a thick marbled steak on the hot griddle while Mark on the right stares with wide eyes",
+      "say_side": "left"
     },
     {
       "title": "ひと口だけ…",
       "mood": "love",
       "prop": "wagyu",
       "say": "バターみたいにとける！",
-      "nar": "脂は体温でとけるほど。<br>噛む前に口の中でほどけていく。"
+      "nar": "脂は体温でとけるほど。<br>噛む前に口の中でほどけていく。",
+      "art": "Mark on the right takes his first bite of the steak with chopsticks, eyes closed in bliss, little sparkles around him"
     },
     {
       "title": "牛肉ぎらいは…",
       "mood": "happy",
       "prop": "wagyu",
       "say": "明日も和牛にしよう！",
-      "nar": "「牛肉は食べない」はどこへやら。<br>旅の間、和牛を探し歩くことに。"
+      "nar": "「牛肉は食べない」はどこへやら。<br>旅の間、和牛を探し歩くことに。",
+      "art": "Mark on the right walks down a lively Japanese shopping street at night with a big grin, happily looking for another steak restaurant"
     }
   ],
   "comments": [

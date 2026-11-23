@@ -24,6 +24,8 @@ API = "https://generativelanguage.googleapis.com/v1beta"
 # 用途ごとのモデル（上から順に試す）
 MODELS = {
     "icons": ["gemini-nano-banana-2.1", "gemini-3.1-flash-image", "gemini-3.1-flash-lite-image"],
+    # 漫画は人物をそろえる力と画力が大事なので、上位モデルから試す
+    "comic": ["gemini-3-pro-image", "gemini-nano-banana-2.1"],
     # 背景は使い回すので、ぼかしの指示をよく守る上位モデルで作る
     "background": ["gemini-3-pro-image", "gemini-nano-banana-2.1", "gemini-3.1-flash-image"],
 }
@@ -275,6 +277,106 @@ def generate_background(description: str, out_path: Path, models: list[str] | No
         out_path.parent.mkdir(parents=True, exist_ok=True)
         img.save(out_path, quality=86)
     return out_path
+
+
+# ---------- 漫画のシート（海外反応のストーリー） ----------
+
+COMIC_STYLE = ("full-color modern webtoon comic illustration, clean bold black outlines, bright flat colors with soft "
+               "cel shading, cute expressive characters with big easy-to-read facial expressions, warm wholesome mood")
+COMIC_COLS, COMIC_ROWS = 2, 3  # 6コマ（表紙・場面4つ・締め）。1コマ 3:2 で、全体は正方形
+COMIC_SLOTS = ("top-left", "top-right", "middle-left", "middle-right", "bottom-left", "bottom-right")
+COMIC_ROLES = ("title panel, the most eye-catching moment", "scene 1", "scene 2", "scene 3", "scene 4",
+               "happy ending")
+
+
+def comic_prompt(cast: str, panels: list[str], style: str = "") -> str:
+    lines = [f"Panel {i} ({COMIC_SLOTS[i - 1]}, {COMIC_ROLES[i - 1]}): {d.strip().rstrip('.')}."
+             for i, d in enumerate(panels, 1)]
+    return (
+        f"A comic page laid out as a strict grid of {COMIC_COLS} columns and {COMIC_ROWS} rows: exactly "
+        f"{len(panels)} equal rectangular panels, each wider than tall (3:2), each with a thin black border, "
+        "separated by plain white gutters of equal width. No panel spans more than one cell. "
+        f"Art style for every panel: {style or COMIC_STYLE}. "
+        "Recurring characters, drawn exactly the same (same face, hairstyle, skin tone and clothes) in every panel "
+        f"they appear in: {cast.strip().rstrip('.')}. "
+        "In every panel, leave the top third as simple background (plain wall, ceiling or sky) because a speech "
+        "bubble will be added there later; keep faces in the middle of the panel, below the top third. "
+        "Do not draw speech bubbles, captions or sound effects. Do not depict any real, identifiable person or "
+        "brand.\n" + "\n".join(lines)
+    )
+
+
+def _split_at(profile, expected: float, span: float) -> int:
+    """白いすき間（ガター）のいちばんそれらしい位置。"""
+    lo, hi = max(1, int(expected - span)), min(len(profile) - 1, int(expected + span))
+    seg = profile[lo:hi]
+    good = seg >= seg.max() - 0.02
+    runs, start = [], None
+    for i, g in enumerate(good):
+        if g and start is None:
+            start = i
+        if (not g or i == len(good) - 1) and start is not None:
+            runs.append((start, i if not g else i + 1))
+            start = None
+    best = min(runs, key=lambda r: abs((lo + (r[0] + r[1]) / 2) - expected))
+    return int(lo + (best[0] + best[1]) / 2)
+
+
+def slice_grid(sheet: Path, cols: int, rows: int, max_w: int = 1200) -> list:
+    """コマ割りの画像を、白いすき間を手がかりに切り分ける。枠線は少し内側で切って落とす。
+    すき間が見つからない（コマ割りが違う）ときは空のリストを返す。"""
+    import numpy as np
+    from PIL import Image
+
+    img = Image.open(sheet).convert("RGB")
+    W, H = img.size
+    white = np.asarray(img.convert("L")) > 232
+    col_p, row_p = white.mean(axis=0), white.mean(axis=1)
+    xs = [0] + [_split_at(col_p, W * k / cols, W * 0.08) for k in range(1, cols)] + [W]
+    ys = [0] + [_split_at(row_p, H * k / rows, H * 0.08) for k in range(1, rows)] + [H]
+    if any(col_p[x] < 0.85 for x in xs[1:-1]) or any(row_p[y] < 0.85 for y in ys[1:-1]):
+        return []
+    out = []
+    for r in range(rows):
+        for c in range(cols):
+            cell = img.crop((xs[c], ys[r], xs[c + 1], ys[r + 1]))
+            yy, xx = np.nonzero(np.asarray(cell.convert("L")) < 232)
+            if len(xx) < 1000:
+                return []
+            x0, x1, y0, y1 = xx.min(), xx.max(), yy.min(), yy.max()
+            if (x1 - x0) < cell.width * 0.7 or (y1 - y0) < cell.height * 0.7:
+                return []  # コマが小さすぎる（割り方が想定と違う）
+            inset = int(min(x1 - x0, y1 - y0) * 0.015) + 3  # 黒い枠線を落とす
+            cell = cell.crop((x0 + inset, y0 + inset, x1 - inset, y1 - inset))
+            if cell.width > max_w:
+                cell = cell.resize((max_w, int(cell.height * max_w / cell.width)), Image.LANCZOS)
+            out.append(cell)
+    return out
+
+
+def generate_comic(cast: str, panels: list[str], out_paths: list[Path], models: list[str] | None = None,
+                   style: str = "", fail_sheet: Path | None = None, attempts: int = 2, log=print) -> int:
+    """6コマの漫画を1回で描かせて切り分け、out_paths（JPEG）に保存する。できたコマの数を返す。
+    コマ割りがうまくいかなかったときは、もう一度描かせる（attempts 回まで）。"""
+    import tempfile
+
+    for attempt in range(attempts):
+        with tempfile.TemporaryDirectory() as tmp:
+            sheet = Path(tmp) / "comic.jpg"
+            if not generate(comic_prompt(cast, panels, style), sheet, aspect="1:1", size="2K", kind="comic",
+                            models=models, log=log):
+                return 0
+            pieces = slice_grid(sheet, COMIC_COLS, COMIC_ROWS)
+            if len(pieces) != len(out_paths) and fail_sheet:
+                fail_sheet.parent.mkdir(parents=True, exist_ok=True)
+                fail_sheet.write_bytes(sheet.read_bytes())
+        if len(pieces) == len(out_paths):
+            for piece, path in zip(pieces, out_paths):
+                path.parent.mkdir(parents=True, exist_ok=True)
+                piece.save(path, quality=88)
+            return len(pieces)
+        log(f"  ⚠️ コマ割りが想定と違ったので描き直します（{attempt + 1}回目）")
+    return 0
 
 
 # ---------- 試し ----------

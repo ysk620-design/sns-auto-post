@@ -23,6 +23,18 @@
 - 使える小物（`icon` と `prop`）：wallet, wagyu, sushi, watch, ramen, noren（`"noren:鮨"` のようにのれんの文字を指定できる）, question, koban, ball, trash, crane, sandwich, train, phone, bag, shinkansen, broom, coffee。話に合う小物がなければ、近いものか question を使う
 - 文字の装飾に使えるのは `<br>` と `<em>` だけ
 
+### 漫画の絵（Gemini・毎回書く）
+
+`art` と各場面の `art` を英語で書くと、Gemini が6コマの漫画（表紙・場面4つ・締め）を1回でまとめて描き、カルーセルとリールの絵に差し込む。1枚に描かせるので、登場人物の見た目が全コマでそろう。描けなかったときは、今までのコードの絵（`mood`・`prop`・`clerk` など）で作るので、それらも今までどおり書く。
+
+- `art.cast`：登場人物の見た目（420文字まで）。主人公に名前を付け、年代・髪・肌・服を具体的に。脇役（店員・子ども・駅員など）も1文ずつ。例 `"Emma: a cheerful British woman in her 30s with wavy red hair, light skin, a mustard sweater and a backpack. The station staff: a young Japanese man in a navy uniform and cap."`
+- `art.cover`：表紙のコマ（いちばん目を引く瞬間。驚いた顔を真ん中に）
+- 各場面の `art`：そのコマの絵（300文字まで）。場所・動き・表情を書く。`say`（ふきだし）を話す人は**右側**に置く（ふきだしの矢印が右下を指す）。左側の人が話すコマは、その場面に `"say_side": "left"`
+- `art.end`：締めのコマ（ほっこりする笑顔の場面。最後のページの右下に小さく出る）
+- 書かなくてよいこと：絵柄・コマ割り・「上の3分の1をあける」（自動で指示する）。文字・看板・ロゴは描かせない（自動で禁止）ので、「〇〇と書いた看板」のような説明はしない
+- 実在の人物や店・会社の名前・制服は書かない（「a convenience store clerk」のように一般名で）。日本の場面は「a Japanese train station platform」「a small ramen shop counter」のように、日本らしさが伝わる言葉を入れる
+- 絵は `assets/story/` に保存され、投稿が済むと消える（スライドと動画に入っているので）
+
 ## 内容のルール
 
 企画は「思わず見たくなる・続きが気になる」が先（CLAUDE.md「企画の考え方」）。ネタは次の4つを使い分けて、幅を広げる。

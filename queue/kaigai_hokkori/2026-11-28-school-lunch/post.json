@@ -9,6 +9,11 @@
   "big": "自分で給食を<br>配るの？",
   "big_size": 104,
   "chat_title": "日本の<em>給食の時間</em>に<br>→ 海外の反応は…",
+  "art": {
+    "cast": "The foreign teacher: a friendly American man in his late 20s with short wavy brown hair, light stubble, light skin, a light blue button-up shirt with rolled-up sleeves and beige chinos. The children: Japanese 3rd graders with black hair; the lunch-duty kids wear white smocks and white cloth caps.",
+    "cover": "Lunchtime in a bright Japanese elementary school classroom: the foreign teacher gasps in amazement as a line of small children in white smocks and caps proudly carry big lunch pots and trays past him",
+    "end": "The foreign teacher and the whole class sit together at grouped desks with lunch trays, everyone pressing their palms together and smiling before eating, a warm happy lunchtime scene"
+  },
   "scenes": [
     {
       "title": "4時間目が終わると",
@@ -16,7 +21,8 @@
       "clerk": "happy",
       "kid": true,
       "say": "先生は配らないの？",
-      "nar": "海外から来た英語の先生。<br>給食の時間に、教室を見回すと…"
+      "nar": "海外から来た英語の先生。<br>給食の時間に、教室を見回すと…",
+      "art": "A classroom right after the lunch bell: children push their desks together into groups while the foreign teacher stands on the right, scratching his head with a puzzled look"
     },
     {
       "title": "白衣の給食当番",
@@ -29,14 +35,16 @@
       },
       "prop": "noren:給食",
       "say": "みんなで配るんだ！",
-      "nar": "白衣を着た子どもたちが、音楽に<br>合わせて手ぎわよく配っていく。"
+      "nar": "白衣を着た子どもたちが、音楽に<br>合わせて手ぎわよく配っていく。",
+      "art": "Children in white smocks and caps happily ladle rice and soup from big metal pots into bowls and pass trays down a line of classmates; the foreign teacher on the right watches with wide eyes and an open mouth"
     },
     {
       "title": "いただきます！",
       "mood": "love",
       "prop": "noren:給食",
       "say": "おいしい！栄養も満点",
-      "nar": "栄養のプロが考えた献立。<br>地元の旬の食材を使った日も。"
+      "nar": "栄養のプロが考えた献立。<br>地元の旬の食材を使った日も。",
+      "art": "The foreign teacher on the right sits at a small school desk with the children, taking a bite of a colorful school lunch on a tray (rice, miso soup, grilled fish, salad, milk) with a blissful, delighted face"
     },
     {
       "title": "毎日の楽しみ",
@@ -45,7 +53,8 @@
       "kid": true,
       "prop": "noren:給食",
       "say": "今日の給食は何かな？",
-      "nar": "子どもたちと食べる給食が、<br>先生の毎日いちばんの楽しみに。"
+      "nar": "子どもたちと食べる給食が、<br>先生の毎日いちばんの楽しみに。",
+      "art": "Another day: the foreign teacher on the right hurries down the school hallway toward the classroom with an excited smile, while two children at the classroom door wave at him to come eat together"
     }
   ],
   "comments": [

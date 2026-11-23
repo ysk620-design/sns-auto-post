@@ -399,6 +399,9 @@ def publish_one(cfg: dict, post: posts.Post, now, dry_run: bool = False) -> dict
     dest = config.posted_dir(ROOT) / handle / post.id
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.move(str(post.folder), str(dest))
+    from . import art
+
+    art.cleanup_story(post.data)  # 漫画の絵は画像と動画に入ったので、元の絵は消す（リポジトリを軽く保つ）
     (dest / "published.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     commit_and_push(f"投稿しました: {handle}/{post.id}")
     if reel_error:
@@ -515,10 +518,13 @@ def main(argv=None) -> int:
     due_only = find_due_reel_only(accounts, now, args.account.strip(), args.force, args.dry_run)
 
     if args.command == "check":
-        needs_render = any(post.needs_render(cfg) for cfg, post in due + due_only) and not args.dry_run
+        from . import art
+
+        # 絵（1枚まとめの絵・漫画）が足りない投稿は、投稿の前に絵を作って作り直すかもしれない
+        stale = {id(post) for cfg, post in due + due_only if post.needs_render(cfg) or art.missing_any(post.data, cfg)}
+        needs_render = bool(stale) and not args.dry_run
         needs_voice = not args.dry_run and any(
-            story.is_story(post.data) and post.needs_render(cfg) and story.reel_wanted(post.data, cfg)
-            for cfg, post in due)
+            story.is_story(post.data) and id(post) in stale and story.reel_wanted(post.data, cfg) for cfg, post in due)
         handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels + due_only)
         set_output(
             due=str(bool(due or due_reels or due_only)).lower(),

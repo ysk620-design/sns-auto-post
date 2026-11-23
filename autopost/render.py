@@ -206,7 +206,9 @@ def main(argv=None) -> int:
         if args.all or post.needs_render(cfg):
             items.append((post.folder, post.data, cfg))
     if args.check_voice:
-        need = any(story.is_story(data) and story.reel_wanted(data, cfg) for _, data, cfg in items)
+        # 漫画の絵が足りないストーリーは、このあと絵ができて作り直しになるかもしれないので、読み上げも用意する
+        need = any(story.is_story(post.data) and story.reel_wanted(post.data, cfg)
+                   and (args.all or post.needs_render(cfg) or art.story_missing(post.data)) for post, cfg in loaded)
         print(f"needs_voice={str(need).lower()}")
         if os.environ.get("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
