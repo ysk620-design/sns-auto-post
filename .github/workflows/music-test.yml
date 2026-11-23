@@ -1,0 +1,51 @@
+name: BGMのテスト（一時的）
+
+on:
+  push:
+    branches: [claude/music-test]
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: ライブラリ
+        run: pip install -q -r requirements.txt
+      - name: 曲をダウンロード
+        run: python -m autopost.music download
+      - name: 曲の長さと盛り上がる所
+        run: |
+          python - <<'PY'
+          import subprocess
+          from autopost import music
+          from autopost.reel import ffmpeg_exe
+          for t in music.tracks():
+              p = music.track_path(t)
+              info = subprocess.run([ffmpeg_exe(), "-i", str(p)], capture_output=True, text=True).stderr
+              dur = [l.strip() for l in info.splitlines() if "Duration" in l]
+              print(t["id"], p.stat().st_size // 1024, "KB", dur[0][:22] if dur else "?", "start7=", music.best_start(t, 7))
+          PY
+      - name: 試しのリール
+        run: |
+          mkdir -p music_test
+          python - <<'PY'
+          from pathlib import Path
+          from autopost import reel
+          for name, sec in [("queue/gensen_otoku/2026-11-25-birth-cost-gap", 5), ("queue/eigo_1phrase/2026-11-29-matome-dekotonai", 7)]:
+              out = Path("music_test") / (Path(name).name + ".mp4")
+              reel.make_still_reel(Path(name) / "slide01.jpg", out, seconds=sec)
+              print("made", out, out.stat().st_size // 1024, "KB")
+          PY
+      - name: 結果をブランチに追加（動画だけ。曲のファイルは追加しない）
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add music_test
+          git commit -m "BGMのテスト結果" && git push || true
