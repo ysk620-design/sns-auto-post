@@ -81,7 +81,7 @@ def generate(prompt: str, out_path: Path, aspect: str = "1:1", models: list[str]
         # 1) Interactions API
         status, res = _post(f"{API}/interactions", {
             "model": model, "input": text,
-            "response_format": {"type": "image", "mime_type": "image/png", "aspect_ratio": aspect, "image_size": "1K"},
+            "response_format": {"type": "image", "mime_type": "image/jpeg", "aspect_ratio": aspect, "image_size": "1K"},
         }, key)
         img = _find_image(res) if status == 200 else None
         how = "interactions"
