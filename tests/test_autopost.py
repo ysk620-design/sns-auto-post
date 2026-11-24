@@ -568,7 +568,7 @@ class TreeTest(unittest.TestCase):
         from autopost import templates
 
         accounts = config.load_accounts()
-        f = ROOT / "queue/gensen_otoku/2026-11-28-education-tree/post.json"
+        f = ROOT / "queue/gensen_otoku/2026-11-25-education-tree/post.json"
         if not f.exists():
             self.skipTest("サンプルの投稿がありません")
         data = json.loads(f.read_text(encoding="utf-8"))
