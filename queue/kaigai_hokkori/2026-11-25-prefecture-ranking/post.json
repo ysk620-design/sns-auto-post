@@ -1,0 +1,84 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-25",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "外国人が行った都道府県ランキング",
+  "slides": [
+    {
+      "layout": "podium",
+      "kicker": "観光庁の調査｜2025年",
+      "title": "外国人が行った<br><span class=\"hl\">都道府県</span>ランキング",
+      "bubble": "意外な3位は\nどこ？",
+      "sub": "訪日客の2人に1人が東京へ",
+      "bg": "a softly blurred busy airport arrival hall with warm lights and travelers",
+      "items": [
+        {
+          "name": "東京都",
+          "value": "50.8%",
+          "num": 50.8,
+          "note": "2人に1人",
+          "icon": "a red and white lattice communications tower"
+        },
+        {
+          "name": "大阪府",
+          "value": "41.3%",
+          "num": 41.3,
+          "icon": "a white Japanese castle with green roofs"
+        },
+        {
+          "name": "千葉県",
+          "value": "35.1%",
+          "num": 35.1,
+          "note": "成田空港がある",
+          "icon": "a passenger airplane taking off"
+        },
+        {
+          "name": "京都府",
+          "value": "29.7%",
+          "num": 29.7,
+          "note": "お寺めぐりの定番",
+          "icon": "a path of many red torii gates"
+        },
+        {
+          "name": "福岡県",
+          "value": "11.0%",
+          "num": 11.0,
+          "note": "アジアから近い",
+          "icon": "a bowl of creamy pork bone ramen"
+        },
+        {
+          "name": "神奈川県",
+          "value": "9.3%",
+          "num": 9.3,
+          "note": "鎌倉・箱根",
+          "icon": "a big bronze Buddha statue sitting outdoors"
+        },
+        {
+          "name": "奈良県",
+          "value": "9.0%",
+          "num": 9.0,
+          "note": "鹿のいる公園",
+          "icon": "a cute spotted deer"
+        },
+        {
+          "name": "山梨県",
+          "value": "8.1%",
+          "num": 8.1,
+          "note": "富士山のふもと",
+          "icon": "snowy Mount Fuji with a small lake"
+        }
+      ],
+      "note": "※観光庁「インバウンド消費動向調査」都道府県別集計 2025年（全目的）の訪問率。1回の旅で何県も回る人がいます"
+    }
+  ],
+  "caption": "外国人旅行者が日本で行った都道府県、3位は京都でも福岡でもなく…千葉県でした。\n\n成田空港があるので、日本に着いてすぐ立ち寄る人が多いと言われています。\n1位の東京には、訪日客の2人に1人が行っていました。\n\n💬 あなたの県は何位だと思う？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#訪日外国人",
+    "#日本旅行",
+    "#インバウンド",
+    "#日本の良いところ"
+  ],
+  "review_notes": "【リールだけの投稿・11/25 18時台・表彰台＋横棒（新しいデザイン）】確認日 2026-11-24。出典：観光庁「インバウンド消費動向調査」都道府県別集計 2025年（全目的）の訪問率。東京都50.8%・大阪府41.3%・千葉県35.1%・京都府29.7%・福岡県11.0%・神奈川県9.3%・奈良県9.0%・山梨県8.1%。要確認：観光庁の集計表そのものは開けず、この表を引用している2つのサイト（https://miloku.co.jp/column/inbound-japan/ ・ https://gaikokujin-ranking.com/inbound-todoufuken-ranking/ 。訪問者数も一致）で確認した。「成田空港があるので立ち寄る人が多い」は解釈なので「と言われています」にしている。"
+}

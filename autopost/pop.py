@@ -9,6 +9,9 @@ layout:
          arrow（false で → を出さない） / note / follow / bg
   tiles  絵のマス目（日本と海外の比べっこなど）。title / kicker / bubble / sub / cols（2か3） /
          tiles（4〜12個。各 {label, icon, a, b}） / summary（{label, big}） / note / follow / bg
+  podium 表彰台＋横棒のランキング（数字の大きさを棒で見せる）。title / kicker / bubble / sub / big / big_label /
+         items（6〜9個。各 {name, value, num, icon, note}。num は棒の長さに使う数（例 50.8）。上位3つは表彰台、
+         4位からは横棒） / note / follow / bg / ask
   tier   ティア表。title / kicker / bubble / sub / tiers（3〜6段。各 {rank, label, items: [{name, icon, note}]}） /
          note / follow / bg
 
@@ -151,3 +154,38 @@ def tier(b, i: int, s: dict) -> str:
     note = f'<p class="ppnote box">{esc(s["note"])}</p>' if s.get("note") else ""
     body = f'<div class="pptier fitbox">{rows}</div>{note}'
     return _frame(b, s, "tier", _head(b, s) + body + _foot(b, s, s.get("ask") or "あなたの1位はどれ？"))
+
+
+MEDALS = ("#f5c400", "#b9c3cd", "#d98b4a")
+
+
+def podium(b, i: int, s: dict) -> str:
+    esc = b.esc
+    items = s["items"]
+    top = max(float(it.get("num") or 0) for it in items) or 1
+    cols = ""
+    for k in (2, 1, 3):  # 真ん中が1位
+        if k > len(items):
+            continue
+        it = items[k - 1]
+        ratio = float(it.get("num") or 0) / top
+        icon = art.icon_uri(it.get("icon"), b.cfg)
+        pic = f'<div class="pci">{_img(icon)}</div>' if icon else '<div class="pci none"></div>'
+        note = f'<small>{esc(it["note"])}</small>' if it.get("note") else ""
+        cols += (f'<div class="pc p{k}" style="--m:{MEDALS[k - 1]};--h:{0.55 + 0.45 * ratio:.3f}">{pic}'
+                 f'<b class="pcn">{esc(it["name"])}</b>'
+                 f'<div class="step"><i>{k}</i><span class="pcv">{esc(it["value"])}</span>{note}</div></div>')
+    bars = ""
+    for k, it in enumerate(items[3:], 4):
+        ratio = float(it.get("num") or 0) / top
+        icon = art.icon_uri(it.get("icon"), b.cfg)
+        pic = f'<span class="ppi">{_img(icon)}</span>' if icon else '<span class="ppi empty"></span>'
+        note = f'<small>{esc(it["note"])}</small>' if it.get("note") else ""
+        bars += (f'<div class="pbr"><span class="ppn">{k}</span>{pic}<div class="pbm">'
+                 f'<div class="pbl"><b class="pbn">{esc(it["name"])}</b>{note}</div>'
+                 f'<div class="pbt"><i style="width:{max(6.0, 100 * ratio):.1f}%"></i><em>{esc(it["value"])}</em></div>'
+                 f'</div></div>')
+    note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
+    body = (f'<div class="pppod fitbox"><div class="podium">{cols}</div>'
+            f'<div class="ppbars">{bars}{note}</div></div>')
+    return _frame(b, s, "podium", _head(b, s) + body + _foot(b, s, s.get("ask") or "予想は当たった？"))

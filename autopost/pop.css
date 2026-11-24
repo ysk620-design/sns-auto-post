@@ -88,3 +88,29 @@
 .ppfoot{flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:2px;background:var(--brand);color:#fff;border-radius:26px;padding:10px 20px 10px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
 .ppfoot b{font-size:38px;font-weight:900;color:#ffd23f;letter-spacing:.01em;line-height:1.22}
 .ppfoot span{font-size:23px;font-weight:700;opacity:.92;line-height:1.3}
+
+/* 表彰台＋横棒（podium） */
+.pppod{flex:1 1 auto;display:flex;flex-direction:column;gap:calc(12px*var(--k))}
+.podium{flex:0 0 auto;display:flex;align-items:flex-end;gap:calc(14px*var(--k));padding:0 6px}
+.pc{flex:1 1 0;min-width:0;display:flex;flex-direction:column;align-items:center}
+.pc.p1{flex-grow:1.18}
+.pci{width:calc(150px*var(--k));height:calc(150px*var(--k));border-radius:50%;overflow:hidden;background:#fff;border:6px solid var(--m);box-shadow:0 8px 18px rgba(0,0,0,.22)}
+.pc.p1 .pci{width:calc(186px*var(--k));height:calc(186px*var(--k))}
+.pci img{width:100%;height:100%;object-fit:cover;display:block}
+.pci.none{background:linear-gradient(135deg,#fff,#eef2f8)}
+.pcn{margin-top:calc(8px*var(--k));background:rgba(255,255,255,.96);color:var(--ink);font-weight:900;font-size:calc(40px*var(--k)*var(--s,1));line-height:1.15;padding:4px 18px;border-radius:999px;max-width:100%;white-space:nowrap;box-shadow:0 4px 10px rgba(0,0,0,.14)}
+.pc.p1 .pcn{font-size:calc(48px*var(--k)*var(--s,1))}
+.step{width:100%;margin-top:calc(10px*var(--k));height:calc(260px*var(--h)*var(--k));background:linear-gradient(180deg,var(--m),color-mix(in srgb,var(--m) 72%,#000));border-radius:20px 20px 6px 6px;display:flex;flex-direction:column;align-items:center;padding-top:calc(10px*var(--k));box-shadow:0 10px 22px rgba(0,0,0,.25);border:4px solid rgba(255,255,255,.9)}
+.step i{font-style:normal;font-weight:900;color:var(--m);background:#fff;width:calc(58px*var(--k));height:calc(58px*var(--k));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:calc(38px*var(--k));line-height:1;box-shadow:0 3px 8px rgba(0,0,0,.2)}
+.pcv{margin-top:calc(6px*var(--k));font-weight:900;font-size:calc(46px*var(--k)*var(--s,1));line-height:1.05;color:#fff;letter-spacing:-.03em;white-space:nowrap;text-shadow:0 3px 0 rgba(0,0,0,.25)}
+.pc.p1 .pcv{font-size:calc(60px*var(--k)*var(--s,1))}
+.step small{margin-top:4px;font-size:calc(22px*var(--k));font-weight:800;color:#fff;line-height:1.2;text-align:center;padding:0 6px;text-shadow:0 2px 0 rgba(0,0,0,.2)}
+.ppbars{flex:1 1 auto;display:flex;flex-direction:column;gap:calc(8px*var(--k));background:rgba(255,255,255,.92);border-radius:30px;padding:calc(14px*var(--k)) 14px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.pbr{flex:1 1 auto;display:flex;align-items:center;gap:calc(12px*var(--k));min-height:0}
+.pbm{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.pbl{display:flex;align-items:baseline;gap:12px;min-width:0}
+.pbl b{font-size:calc(38px*var(--k)*var(--s,1));font-weight:900;color:var(--ink);line-height:1.15;white-space:nowrap}
+.pbl small{font-size:calc(23px*var(--k));font-weight:700;color:#7a8396;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pbt{position:relative;height:calc(44px*var(--k));background:#edf1f7;border-radius:999px;overflow:hidden}
+.pbt i{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--brand),var(--hot));border-radius:999px}
+.pbt em{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-style:normal;font-weight:900;font-size:calc(32px*var(--k));color:var(--ink)}

@@ -545,3 +545,19 @@ class ComicTest(unittest.TestCase):
         self.assertNotIn("stage art", design.carousel(self.data, cfg["name"], "@x", []))
         reel = self.data | {"comments": self.data["reel_script"]["comments"]}
         self.assertEqual(design.reel_pages(reel, cfg["name"], "@x", "", panels).count('class="p stage art"'), 4)
+
+
+class PodiumTest(unittest.TestCase):
+    def test_podium(self):
+        from autopost import art
+
+        accounts = config.load_accounts()
+        data = json.loads((ROOT / "queue/kaigai_hokkori/2026-11-25-prefecture-ranking/post.json").read_text(encoding="utf-8")) \
+            if (ROOT / "queue/kaigai_hokkori/2026-11-25-prefecture-ranking/post.json").exists() else None
+        if data is None:
+            self.skipTest("サンプルの投稿がありません")
+        self.assertEqual(validate.validate_post(data, accounts), [])
+        self.assertEqual(len(art.icons_of(data["slides"][0])), 8)
+        bad = json.loads(json.dumps(data))
+        bad["slides"][0]["items"][0]["num"] = 1
+        self.assertIn("num の大きい順", " ".join(validate.validate_post(bad, accounts)))

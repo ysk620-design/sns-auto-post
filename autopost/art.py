@@ -19,7 +19,7 @@ from pathlib import Path
 from . import config
 
 ASSETS = config.ROOT / "assets"
-POP_LAYOUTS = ("pop", "tiles", "tier")
+POP_LAYOUTS = ("pop", "tiles", "tier", "podium")
 # 1回の実行で作ってよい数の上限（設定ミスでお金を使いすぎないように）
 MAX_ICONS_PER_RUN = 72
 MAX_BGS_PER_RUN = 8
@@ -56,7 +56,7 @@ def _clean(values) -> list[str]:
 def icons_of(slide: dict) -> list[str]:
     layout = slide.get("layout")
     found: list = []
-    if layout == "pop":
+    if layout in ("pop", "podium"):
         found = [it.get("icon") for it in slide.get("items") or [] if isinstance(it, dict)]
     elif layout == "tiles":
         found = [t.get("icon") for t in slide.get("tiles") or [] if isinstance(t, dict)]
