@@ -14,6 +14,9 @@ layout:
          4位からは横棒） / note / follow / bg / ask
   bars   横棒のランキング（全部を一列の横棒で、数字の差を棒の長さで見せる。上位3つは金銀銅）。項目は podium と同じで
          items は6〜10個
+  tree   樹形図（分かれ道を選ぶたびに累計がふえ、行き止まりに総額）。title / kicker / bubble / sub / big / big_label /
+         stages（各 {name, years, options: {選択肢: 金額（万円）}}） / routes（3〜8本。各 {path: [各段階の選択肢], name}） /
+         unit / note / follow / bg / ask。同じ選択の続く部分は1本にまとまる
   tier   ティア表。title / kicker / bubble / sub / tiers（3〜6段。各 {rank, label, items: [{name, icon, note}]}） /
          note / follow / bg
 
@@ -211,3 +214,56 @@ def bars(b, i: int, s: dict) -> str:
     note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
     body = f'<div class="ppbars all fitbox">{rows}{note}</div>'
     return _frame(b, s, "bars", _head(b, s) + body + _foot(b, s, s.get("ask") or "予想は当たった？"))
+
+
+TREE_COLORS = {"公立": "#2f7de1", "国立": "#2f7de1", "公": "#2f7de1"}
+
+
+def _man(v: float) -> str:
+    return f"{round(v):,}"
+
+
+def tree(b, i: int, s: dict) -> str:
+    """樹形図。routes の共通の前半はまとめて1つの枝にする。座標は Python で計算して SVG の線を引く。"""
+    esc = b.esc
+    stages, routes = s["stages"], s["routes"]
+    n, m = len(stages), len(routes)
+    unit = s.get("unit", "万")
+    W, colw, left, tot_w = 1000, 140, 6, 260
+    xs = [left + k * colw for k in range(n)]
+    row_h = 100 / m  # 行の高さ（%）
+    nodes, lines = {}, []
+    for r, route in enumerate(routes):
+        acc = 0.0
+        for k, choice in enumerate(route["path"]):
+            acc += float(stages[k]["options"][choice])
+            key = tuple(route["path"][: k + 1])
+            if key not in nodes:
+                nodes[key] = {"row": r, "k": k, "label": choice, "acc": acc}
+                if k:
+                    parent = nodes[tuple(route["path"][:k])]
+                    lines.append((parent["k"], parent["row"], k, r))
+        route["_total"] = acc
+    y = lambda row: (row + 0.5) * row_h
+    svg = "".join(
+        f'<path d="M{xs[k0] + 62} {y(r0):.2f} V{y(r1):.2f} H{xs[k1]}" />' if r0 != r1 else
+        f'<path d="M{xs[k0] + 62} {y(r0):.2f} H{xs[k1]}" />' for k0, r0, k1, r1 in lines)
+    svg += "".join(f'<path d="M{xs[n - 1] + 124} {y(r):.2f} H{W - tot_w + 6}" class="dash" />' for r in range(m))
+    divs = ""
+    for node in nodes.values():
+        pub = node["label"] in TREE_COLORS
+        divs += (f'<div class="tn {"pub" if pub else "pri"}" style="left:{xs[node["k"]] / W * 100:.2f}%;top:{y(node["row"]):.2f}%">'
+                 f'<b>{esc(node["label"])}</b><small>{_man(node["acc"])}{unit}</small></div>')
+    top = max(r["_total"] for r in routes)
+    for r, route in enumerate(routes):
+        hot = " max" if route["_total"] == top else ""
+        divs += (f'<div class="tt{hot}" style="top:{y(r):.2f}%"><small>{esc(route.get("name", ""))}</small>'
+                 f'<b>{_man(route["_total"])}<i>{unit}円</i></b></div>')
+    heads = "".join(f'<span style="left:{xs[k] / W * 100:.2f}%">{esc(st["name"])}<small>{esc(st.get("years", ""))}</small></span>'
+                    for k, st in enumerate(stages))
+    heads += '<span class="th" style="right:0">総額</span>'
+    note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
+    legend = '<div class="tlg"><span class="pub">公立・国立</span><span class="pri">私立</span><em>数字はそこまでの累計</em></div>'
+    body = (f'<div class="pptree fitbox"><div class="tgrid">{heads}</div>{legend}'
+            f'<div class="tbox"><svg viewBox="0 0 {W} 100" preserveAspectRatio="none">{svg}</svg>{divs}</div>{note}</div>')
+    return _frame(b, s, "tree", _head(b, s) + body + _foot(b, s, s.get("ask") or "うちはどのルート？"))
