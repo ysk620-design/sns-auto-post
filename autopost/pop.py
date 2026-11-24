@@ -14,7 +14,7 @@ layout:
          4位からは横棒） / note / follow / bg / ask
   bars   横棒のランキング（全部を一列の横棒で、数字の差を棒の長さで見せる。上位3つは金銀銅）。項目は podium と同じで
          items は6〜10個
-  tree   樹形図（分かれ道を選ぶたびに累計がふえ、行き止まりに総額）。title / kicker / bubble / sub / big / big_label /
+  tree   樹形図（各分かれ道にその段階の金額、行き止まりに総額）。title / kicker / bubble / sub / big / big_label /
          stages（各 {name, years, options: {選択肢: 金額（万円）}}） / routes（3〜8本。各 {path: [各段階の選択肢], name}） /
          unit / note / follow / bg / ask。同じ選択の続く部分は1本にまとまる
   tier   ティア表。title / kicker / bubble / sub / tiers（3〜6段。各 {rank, label, items: [{name, icon, note}]}） /
@@ -239,7 +239,7 @@ def tree(b, i: int, s: dict) -> str:
             acc += float(stages[k]["options"][choice])
             key = tuple(route["path"][: k + 1])
             if key not in nodes:
-                nodes[key] = {"row": r, "k": k, "label": choice, "acc": acc}
+                nodes[key] = {"row": r, "k": k, "label": choice, "cost": float(stages[k]["options"][choice])}
                 if k:
                     parent = nodes[tuple(route["path"][:k])]
                     lines.append((parent["k"], parent["row"], k, r))
@@ -253,7 +253,7 @@ def tree(b, i: int, s: dict) -> str:
     for node in nodes.values():
         pub = node["label"] in TREE_COLORS
         divs += (f'<div class="tn {"pub" if pub else "pri"}" style="left:{xs[node["k"]] / W * 100:.2f}%;top:{y(node["row"]):.2f}%">'
-                 f'<b>{esc(node["label"])}</b><small>{_man(node["acc"])}{unit}</small></div>')
+                 f'<b>{esc(node["label"])}</b><small>{_man(node["cost"])}{unit}</small></div>')
     top = max(r["_total"] for r in routes)
     for r, route in enumerate(routes):
         hot = " max" if route["_total"] == top else ""
@@ -263,7 +263,7 @@ def tree(b, i: int, s: dict) -> str:
                     for k, st in enumerate(stages))
     heads += '<span class="th" style="right:0">総額</span>'
     note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
-    legend = '<div class="tlg"><span class="pub">公立・国立</span><span class="pri">私立</span><em>数字はそこまでの累計</em></div>'
+    legend = '<div class="tlg"><span class="pub">公立・国立</span><span class="pri">私立</span><em>数字はその学校の年数分の金額</em></div>'
     body = (f'<div class="pptree fitbox"><div class="tgrid">{heads}</div>{legend}'
             f'<div class="tbox"><svg viewBox="0 0 {W} 100" preserveAspectRatio="none">{svg}</svg>{divs}</div>{note}</div>')
     return _frame(b, s, "tree", _head(b, s) + body + _foot(b, s, s.get("ask") or "うちはどのルート？"))
