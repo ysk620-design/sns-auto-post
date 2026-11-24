@@ -5,38 +5,47 @@
   "title": "選手村の冷凍餃子",
   "icon": "noren:餃",
   "burst": "YUMMY!",
-  "top": "五輪選手が夢中の餃子",
-  "big": "その正体に<br>世界がびっくり！",
+  "top": "五輪選手が毎食食べた餃子",
+  "big": "その正体は<br>どこで買える？",
   "big_size": 100,
   "chat_title": "選手村の<em>餃子</em>の正体は<br>→ 海外の反応は…",
+  "art": {
+    "cast": "The athlete: a tall, athletic Canadian woman in her 20s with a high blonde ponytail, light skin, wearing a red team tracksuit jacket. Other athletes from around the world in colorful team tracksuits.",
+    "cover": "In a huge, bright athletes' dining hall, the athlete holds a plate piled high with golden pan-fried dumplings, eyes sparkling with excitement",
+    "end": "The athlete happily eating pan-fried dumplings at home in her kitchen, holding up a frozen food bag with no writing on it, grinning"
+  },
   "scenes": [
     {
       "title": "東京の選手村",
       "mood": "think",
       "prop": "question",
       "say": "日本の食堂、何があるかな",
-      "nar": "2021年、東京の選手村の食堂。<br>世界中の選手が集まった。"
+      "nar": "2021年、東京の選手村の食堂。<br>世界中の選手が集まった。",
+      "art": "The athlete on the right walks into a huge, bright athletes' dining hall with long buffet counters, looking around with curiosity, other athletes in colorful tracksuits nearby"
     },
     {
       "title": "ひと口食べたら",
       "mood": "wow",
       "prop": "noren:餃",
       "say": "パリッとしてジューシー！",
-      "nar": "皮はパリッと、中はジューシー。<br>選手たちはSNSで大絶賛。"
+      "nar": "皮はパリッと、中はジューシー。<br>選手たちはSNSで大絶賛。",
+      "art": "The athlete on the right bites into a crispy golden pan-fried dumpling with chopsticks, eyes wide with surprise, steam rising"
     },
     {
       "title": "毎食これ！",
       "mood": "love",
       "prop": "noren:餃",
       "say": "毎食これを食べてる！",
-      "nar": "毎食食べる選手も現れた。<br>出された餃子は約60万個。"
+      "nar": "毎食食べる選手も現れた。<br>出された餃子は約60万個。",
+      "art": "The athlete on the right sits at a long table with a mountain of dumplings on her plate, giving a thumbs up to teammates, blissful face"
     },
     {
-      "title": "まさかの正体",
+      "title": "正体は…",
       "mood": "wow",
       "prop": "bag",
       "say": "スーパーで買えるの！？",
-      "nar": "実は日本のスーパーで売っている<br>冷凍餃子と同じ味だった。"
+      "nar": "実は日本のスーパーで売っている<br>冷凍餃子と同じ味だった。",
+      "art": "The athlete on the right stands in a Japanese supermarket frozen food aisle, holding a bag of frozen dumplings with a shocked open mouth"
     }
   ],
   "comments": [
