@@ -561,3 +561,18 @@ class PodiumTest(unittest.TestCase):
         bad = json.loads(json.dumps(data))
         bad["slides"][0]["items"][0]["num"] = 1
         self.assertIn("num の大きい順", " ".join(validate.validate_post(bad, accounts)))
+
+
+class TreeTest(unittest.TestCase):
+    def test_tree(self):
+        from autopost import templates
+
+        accounts = config.load_accounts()
+        f = ROOT / "queue/gensen_otoku/2026-11-25-education-tree/post.json"
+        if not f.exists():
+            self.skipTest("サンプルの投稿がありません")
+        data = json.loads(f.read_text(encoding="utf-8"))
+        self.assertEqual(validate.validate_post(data, accounts), [])
+        bad = json.loads(json.dumps(data))
+        bad["slides"][0]["routes"].reverse()
+        self.assertIn("線が交差しない", " ".join(validate.validate_post(bad, accounts)))

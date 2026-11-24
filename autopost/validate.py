@@ -29,9 +29,10 @@ LAYOUT_FIELDS = {
     "tiles": ({"title", "tiles"}, {"kicker", "bubble", "sub", "cols", "summary", "note", "follow", "bg", "ask", "tag"}),
     "tier": ({"title", "tiers"}, {"kicker", "bubble", "sub", "note", "follow", "bg", "ask", "tag"}),
     "podium": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
+    "tree": ({"title", "stages", "routes"}, {"kicker", "bubble", "sub", "big", "big_label", "unit", "note", "follow", "bg", "ask", "tag"}),
     "bars": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
 }
-TALL_LAYOUTS = ("matome", "pop", "tiles", "tier", "podium", "bars")  # 縦長の1枚（リールだけの投稿で使う）
+TALL_LAYOUTS = ("matome", "pop", "tiles", "tier", "podium", "bars", "tree")  # 縦長の1枚（リールだけの投稿で使う）
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
     "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst", "quiz_end_title",
@@ -90,7 +91,7 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
         rows = s.get("rows")
         if not isinstance(rows, list) or not 1 <= len(rows) <= 6:
             errors.append(f"{i}枚目（table）: rows は1〜6行にしてください")
-    if layout in ("pop", "tiles", "tier", "podium", "bars"):
+    if layout in ("pop", "tiles", "tier", "podium", "bars", "tree"):
         _check_pop(i, layout, s, errors)
 
 
@@ -115,6 +116,37 @@ def _check_art_text(value, where: str, errors: list[str]) -> None:
         return
     if not isinstance(value, str) or not value.strip() or not value.isascii() or len(value) > 160:
         errors.append(f"{where} は英語の短い説明（160文字まで）にしてください。例 \"an empty wallet with a moth flying out\"")
+
+
+def _check_tree(where: str, s: dict, errors: list[str]) -> None:
+    stages, routes = s.get("stages"), s.get("routes")
+    if not isinstance(stages, list) or not 3 <= len(stages) <= 6:
+        errors.append(f"{where}: stages は3〜6段階にしてください")
+        return
+    for k, st in enumerate(stages, 1):
+        if not isinstance(st, dict) or not isinstance(st.get("options"), dict) or not st["options"]:
+            errors.append(f"{where}: stages の{k}つ目は {{\"name\": …, \"options\": {{選択肢: 金額}}}} にしてください")
+            return
+        _short(st.get("name"), 5, f"{where} の stages{k} の name", errors, True)
+        _short(st.get("years"), 5, f"{where} の stages{k} の years", errors)
+        for lab, v in st["options"].items():
+            _short(lab, 4, f"{where} の stages{k} の選択肢", errors, True)
+            if not isinstance(v, (int, float)) or v < 0:
+                errors.append(f"{where}: stages{k} の「{lab}」の金額を数で書いてください")
+    if not isinstance(routes, list) or not 3 <= len(routes) <= 8:
+        errors.append(f"{where}: routes は3〜8本にしてください")
+        return
+    order = []
+    for k, r in enumerate(routes, 1):
+        path = r.get("path") if isinstance(r, dict) else None
+        if not isinstance(path, list) or len(path) != len(stages) or any(
+                c not in st["options"] for c, st in zip(path, stages)):
+            errors.append(f"{where}: routes の{k}本目の path は、各段階の選択肢を順に並べてください")
+            return
+        _short(r.get("name"), 9, f"{where} の routes{k} の name", errors)
+        order.append([list(st["options"]).index(c) for c, st in zip(path, stages)])
+    if order != sorted(order):
+        errors.append(f"{where}: routes は、stages の選択肢の順で上から並べてください（線が交差しないように）")
 
 
 def _check_pop(i: int, layout: str, s: dict, errors: list[str]) -> None:
@@ -149,6 +181,8 @@ def _check_pop(i: int, layout: str, s: dict, errors: list[str]) -> None:
         if "head" in s and not (isinstance(s["head"], list) and len(s["head"]) == 2
                                 and all(isinstance(x, str) and 0 < len(x) <= 12 for x in s["head"])):
             errors.append(f"{where}: head は列の見出し（12文字まで）を2つにしてください")
+    if layout == "tree":
+        _check_tree(where, s, errors)
     if layout in ("podium", "bars"):
         items = s.get("items")
         most = 9 if layout == "podium" else 10
@@ -389,7 +423,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             pass  # クイズリールだけを出す（問題のスライドの形は quizreel.validate が確かめる）
         elif not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
                   and slides[0].get("layout") in TALL_LAYOUTS):
-            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier・podium・bars のどれか1枚にしてください")
+            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier・podium・bars・tree のどれか1枚にしてください")
     elif "post_hour_jst" in data:
         errors.append("post_hour_jst は type が reel_only のときだけ書けます")
     if kind == "story":
@@ -403,7 +437,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)
-            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier", "podium", "bars") and kind != "reel_only":
+            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier", "podium", "bars", "tree") and kind != "reel_only":
                 errors.append(f"{i}枚目: {s['layout']} は縦長なので、type が reel_only の投稿でだけ使えます")
     caption = data.get("caption")
     if not isinstance(caption, str) or not caption.strip():

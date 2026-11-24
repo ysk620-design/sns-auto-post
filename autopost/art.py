@@ -19,7 +19,7 @@ from pathlib import Path
 from . import config
 
 ASSETS = config.ROOT / "assets"
-POP_LAYOUTS = ("pop", "tiles", "tier", "podium", "bars")
+POP_LAYOUTS = ("pop", "tiles", "tier", "podium", "bars", "tree")
 # 1回の実行で作ってよい数の上限（設定ミスでお金を使いすぎないように）
 MAX_ICONS_PER_RUN = 72
 MAX_BGS_PER_RUN = 8
