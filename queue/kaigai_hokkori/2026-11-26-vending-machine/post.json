@@ -9,34 +9,43 @@
   "big": "冬に温かい缶が<br>出てくるの？",
   "big_size": 100,
   "chat_title": "日本の<em>温かい自販機</em>に<br>→ 海外の反応は…",
+  "art": {
+    "cast": "The traveler: a young Australian man in his 20s with messy sandy hair, light skin, a green puffer jacket, a knit beanie and a backpack.",
+    "cover": "On a cold winter night street in Japan, the traveler holds a hot drink can with both hands in front of a glowing vending machine, eyes wide in surprise, steam rising",
+    "end": "The traveler sits on a bench at a snowy morning train station, holding a warm can of coffee with both hands and smiling contentedly"
+  },
   "scenes": [
     {
       "title": "冬の夜道で",
       "mood": "think",
       "prop": "question",
       "say": "寒い…温まりたい",
-      "nar": "冬の日本旅行。夜の街は冷えこむ。<br>ふと見ると、道ばたに光る自販機。"
+      "nar": "冬の日本旅行。夜の街は冷えこむ。<br>ふと見ると、道ばたに光る自販機。",
+      "art": "The traveler on the right shivers on a dark, cold residential street at night in Japan, breath visible, spotting a glowing vending machine on the corner"
     },
     {
       "title": "赤いボタンは？",
       "mood": "wow",
       "prop": "coffee",
       "say": "えっ、缶があったかい！",
-      "nar": "青は冷たい、赤は温かい。<br>1台に両方が並んでいる。"
+      "nar": "青は冷たい、赤は温かい。<br>1台に両方が並んでいる。",
+      "art": "The traveler on the right presses a red-lit button on a vending machine and holds a warm drink can, surprised and delighted, steam rising from the can"
     },
     {
       "title": "どこにでもある",
       "mood": "happy",
       "prop": "coffee",
       "say": "ここにも、あそこにも！",
-      "nar": "駅にも、住宅街の角にも。<br>夜中でも、ちゃんと動いている。"
+      "nar": "駅にも、住宅街の角にも。<br>夜中でも、ちゃんと動いている。",
+      "art": "Montage-like scene: the traveler on the right points happily at glowing vending machines everywhere, at a station entrance and on a quiet street corner"
     },
     {
       "title": "旅の朝の楽しみ",
       "mood": "love",
       "prop": "coffee",
       "say": "明日の朝もこれにしよう",
-      "nar": "毎朝の温かい缶コーヒーが、<br>旅いちばんのお気に入りに。"
+      "nar": "毎朝の温かい缶コーヒーが、<br>旅いちばんのお気に入りに。",
+      "art": "Early morning: the traveler on the right sips a warm can of coffee in front of a vending machine, cheeks rosy, with a happy relaxed smile"
     }
   ],
   "comments": [

@@ -5,17 +5,23 @@
   "title": "雨の京都と1本の傘",
   "icon": "noren:傘",
   "burst": "THANKS!",
-  "top": "なぜ見知らぬ人が…",
-  "big": "ずぶぬれの旅行者に<br>まさかの1本！",
+  "top": "京都でどしゃぶり…",
+  "big": "知らない人が<br>傘をくれた！",
   "big_size": 96,
   "chat_title": "雨の日に<em>見知らぬ人</em>が<br>くれた傘 → 海外の反応は…",
+  "art": {
+    "cast": "The traveler: a young American woman in her 20s with curly black hair, dark brown skin, a beige trench coat and a small backpack. The kind local: a Japanese woman in her 60s with short gray hair, glasses and a purple cardigan.",
+    "cover": "On a rainy Kyoto street, the soaked traveler stares in surprise as the kind local woman holds out a clear umbrella to her with a gentle smile",
+    "end": "The traveler walks happily down a rainy Kyoto street under a clear umbrella, turning back to wave, smiling warmly"
+  },
   "scenes": [
     {
       "title": "突然の大雨",
       "mood": "sad",
       "prop": "question",
       "say": "傘がない…駅はどっち？",
-      "nar": "京都を旅していたら、急などしゃぶり。<br>道をたずねる言葉もわからない。"
+      "nar": "京都を旅していたら、急などしゃぶり。<br>道をたずねる言葉もわからない。",
+      "art": "The soaked traveler on the right stands in sudden heavy rain on a narrow Kyoto street with wooden houses, hugging herself, looking lost and worried"
     },
     {
       "title": "腕をひかれて",
@@ -26,7 +32,8 @@
         "shirt": "#7a8fb8"
       },
       "say": "えっ、どこへ行くの？",
-      "nar": "通りかかった女性が、腕をひいて<br>近くの小さなお店へ連れて行く。"
+      "nar": "通りかかった女性が、腕をひいて<br>近くの小さなお店へ連れて行く。",
+      "art": "The kind local woman on the left gently takes the traveler's arm and leads her toward a small shop; the traveler on the right looks confused"
     },
     {
       "title": "カウンターの下から",
@@ -38,14 +45,16 @@
       },
       "prop": "noren:傘",
       "say": "傘を…くれるの？",
-      "nar": "出てきたのは、傘がたくさんのバケツ。<br>その中から1本を手渡してくれた。"
+      "nar": "出てきたのは、傘がたくさんのバケツ。<br>その中から1本を手渡してくれた。",
+      "art": "Inside a small shop, the kind local woman on the left pulls a clear umbrella out of a bucket full of umbrellas and hands it over; the traveler on the right looks amazed"
     },
     {
       "title": "お代は？",
       "mood": "love",
       "prop": "noren:傘",
       "say": "本当にありがとう！",
-      "nar": "お金を払おうとしても、首をふるだけ。<br>心まで温かくなって、雨の中へ。"
+      "nar": "お金を払おうとしても、首をふるだけ。<br>心まで温かくなって、雨の中へ。",
+      "art": "The traveler on the right bows deeply with her hands together saying thank you, while the kind local woman on the left smiles and waves her hand, refusing money"
     }
   ],
   "comments": [

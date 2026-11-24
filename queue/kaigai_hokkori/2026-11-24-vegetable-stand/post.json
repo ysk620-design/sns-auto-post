@@ -5,38 +5,47 @@
   "title": "野菜の無人販売所",
   "icon": "noren:菜",
   "burst": "WOW!",
-  "top": "お店の人はどこ…？",
-  "big": "道ばたの野菜に<br>外国人びっくり！",
+  "top": "店員ゼロ、カメラゼロ…",
+  "big": "なのに野菜が<br>ちゃんと売れる！",
   "big_size": 100,
   "chat_title": "日本の<em>野菜の無人販売</em><br>→ 海外の反応は…",
+  "art": {
+    "cast": "The father: a friendly French man in his late 30s with short dark brown hair, a trimmed beard, light skin, a navy knit sweater and a gray scarf. His daughter: a 7-year-old girl with long light-brown hair in two braids and a yellow raincoat-style jacket.",
+    "cover": "On a quiet country road near Kyoto, the father and his daughter stop in amazement in front of a small wooden roadside vegetable stand full of fresh vegetables with nobody around",
+    "end": "The father and daughter walk home along the country road at sunset, the girl happily hugging a bag of vegetables, both smiling"
+  },
   "scenes": [
     {
       "title": "田舎道の散歩",
       "mood": "think",
       "prop": "question",
       "say": "お店の人がいない…？",
-      "nar": "京都の郊外を娘と散歩中。<br>道ばたに、野菜の小屋が。"
+      "nar": "京都の郊外を娘と散歩中。<br>道ばたに、野菜の小屋が。",
+      "art": "The father on the right and his daughter walk along a narrow country road between rice fields near Kyoto, the father looking around curiously at a small wooden stand by the road"
     },
     {
       "title": "手書きの値札",
       "mood": "wow",
       "prop": "noren:菜",
       "say": "スーパーより安い！",
-      "nar": "あるのは手書きの値札と、<br>小さな料金箱だけ。"
+      "nar": "あるのは手書きの値札と、<br>小さな料金箱だけ。",
+      "art": "Close-up at the wooden stand: shelves of fresh cucumbers, tomatoes and daikon radishes in small bags; the father on the right leans in with wide eyes, delighted"
     },
     {
       "title": "自分でお金を",
       "mood": "happy",
       "prop": "wallet",
       "say": "ちゃんと払おうね",
-      "nar": "見張りもカメラもない。<br>お金は自分で数えて箱へ。"
+      "nar": "見張りもカメラもない。<br>お金は自分で数えて箱へ。",
+      "art": "The father on the right kneels beside his daughter as she carefully drops coins into a small wooden money box at the stand, both smiling"
     },
     {
       "title": "信頼のしくみ",
       "mood": "love",
       "prop": "noren:菜",
       "say": "信じてくれてるんだ",
-      "nar": "見られていなくても守る約束。<br>畑のそばの、小さな信頼。"
+      "nar": "見られていなくても守る約束。<br>畑のそばの、小さな信頼。",
+      "art": "The father on the right holds his daughter's hand and looks back at the empty little vegetable stand with a warm, moved smile"
     }
   ],
   "comments": [
