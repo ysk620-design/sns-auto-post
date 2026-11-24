@@ -557,7 +557,7 @@ class PodiumTest(unittest.TestCase):
         if data is None:
             self.skipTest("サンプルの投稿がありません")
         self.assertEqual(validate.validate_post(data, accounts), [])
-        self.assertEqual(len(art.icons_of(data["slides"][0])), 8)
+        self.assertEqual(len(art.icons_of(data["slides"][0])), len(data["slides"][0]["items"]))
         bad = json.loads(json.dumps(data))
         bad["slides"][0]["items"][0]["num"] = 1
         self.assertIn("num の大きい順", " ".join(validate.validate_post(bad, accounts)))

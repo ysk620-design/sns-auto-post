@@ -12,6 +12,8 @@ layout:
   podium 表彰台＋横棒のランキング（数字の大きさを棒で見せる）。title / kicker / bubble / sub / big / big_label /
          items（6〜9個。各 {name, value, num, icon, note}。num は棒の長さに使う数（例 50.8）。上位3つは表彰台、
          4位からは横棒） / note / follow / bg / ask
+  bars   横棒のランキング（全部を一列の横棒で、数字の差を棒の長さで見せる。上位3つは金銀銅）。項目は podium と同じで
+         items は6〜10個
   tier   ティア表。title / kicker / bubble / sub / tiers（3〜6段。各 {rank, label, items: [{name, icon, note}]}） /
          note / follow / bg
 
@@ -189,3 +191,23 @@ def podium(b, i: int, s: dict) -> str:
     body = (f'<div class="pppod fitbox"><div class="podium">{cols}</div>'
             f'<div class="ppbars">{bars}{note}</div></div>')
     return _frame(b, s, "podium", _head(b, s) + body + _foot(b, s, s.get("ask") or "予想は当たった？"))
+
+
+def bars(b, i: int, s: dict) -> str:
+    esc = b.esc
+    items = s["items"]
+    top = max(float(it.get("num") or 0) for it in items) or 1
+    rows = ""
+    for k, it in enumerate(items, 1):
+        ratio = float(it.get("num") or 0) / top
+        icon = art.icon_uri(it.get("icon"), b.cfg)
+        pic = f'<span class="ppi">{_img(icon)}</span>' if icon else '<span class="ppi empty"></span>'
+        note = f'<small>{esc(it["note"])}</small>' if it.get("note") else ""
+        medal = f" top m{k}" if k <= 3 else ""
+        rows += (f'<div class="pbr{medal}"><span class="ppn">{k}</span>{pic}<div class="pbm">'
+                 f'<div class="pbl"><b class="pbn">{esc(it["name"])}</b>{note}</div>'
+                 f'<div class="pbt2"><div class="tr"><i style="width:{max(4.0, 100 * ratio):.1f}%"></i></div>'
+                 f'<em>{esc(it["value"])}</em></div></div></div>')
+    note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
+    body = f'<div class="ppbars all fitbox">{rows}{note}</div>'
+    return _frame(b, s, "bars", _head(b, s) + body + _foot(b, s, s.get("ask") or "予想は当たった？"))
