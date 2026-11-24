@@ -28,8 +28,10 @@ LAYOUT_FIELDS = {
                                  "follow", "bg", "ask", "tag"}),
     "tiles": ({"title", "tiles"}, {"kicker", "bubble", "sub", "cols", "summary", "note", "follow", "bg", "ask", "tag"}),
     "tier": ({"title", "tiers"}, {"kicker", "bubble", "sub", "note", "follow", "bg", "ask", "tag"}),
+    "podium": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
+    "bars": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
 }
-TALL_LAYOUTS = ("matome", "pop", "tiles", "tier")  # 縦長の1枚（リールだけの投稿で使う）
+TALL_LAYOUTS = ("matome", "pop", "tiles", "tier", "podium", "bars")  # 縦長の1枚（リールだけの投稿で使う）
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
     "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst", "quiz_end_title",
@@ -88,7 +90,7 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
         rows = s.get("rows")
         if not isinstance(rows, list) or not 1 <= len(rows) <= 6:
             errors.append(f"{i}枚目（table）: rows は1〜6行にしてください")
-    if layout in ("pop", "tiles", "tier"):
+    if layout in ("pop", "tiles", "tier", "podium", "bars"):
         _check_pop(i, layout, s, errors)
 
 
@@ -147,6 +149,32 @@ def _check_pop(i: int, layout: str, s: dict, errors: list[str]) -> None:
         if "head" in s and not (isinstance(s["head"], list) and len(s["head"]) == 2
                                 and all(isinstance(x, str) and 0 < len(x) <= 12 for x in s["head"])):
             errors.append(f"{where}: head は列の見出し（12文字まで）を2つにしてください")
+    if layout in ("podium", "bars"):
+        items = s.get("items")
+        most = 9 if layout == "podium" else 10
+        if not isinstance(items, list) or not 6 <= len(items) <= most:
+            errors.append(f"{where}: items は6〜{most}個にしてください")
+        if not isinstance(items, list):
+            items = []
+        nums = []
+        for k, it in enumerate(items, 1):
+            w = f"{where} の{k}個目"
+            if not isinstance(it, dict):
+                errors.append(f"{w}: {{\"name\": …, \"value\": …, \"num\": …}} の形で書いてください")
+                continue
+            extra = set(it) - {"name", "value", "num", "icon", "note"}
+            if extra:
+                errors.append(f"{w}: 使えない項目があります: {', '.join(sorted(extra))}")
+            _short(it.get("name"), 8, f"{w}の name", errors, True)
+            _short(it.get("value"), 10, f"{w}の value", errors, True)
+            _short(it.get("note"), 16, f"{w}の note", errors)
+            _check_art_text(it.get("icon"), f"{w}の icon", errors)
+            if not isinstance(it.get("num"), (int, float)) or it["num"] <= 0:
+                errors.append(f"{w}: num（棒の長さに使う数。例 50.8）を書いてください")
+            else:
+                nums.append(it["num"])
+        if nums and nums != sorted(nums, reverse=True):
+            errors.append(f"{where}: items は num の大きい順に並べてください")
     if layout == "tiles":
         tiles = s.get("tiles")
         if not isinstance(tiles, list) or not 4 <= len(tiles) <= 12:
@@ -361,7 +389,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             pass  # クイズリールだけを出す（問題のスライドの形は quizreel.validate が確かめる）
         elif not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
                   and slides[0].get("layout") in TALL_LAYOUTS):
-            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier のどれか1枚にしてください")
+            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier・podium・bars のどれか1枚にしてください")
     elif "post_hour_jst" in data:
         errors.append("post_hour_jst は type が reel_only のときだけ書けます")
     if kind == "story":
@@ -375,7 +403,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)
-            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier") and kind != "reel_only":
+            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier", "podium", "bars") and kind != "reel_only":
                 errors.append(f"{i}枚目: {s['layout']} は縦長なので、type が reel_only の投稿でだけ使えます")
     caption = data.get("caption")
     if not isinstance(caption, str) or not caption.strip():

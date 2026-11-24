@@ -36,7 +36,7 @@ FIT_JS = """
       while (title && lines() > 3.2 && tk > 0.7) { tk = Math.round((tk - 0.04) * 100) / 100; set(); }
       const over = () => wrap.scrollHeight > wrap.clientHeight + 1;
       // 1行に収めたい短い言葉（日本語・英語・名前）は、少しだけ小さくして1行にする。無理なら折り返す
-      for (const el of s.querySelectorAll('.ppl b, .ppr b, .ppit span, .ppt h3 span')) {
+      for (const el of s.querySelectorAll('.ppl b, .ppr b, .ppit span, .ppt h3 span, .pcn, .pcv, .pbl b')) {
         el.style.whiteSpace = 'nowrap';
         let sc = 1;
         while (el.scrollWidth > el.clientWidth + 1 && sc > 0.72) { sc = Math.round((sc - 0.04) * 100) / 100; el.style.setProperty('--s', String(sc)); }

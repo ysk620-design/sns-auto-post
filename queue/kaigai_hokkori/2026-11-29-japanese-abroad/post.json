@@ -1,0 +1,74 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "日本人が行った国ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "2025年｜各国の発表から",
+      "title": "日本人が行った<br><span class=\"hl\">国</span>ランキング",
+      "bubble": "日本に来た人\nとくらべると…",
+      "sub": "韓国から日本へは946万人、日本から韓国へは365万人",
+      "bg": "a softly blurred airport departure gate with a plane outside the window at sunrise",
+      "items": [
+        {
+          "name": "韓国",
+          "value": "約365万人",
+          "num": 365.3,
+          "note": "過去最多",
+          "icon": "a small South Korean flag on a short stick"
+        },
+        {
+          "name": "米国",
+          "value": "約197万人",
+          "num": 196.7,
+          "note": "ハワイ・グアム含む",
+          "icon": "a small United States flag on a short stick"
+        },
+        {
+          "name": "台湾",
+          "value": "約148万人",
+          "num": 148.3,
+          "icon": "a small Taiwanese flag on a short stick"
+        },
+        {
+          "name": "タイ",
+          "value": "約109万人",
+          "num": 109.1,
+          "icon": "a small Thai flag on a short stick"
+        },
+        {
+          "name": "ベトナム",
+          "value": "約81万人",
+          "num": 81.4,
+          "note": "じわじわ人気",
+          "icon": "a small Vietnamese flag on a short stick"
+        },
+        {
+          "name": "香港",
+          "value": "約74万人",
+          "num": 74.2,
+          "icon": "a small Hong Kong flag with a white flower on a short stick"
+        },
+        {
+          "name": "シンガポール",
+          "value": "約63万人",
+          "num": 62.8,
+          "icon": "a small Singapore flag on a short stick"
+        }
+      ],
+      "note": "※2025年。各国・地域の発表をもとにした日本人渡航者数（数え方は国ごとに違う）。8位以下は発表がそろっていないため省略"
+    }
+  ],
+  "caption": "11/27の「日本に来た外国人ランキング」の逆バージョン。日本人が2025年に行った国は…\n\n1位は韓国で約365万人、過去最多でした。\nでも韓国から日本へ来た人は約946万人。来る人のほうが2.5倍以上多いんです。\n\n2位の米国はハワイ・グアムも含めた数字です。\n\n💬 あなたが次に行きたい国は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#海外旅行",
+    "#日本人旅行者",
+    "#旅行好きな人と繋がりたい",
+    "#韓国旅行"
+  ],
+  "review_notes": "【リールだけの投稿・11/29 18時台・10位までの横棒（7位まで）】確認日 2026-11-24。11/27「日本に来た外国人ランキング」で予告済み（画像の問いかけとキャプション）。数字：ツーリズム総合研究所の集計（各国・地域の発表をまとめたもの） https://note.com/tourism_journal/n/n394d10a7f9e6 。韓国365万3000人（過去最多）・米国196万7000人（ハワイ・グアム含む）・台湾148万3000人・タイ109万1000人・ベトナム81万4000人・香港74万2000人・シンガポール62万8000人。要確認：公的機関の一覧ではなく、各国の発表をまとめた集計を使った（8位以下は記事に数字がないので7位までにした）。各国で数え方（入国者数・到着者数など）が違う旨は画像の注記に書いた。「2.5倍以上」は946万÷365万≒2.6で計算。"
+}

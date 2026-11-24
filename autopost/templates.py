@@ -15,7 +15,7 @@
           head（列の見出し2つ。初期値 ["こんなとき", "目安"]） / items[[状況, 金額, 制度名]]（6〜14行） / note（注意書き） /
           big（見出しの大きな数字。例 "約222<small>万円</small>"） / big_label（big の前の小さな文字） / rank（true なら上から3行を強調） /
           follow（一番下のフォローのお誘い。省略すると accounts/*.json の matome_follow）
-  pop / tiles / tier  にぎやかな1枚まとめ（縦長 1080×1920。絵と背景付き）。項目は pop.py の説明を参照
+  pop / tiles / tier / podium / bars  にぎやかな1枚まとめ（縦長 1080×1920。絵と背景付き）。項目は pop.py の説明を参照
 どのスライドも tag（左上の小見出し）を指定できる。
 """
 from __future__ import annotations
@@ -190,8 +190,14 @@ class _Builder:
     def tier(self, i: int, s: dict) -> str:
         return pop.tier(self, i, s)
 
+    def podium(self, i: int, s: dict) -> str:
+        return pop.podium(self, i, s)
 
-LAYOUTS = ("cover", "callout", "cards", "points", "table", "quiz", "cta", "matome", "pop", "tiles", "tier")
+    def bars(self, i: int, s: dict) -> str:
+        return pop.bars(self, i, s)
+
+
+LAYOUTS = ("cover", "callout", "cards", "points", "table", "quiz", "cta", "matome", "pop", "tiles", "tier", "podium", "bars")
 
 
 def build_html(data: dict, cfg: dict) -> str:
