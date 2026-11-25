@@ -576,3 +576,14 @@ class TreeTest(unittest.TestCase):
         bad = json.loads(json.dumps(data))
         bad["slides"][0]["routes"].reverse()
         self.assertIn("線が交差しない", " ".join(validate.validate_post(bad, accounts)))
+
+
+class OpenerTest(unittest.TestCase):
+    def test_opener_triggers_render(self):
+        from autopost.story import build
+
+        with tempfile.TemporaryDirectory() as tmp:
+            folder = Path(tmp)
+            self.assertEqual(build.opener_digest(folder), "")
+            (folder / "opener.mp4").write_bytes(b"video")
+            self.assertEqual(len(build.opener_digest(folder)), 16)
