@@ -63,7 +63,7 @@ def _burst(p, w):
     return burst(p.get("burst", "WOW!"), w, "#ffe14d").replace('fill="#fff" stroke="#222"', 'fill="#ff3d5a" stroke="#111"')
 
 
-def cover_inner(p, tall=False, img=""):
+def cover_inner(p, tall=False, img="", still=False):
     """表紙の中身。tall=True ならリール用(1080x1920)に縦位置をずらす。img は漫画の表紙のコマ"""
     dy = 285 if tall else 0
     head = f'''
@@ -73,7 +73,7 @@ def cover_inner(p, tall=False, img=""):
   <div class="p" style="position:absolute;left:70px;right:70px;top:{1110+dy}px;padding:24px 30px;font-size:52px;font-weight:900;text-align:center">海外の反応は…？ ▶</div>'''
     if img:
         return head + f'''
-  <div class="frame" style="left:70px;right:70px;top:{600+dy}px;height:480px;transform:rotate(-1.2deg)"><img class="pic" src="{img}"></div>
+  <div class="frame" style="left:70px;right:70px;top:{600+dy}px;height:480px;transform:{"none" if still else "rotate(-1.2deg)"}"><img class="pic" src="{img}"></div>
   <div style="position:absolute;right:16px;top:{540+dy}px;z-index:4">{_burst(p, 230)}</div>''' + ask
     return head + f'''
   <div style="position:absolute;left:50px;top:{640+dy}px">{icon(p["icon"],430)}</div>
@@ -202,9 +202,10 @@ def reel_motion(p):
     return [True] * (1 + len(p["scenes"])) + [False] * len(p["comments"]) + [True, True]
 
 
-def reel_pages(p, name, handle, credit="", panels=None):
+def reel_pages(p, name, handle, credit="", panels=None, still=False):
+    """still=True は、表紙の漫画の枠に動画を重ねるとき（枠を傾けない）"""
     C, sc = p["comments"], p["scenes"]
-    P = [f'<section class="s" style="height:1920px"><div class="logo" style="top:200px">🌏 {name}</div>{cover_inner(p, tall=True, img=_panel(panels, 0))}<div class="real" style="top:206px">{REAL}</div><div class="foot" style="bottom:300px">{handle}</div></section>']
+    P = [f'<section class="s" style="height:1920px"><div class="logo" style="top:200px">🌏 {name}</div>{cover_inner(p, tall=True, img=_panel(panels, 0), still=still)}<div class="real" style="top:206px">{REAL}</div><div class="foot" style="bottom:300px">{handle}</div></section>']
     bg = ["blue", "", "blue", ""]
     for i, s in enumerate(sc):
         P.append(f'''<section class="s {bg[i % 4]}" style="height:1920px;padding-top:330px"><div class="logo" style="top:200px">🌏 {name}</div><div class="real" style="top:206px">{REAL}</div>

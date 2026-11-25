@@ -41,10 +41,25 @@ def render_hash(data: dict, cfg: dict) -> str:
     return _hash(data, cfg)
 
 
+OPENER = "opener.mp4"  # 冒頭に差し込む手作りの動画（表紙の漫画の枠に重ねる。音は使わない）
+OPENER_SECONDS = 4.0
+# リールの表紙の漫画の枠の内側（design.cover_inner の tall・動画ありのとき。傾けない）
+OPENER_BOX = (78, 893, 924, 464)
+
+
+def opener_digest(folder: Path) -> str:
+    import hashlib
+
+    f = folder / OPENER
+    return hashlib.sha256(f.read_bytes()).hexdigest()[:16] if f.exists() else ""
+
+
 def needs_render(folder: Path, data: dict, cfg: dict) -> bool:
     info_path = folder / "render.json"
     info = json.loads(info_path.read_text(encoding="utf-8")) if info_path.exists() else {}
     if info.get("hash") != render_hash(data, cfg):
+        return True
+    if info.get("opener", "") != opener_digest(folder):
         return True
     if len(list(folder.glob("slide*.jpg"))) != info.get("slides"):
         return True
@@ -61,8 +76,10 @@ def _wav_to_float(raw: bytes):
     return w.astype(np.float32) / 32768
 
 
-def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path, motion: list[bool] | None = None) -> float:
-    """画面PNG（01..NN）と台本から、読み上げ＋BGM付きの mp4 を作る。長さ（秒）を返す。"""
+def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path, motion: list[bool] | None = None,
+                    opener: Path | None = None) -> float:
+    """画面PNG（01..NN）と台本から、読み上げ＋BGM付きの mp4 を作る。長さ（秒）を返す。
+    opener（動画）があれば、表紙の画面の漫画の枠にその動画を重ねる（最初の数秒。終わったら最後の場面で止める）。"""
     import numpy as np
     from scipy.io import wavfile
 
@@ -103,7 +120,14 @@ def make_reel_video(png_dir: Path, lines: list[str], voice: dict, out: Path, mot
         for idx, (png, d, move) in enumerate(zip(pngs, durs, motion)):
             n = max(1, round(d * FPS))
             clip = tmp / f"part{idx:02d}.mp4"
-            if move:
+            if idx == 0 and opener is not None:
+                x, y, w, h = OPENER_BOX
+                vf = (f"[1:v]scale={w}:{h}:force_original_aspect_ratio=increase,crop={w}:{h},setsar=1,fps={FPS},"
+                      f"trim=duration={OPENER_SECONDS},tpad=stop_mode=clone:stop_duration={d}[v];"
+                      f"[0:v]scale=1080:1920[bg];[bg][v]overlay={x}:{y}:shortest=0")
+                cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-loop", "1", "-i", str(png), "-an", "-i", str(opener),
+                       "-filter_complex", vf, "-frames:v", str(n)]
+            elif move:
                 # ゆっくりズーム（画面ごとに寄る・引くを交互に）。拡大してから縮めると、動きがなめらかになる
                 z = f"1+{ZOOM}*on/{n}" if zoom_in else f"{1 + ZOOM}-{ZOOM}*on/{n}"
                 zoom_in = not zoom_in
@@ -171,12 +195,16 @@ async def render_story(browser, folder: Path, data: dict, cfg: dict) -> list[str
         credit = (cfg.get("reel") or {}).get("credit", "")
         with tempfile.TemporaryDirectory() as tmp:
             tmp = Path(tmp)
-            over = await _shoot(browser, design.reel_pages(reel_data, name, handle, credit, panels), 1920, tmp, "", "png")
+            opener = folder / OPENER if (folder / OPENER).exists() else None
+            over = await _shoot(browser, design.reel_pages(reel_data, name, handle, credit, panels, still=bool(opener)),
+                                1920, tmp, "", "png")
             for idx, bad in enumerate(over, 1):
                 if bad:
                     problems.append(f"{rel}: リールの{idx}画面目の文字が枠に収まりません。文を短くしてください")
             info["reel_seconds"] = round(make_reel_video(tmp, data["reel_script"]["nar"], voice_settings(cfg),
-                                                         folder / "reel.mp4", design.reel_motion(reel_data)), 1)
+                                                         folder / "reel.mp4", design.reel_motion(reel_data),
+                                                         opener), 1)
+            info["opener"] = opener_digest(folder)
 
     (folder / "render.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     extra = f"・リール{info['reel_seconds']}秒" if "reel_seconds" in info else ""

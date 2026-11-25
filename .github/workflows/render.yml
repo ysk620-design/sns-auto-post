@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "queue/**/post.json"
+      - "queue/**/opener.mp4"
       - "accounts/*.json"
       - "autopost/templates.py"
       - "autopost/style.css"
