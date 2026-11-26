@@ -1,0 +1,68 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-28",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "日本では無料なのに海外では有料なもの 第2弾",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "第2弾｜当たり前すぎて気づかない",
+      "bubble": "これも全部\n日本だとタダ！",
+      "title": "日本では<span class=\"hl\">無料</span>なのに<br>海外では<span class=\"hl\">有料</span>なもの",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "蛇口の水",
+          "icon": "a kitchen faucet pouring clear water into a glass",
+          "a": "日本：そのまま飲める",
+          "b": "そのまま飲める国は世界で9か国だけ"
+        },
+        {
+          "label": "レストランの席料",
+          "icon": "a restaurant table setting with a bread basket and a folded napkin",
+          "a": "日本：ふつうはなし",
+          "b": "イタリア：1人1〜3ユーロ（コペルト）"
+        },
+        {
+          "label": "銀行口座",
+          "icon": "a bank card next to a small piggy bank",
+          "a": "日本：維持費0円が多い",
+          "b": "アメリカ：月約14ドル（平均）"
+        },
+        {
+          "label": "ペットボトル",
+          "icon": "a plastic water bottle with a small coin beside it",
+          "a": "日本：預かり金なし",
+          "b": "ドイツ：1本0.25ユーロ（返すと戻る）"
+        },
+        {
+          "label": "スーパーのカート",
+          "icon": "a red supermarket shopping cart with a coin slot on the handle",
+          "a": "日本：そのまま使える",
+          "b": "ドイツ：1ユーロ硬貨を入れる（戻る）"
+        },
+        {
+          "label": "デパ地下の試食",
+          "icon": "small food samples on toothpicks on a tray",
+          "a": "日本：無料で食べられる",
+          "b": "海外：あまり見かけない"
+        }
+      ],
+      "summary": {
+        "label": "日本なら、ぜんぶ",
+        "big": "0円"
+      },
+      "note": "※国や店によって違います。水道水の国の数は国土交通省「日本の水資源の現況」より。イタリアのコペルトは地域によっては取らない店もあります"
+    }
+  ],
+  "caption": "大反響だった「日本では無料なのに、海外では有料なもの」の第2弾。\n\n蛇口の水をそのまま飲める国は、日本を含めて世界で9か国だけ。\nイタリアのレストランでは、席に座るだけで1人1〜3ユーロの「コペルト」がかかります。\nドイツではスーパーのカートを使うのに1ユーロ硬貨が必要（返すと戻ってきます）。\n\n💬 第3弾で知りたい「日本ではタダなもの」は？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#海外旅行",
+    "#日本の良いところ",
+    "#海外生活",
+    "#カルチャーショック"
+  ],
+  "review_notes": "【リールだけの投稿・11/28 18時台・タイル（大当たりした11/26の第2弾）】11/28のTier表と入れ替え（本人OK）。確認日 2026-11-26。出典：水道水をそのまま飲める国は日本を含む9か国＝国土交通省「令和8年版 日本の水資源の現況」（千葉県水道局のページで確認 https://www.pref.chiba.lg.jp/suidou/keikaku/oishii2/mame/mame10.html ）／イタリアのコペルトは1人1〜3ユーロが一般的（高級店は5ユーロほど・ローマのあるラツィオ州では禁止とされる）＝ https://www.learnitalianpod.com/2026/06/30/coperto-in-italy/ ／アメリカの当座預金の月額維持手数料の平均13.95ドル（MoneyRates 2026年の調査。手数料のない口座も37%以上）＝ https://www.cnbc.com/select/how-to-avoid-common-checking-account-fees/ ／ドイツの使い捨てペットボトル・缶の預かり金25セント（法律で決まっている）＝ https://dpg-pfandsystem.de/en/the-one-way-deposit-system/the-dpg-deposit-process.html ／ドイツのスーパーのカートは1ユーロ硬貨などで外す（返すと戻る）＝ https://www.tagesspiegel.de/wirtschaft/was-kostet-eigentlich-ein-einkaufswagen-3637375.html 。「デパ地下の試食：海外ではあまり見かけない」は数字のない一般的な言い方。日本の銀行も、長く使っていない口座に手数料をかけるところがある（「0円が多い」にしている）。"
+}
