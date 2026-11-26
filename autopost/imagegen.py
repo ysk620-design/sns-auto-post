@@ -22,12 +22,13 @@ from pathlib import Path
 
 API = "https://generativelanguage.googleapis.com/v1beta"
 # 用途ごとのモデル（上から順に試す）
+# 費用を抑えるため、安いモデルから試す（2026-11-26 本人と決定。Pro は最後の手段）
 MODELS = {
-    "icons": ["gemini-nano-banana-2.1", "gemini-3.1-flash-image", "gemini-3.1-flash-lite-image"],
-    # 漫画は人物をそろえる力と画力が大事なので、上位モデルから試す
-    "comic": ["gemini-3-pro-image", "gemini-nano-banana-2.1"],
-    # 背景は使い回すので、ぼかしの指示をよく守る上位モデルで作る
-    "background": ["gemini-3-pro-image", "gemini-nano-banana-2.1", "gemini-3.1-flash-image"],
+    "icons": ["gemini-3.1-flash-lite-image", "gemini-nano-banana-2.1", "gemini-3.1-flash-image"],
+    # 漫画は1枚に6コマ描くので2Kのまま。モデルは Pro から1つ下げる
+    "comic": ["gemini-nano-banana-2.1", "gemini-3-pro-image"],
+    # 背景はぼかすので、安いモデル・1Kで十分
+    "background": ["gemini-3.1-flash-lite-image", "gemini-nano-banana-2.1"],
 }
 NO_TEXT = " Absolutely no text, letters, numbers, signs, logos or watermarks anywhere in the image."
 
@@ -237,7 +238,7 @@ def generate_icons(subjects: list[str], out_paths: list[Path], style: str = "cla
         prompt, cols, rows, aspect = sheet_prompt(part, style)
         with tempfile.TemporaryDirectory() as tmp:
             sheet = Path(tmp) / "sheet.jpg"
-            if not generate(prompt, sheet, aspect=aspect, size="2K", kind="icons", models=models, log=log):
+            if not generate(prompt, sheet, aspect=aspect, size="1K", kind="icons", models=models, log=log):
                 continue
             if keep_sheet:
                 keep_sheet.parent.mkdir(parents=True, exist_ok=True)
@@ -262,7 +263,7 @@ def generate_background(description: str, out_path: Path, models: list[str] | No
     prompt = f"{description.strip().rstrip('.')}. {BG_STYLE}"
     with tempfile.TemporaryDirectory() as tmp:
         raw = Path(tmp) / "bg.jpg"
-        if not generate(prompt, raw, aspect="9:16", size="2K", kind="background", models=models, log=log):
+        if not generate(prompt, raw, aspect="9:16", size="1K", kind="background", models=models, log=log):
             return None
         img = Image.open(raw).convert("RGB")
         # 1080×1920 にそろえる（縦横比が少し違っても中央で切る）
