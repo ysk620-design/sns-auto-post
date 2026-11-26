@@ -16,13 +16,13 @@
           "label": "蛇口の水",
           "icon": "a kitchen faucet pouring clear water into a glass",
           "a": "日本：そのまま飲める",
-          "b": "そのまま飲める国は世界で9か国だけ"
+          "b": "飲める国は世界で9か国だけ"
         },
         {
           "label": "レストランの席料",
           "icon": "a restaurant table setting with a bread basket and a folded napkin",
           "a": "日本：ふつうはなし",
-          "b": "イタリア：1人1〜3ユーロ（コペルト）"
+          "b": "イタリア：1人1〜3ユーロ"
         },
         {
           "label": "銀行口座",
@@ -34,13 +34,13 @@
           "label": "ペットボトル",
           "icon": "a plastic water bottle with a small coin beside it",
           "a": "日本：預かり金なし",
-          "b": "ドイツ：1本0.25ユーロ（返すと戻る）"
+          "b": "ドイツ：1本25セント（戻る）"
         },
         {
           "label": "スーパーのカート",
           "icon": "a red supermarket shopping cart with a coin slot on the handle",
           "a": "日本：そのまま使える",
-          "b": "ドイツ：1ユーロ硬貨を入れる（戻る）"
+          "b": "ドイツ：1ユーロ硬貨が要る"
         },
         {
           "label": "デパ地下の試食",
