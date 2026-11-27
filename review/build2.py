@@ -79,7 +79,9 @@ def html(kind: str) -> str:
 async def shots(tmp: Path) -> None:
     from playwright.async_api import async_playwright
     async with async_playwright() as p:
-        b = await p.chromium.launch()
+        from autopost.render import chrome_path
+        exe = chrome_path()
+        b = await p.chromium.launch(**({"executable_path": exe} if exe else {}))
         pg = await b.new_page(viewport={"width": 1080, "height": 1920})
         for kind, _, _ in SCENES:
             await pg.set_content(html(kind))
