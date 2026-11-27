@@ -2,7 +2,7 @@ name: review-test
 on:
   push:
     branches: [claude/gemini-review]
-    paths: ["review/build2.py", "review/target2.md", "review/rubric.md", "review/run.py", ".github/workflows/review-test.yml"]
+    paths: ["review/build3.py", "review/target3.md", "review/rubric.md", "review/run.py", ".github/workflows/review-test.yml"]
 permissions:
   contents: write
 jobs:
@@ -34,15 +34,15 @@ jobs:
           key: music-${{ hashFiles('music/tracks.json') }}
           restore-keys: music-
       - run: python -m autopost.music download || true
-      - name: 試作リール第2版を作る
-        run: python review/build2.py
+      - name: 試作リール第3版を作る
+        run: python review/build3.py
       - name: Geminiにレビューしてもらう
-        run: python review/run.py review/v2 review/target2.md review/out2.md
+        run: python review/run.py review/v3 review/target3.md review/out3.md
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       - if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add review/v2 review/out2.md || true
-          git commit -m "試作第2版とGeminiのレビュー" && git push || true
+          git add review/v3 review/out3.md || true
+          git commit -m "試作第3版とGeminiのレビュー" && git push || true
