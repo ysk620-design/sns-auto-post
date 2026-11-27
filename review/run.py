@@ -43,9 +43,12 @@ def list_models(key: str) -> list[str]:
 
 def main() -> int:
     key = os.environ["GEMINI_API_KEY"]
+    in_dir = Path(sys.argv[1]) if len(sys.argv) > 1 else HERE / "in"
+    target = Path(sys.argv[2]) if len(sys.argv) > 2 else HERE / "target.md"
+    out = Path(sys.argv[3]) if len(sys.argv) > 3 else HERE / "out.md"
     parts = [{"text": (HERE / "rubric.md").read_text()},
-             {"text": "## 対象\n" + (HERE / "target.md").read_text()}]
-    for f in sorted((HERE / "in").iterdir()):
+             {"text": "## 対象\n" + target.read_text()}]
+    for f in sorted(in_dir.iterdir()):
         if f.suffix.lower() in MIME:
             parts.append({"inline_data": {"mime_type": MIME[f.suffix.lower()],
                                           "data": base64.b64encode(f.read_bytes()).decode()}})
@@ -65,11 +68,11 @@ def main() -> int:
             if code == 200:
                 text = "".join(p.get("text", "") for c in data.get("candidates", [])
                                for p in c.get("content", {}).get("parts", []))
-                (HERE / "out.md").write_text(f"<!-- model: {m} -->\n{text}\n")
+                out.write_text(f"<!-- model: {m} -->\n{text}\n")
                 print("ok", m)
                 return 0
             print(m, code, str(data.get("error", {}).get("message", ""))[:200])
-    (HERE / "out.md").write_text("レビューに失敗しました: " + ", ".join(tried) + "\n")
+    out.write_text("レビューに失敗しました: " + ", ".join(tried) + "\n")
     return 1
 
 
