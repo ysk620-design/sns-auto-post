@@ -145,7 +145,8 @@ def main() -> None:
         f"[5:a][tr]amix=inputs=2:normalize=0,afade=t=out:st={total-0.6}:d=0.6[au]"
     )
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    cmd = ["ffmpeg", "-v", "error", "-y", "-i", str(SRC_VIDEO),
+    from autopost.reel import ffmpeg_exe
+    cmd = [ffmpeg_exe(), "-v", "error", "-y", "-i", str(SRC_VIDEO),
            "-loop", "1", "-t", str(d0), "-i", str(tmp / "hook.png"),
            "-i", str(tmp / "page.png"),
            "-i", str(tmp / "ochi.png"),
