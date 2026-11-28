@@ -133,6 +133,12 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
             old_reel = folder / "reel.mp4"
             if old_reel.exists():
                 old_reel.unlink()
+            from . import zukan
+
+            if zukan.is_zukan(data):
+                # 虚構図鑑は、読み上げ付きのリールを画像と一緒に作る（PRで見られるように）
+                info["reel_seconds"] = await zukan.render_extras(page, folder, data, cfg)
+                info["zukan"] = zukan.render_key(folder, data)
             if posts.quiz_reel_wanted(data, cfg):
                 # テスト回は、文字をしぼったクイズリールを画像と一緒に作っておく（PRで確認できるように）
                 from . import quizreel, reel
@@ -149,7 +155,7 @@ async def render_posts(items: list[tuple[Path, dict, dict]]) -> list[str]:
                     problems.append(f"{rel}: {idx}枚目の文字が多すぎて収まりません。文を短くしてください")
                 elif f["zoom"] < 0.85:
                     print(f"⚠️ {rel}: {idx}枚目は文字が多いので{int(f['zoom'] * 100)}%に縮小しました")
-            extra = f"・クイズリール{info['reel_seconds']}秒" if "reel_seconds" in info else ""
+            extra = f"・リール{info['reel_seconds']}秒" if "reel_seconds" in info else ""
             print(f"🖼  {rel}: {len(sections)}枚{extra}")
         await browser.close()
     return problems
@@ -207,8 +213,11 @@ def main(argv=None) -> int:
             items.append((post.folder, post.data, cfg))
     if args.check_voice:
         # 漫画の絵が足りないストーリーは、このあと絵ができて作り直しになるかもしれないので、読み上げも用意する
+        from . import zukan
+
         need = any(story.is_story(post.data) and story.reel_wanted(post.data, cfg)
                    and (args.all or post.needs_render(cfg) or art.story_missing(post.data)) for post, cfg in loaded)
+        need = need or any(zukan.is_zukan(post.data) and (args.all or post.needs_render(cfg)) for post, cfg in loaded)
         print(f"needs_voice={str(need).lower()}")
         if os.environ.get("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:

@@ -19,7 +19,7 @@ from pathlib import Path
 from . import config
 
 ASSETS = config.ROOT / "assets"
-POP_LAYOUTS = ("pop", "tiles", "tier", "podium", "bars", "tree")
+POP_LAYOUTS = ("pop", "tiles", "tier", "podium", "bars", "tree", "vs")
 # 1回の実行で作ってよい数の上限（設定ミスでお金を使いすぎないように）
 MAX_ICONS_PER_RUN = 72
 MAX_BGS_PER_RUN = 8
@@ -58,6 +58,8 @@ def icons_of(slide: dict) -> list[str]:
     found: list = []
     if layout in ("pop", "podium", "bars"):
         found = [it.get("icon") for it in slide.get("items") or [] if isinstance(it, dict)]
+    elif layout == "vs":
+        found = [side.get("icon") for side in (slide.get("left"), slide.get("right")) if isinstance(side, dict)]
     elif layout == "tiles":
         found = [t.get("icon") for t in slide.get("tiles") or [] if isinstance(t, dict)]
     elif layout == "tier":
@@ -156,8 +158,10 @@ def cleanup_story(data: dict) -> None:
 
 def missing_any(data: dict, cfg: dict) -> bool:
     """作る予定の絵（アイコン・背景・漫画）に、まだ無いものがあるか。"""
+    from . import zukan
+
     icons, bgs = missing(data, cfg)
-    return bool(icons or bgs) or story_missing(data)
+    return bool(icons or bgs) or story_missing(data) or bool(zukan.missing(data))
 
 
 def data_uri(path: Path) -> str:
@@ -194,9 +198,12 @@ def ensure(items: list[tuple[dict, dict]], log=print) -> int:
         need_bgs += [b for b in bgs if b not in need_bgs]
         bg_models = bg_models or (cfg.get("art") or {}).get("bg_models")
     need_story = [(data, cfg) for data, cfg in items if story_missing(data)]
+    from . import zukan
+
+    made_zukan = zukan.ensure([data for data, _ in items], log=log)  # 虚構図鑑の挿絵・場面の絵
     total = sum(len(v) for v in need_icons.values()) + len(need_bgs) + len(need_story) * 6
     if not total:
-        return 0
+        return made_zukan
     if not imagegen.api_key():
         log(f"🎨 絵が{total}個足りませんが、GEMINI_API_KEY が無いので絵なしで作ります")
         return 0
@@ -227,4 +234,4 @@ def ensure(items: list[tuple[dict, dict]], log=print) -> int:
         made += n
     if total > made:
         log(f"⚠️ 絵が{total - made}個できませんでした（その部分は今までの絵で作ります）")
-    return made
+    return made + made_zukan

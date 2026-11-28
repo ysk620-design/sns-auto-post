@@ -56,6 +56,10 @@ class Post:
             return True
         if quiz_reel_wanted(self.data, account_cfg) and not (self.folder / "reel.mp4").exists():
             return True
+        from . import zukan
+
+        if zukan.needs_reel(self.folder, self.data, self.render_info()):
+            return True
         return len(self.slide_files()) != len(self.data.get("slides", []))
 
 
@@ -74,7 +78,7 @@ def _fingerprint(names: tuple[str, ...]) -> str:
 
 def template_fingerprint() -> str:
     """デザイン（templates.py と style.css など）が変わったら作り直すための指紋。"""
-    return _fingerprint(("templates.py", "style.css", "cover_art.py", "pop.py", "pop.css"))
+    return _fingerprint(("templates.py", "style.css", "cover_art.py", "pop.py", "pop.css", "zukan.py"))
 
 
 def quiz_fingerprint() -> str:

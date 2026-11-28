@@ -8,7 +8,7 @@
   "post_window_hours": 3,
   "series": "厳選お得",
   "reel": {
-    "enabled": true,
+    "enabled": false,
     "delay_days": 1,
     "post_hour_jst": 12,
     "post_window_hours": 3,
@@ -22,13 +22,6 @@
     "accent_soft": "#efc75e",
     "muted": "#8f998f"
   },
-  "boost": {
-    "until": "2026-11-17",
-    "reel_hours_jst": [
-      12,
-      18
-    ]
-  },
   "matome_follow": "フォローで、子育てのお得を毎日1枚",
   "art": {
     "style": "clay",
@@ -39,7 +32,7 @@
     ]
   },
   "reel_only_seconds": [
-    5,
     7
-  ]
+  ],
+  "reel_follow": "損しないお金が毎日わかる"
 }

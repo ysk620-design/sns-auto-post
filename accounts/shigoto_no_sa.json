@@ -1,0 +1,39 @@
+{
+  "handle": "shigoto_no_sa",
+  "name": "シゴトの差｜20代の働き方と年収",
+  "ig_user_id": "me",
+  "token_secret": "IG_TOKEN_SHIGOTO_NO_SA",
+  "enabled": true,
+  "post_hour_jst": 20,
+  "post_window_hours": 3,
+  "series": "シゴトの差",
+  "reel": {
+    "enabled": false,
+    "delay_days": 1,
+    "post_hour_jst": 12,
+    "post_window_hours": 3,
+    "share_to_feed": false
+  },
+  "theme": {
+    "main": "#14213d",
+    "base": "#f6f7fb",
+    "accent": "#ff6b35",
+    "accent_soft": "#ffd23f",
+    "muted": "#8a93a8",
+    "ink": "#14213d",
+    "hot": "#ff5a1f"
+  },
+  "matome_follow": "フォローで、20代の差がつく考え方を毎日",
+  "reel_follow": "仕事で差がつく考え方が毎日わかる",
+  "art": {
+    "style": "clay",
+    "backgrounds": [
+      "A bright modern Japanese office with large windows and green plants in soft morning light",
+      "A clean Tokyo business district street with glass buildings at golden hour",
+      "A cozy modern cafe with a laptop and coffee on a wooden table near the window"
+    ]
+  },
+  "reel_only_seconds": [
+    7
+  ]
+}

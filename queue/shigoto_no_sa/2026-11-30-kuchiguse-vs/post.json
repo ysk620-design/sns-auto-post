@@ -1,0 +1,55 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "職場で伸びる人と伸びない人、口ぐせの差",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "20代で差がつく",
+      "title": "伸びる人と<br>伸びない人の<span class=\"hl\">口ぐせ</span>",
+      "left": {
+        "label": "伸びない人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, slumped and sighing at a desk, gloomy"
+      },
+      "right": {
+        "label": "伸びる人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, smiling and raising a hand confidently"
+      },
+      "rows": [
+        {
+          "ng": "でも、だって",
+          "ok": "どうすればできる？"
+        },
+        {
+          "ng": "聞いてないです",
+          "ok": "確認していいですか"
+        },
+        {
+          "ng": "忙しいので無理です",
+          "ok": "いつまでなら出せます"
+        },
+        {
+          "ng": "前もそうでした",
+          "ok": "今回はこう変えます"
+        },
+        {
+          "ng": "なんとかなります",
+          "ok": "ここが不安です"
+        }
+      ],
+      "verdict": "差は「言いかえ」から始まる",
+      "ask": "あなたの口ぐせはどっち？"
+    }
+  ],
+  "caption": "その一言、損してるかも。\n仕事ができる人ほど、言い方を少しだけ変えています。\n\n✅ 「でも」→「どうすれば」\n✅ 「無理です」→「いつまでなら」\n\n明日からひとつだけ変えてみてください。\nあなたの口ぐせはどっちに近い？コメントで教えてください👇\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#社会人",
+    "#新社会人",
+    "#シゴトの差"
+  ],
+  "review_notes": "【1本目】ビジネスの1本目。比べる型（vs）。キャラの絵（icon）はGeminiで作る。同じキャラで表情だけ変えている"
+}

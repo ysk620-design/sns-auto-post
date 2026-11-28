@@ -31,6 +31,8 @@ jobs:
       IG_TOKEN_EIGO_1PHRASE: ${{ secrets.IG_TOKEN_EIGO_1PHRASE }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       IG_TOKEN_GENSEN_OTOKU: ${{ secrets.IG_TOKEN_GENSEN_OTOKU }}
+      IG_TOKEN_SHIGOTO_NO_SA: ${{ secrets.IG_TOKEN_SHIGOTO_NO_SA }}
+      IG_TOKEN_KYOKOU_ZUKAN: ${{ secrets.IG_TOKEN_KYOKOU_ZUKAN }}
       ACCOUNT: ${{ inputs.account }}
       MODE_FLAGS: ${{ inputs.mode == 'now' && '--force' || (inputs.mode == 'dry-run' && '--dry-run' || '') }}
     steps:

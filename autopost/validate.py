@@ -31,8 +31,11 @@ LAYOUT_FIELDS = {
     "podium": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
     "tree": ({"title", "stages", "routes"}, {"kicker", "bubble", "sub", "big", "big_label", "unit", "note", "follow", "bg", "ask", "tag"}),
     "bars": ({"title", "items"}, {"kicker", "bubble", "sub", "big", "big_label", "note", "follow", "bg", "ask", "tag"}),
+    "vs": ({"title", "left", "right", "rows"}, {"kicker", "bubble", "sub", "verdict", "note", "follow", "bg", "ask", "tag"}),
+    "zukan": ({"name", "hook_top", "hook_bottom", "feature", "ochi", "plate"},
+              {"no", "latin", "group", "ask", "voice", "scene", "follow", "opener_focus", "opener_start"}),
 }
-TALL_LAYOUTS = ("matome", "pop", "tiles", "tier", "podium", "bars", "tree")  # 縦長の1枚（リールだけの投稿で使う）
+TALL_LAYOUTS = ("matome", "pop", "tiles", "tier", "podium", "bars", "tree", "vs", "zukan")  # 縦長の1枚（リールだけの投稿で使う）
 POST_FIELDS = {
     "account", "date", "type", "no", "title", "slides", "caption", "hashtags", "pr", "review_notes",
     "reel", "reel_title", "reel_style", "reel_questions", "post_hour_jst", "quiz_end_title",
@@ -93,6 +96,52 @@ def _check_slide(i: int, s, errors: list[str]) -> None:
             errors.append(f"{i}枚目（table）: rows は1〜6行にしてください")
     if layout in ("pop", "tiles", "tier", "podium", "bars", "tree"):
         _check_pop(i, layout, s, errors)
+    if layout == "vs":
+        _check_vs(i, s, errors)
+    if layout == "zukan":
+        _check_zukan(i, s, errors)
+
+
+def _check_vs(i: int, s: dict, errors: list[str]) -> None:
+    where = f"{i}枚目（vs）"
+    for key in ("left", "right"):
+        side = s.get(key)
+        if not (isinstance(side, dict) and set(side) <= {"label", "icon"}):
+            errors.append(f"{where}: {key} は {{\"label\": …, \"icon\": …}} の形で書いてください")
+            continue
+        _short(side.get("label"), 9, f"{where} の {key} の label", errors, True)
+        _check_art_text(side.get("icon"), f"{where} の {key} の icon", errors)
+    rows = s.get("rows")
+    if not isinstance(rows, list) or not 3 <= len(rows) <= 6:
+        errors.append(f"{where}: rows は3〜6行にしてください")
+        rows = rows if isinstance(rows, list) else []
+    for k, r in enumerate(rows, 1):
+        if not (isinstance(r, dict) and set(r) == {"ng", "ok"}):
+            errors.append(f"{where} の{k}行目: {{\"ng\": …, \"ok\": …}} の形で書いてください")
+            continue
+        _short(r.get("ng"), 18, f"{where} の{k}行目の ng", errors, True)
+        _short(r.get("ok"), 18, f"{where} の{k}行目の ok", errors, True)
+    _short(s.get("verdict"), 22, f"{where} の verdict", errors)
+    _short(s.get("title"), 30, f"{where} の title", errors, True)
+
+
+def _check_zukan(i: int, s: dict, errors: list[str]) -> None:
+    where = f"{i}枚目（zukan）"
+    _short(s.get("name"), 9, f"{where} の name", errors, True)
+    _short(s.get("hook_top"), 18, f"{where} の hook_top", errors, True)
+    _short(s.get("hook_bottom"), 10, f"{where} の hook_bottom", errors, True)
+    _short(s.get("feature"), 30, f"{where} の feature", errors, True)
+    _short(s.get("ochi"), 22, f"{where} の ochi", errors, True)
+    _short(s.get("ask"), 20, f"{where} の ask", errors)
+    _short(s.get("group"), 16, f"{where} の group", errors)
+    _short(s.get("latin"), 30, f"{where} の latin", errors)
+    if "no" in s and not (isinstance(s["no"], str) and re.fullmatch(r"\d{3}", s["no"])):
+        errors.append(f"{where}: no は3けたの番号（例 \"001\"）にしてください")
+    for key in ("plate", "scene"):
+        _check_art_text(s.get(key), f"{where} の {key}", errors)
+    v = s.get("voice")
+    if v is not None and not (isinstance(v, list) and len(v) == 3 and all(isinstance(x, str) and x.strip() for x in v)):
+        errors.append(f"{where}: voice は読み上げる文を3つ（つかみ・ページ・オチ）並べてください")
 
 
 def _plain_len(value) -> int:
@@ -423,7 +472,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             pass  # クイズリールだけを出す（問題のスライドの形は quizreel.validate が確かめる）
         elif not (isinstance(slides, list) and len(slides) == 1 and isinstance(slides[0], dict)
                   and slides[0].get("layout") in TALL_LAYOUTS):
-            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier・podium・bars・tree のどれか1枚にしてください")
+            errors.append("type が reel_only のときは、slides を matome・pop・tiles・tier・podium・bars・tree・vs・zukan のどれか1枚にしてください")
     elif "post_hour_jst" in data:
         errors.append("post_hour_jst は type が reel_only のときだけ書けます")
     if kind == "story":
@@ -437,7 +486,7 @@ def validate_post(data, accounts: dict, folder: Path | None = None) -> list[str]
             errors.append("type が image のときは1枚にしてください")
         for i, s in enumerate(slides, 1):
             _check_slide(i, s, errors)
-            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier", "podium", "bars", "tree") and kind != "reel_only":
+            if isinstance(s, dict) and s.get("layout") in ("pop", "tiles", "tier", "podium", "bars", "tree", "vs", "zukan") and kind != "reel_only":
                 errors.append(f"{i}枚目: {s['layout']} は縦長なので、type が reel_only の投稿でだけ使えます")
     caption = data.get("caption")
     if not isinstance(caption, str) or not caption.strip():

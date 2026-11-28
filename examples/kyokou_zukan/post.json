@@ -1,0 +1,27 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "ツリカワモドキ（満員電車のつり革に化けてやる気を吸う）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "001",
+      "name": "ツリカワモドキ",
+      "latin": "Pseudoansa matutina",
+      "group": "擬態環形獣のなかま",
+      "hook_top": "月曜の朝<br>やる気が消えるのは",
+      "hook_bottom": "こいつのせい。",
+      "feature": "つり革に化けて<br>つかんだ人の<b>やる気</b>を吸う",
+      "ochi": "金曜の夜は<br>満腹で、動かない。",
+      "ask": "今朝にぎった人はコメントで除霊",
+      "voice": ["月曜の朝、やる気が消えるのは、こいつのせい。", "ツリカワモドキ。つり革に化けて、つかんだ人のやる気を吸う。", "金曜の夜は、満腹で動かない。"],
+      "plate": "a strange creature that mimics a train hanging strap: pale beige rubbery ring-shaped body, two tiny black eyes, thin finger-like tentacles",
+      "scene": "inside a crowded Tokyo commuter train in the morning, one of the hanging straps is a pale beige rubbery ring-shaped creature with tiny black eyes"
+    }
+  ],
+  "caption": "月曜だるいって言ってる同僚に送ってあげて。\n\n虚構図鑑 No.001「ツリカワモドキ」\n満員電車のつり革に化けて、つかんだ人のやる気を少しずつ吸う。金曜の夜は満腹で、ほとんど動かない。\n\n👻 今朝にぎった人は、コメントで除霊します\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": ["#あるある", "#架空生物", "#創作", "#月曜日", "#虚構図鑑"],
+  "review_notes": "見本。図鑑リール（zukan）。plate は図鑑の挿絵、scene はつかみの場面（どちらも英語、Gemini で描く）。投稿フォルダに opener.mp4（Geminiアプリの動画）を置くと、つかみに動画を使う"
+}

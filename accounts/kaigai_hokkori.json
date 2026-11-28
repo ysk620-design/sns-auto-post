@@ -9,7 +9,7 @@
   "post_window_hours": 3,
   "series": "海外の反応",
   "reel": {
-    "enabled": true,
+    "enabled": false,
     "delay_days": 1,
     "post_hour_jst": 12,
     "post_window_hours": 3,
@@ -23,17 +23,6 @@
       "gap": 0.6,
       "bgm_volume": 0.15
     }
-  },
-  "boost": {
-    "until": "2026-11-16",
-    "post_hours_jst": [
-      7,
-      20
-    ],
-    "reel_hours_jst": [
-      12,
-      18
-    ]
   },
   "theme": {
     "main": "#d9382e",
@@ -54,7 +43,7 @@
     ]
   },
   "reel_only_seconds": [
-    5,
     7
-  ]
+  ],
+  "reel_follow": "日本の「当たり前」が毎日わかる"
 }

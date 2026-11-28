@@ -8,7 +8,7 @@
   "post_window_hours": 3,
   "series": "直訳しがちな英語",
   "reel": {
-    "enabled": true,
+    "enabled": false,
     "delay_days": 1,
     "post_hour_jst": 12,
     "post_window_hours": 3,
@@ -32,7 +32,7 @@
     ]
   },
   "reel_only_seconds": [
-    5,
     7
-  ]
+  ],
+  "reel_follow": "通じる英語が毎日わかる"
 }
