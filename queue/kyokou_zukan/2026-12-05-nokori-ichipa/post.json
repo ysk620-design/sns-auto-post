@@ -3,35 +3,35 @@
   "date": "2026-12-05",
   "type": "reel_only",
   "post_hour_jst": 21,
-  "title": "ノコリイチパー（スマホの充電の残り1%に住む）",
+  "title": "ノコリイチパー（スマホの充電がいつも1%なのはこいつのしわざ）",
   "slides": [
     {
       "layout": "zukan",
-      "no": "011",
       "name": "ノコリイチパー",
-      "latin": "Batteriola ultima",
-      "group": "残量寄生獣のなかま",
-      "hook_top": "充電1%から<br>意外と粘るのは",
-      "hook_bottom": "こいつのおかげ。",
-      "feature": "残り<b>1%</b>に住みつき<br>電池を必死に支える",
-      "ochi": "充電器を探し始めた瞬間<br>0%にする。",
-      "ask": "今の充電を％でコメント",
+      "latin": "Unipercentus ultimus",
+      "group": "電池に棲む精のなかま",
+      "hook_top": "スマホの充電が<br>いつも1%なのは",
+      "hook_bottom": "こいつのしわざ。",
+      "feature": "スマホの残り<b>1%</b>に住み<br>そこから2時間ねばる",
+      "ochi": "充電器を見つけた瞬間<br>0%にしてくる。",
+      "ask": "いま充電1%の人は🙋",
       "voice": [
-        "充電1%から、意外と粘るのは、こいつのおかげ。",
-        "ノコリイチパー。残り1%に住みつき、電池を必死に支える。",
-        "充電器を探し始めた瞬間、0%にする。"
+        "スマホの充電が、いつも1%なのは、こいつのしわざ。",
+        "ノコリイチパー。スマホの残り1%に住み、そこから2時間ねばる。",
+        "充電器を見つけた瞬間、0%にしてくる。"
       ],
-      "plate": "a tiny bean-shaped creature glowing faint red, a smooth body like a battery cell, big tired determined eyes, short arms raised as if holding something up",
-      "scene": "a dim bedroom at night, a hand holding a smartphone with a red low battery glow, a tiny glowing red bean-shaped creature clinging to the screen in the center"
+      "plate": "a tiny glowing red battery-shaped creature with a silver battery cap on its head, big googly eyes, a smug grin and stubby little arms and legs",
+      "scene": "a dim desk at night, a tiny glowing red battery-shaped creature with googly eyes sitting on a smartphone screen, a hand bringing a charging cable closer",
+      "no": "013"
     }
   ],
-  "caption": "いつも充電ギリギリの友だちに送ってあげて。\n\n虚構図鑑 No.011「ノコリイチパー」\nスマホの充電の残り1%に住みつき、電池を必死に支えて意外と粘らせる。でも、充電器を探し始めた瞬間、0%にする。\n\n🔋 今の充電を％でコメントしてみて\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "caption": "いつも充電がない友だちに送ってあげて。\n\n虚構図鑑 No.013「ノコリイチパー」\nスマホの残り1%に住み、そこから2時間ねばる。充電器を見つけた瞬間、0%にしてくる。\n\n🙋 いま充電1%の人はコメントで教えて\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
   "hashtags": [
     "#あるある",
     "#架空生物",
     "#創作",
-    "#スマホあるある",
+    "#スマホ",
     "#虚構図鑑"
   ],
-  "review_notes": "【当たり狙い】【動画】本人の企画の生き物。本人がGeminiアプリで動画を作って、このフォルダに opener.mp4 として置いてほしい（置かなければ scene の絵で作られる）。Geminiアプリ用の指示文：A photorealistic smartphone video, horizontal. A dim bedroom at night. A hand holds a smartphone glowing with a red low battery light. A tiny glowing red bean-shaped creature with big tired eyes clings to the center of the screen, straining to hold the battery up, then lets go and the screen goes dark the moment the other hand reaches for a charger cable. The creature stays in the center of the frame. ※コメントの誘いは絵文字1文字ではなく「今の充電を％で」にした（数字を書くだけで参加できる）"
+  "review_notes": "【当たり狙い】【動画】本人がGeminiアプリで作った動画をつかみに使っている。図鑑番号（no）は、週次投稿づくりで投稿順に合わせて入れる"
 }

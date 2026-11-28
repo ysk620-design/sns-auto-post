@@ -3,7 +3,7 @@
   "name": "虚構図鑑",
   "ig_user_id": "17841469960174360",
   "token_secret": "IG_TOKEN_KYOKOU_ZUKAN",
-  "enabled": false,
+  "enabled": true,
   "post_hour_jst": 21,
   "post_window_hours": 3,
   "series": "虚構図鑑",

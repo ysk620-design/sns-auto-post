@@ -1,0 +1,55 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "「仕事が遅い」と思われる人と「速い」と思われる人",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "実は作業スピードじゃない",
+      "title": "「仕事が速い」と<br>思われる人の<span class=\"hl\">返し方</span>",
+      "left": {
+        "label": "遅いと思われる",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, staring at a pile of unread emails with a worried face"
+      },
+      "right": {
+        "label": "速いと思われる",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, typing a quick reply on a laptop with a confident smile"
+      },
+      "rows": [
+        {
+          "ng": "完璧にしてから返信",
+          "ok": "まず「受け取りました」"
+        },
+        {
+          "ng": "締切ギリギリに提出",
+          "ok": "途中で一度見せる"
+        },
+        {
+          "ng": "わからないまま抱える",
+          "ok": "30分で聞く"
+        },
+        {
+          "ng": "「確認します」で放置",
+          "ok": "「15時に返します」"
+        },
+        {
+          "ng": "全部に同じ力を入れる",
+          "ok": "先に重いのを片づける"
+        }
+      ],
+      "verdict": "速さは「返し方」で決まる",
+      "ask": "完璧主義で抱えがちな人は🙋"
+    }
+  ],
+  "caption": "仕事を抱えこみがちな同期に、そっと送ってあげて。\n「仕事が速い人」は、作業が速いとは限りません。返し方と見せ方で、速いと思われています。\n\n✅ 完璧にしてから返信 → まず「受け取りました」\n✅ 「確認します」で放置 → 「15時に返します」\n\n明日の朝のメールから1つだけ試してみてください。\n完璧主義で抱えがちな人は🙋で教えてください👇\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#社会人",
+    "#仕事が速い人",
+    "#シゴトの差"
+  ],
+  "review_notes": "月曜夜（週はじめ）の回。vs。ここに実体験を一言（先に「受け取りました」と返して評価が変わった経験など）"
+}

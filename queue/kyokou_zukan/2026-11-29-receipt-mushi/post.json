@@ -1,0 +1,37 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "レシートムシ（財布がいつもパンパンなのはこいつが産んでるから）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "001",
+      "name": "レシートムシ",
+      "latin": "Chartula ovipara",
+      "group": "財布に棲む紙虫のなかま",
+      "hook_top": "財布がいつも<br>パンパンなのは",
+      "hook_bottom": "こいつが産んでる。",
+      "feature": "財布の中に住み<br>夜のうちに<b>レシート</b>を産む",
+      "ochi": "全部捨てた日に限って<br>返品したくなる。",
+      "ask": "財布パンパンの人は🙋",
+      "voice": [
+        "財布がいつもパンパンなのは、こいつが産んでる。",
+        "レシートムシ。財布の中に住み、夜のうちに、レシートを産む。",
+        "全部捨てた日に限って、返品したくなる。"
+      ],
+      "plate": "a small paper-white insect-like creature made of crumpled receipts, tiny legs and curious black eyes",
+      "scene": "an open stuffed wallet on a wooden table at night, a small creature made of crumpled receipts crawling out in the center"
+    }
+  ],
+  "caption": "財布がいつもパンパンな家族に送ってあげて。\n\n虚構図鑑 No.001「レシートムシ」\n財布の中に住み、夜のうちにレシートを産む。全部捨てた日に限って、返品したくなる。\n\n🙋 財布パンパンの人はコメントで教えて\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#財布",
+    "#虚構図鑑"
+  ],
+  "review_notes": "1本目（日曜21時）。財布のあるある。ここに実体験を一言（財布から出てきた一番古いレシート）"
+}
