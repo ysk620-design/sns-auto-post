@@ -8,8 +8,8 @@
     {
       "layout": "bars",
       "kicker": "国税庁｜令和6年分の平均給与",
-      "title": "<span class=\"hl\">業種</span>で年収は<br>こんなに違う",
-      "bubble": "1位と最下位で\n約550万円の差",
+      "title": "同じ会社員でも<br><span class=\"hl\">業種</span>で550万円差",
+      "bubble": "あなたの業界は\n何位？",
       "sub": "全体の平均は478万円。あなたの業界は上？下？",
       "items": [
         {
