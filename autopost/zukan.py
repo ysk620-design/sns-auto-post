@@ -19,7 +19,9 @@ post.json（type "reel_only"、slides は zukan 1枚）:
   scene     つかみの場面の説明（英語。写真風。Gemini で描く）
   投稿フォルダに opener.mp4（Gemini アプリで作った動画）を置くと、つかみに動画を使う。
   opener_focus（0〜1。横長の動画のどのあたりを縦に切り出すか。生き物のいる位置。省略すると 0.5＝中央）と
-  opener_start（動画の何秒目から使うか）も書ける
+  opener_start（動画の何秒目から使うか）も書ける（opener_focus・opener_start は、動画を縦に切り出していた
+  ころの項目。今は動画を横長のまま真ん中に置き、上下の帯に字幕を出す形なので、使わない）
+  動画があるときの流れ：動画（最大9秒。上下の帯に つかみ→名前と特徴→オチ の字幕と読み上げ）→ 図鑑のページ2秒 → 動画の冒頭へ
 """
 from __future__ import annotations
 
@@ -192,7 +194,54 @@ def section_html(b, s: dict) -> str:
             f'<div class="zht" style="top:230px;font-size:84px;line-height:1.3">{_esc(s.get("hook_top"))}</div>'
             f'<div class="zht" style="bottom:330px;font-size:104px;color:#ffe14a;line-height:1.25">{_esc(s.get("hook_bottom"))}</div>'
             f'</section>')
-    return f'<style>{_css(cfg["theme"])}</style>{final}{mid}{hook}'
+    caps = _caps_html(s, cfg, ask, follow, credit)
+    return f'<style>{_css(cfg["theme"])}{CAP_CSS}</style>{final}{mid}{hook}{caps}'
+
+
+# 動画があるときの字幕の画面（横長の動画は縦に切らず、真ん中に置く。上下の帯に文字）
+VIDEO_TOP = 656  # 動画（1080×608）を置く高さ
+CAP_CSS = f"""
+.zcap{{position:relative;width:1080px;height:1920px;overflow:hidden;background:transparent}}
+.zcap .bt,.zcap .bb{{position:absolute;left:0;right:0;background:radial-gradient(ellipse at 30% 20%,#f6ead0 0%,#ead7b0 70%,#dcc394 100%)}}
+.zcap .bt{{top:0;height:{VIDEO_TOP}px;border-bottom:6px solid #3a2a1a}}
+.zcap .bb{{top:{VIDEO_TOP + 608}px;bottom:0;border-top:6px solid #3a2a1a}}
+.zcap .ct{{position:absolute;left:40px;right:40px;top:150px;bottom:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:{FONT_SANS};font-weight:900;color:#2b2118;line-height:1.25}}
+.zcap .cb{{position:absolute;left:40px;right:40px;top:28px;bottom:120px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:{FONT_SANS};font-weight:900;color:#2b2118;line-height:1.35}}
+.zcap .tg{{position:absolute;top:60px;left:56px;font-family:{FONT_SERIF};font-size:42px;font-weight:900;letter-spacing:.22em;color:#3a2a1a}}
+.zcap .tg em{{font-style:normal;color:#c8402f;font-size:36px;letter-spacing:.05em;margin-left:8px}}
+.zcap .fc{{position:absolute;top:70px;right:56px;font-size:26px;color:#7a5a36;border:2px solid #7a5a36;padding:3px 12px;border-radius:30px;font-family:{FONT_SANS}}}
+.zcap .h1{{font-size:70px}}
+.zcap .h2{{font-size:100px;color:#c8402f;margin-top:10px}}
+.zcap .nm{{font-family:{FONT_SERIF};font-size:110px;letter-spacing:.03em;white-space:nowrap}}
+.zcap .lt{{font-family:serif;font-style:italic;font-weight:400;font-size:34px;color:#6b4e2e;margin-top:6px}}
+.zcap .gp{{font-size:30px;font-weight:700;color:#7a5a36;margin-bottom:6px}}
+.zcap .ft{{font-family:{FONT_SERIF};font-size:58px;font-weight:700;line-height:1.5}}
+.zcap .ft b{{color:#c8402f}}
+.zcap .oc{{background:#c8402f;color:#fff6e6;font-size:70px;padding:24px 34px;border-radius:12px;transform:rotate(-2deg);box-shadow:0 10px 0 rgba(0,0,0,.35)}}
+.zcap .ak{{font-size:44px;margin-top:34px}}
+.zcap .tz{{font-size:46px;color:#7a5a36}}
+.zcap .fo{{position:absolute;left:20px;right:20px;bottom:34px;text-align:center;font-size:24px;color:#7a5a36;font-family:{FONT_SANS}}}
+"""
+
+
+def _caps_html(s: dict, cfg: dict, ask: str, follow: str, credit: str) -> str:
+    no = f'<em>No.{_esc(s.get("no"))}</em>' if s.get("no") else ""
+    top_tag = f'<div class="tg">虚構図鑑{no}</div><div class="fc">創作です</div>'
+    foot = f'<div class="fo">※掲載内容はすべて創作です　{_esc(credit)}</div>'
+    grp = f'<div class="gp">{_esc(s.get("group"))}</div>' if s.get("group") else ""
+    latin = f'<div class="lt">{_esc(s.get("latin"))}</div>' if s.get("latin") else ""
+    name = f'{grp}<div class="nm">{_esc(s.get("name"))}</div>{latin}'
+
+    def cap(key, top, bottom):
+        return (f'<section class="zx zcap" data-zx="{key}"><div class="bt">{top_tag}<div class="ct">{top}</div></div>'
+                f'<div class="bb"><div class="cb">{bottom}</div>{foot}</div></section>')
+
+    c1 = cap("cap1", f'<div class="h1">{_esc(s.get("hook_top"))}</div><div class="h2">{_esc(s.get("hook_bottom"))}</div>',
+             '<div class="tz">この生き物の正体は…</div>')
+    c2 = cap("cap2", name, f'<div class="ft">{_esc(s.get("feature"))}</div>')
+    ak = f'<div class="ak">👻 {_esc(s.get("ask"))}</div>' if s.get("ask") else ""
+    c3 = cap("cap3", name, f'<div class="oc">{_esc(s.get("ochi"))}</div>{ak}')
+    return c1 + c2 + c3
 
 
 # ---------- 読み上げと動画 ----------
@@ -317,6 +366,116 @@ def make_reel(folder: Path, data: dict, cfg: dict, final_png: Path, page_png: Pa
     return round(total, 2)
 
 
+def _mix_audio(folder: Path, voices: list, starts: list, total: float, sfx_at: float):
+    """読み上げ（starts 秒に置く）＋BGM（声の間は小さく）＋効果音。ステレオの配列を返す。"""
+    import numpy as np
+    from scipy.io import wavfile
+
+    from . import music
+    from .story.bgm import make_bgm
+
+    n = int(SR * total)
+    vtrack = np.zeros(n)
+    active = np.zeros(n)
+    for data_w, st in zip(voices, starts):
+        _, v = wavfile.read(io.BytesIO(data_w))
+        v = v.astype(np.float32) / 32768.0
+        if v.ndim > 1:
+            v = v.mean(axis=1)
+        s0 = int(st * SR)
+        e0 = min(n, s0 + len(v))
+        if e0 > s0:
+            vtrack[s0:e0] += v[: e0 - s0]
+            active[s0:e0] = 1
+    vtrack *= 0.9 / (np.max(np.abs(vtrack)) or 1.0)
+    k = int(0.12 * SR)
+    smooth = np.convolve(active, np.ones(k) / k, mode="same")
+    gain = 0.30 - 0.20 * np.clip(smooth * 1.5, 0, 1)
+    bgm = music.bgm_array(folder.name, total, 0.6, mood="quiz")
+    if bgm is None:
+        bgm = make_bgm(total + 0.5) * 0.5
+    bgm = np.asarray(bgm)[:n]
+    if bgm.ndim == 1:
+        bgm = np.stack([bgm, bgm], axis=1)
+    if len(bgm) < n:
+        bgm = np.pad(bgm, ((0, n - len(bgm)), (0, 0)))
+    bgm = bgm / (np.max(np.abs(bgm)) or 1.0)
+    mix = bgm * gain[:, None]
+    mix[:, 0] += vtrack
+    mix[:, 1] += vtrack
+    ts = int(sfx_at * SR)
+    L = min(int(0.32 * SR), n - ts)
+    if L > 0:
+        b = _boing(L)
+        mix[ts:ts + L, 0] += b
+        mix[ts:ts + L, 1] += b
+    return np.clip(mix, -1, 1)
+
+
+def _video_seconds(path: Path) -> float:
+    from .reel import ffmpeg_exe
+
+    r = subprocess.run([ffmpeg_exe(), "-i", str(path)], capture_output=True, text=True)
+    m = re.search(r"Duration: (\d+):(\d+):([\d.]+)", r.stderr)
+    return int(m.group(1)) * 3600 + int(m.group(2)) * 60 + float(m.group(3)) if m else 8.0
+
+
+PAGE_SECONDS = 2.0  # 動画のあとに図鑑のページを見せる秒数
+VIDEO_MAX = 9.0
+
+
+def make_video_reel(folder: Path, data: dict, cfg: dict, final_png: Path, caps: list, out_path: Path) -> float:
+    """動画が主役のリール。横長の動画を真ん中に置き、上下の帯に字幕（つかみ→名前と特徴→オチ）を出す。
+    動画のあとに図鑑のページを少しだけ見せ、最後に動画の冒頭へ戻る（ループでつながる）。"""
+    import numpy as np
+    from scipy.io import wavfile
+
+    from .reel import ffmpeg_exe
+    from .story import tts
+
+    s = slide_of(data)
+    voice_cfg = dict((cfg.get("reel") or {}).get("voice") or {"style_id": 14})
+    for k, v in (("speed", 1.0), ("pitch", 0.0), ("intonation", 1.1), ("pause", 1.1)):
+        voice_cfg.setdefault(k, v)
+    voices = [tts.speak(t, voice_cfg) for t in voice_lines(s)]
+    lens = [_wav_seconds(v) for v in voices]
+    opener = folder / OPENER
+    vstart = 0.0  # 動画は最初から見せる
+    vlen = min(VIDEO_MAX, max(3.0, _video_seconds(opener) - vstart))
+    # 字幕と読み上げの区切り（1つ目の声のあとに2つ目、2つ目のあとにオチ）
+    t1 = 0.15
+    t2 = max(1.8, t1 + lens[0] + 0.25)
+    t3 = max(t2 + 1.8, t2 + lens[1] + 0.25)
+    vend = max(vlen, t3 + lens[2] + 0.5)  # 声が長いときは動画の最後の絵で止めて待つ
+    total = vend + PAGE_SECONDS + LOOP
+    mix = _mix_audio(folder, voices, [t1, t2, t3], total, t3)
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        wavfile.write(tmp / "audio.wav", SR, (mix * 32767).astype(np.int16))
+        hold = max(0.0, vend - vlen)
+        vid = (f"[0:v]trim=start={vstart:.2f}:duration={vlen:.2f},setpts=PTS-STARTPTS,"
+               f"scale=1080:608:force_original_aspect_ratio=increase,crop=1080:608,setsar=1,fps={FPS}"
+               + (f",tpad=stop_mode=clone:stop_duration={hold:.2f}" if hold > 0 else "") +
+               f",pad=1080:1920:0:{VIDEO_TOP}:color=0x2b2118[v0];"
+               f"[v0][1:v]overlay=0:0:enable='lt(t,{t2:.2f})'[v1];"
+               f"[v1][2:v]overlay=0:0:enable='between(t,{t2:.2f},{t3:.2f})'[v2];"
+               f"[v2][3:v]overlay=0:0:enable='gte(t,{t3:.2f})',format=yuv420p,trim=duration={vend:.2f}[main];"
+               f"[4:v]scale=1080:1920,setsar=1,fps={FPS},trim=duration={PAGE_SECONDS},format=yuv420p[pg];"
+               f"[5:v]trim=start={vstart:.2f}:duration={LOOP},setpts=PTS-STARTPTS,"
+               f"scale=1080:608:force_original_aspect_ratio=increase,crop=1080:608,setsar=1,fps={FPS},"
+               f"pad=1080:1920:0:{VIDEO_TOP}:color=0x2b2118[l0];[l0][1:v]overlay=0:0,format=yuv420p[lp];"
+               f"[main][pg][lp]concat=n=3:v=1:a=0[out];[6:a]loudnorm=I=-14:TP=-1.5:LRA=11[au]")
+        cmd = [ffmpeg_exe(), "-y", "-loglevel", "error", "-i", str(opener),
+               "-loop", "1", "-i", str(caps[0]), "-loop", "1", "-i", str(caps[1]), "-loop", "1", "-i", str(caps[2]),
+               "-loop", "1", "-t", str(PAGE_SECONDS), "-i", str(final_png), "-i", str(opener),
+               "-i", str(tmp / "audio.wav"),
+               "-filter_complex", vid, "-map", "[out]", "-map", "[au]",
+               "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-c:a", "aac", "-b:a", "160k", "-ar", "44100",
+               "-movflags", "+faststart", "-t", f"{total:.3f}", str(out_path)]
+        subprocess.run(cmd, check=True)
+    return round(total, 2)
+
+
 async def render_extras(page, folder: Path, data: dict, cfg: dict) -> float:
     """templates の HTML がページに読み込まれた状態で呼ぶ。つかみとページの画面を撮って、リールを作る。"""
     with tempfile.TemporaryDirectory() as tmp:
@@ -328,6 +487,13 @@ async def render_extras(page, folder: Path, data: dict, cfg: dict) -> float:
         await page.evaluate("for (const el of [document.documentElement, document.body]) el.style.background = 'transparent'")
         await hook_el.screenshot(path=str(tmp / "hook.png"), omit_background=True)
         final = folder / "slide01.jpg"
+        if (folder / OPENER).exists():
+            caps = []
+            for k in ("cap1", "cap2", "cap3"):
+                el = await page.query_selector(f'section.zx[data-zx="{k}"]')
+                await el.screenshot(path=str(tmp / f"{k}.png"), omit_background=True)
+                caps.append(tmp / f"{k}.png")
+            return make_video_reel(folder, data, cfg, final, caps, folder / "reel.mp4")
         return make_reel(folder, data, cfg, final, tmp / "page.png", tmp / "hook.png", folder / "reel.mp4")
 
 
