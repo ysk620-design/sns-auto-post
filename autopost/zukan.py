@@ -235,7 +235,8 @@ def make_reel(folder: Path, data: dict, cfg: dict, final_png: Path, page_png: Pa
 
     s = slide_of(data)
     voice_cfg = dict((cfg.get("reel") or {}).get("voice") or {"style_id": 14})
-    voice_cfg.setdefault("speed", 1.0)
+    for k, v in (("speed", 1.0), ("pitch", 0.0), ("intonation", 1.1), ("pause", 1.1)):
+        voice_cfg.setdefault(k, v)
     lines = voice_lines(s)
     voices = [tts.speak(t, voice_cfg) for t in lines]
     durs = [max(m, _wav_seconds(v) + 0.35) for m, v in zip(MIN_SECONDS, voices)]

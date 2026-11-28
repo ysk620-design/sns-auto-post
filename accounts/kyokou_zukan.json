@@ -18,7 +18,8 @@
       "style_id": 14,
       "speed": 1.0,
       "intonation": 1.1,
-      "pause": 1.1
+      "pause": 1.1,
+      "pitch": 0.0
     }
   },
   "theme": {
