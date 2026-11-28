@@ -4,10 +4,13 @@
   "zoom": [
     1
   ],
-  "rendered_at": "2026-11-28T15:33:37+09:00",
+  "rendered_at": "2026-11-28T15:58:40+09:00",
   "reel_seconds": 9.08,
   "zukan": {
-    "art": [],
+    "art": [
+      "plate-a-tiny-bean-shaped-creature-glowing-faint-red-a-018e73.jpg",
+      "scene-a-dim-bedroom-at-night-a-hand-holding-a-smartpho-9379fe.jpg"
+    ],
     "opener": "",
     "code": "a0f1a4b00e6e"
   }
