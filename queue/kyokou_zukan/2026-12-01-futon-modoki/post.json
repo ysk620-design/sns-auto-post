@@ -1,0 +1,38 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "フトンモドキ（冬の朝、布団から出られないのはこいつのせい）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "name": "フトンモドキ",
+      "latin": "Pseudofuton hibernans",
+      "group": "擬態寝具獣のなかま",
+      "hook_top": "冬の朝<br>布団から出られないのは",
+      "hook_bottom": "こいつのせい。",
+      "feature": "布団に化けて<br>起きようとする人の<b>足</b>をつかむ",
+      "ochi": "休みの日だけ<br>なぜか早く起こしてくる。",
+      "ask": "今朝つかまった人は🙋",
+      "voice": [
+        "冬の朝、布団から出られないのは、こいつのせい。",
+        "フトンモドキ。布団に化けて、起きようとする人の足をつかむ。",
+        "休みの日だけ、なぜか早く起こしてくる。"
+      ],
+      "plate": "a strange creature that mimics a white Japanese futon: a soft fluffy white blanket body with two sleepy round eyes and soft quilted arms",
+      "scene": "a dim Japanese tatami bedroom on a winter morning, a white futon on the floor is a soft creature with sleepy round eyes holding a person's leg",
+      "opener_focus": 0.56,
+      "opener_start": 2.5
+    }
+  ],
+  "caption": "布団から出られなかった家族に送ってあげて。\n\n虚構図鑑「フトンモドキ」\n冬の朝、布団に化けて、起きようとする人の足をつかむ。休みの日だけ、なぜか早く起こしてくる。\n\n🙋 今朝つかまった人はコメントで教えて\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#冬の朝",
+    "#虚構図鑑"
+  ],
+  "review_notes": "【当たり狙い】【動画】本人がGeminiアプリで作った動画をつかみに使っている。図鑑番号（no）は、週次投稿づくりで投稿順に合わせて入れる"
+}
