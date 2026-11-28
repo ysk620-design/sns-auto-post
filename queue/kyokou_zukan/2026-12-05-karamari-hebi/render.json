@@ -4,10 +4,13 @@
   "zoom": [
     1
   ],
-  "rendered_at": "2026-11-28T15:33:28+09:00",
+  "rendered_at": "2026-11-28T15:56:06+09:00",
   "reel_seconds": 8.81,
   "zukan": {
-    "art": [],
+    "art": [
+      "plate-a-long-thin-green-snake-creature-whose-body-is-a-2d2968.jpg",
+      "scene-a-cardboard-box-opened-on-a-living-room-floor-in-b1a8cb.jpg"
+    ],
     "opener": "",
     "code": "a0f1a4b00e6e"
   }
