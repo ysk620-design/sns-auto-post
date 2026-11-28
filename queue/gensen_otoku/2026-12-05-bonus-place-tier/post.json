@@ -1,0 +1,100 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "ボーナス50万円、どこに置く？Tier表（独断）",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "冬のボーナス｜独断のTier表",
+      "bubble": "一番得なのは\n意外なアレ",
+      "title": "ボーナス50万円<br><span class=\"hl\">どこに置く？</span>",
+      "sub": "1年でいくら得するかで、独断で並べました",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "まず最優先",
+          "items": [
+            {
+              "name": "リボの返済",
+              "icon": "a heavy chain and ball on a credit card",
+              "note": "年15%→+7.5万円"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "長く育てる",
+          "items": [
+            {
+              "name": "NISAで積立",
+              "icon": "a small plant growing from coins",
+              "note": "年3%なら+1.5万円"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "堅実に増やす",
+          "items": [
+            {
+              "name": "高金利の預金",
+              "icon": "a bank card next to a small piggy bank",
+              "note": "1.2%で+6,000円"
+            },
+            {
+              "name": "ローン繰上返済",
+              "icon": "a cozy family house with a garden",
+              "note": "金利1%→年5,000円"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "ないよりマシ",
+          "items": [
+            {
+              "name": "大手の普通預金",
+              "icon": "a classic stone bank building",
+              "note": "0.5%で+2,500円"
+            }
+          ]
+        },
+        {
+          "rank": "D",
+          "label": "じわじわ減る",
+          "items": [
+            {
+              "name": "タンス預金",
+              "icon": "an empty wallet with a moth flying out",
+              "note": "物価2%で−1万円"
+            }
+          ]
+        },
+        {
+          "rank": "E",
+          "label": "平均で半分",
+          "items": [
+            {
+              "name": "宝くじ",
+              "icon": "a lottery ticket with a small coin",
+              "note": "平均−25万円"
+            }
+          ]
+        }
+      ],
+      "note": "※独断。50万円を1年置いたときの目安（税引前）。NISAは元本割れもあります。生活費の予備は先に確保を",
+      "bg": "a cozy Japanese living room in winter with a small Christmas tree and warm lights"
+    }
+  ],
+  "caption": "冬のボーナス、どこに置くのがいちばん得か知っていますか？\n50万円を1年置いたときにいくら得するかで、独断のTier表にしました。\n\n✅ いちばん得なのは「リボ払いの返済」。年15%の手数料がなくなるので、実質+7.5万円\n✅ 高金利の普通預金（年1.2%）なら+6,000円、大手（年0.5%）なら+2,500円\n✅ 宝くじは平均すると半分が消える\n\nまずは生活費の3〜6か月分の予備を確保して、残りを分けるのが基本です。\n\n⚠️ 独断のランキングです。NISAなどの投資は元本割れの可能性があり、年3%は約束された数字ではありません。預金の利息からは約20%の税金が引かれます。\n\n💬 あなたのボーナスの使い道は？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#冬のボーナス",
+    "#ボーナスの使い道",
+    "#NISA",
+    "#家計管理"
+  ],
+  "review_notes": "確認日 2026-11-28。独断のTier表。【計算】50万円×1年：リボ返済 15%＝7.5万円（払わずにすむ手数料）、NISA 年3%（仮定。約束された数字ではない）＝1.5万円、高金利の預金 1.2%（あおぞら銀行BANK 100万円まで）＝6,000円、住宅ローン繰上返済 金利1%＝1年目に減る利息 約5,000円（期間短縮型なら総額ではもっと大きい）、大手の普通預金 0.5%（3メガ 2026/11/2〜）＝2,500円、タンス預金 物価2%＝実質−1万円、宝くじ 当せん金は売上の約50%＝平均−25万円（11/29の年末ジャンボの計算）。金利の出典：https://www.watch.impress.co.jp/docs/news/2142489.html 。預金は税引前。【確認してほしい点】繰上返済をBに置いたのは独断（1年目の額で比べたため）。総額で比べるとAに近いので、気になればAに移してください。"
+}

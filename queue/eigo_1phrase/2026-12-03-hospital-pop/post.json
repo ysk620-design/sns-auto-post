@@ -1,0 +1,95 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：病院・薬局の直訳しがちな英語",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "保存版｜病院・薬局",
+      "bubble": "旅行先で\n具合が悪くなったら",
+      "title": "それ、<span class=\"hl\">通じません</span><br>体調の言いかえ9選",
+      "head": [
+        "日本語",
+        "自然な英語"
+      ],
+      "items": [
+        {
+          "left": "熱があります",
+          "ng": "I have heat.",
+          "right": "I have a fever.",
+          "right_sub": "アイ ハヴ ア フィーヴァー",
+          "icon": "a thermometer with a red high reading"
+        },
+        {
+          "left": "お腹が痛い",
+          "ng": "My stomach is pain.",
+          "right": "I have a stomachache.",
+          "right_sub": "アイ ハヴ ア スタマケイク",
+          "icon": "a cute character holding its tummy"
+        },
+        {
+          "left": "風邪をひいた",
+          "ng": "I pulled a cold.",
+          "right": "I caught a cold.",
+          "right_sub": "アイ コート ア コールド",
+          "icon": "a cute character with a face mask and a scarf"
+        },
+        {
+          "left": "鼻水が出る",
+          "ng": "Nose water comes.",
+          "right": "I have a runny nose.",
+          "right_sub": "アイ ハヴ ア ラニー ノーズ",
+          "icon": "a box of tissues"
+        },
+        {
+          "left": "のどが痛い",
+          "ng": "My throat is pain.",
+          "right": "I have a sore throat.",
+          "right_sub": "アイ ハヴ ア ソア スロート",
+          "icon": "a cup of hot tea with honey"
+        },
+        {
+          "left": "寒気がする",
+          "ng": "I feel cold wind.",
+          "right": "I have chills.",
+          "right_sub": "アイ ハヴ チルズ",
+          "icon": "a shivering cute character wrapped in a blanket"
+        },
+        {
+          "left": "頭痛薬ください",
+          "ng": "Head medicine, please.",
+          "right": "Something for a headache?",
+          "right_sub": "サムシング フォー ア ヘデイク",
+          "icon": "a small medicine bottle with pills"
+        },
+        {
+          "left": "医者にみてほしい",
+          "ng": "I want to go hospital.",
+          "right": "I need to see a doctor.",
+          "right_sub": "アイ ニード トゥ シー ア ダクター",
+          "icon": "a friendly doctor with a stethoscope"
+        },
+        {
+          "left": "二日酔いです",
+          "ng": "I'm two-day drunk.",
+          "right": "I'm hungover.",
+          "right_sub": "アイム ハングオウヴァー",
+          "icon": "a dizzy cute character with an ice pack on its head"
+        }
+      ],
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります。hospital は入院や救急のイメージ",
+      "bg": "A bright clean pharmacy interior with soft light and shelves of colorful boxes"
+    }
+  ],
+  "caption": "旅行先で具合が悪くなったとき、英語で言えますか？\n9つのうち、いくつ言えた？\n\n✕ I have heat. → ○ I have a fever.\n✕ Nose water comes. → ○ I have a runny nose.\n✕ I'm two-day drunk. → ○ I'm hungover.\n\n忘年会シーズンの最後の1つ、使う日が来ませんように。\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#旅行英語",
+    "#病院英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/3 7時台・pop】病院・薬局（体調）の場面。忘年会シーズンなので最後に「二日酔い」を入れました。「病院に行きたい」は英語では I need to see a doctor. が自然（hospital は大きな病院・入院・救急のイメージ）。"
+}

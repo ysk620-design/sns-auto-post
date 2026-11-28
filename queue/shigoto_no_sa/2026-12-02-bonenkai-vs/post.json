@@ -1,0 +1,59 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "忘年会で差がつく人のふるまい",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "12月の飲み会で差がつく",
+      "title": "忘年会で<br><span class=\"hl\">差がつく</span>ふるまい",
+      "left": {
+        "label": "損する人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, sitting alone at a party table staring at a smartphone, bored"
+      },
+      "right": {
+        "label": "得する人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, raising a beer glass and laughing at a party, cheerful"
+      },
+      "rows": [
+        {
+          "ng": "同期とだけ固まる",
+          "ok": "他部署の人に1人話す"
+        },
+        {
+          "ng": "上司の席を避ける",
+          "ok": "乾杯後に一度あいさつ"
+        },
+        {
+          "ng": "仕事の愚痴で盛り上がる",
+          "ok": "最近の良かった話をする"
+        },
+        {
+          "ng": "ずっとスマホを見る",
+          "ok": "聞き役で質問する"
+        },
+        {
+          "ng": "飲みすぎて記憶がない",
+          "ok": "最初の1杯でペース配分"
+        },
+        {
+          "ng": "翌日はお礼なし",
+          "ok": "翌朝ひとことお礼"
+        }
+      ],
+      "verdict": "忘年会は「顔を覚えてもらう日」",
+      "ask": "忘年会は行く派？"
+    }
+  ],
+  "caption": "今年はじめての忘年会がある後輩に送ってあげて。\n忘年会は、行かないのもアリ。でも行くなら、ちょっとしたふるまいで「あの子いいね」と覚えてもらえる日です。\n\n✅ 他部署の人に1人だけ話しかける\n✅ 乾杯のあと、上司に一度あいさつ\n✅ 翌朝「昨日はありがとうございました」\n\nがんばって盛り上げなくて大丈夫。聞き役でも十分です。\nあなたは忘年会、行く派？行かない派？コメントで教えてください👇\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#忘年会",
+    "#新社会人",
+    "#シゴトの差"
+  ],
+  "review_notes": "12月の季節ネタ（忘年会）。数字・制度の話はないので出典なし。「行かないのもアリ」とキャプションで言い、飲み会を強制する空気にならないようにした（コメントで行く派・行かない派に分かれて伸びる狙い）。ここに実体験を一言（忘年会で覚えてもらえた・失敗した話など）もよいです"
+}

@@ -1,0 +1,93 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "外国人が日本でいちばん満足した買い物ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "観光庁の調査｜2025年",
+      "title": "外国人が日本で<br>いちばん<span class=\"hl\">満足した買い物</span>",
+      "bubble": "電気製品は\nもう10位以下？",
+      "sub": "1位はお菓子。5人に1人が「これがいちばん」",
+      "bg": "a softly blurred Japanese drugstore and souvenir shop street with bright signs and no text",
+      "items": [
+        {
+          "name": "お菓子",
+          "value": "19.1%",
+          "num": 19.1,
+          "icon": "a pile of colorful Japanese snack boxes and chocolate",
+          "note": "5人に1人"
+        },
+        {
+          "name": "服",
+          "value": "17.5%",
+          "num": 17.5,
+          "icon": "a folded sweater and a shopping bag"
+        },
+        {
+          "name": "靴・かばん",
+          "value": "9.5%",
+          "num": 9.5,
+          "icon": "a leather handbag and sneakers"
+        },
+        {
+          "name": "化粧品",
+          "value": "8.3%",
+          "num": 8.3,
+          "icon": "a set of skincare bottles and lipstick"
+        },
+        {
+          "name": "食品・飲み物",
+          "value": "6.4%",
+          "num": 6.4,
+          "icon": "green tea bags and a jar of seasoning"
+        },
+        {
+          "name": "お酒",
+          "value": "4.5%",
+          "num": 4.5,
+          "icon": "a bottle of Japanese whisky and a sake bottle"
+        },
+        {
+          "name": "薬",
+          "value": "4.5%",
+          "num": 4.5,
+          "icon": "a box of cold medicine and eye drops",
+          "note": "目薬など"
+        },
+        {
+          "name": "伝統工芸品",
+          "value": "2.6%",
+          "num": 2.6,
+          "icon": "a colorful Japanese lacquer box and a fan"
+        },
+        {
+          "name": "電気製品",
+          "value": "2.3%",
+          "num": 2.3,
+          "icon": "a rice cooker and a hair dryer",
+          "note": "昔は爆買いの主役"
+        },
+        {
+          "name": "時計・カメラ",
+          "value": "1.2%",
+          "num": 1.2,
+          "icon": "a wristwatch next to a film camera"
+        }
+      ],
+      "note": "※観光庁「インバウンド消費動向調査」2025年。最も満足した購入商品（全体）。「その他買物代」21.2%は除く",
+      "ask": "おみやげに何をあげる？"
+    }
+  ],
+  "caption": "外国人旅行者が日本でいちばん満足した買い物。1位はお菓子で19.1%でした。\n\n2位は服、3位は靴・かばん。\nひと昔前の「爆買い」の主役だった電気製品は2.3%で、9位でした。\n\n💬 あなたが外国人の友だちにあげたい日本のおみやげは？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#訪日外国人",
+    "#日本のお菓子",
+    "#おみやげ",
+    "#ランキング"
+  ],
+  "review_notes": "【リールだけの投稿・12/3 7時台・10位までの横棒】18時が「日本では当たり前」タイルの実験なので、7時は別の型・別のテーマ。確認日 2026-11-28。出典：観光庁「インバウンド消費動向調査」2025年暦年の確報、最も満足した購入商品（全国籍・地域） https://www.mlit.go.jp/kankocho/content/002003329.pdf 。（その他買物代21.2は除外）菓子類19.1・衣類17.5・靴・かばん・革製品9.5・化粧品・香水8.3・その他食料品・飲料・たばこ6.4・酒類4.5・医薬品4.5・民芸品・伝統工芸品2.6・電気製品2.3・時計・フィルムカメラ1.2。bubble の「10位以下？」は問いかけで、実際は9位（キャプションに書いた）。「昔は爆買いの主役」は2015年ごろの報道で一般的な言い方。12/1 22時の料理ランキングと同じ調査なので、続けて見た人に「料理の次は買い物」とつながる。"
+}

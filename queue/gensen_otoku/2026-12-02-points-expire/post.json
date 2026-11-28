@@ -1,0 +1,85 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 8,
+  "title": "放っておくと消えるポイント（Ponta・Vポイントは最後に使ってから1年）",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "年末の点検｜ポイントの期限",
+      "bubble": "気づいたら\n0ptに…",
+      "title": "放っておくと<br><span class=\"hl\">消えるポイント</span>",
+      "big_label": "Ponta・Vポイントは、最後に使ってから",
+      "big": "1<small>年</small>で消える",
+      "sub": "ためるか使うかすれば、期限はのびる",
+      "head": [
+        "ポイント",
+        "消えるまで"
+      ],
+      "items": [
+        {
+          "left": "楽天の期間限定pt",
+          "left_sub": "キャンペーンでもらった分",
+          "right": "2週間〜2か月ほど",
+          "icon": "a small stopwatch showing one minute"
+        },
+        {
+          "left": "Pontaポイント",
+          "left_sub": "ためるか使うと、のびる",
+          "right": "最後に使って1年",
+          "icon": "a loyalty card with star stamps"
+        },
+        {
+          "left": "Vポイント",
+          "left_sub": "ためるか使うと、のびる",
+          "right": "最後に使って1年",
+          "icon": "a blue point card with a star"
+        },
+        {
+          "left": "楽天ポイント（通常）",
+          "left_sub": "ためるとのびる",
+          "right": "最後にためて1年",
+          "icon": "a red point card with a coin"
+        },
+        {
+          "left": "ANAマイル",
+          "left_sub": "ためた月から",
+          "right": "36か月",
+          "icon": "a passenger airplane"
+        },
+        {
+          "left": "dポイント（通常）",
+          "left_sub": "期間・用途限定は短い",
+          "right": "48か月",
+          "icon": "a red heart-shaped coin"
+        },
+        {
+          "left": "Suicaの残高",
+          "left_sub": "窓口で払いもどしできる",
+          "right": "使わずに10年",
+          "icon": "a commuter train next to a big clock"
+        },
+        {
+          "left": "PayPayポイント",
+          "left_sub": "期間限定の分は期限あり",
+          "right": "期限なし",
+          "icon": "a green check mark"
+        }
+      ],
+      "arrow": false,
+      "note": "※2026年11月時点。ポイントの種類やキャンペーンで期限が違うことがあります。各アプリで確認を",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "消えたことある？"
+    }
+  ],
+  "caption": "ポイント、気づいたら消えていたことありませんか？\nPontaやVポイントは、最後にためるか使ってから1年たつと消えます。楽天の期間限定ポイントは2週間〜2か月ほどで消えることも。\n\n✅ ためるか使うかすれば、期限がのびるポイントが多い\n✅ PayPayポイント（通常）は期限なし\n✅ 使っていないSuicaも、10年使わないと使えなくなる（窓口で払いもどしできる）\n\n年末の大掃除のついでに、アプリのポイントもチェックしてみて。\n\n⚠️ ポイントの種類やキャンペーンで期限が違うことがあります。\n\n💬 消しちゃったポイントある？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#ポイ活",
+    "#ポイント失効",
+    "#楽天ポイント",
+    "#節約術"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：価格.comマガジン https://kakakumag.com/money/?id=20897 （楽天 通常＝最後にポイントを獲得した月を含めて1年、期間限定＝2週間〜2か月ほど、Vポイント＝最後に利用してから1年、dポイント 通常＝48か月、Ponta＝最後に獲得・利用した日から1年。2024年6月の記事）／PayPay公式 https://paypay.ne.jp/guide/point/ （通常は有効期限なし、期間限定は期限あり）／JR東日本 https://www.jreast.co.jp/suica/new_s/info_tenyears.html （最後に利用した日から10年で使えなくなる、残額は移し替えか払いもどし）／ANAマイル 36か月 https://magazine.d-money.jp/point/miles-expiration-date/ （民間）。【確認してほしい点】①2024年の記事のため、各公式で今のルールが同じか確認してください（とくにdポイントの数え方） ②Amazonポイントは公式の確認ができなかったので外しました。"
+}

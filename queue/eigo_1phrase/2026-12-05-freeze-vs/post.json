@@ -1,0 +1,56 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：英語で止まる人vs会話が続く人",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "英語が話せる人の正体",
+      "bubble": "沈黙が\nいちばん気まずい",
+      "title": "英語で<span class=\"hl\">止まる人</span><br>vs 会話が続く人",
+      "left": {
+        "label": "止まる人",
+        "icon": "a cute clay character frozen with a blank face and a sweat drop"
+      },
+      "right": {
+        "label": "続く人",
+        "icon": "the same cute clay character chatting cheerfully with a speech bubble"
+      },
+      "rows": [
+        {
+          "ng": "Ehh...",
+          "ok": "Well..."
+        },
+        {
+          "ng": "（沈黙）",
+          "ok": "Let me think."
+        },
+        {
+          "ng": "No, no, no.",
+          "ok": "Not really."
+        },
+        {
+          "ng": "Sorry, sorry!",
+          "ok": "Oops, sorry!"
+        },
+        {
+          "ng": "Yes.（実は不明）",
+          "ok": "Sorry, what?"
+        }
+      ],
+      "verdict": "単語力より、つなぎのひと言",
+      "ask": "いつもどっち？"
+    }
+  ],
+  "caption": "英語で話していて、急に頭が真っ白になったことありませんか？\n話せる人は、単語を知っているというより「つなぎのひと言」で時間をかせいでいます。\n\n✕ Ehh... → ○ Well...\n✕ （沈黙） → ○ Let me think.\n✕ Yes.（わかってないのに） → ○ Sorry, what?\n\n💬 自分はどっち派？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英会話初心者",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語"
+  ],
+  "review_notes": "【リールだけ・12/5 21時台・vs】「話せる人は単語力より“つなぎ”」という切り口。わかっていないのに Yes. と言ってしまう“あるある”を最後に入れました。【実体験】ここに実体験を一言（英語でフリーズした経験など）があると強いです。"
+}

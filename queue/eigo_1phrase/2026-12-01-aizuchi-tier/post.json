@@ -1,0 +1,102 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：英語の相づちTier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜ネイティブっぽさ",
+      "bubble": "Yes, yes は\nイラッとされる？",
+      "title": "英語の<span class=\"hl\">相づち</span><br>ネイティブ度Tier表",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "ネイティブ感",
+          "items": [
+            {
+              "name": "Really?",
+              "note": "ほんとに？",
+              "icon": "a cute character with wide surprised eyes"
+            },
+            {
+              "name": "Totally!",
+              "note": "ほんとそう！",
+              "icon": "a cute character nodding happily"
+            },
+            {
+              "name": "Same here",
+              "note": "わたしも",
+              "icon": "two matching coffee cups side by side"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "よく使う",
+          "items": [
+            {
+              "name": "For real?",
+              "note": "マジで？",
+              "icon": "a cute character with raised eyebrows"
+            },
+            {
+              "name": "I see.",
+              "note": "なるほど",
+              "icon": "a light bulb glowing softly"
+            },
+            {
+              "name": "Mm-hmm.",
+              "note": "うんうん",
+              "icon": "a speech bubble with three dots"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "言い方しだい",
+          "items": [
+            {
+              "name": "Oh yeah?",
+              "note": "へえ（疑い気味）",
+              "icon": "a cute character with one eyebrow raised"
+            },
+            {
+              "name": "Right.",
+              "note": "だよね",
+              "icon": "a green check mark"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "やりがちNG",
+          "items": [
+            {
+              "name": "Yes, yes.",
+              "note": "急かしてる感じ",
+              "icon": "a cute character tapping a foot impatiently"
+            },
+            {
+              "name": "OK, OK.",
+              "note": "もういいよ感",
+              "icon": "a cute character rolling eyes"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。言い方やトーンで印象は変わります",
+      "ask": "いつもどれ使ってる？"
+    }
+  ],
+  "caption": "英語の相づち、Yes, yes. ばかりになっていませんか？\n日本語の「はいはい」と同じで、急かしているように聞こえることも。\n\n○ Really?（ほんとに？）\n○ Totally!（ほんとそう！）\n△ Yes, yes.（急かしてる感じ）\n\n💬 あなたの「よく使う」はどれ？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#日常英会話",
+    "#英語の相づち",
+    "#ネイティブ英語",
+    "#英語ティア表"
+  ],
+  "review_notes": "【リールだけ・12/1 21時台・tier（独断）】相づちの独断Tier表。Yes, yes. / OK, OK. は、くり返すと「わかったから」と急かすように聞こえることがある、という一般的な説明にとどめています（トーンしだい、と note に明記）。"
+}

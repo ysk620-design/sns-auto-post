@@ -1,0 +1,59 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "定時で帰れる人と帰れない人の差",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "残業が減らない人へ",
+      "title": "定時で<span class=\"hl\">帰れる人</span>と<br>帰れない人",
+      "left": {
+        "label": "帰れない人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, buried under piles of paper at a desk at night, exhausted"
+      },
+      "right": {
+        "label": "帰れる人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, leaving the office with a bag at sunset, waving happily"
+      },
+      "rows": [
+        {
+          "ng": "来た順に手をつける",
+          "ok": "締め切り順に並べる"
+        },
+        {
+          "ng": "完璧に仕上げて出す",
+          "ok": "6割で一度見せる"
+        },
+        {
+          "ng": "頼まれたら即OK",
+          "ok": "「いつまで？」と聞く"
+        },
+        {
+          "ng": "メールを1日中見る",
+          "ok": "1日3回まとめて返す"
+        },
+        {
+          "ng": "30分ひとりで悩む",
+          "ok": "15分で人に聞く"
+        },
+        {
+          "ng": "夕方に重い作業",
+          "ok": "朝イチに重い作業"
+        }
+      ],
+      "verdict": "差は「始める前の5分」でつく",
+      "ask": "今日は定時で帰れそう？"
+    }
+  ],
+  "caption": "毎日残業してる同期に送ってあげて。\n定時で帰れる人は、仕事が少ないわけでも、手が速いわけでもありません。始める前の段取りが違います。\n\n✅ 来た順ではなく、締め切り順\n✅ 完璧の前に、6割で一度見せる\n✅ わからないことは15分で聞く\n\n明日の朝、5分だけ「今日やる順番」を書き出してみてください。\n今日は定時で帰れそう？コメントで教えてください👇\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#時短術",
+    "#残業",
+    "#シゴトの差"
+  ],
+  "review_notes": "比べる型（vs）・考え方と行動。数字・制度の話はないので出典なし。ここに実体験を一言（残業を減らせたきっかけなど）もよいです"
+}

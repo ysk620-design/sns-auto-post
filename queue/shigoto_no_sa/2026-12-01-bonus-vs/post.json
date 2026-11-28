@@ -1,0 +1,60 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "冬のボーナスが消える人と残る人",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "冬のボーナスの前に",
+      "title": "ボーナスが<br><span class=\"hl\">消える人</span>と残る人",
+      "sub": "手取りは額面の約8割。40万円なら約32万円",
+      "left": {
+        "label": "消える人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, holding an empty wallet upside down, shocked"
+      },
+      "right": {
+        "label": "残る人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, putting a coin into a piggy bank, satisfied smile"
+      },
+      "rows": [
+        {
+          "ng": "額面で使い道を考える",
+          "ok": "手取り8割で計算する"
+        },
+        {
+          "ng": "ご褒美を先に買う",
+          "ok": "先に貯める額を決める"
+        },
+        {
+          "ng": "ボーナス払いで買う",
+          "ok": "現金で買える物だけ"
+        },
+        {
+          "ng": "全部を給料口座に置く",
+          "ok": "その日に別口座へ移す"
+        },
+        {
+          "ng": "セールで一気に使う",
+          "ok": "欲しい物は1週間待つ"
+        },
+        {
+          "ng": "NISAは来年でいいや",
+          "ok": "一部を積立に回す"
+        }
+      ],
+      "verdict": "差は「入った日」の30分でつく",
+      "ask": "ボーナスの使い道は？"
+    }
+  ],
+  "caption": "冬のボーナスが入る前に、同期にも送ってあげて。\nボーナスは、額面がそのまま入るわけではありません。社会保険料と所得税が引かれて、手取りはだいたい額面の8割です。\n\n✅ 使い道は「手取り」で考える\n✅ 入った日に、貯める分を別の口座へ\n✅ ボーナス払いは、来年の自分への借金\n\n貯まる人は、我慢しているのではなく「入った日」に仕組みを作っています。\nあなたのボーナスの使い道は？コメントで教えてください👇\n\n※手取りの割合は、年齢・扶養・前月の給料などで変わります\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#お金の勉強",
+    "#20代",
+    "#ボーナス",
+    "#貯金",
+    "#シゴトの差"
+  ],
+  "review_notes": "確認日 2026-11-28。「手取りは額面の約8割」は計算の目安：額面40万円・東京・協会けんぽ・40歳未満・扶養なしで、健康保険4.925%（東京9.85%の半分）＋子ども・子育て支援金0.115%＋厚生年金9.15%＋雇用保険0.5%＝約14.7%（約5.9万円）、所得税は賞与の源泉徴収税率（前月の給料による。数%）で約1.5〜2万円 → 手取りは約31.5〜32.5万円＝約8割。出典：協会けんぽ 令和8年度保険料率 https://www.kyoukaikenpo.or.jp/about/business/insurance_rate/rate_prefectures/r08 ・ https://www.kyoukaikenpo.or.jp/LP/2026hokenryou/ ／令和8年度 雇用保険料率（労働者5/1000） https://jsite.mhlw.go.jp/yamanashi-roudoukyoku/koyouhoken_R8.html 。ここに実体験を一言（ボーナスの使い道・失敗談など）もよいです"
+}

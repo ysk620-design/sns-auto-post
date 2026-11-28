@@ -1,0 +1,81 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 8,
+  "title": "暖房1時間の電気代（オイルヒーターと電気毛布で約30倍）",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "冬の電気代｜1時間あたり",
+      "bubble": "つけっぱなし\n注意！",
+      "title": "暖房1時間<br><span class=\"hl\">いくら</span>かかる？",
+      "big_label": "オイルヒーターと電気毛布、1時間の差は",
+      "big": "約30<small>倍</small>",
+      "sub": "同じ「あったかい」でも、電気代はこんなに違う",
+      "items": [
+        {
+          "name": "オイルヒーター",
+          "value": "約46.5円",
+          "num": 46.5,
+          "note": "1,500Wの例",
+          "icon": "an oil-filled radiator heater"
+        },
+        {
+          "name": "セラミック",
+          "value": "約37.2円",
+          "num": 37.2,
+          "note": "ファンヒーター1,200W",
+          "icon": "a small ceramic fan heater"
+        },
+        {
+          "name": "電気ストーブ",
+          "value": "約24.8円",
+          "num": 24.8,
+          "note": "800Wの例",
+          "icon": "an electric stove heater with glowing bars"
+        },
+        {
+          "name": "ホットカーペット",
+          "value": "約21.7円",
+          "num": 21.7,
+          "note": "3畳・700Wの例",
+          "icon": "a cozy heated carpet in a living room"
+        },
+        {
+          "name": "こたつ",
+          "value": "約18.6円",
+          "num": 18.6,
+          "note": "強・600Wの例",
+          "icon": "a Japanese kotatsu table with a blanket"
+        },
+        {
+          "name": "エアコン",
+          "value": "約15.5円",
+          "num": 15.5,
+          "note": "500Wで動いたとき",
+          "icon": "a white wall air conditioner blowing warm air"
+        },
+        {
+          "name": "電気毛布",
+          "value": "約1.6円",
+          "num": 1.6,
+          "note": "50Wの例",
+          "icon": "a soft electric blanket folded on a bed"
+        }
+      ],
+      "note": "※2026年11月時点の目安。電気代は31円/kWh×消費電力で計算。温度で入り切りするので実際はもっと安くなることも",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "うちの暖房はどれ？"
+    }
+  ],
+  "caption": "暖房、1時間あたりの電気代を知っていますか？\nオイルヒーター（1,500W）は1時間約46.5円、電気毛布（50W）なら約1.6円。同じ「あったかい」でも約30倍の差です。\n\n✅ 1日8時間×30日なら、オイルヒーターは約1.1万円、電気毛布は約400円\n✅ エアコンは部屋が暖まると消費電力が下がるので、つけっぱなしの方が安いことも\n\n⚠️ 消費電力は製品の例です。おうちの暖房の「消費電力（W）」×31円÷1000で、1時間の目安が出せます。12月使用分からは国の電気代の値引きもあります。\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#電気代節約",
+    "#暖房費",
+    "#冬の節約",
+    "#節約生活"
+  ],
+  "review_notes": "確認日 2026-11-28。【計算】1時間の電気代＝消費電力(kW)×31円（全国家庭電気製品公正取引協議会の新電力料金目安単価31円/kWh・税込。2022年7月改定。2026年に改定されていないかは未確認）。オイルヒーター1.5kW×31＝46.5円、セラミック1.2kW＝37.2円、電気ストーブ0.8kW＝24.8円、ホットカーペット0.7kW＝21.7円、こたつ0.6kW＝18.6円、エアコン0.5kW＝15.5円、電気毛布0.05kW＝1.55円。46.5÷1.55＝30倍。消費電力は代表的な製品の「例」として置いた数字（特定の製品ではない）。1日8時間×30日：46.5×240＝11,160円、1.55×240＝372円。【確認してほしい点】ここに実体験を一言（わが家の冬の暖房の工夫など）。"
+}

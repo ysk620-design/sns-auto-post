@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "日本のコンビニでは当たり前、海外では驚かれること",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜コンビニ編",
+      "bubble": "コンビニで\n税金も払える",
+      "title": "日本の<span class=\"hl\">コンビニ</span>では当たり前<br>海外では驚かれること",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "公共料金の支払い",
+          "icon": "a utility bill paper and coins on a counter",
+          "a": "日本：レジで払える",
+          "b": "海外：銀行やネットが多い"
+        },
+        {
+          "label": "ATM",
+          "icon": "a convenience store ATM machine",
+          "a": "日本：24時間お金が下ろせる",
+          "b": "海外：手数料が高い国も"
+        },
+        {
+          "label": "宅配便の受付",
+          "icon": "a cardboard box being handed over a counter",
+          "a": "日本：荷物を出せる",
+          "b": "海外：郵便局へ行くのがふつう"
+        },
+        {
+          "label": "チケット発券",
+          "icon": "a concert ticket and a small kiosk machine",
+          "a": "日本：ライブの券も",
+          "b": "海外：ネットや窓口が多い"
+        },
+        {
+          "label": "トイレを貸してくれる",
+          "icon": "a clean restroom door with a green light",
+          "a": "日本：無料で使える店が多い",
+          "b": "海外：「お客さん専用」が多い"
+        },
+        {
+          "label": "いれたてコーヒー",
+          "icon": "a paper cup of hot coffee from a machine",
+          "a": "日本：1杯100円台から",
+          "b": "海外：コンビニのは安い分…"
+        },
+        {
+          "label": "お弁当とお箸",
+          "icon": "a bento box with a pair of disposable chopsticks",
+          "a": "日本：お箸もつけてくれる",
+          "b": "海外：自分で取るのがふつう"
+        },
+        {
+          "label": "おでん",
+          "icon": "a pot of oden with eggs, radish and fish cakes",
+          "a": "日本：レジ横で煮ている",
+          "b": "海外：コンビニで煮物は珍しい"
+        },
+        {
+          "label": "コピー機",
+          "icon": "a multifunction copy machine",
+          "a": "日本：写真も印刷できる",
+          "b": "海外：コピーは専門店で"
+        }
+      ],
+      "summary": {
+        "label": "日本のコンビニは",
+        "big": "なんでも屋"
+      },
+      "note": "※国や店によって違います。トイレを貸さない店もあります",
+      "ask": "毎日使うのはどれ？"
+    }
+  ],
+  "caption": "日本のコンビニでは当たり前なのに、海外の人に驚かれること。\n\n電気代や税金をレジで払える、24時間ATMでお金を下ろせる、宅配便を出せる、ライブのチケットまで受け取れる。\n海外の人からは「コンビニというより、町の窓口」と言われることも。\n\n💬 あなたがコンビニでいちばん使うサービスは？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本のコンビニ",
+    "#コンビニ",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・12/5 7時台・タイル（日本では当たり前シリーズ）】確認日 2026-11-28。数字は使わず、一般的な言い方にしている。いれたてコーヒーの「1杯100円台から」は大手チェーンのレギュラーサイズの価格帯（店で違うので、気になるなら「日本：店でいれたて」に）。「海外：コンビニのは安い分…」は言いかけのユーモア（悪口に見えるなら「海外：あまり見かけない」に）。キャプションの「コンビニというより、町の窓口」は特定の人の発言ではない言い回し（気になるなら削除を）。"
+}

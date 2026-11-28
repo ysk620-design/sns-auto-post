@@ -1,0 +1,83 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：ネイティブが毎日使うひと言",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "中学英語だけで言える",
+      "bubble": "今日から\n使える！",
+      "title": "ネイティブが<span class=\"hl\">毎日使う</span><br>ひと言9選",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "ほんとそれ",
+          "a": "テル ミー アバウディッ",
+          "b": "Tell me about it.",
+          "icon": "two cute characters nodding together"
+        },
+        {
+          "label": "もういいよ",
+          "a": "ネヴァー マインド",
+          "b": "Never mind.",
+          "icon": "a cute character waving a hand dismissively"
+        },
+        {
+          "label": "どっちでもいい",
+          "a": "イーザー ワークス",
+          "b": "Either works.",
+          "icon": "two cups side by side with a balance scale"
+        },
+        {
+          "label": "せっかくだし",
+          "a": "ワイ ナット",
+          "b": "Why not?",
+          "icon": "a cute character shrugging with a smile"
+        },
+        {
+          "label": "よかったね！",
+          "a": "グッド フォー ユー",
+          "b": "Good for you!",
+          "icon": "a cute character clapping happily"
+        },
+        {
+          "label": "お大事に",
+          "a": "フィール ベター",
+          "b": "Feel better!",
+          "icon": "a bowl of warm soup with a heart"
+        },
+        {
+          "label": "楽しんで！",
+          "a": "ハヴ ファン",
+          "b": "Have fun!",
+          "icon": "a party hat with confetti"
+        },
+        {
+          "label": "いい感じ！",
+          "a": "ルックス グッド",
+          "b": "Looks good!",
+          "icon": "a cute character giving an ok sign"
+        },
+        {
+          "label": "まあね",
+          "a": "カインド オヴ",
+          "b": "Kind of.",
+          "icon": "a cute character tilting its head"
+        }
+      ],
+      "note": "※読みは目安です。言い方で意味が変わるものもあります",
+      "ask": "いくつ言えた？"
+    }
+  ],
+  "caption": "「ほんとそれ」「せっかくだし」、英語で言えますか？\n中学英語の単語だけで言える、ネイティブが毎日使うひと言です。\n9つのうち、いくつ言えた？\n\n○ ほんとそれ → Tell me about it.\n○ せっかくだし → Why not?\n○ お大事に → Feel better!\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#中学英語",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語"
+  ],
+  "review_notes": "【リールだけ・12/5 7時台・tiles】「ネイティブが毎日使う〇〇」の型（NG→OK ではなく、言えると便利なひと言）。Tell me about it. は共感の「ほんとそれ」（文字どおり「教えて」の意味にもなる）。Never mind. は言い方によってはすねた感じにもなる。"
+}

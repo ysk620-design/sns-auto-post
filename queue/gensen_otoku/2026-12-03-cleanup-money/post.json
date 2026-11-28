@@ -1,0 +1,70 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 8,
+  "title": "大掃除で見つけたら、まだ使えるお金",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "大掃除の前に保存",
+      "bubble": "捨てたら\nもったいない！",
+      "title": "大掃除で見つけたら<br><span class=\"hl\">まだ使えるお金</span>",
+      "sub": "古くても、捨てずに窓口へ",
+      "cols": 2,
+      "tiles": [
+        {
+          "label": "古いお札",
+          "icon": "an old Japanese banknote with a portrait",
+          "a": "25種類が使える",
+          "b": "聖徳太子の1万円札も、今も1万円"
+        },
+        {
+          "label": "昔の通帳",
+          "icon": "a bank passbook with a cash card",
+          "a": "10年たっても",
+          "b": "休眠預金でも、窓口で引き出せる・期限なし"
+        },
+        {
+          "label": "古いSuica",
+          "icon": "a commuter train next to a big clock",
+          "a": "500円が戻る",
+          "b": "10年使っていなくても、窓口で残高と預り金"
+        },
+        {
+          "label": "古い切手",
+          "icon": "a sheet of postage stamps",
+          "a": "期限なし",
+          "b": "84円切手も、足りない分を足せば使える"
+        },
+        {
+          "label": "記念Suica",
+          "icon": "a commemorative transit card in a case",
+          "a": "残高＋500円",
+          "b": "交換はできないが、払いもどしはできる"
+        },
+        {
+          "label": "書き損じ年賀状",
+          "icon": "a stack of new year postcards",
+          "a": "1枚85円分",
+          "b": "手数料を払えば、新しいはがきや切手に"
+        }
+      ],
+      "summary": {
+        "label": "Suicaを払いもどすと",
+        "big": "500円"
+      },
+      "note": "※2026年11月時点。手続きは各窓口で（Suicaは JR東日本の駅、休眠預金はその銀行、古いお札は日本銀行や銀行）",
+      "bg": "a cozy Japanese living room in winter with a small Christmas tree and warm lights"
+    }
+  ],
+  "caption": "大掃除で出てきた古いお札や通帳、捨てていませんか？\n聖徳太子の1万円札も今も1万円として使えます。10年以上さわっていない口座も、窓口で引き出せます。\n\n✅ 今使えるお札は25種類\n✅ 10年使っていないSuicaも、窓口で残高と預り金500円が戻る\n✅ 古い切手は期限なし。足りない分を足せば使える\n\n⚠️ 古いお札は、お店で受け取ってもらえないこともあるので、銀行や日本銀行で今のお札に交換するのが安心です。書き損じはがきの交換には手数料がかかります。\n\n💬 大掃除で見つけたお宝ある？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#大掃除",
+    "#お金の知識",
+    "#節約術",
+    "#年末準備"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：日本銀行 https://www.boj.or.jp/about/education/oshiete/money/c07.htm （今使える銀行券は25種類、聖徳太子の1万円券も有効）／金融庁 休眠預金 https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html （10年以上取引がないと休眠預金等、そのあとも同じ金融機関で引き出せる、期限なし）／JR東日本 https://www.jreast.co.jp/suica/new_s/info_tenyears.html （10年利用がないと使えなくなる。新しいカードに移し替えか払いもどし：残額−手数料＋預り金500円。記念Suicaは移し替えできず払いもどし）／日本郵便 書き損じはがき https://www.post.japanpost.jp/service/standard/kaki_sonji/index.html （所定の手数料で交換）。はがき85円は2024年10月の料金改定から。【確認してほしい点】①書き損じはがきの交換手数料（1枚いくら）は公式ページで金額を確認できなかったので書いていません ②Suicaの払いもどしは手数料（220円）が残額から引かれる。「500円が戻る」は預り金の分なので、残額が少ないときは差し引きになる点をキャプションに足すか判断してください。"
+}

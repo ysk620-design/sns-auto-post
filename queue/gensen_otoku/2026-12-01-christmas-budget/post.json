@@ -1,0 +1,80 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "クリスマスプレゼントの予算、平均は8,378円",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "サンタさんの財布事情",
+      "bubble": "うちは平均より\n上？下？",
+      "title": "サンタさんの予算<br><span class=\"hl\">みんないくら？</span>",
+      "big_label": "3〜12歳の子へのプレゼント、平均の予算は",
+      "big": "8,378<small>円</small>",
+      "sub": "2年続けて増えた。いちばん多いのは5,000円台",
+      "head": [
+        "みんなのクリスマス",
+        "数字"
+      ],
+      "items": [
+        {
+          "left": "平均の予算",
+          "left_sub": "前の年より240円アップ",
+          "right": "8,378円",
+          "icon": "a wrapped gift box with a ribbon"
+        },
+        {
+          "left": "いちばん多い価格帯",
+          "right": "5,000〜6,000円",
+          "icon": "a red sale price tag"
+        },
+        {
+          "left": "サプライズをする",
+          "left_sub": "枕元に置く、など",
+          "right": "83.7%",
+          "icon": "a Christmas stocking hanging by a bed"
+        },
+        {
+          "left": "ネットで買う",
+          "left_sub": "店頭は40.8%",
+          "right": "45.4%",
+          "icon": "a laptop with a shopping cart on the screen"
+        },
+        {
+          "left": "欲しい物を本人に聞く",
+          "right": "45.0%",
+          "icon": "a child whispering a wish to a parent"
+        },
+        {
+          "left": "ポイントが使える店で",
+          "right": "39.3%",
+          "icon": "a loyalty card with star stamps"
+        },
+        {
+          "left": "クーポン・割引券",
+          "right": "31.2%",
+          "icon": "a discount coupon with scissors"
+        },
+        {
+          "left": "セールの時期に買う",
+          "right": "28.5%",
+          "icon": "a price tag with a down arrow"
+        }
+      ],
+      "arrow": false,
+      "note": "※バンダイ「クリスマスに関する調査」（2025年10月、3〜12歳の子の親600人）。2026年11月時点で確認できた最新の調査",
+      "bg": "a cozy Japanese living room in winter with a small Christmas tree and warm lights",
+      "ask": "今年の予算はいくら？"
+    }
+  ],
+  "caption": "クリスマスプレゼント、みんないくらにしてる？\n3〜12歳の子どもへのプレゼントの平均予算は8,378円。2年続けて増えています。いちばん多い価格帯は5,000〜6,000円でした。\n\n✅ ポイントが使える店で買う人が39.3%、クーポンを使う人が31.2%\n✅ ネットで買う人（45.4%）が、店で買う人（40.8%）より多い\n✅ 8割以上の親が、サプライズの工夫をしている\n\nポイント還元の大きい日にまとめて買うと、サンタさんの負担も軽くなります。\n\n💬 今年のプレゼントの予算は？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#クリスマスプレゼント",
+    "#サンタさん",
+    "#子育てママ",
+    "#家計管理"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：リセマム 2025/11/28 https://resemom.jp/article/2025/11/28/84134.html （バンダイ「クリスマスに関する調査」2025年10月24〜27日、3〜12歳の子をもつ親600人。平均予算8,378円（前年比240円増）、最多価格帯5,000〜6,000円未満、増額21.0%・減額5.8%、ポイントが使える店39.3%、クーポン31.2%、セール28.5%、店頭40.8%・オンライン45.4%、本人に聞いた45.0%、サプライズ83.7%）。【確認してほしい点】バンダイは例年11月末〜12月初めに今年の調査を出します（2024年分は12/3発表）。投稿前に2026年の調査が出ていたら数字を差しかえてください。ここに実体験を一言（わが家のサンタ事情）。"
+}

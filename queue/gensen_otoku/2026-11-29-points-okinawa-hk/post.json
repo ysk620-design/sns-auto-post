@@ -1,0 +1,79 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "17万ポイントで沖縄と香港ディズニー（家族4人）",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "わが家の実例｜家族4人の旅行",
+      "bubble": "飛行機代を\nポイントで！",
+      "title": "17万ポイントで<br><span class=\"hl\">沖縄と香港ディズニー</span>",
+      "big_label": "家族4人の飛行機を、ためたポイントで",
+      "big": "17<small>万pt</small>",
+      "sub": "ANAとブリティッシュ・エアウェイズに分けて移した",
+      "head": [
+        "やったこと",
+        "ルール"
+      ],
+      "items": [
+        {
+          "left": "ポイントをANAへ",
+          "left_sub": "年4万マイルまで",
+          "right": "1,000pt→1,000マイル",
+          "icon": "a passenger airplane"
+        },
+        {
+          "left": "12月と1月に分ける",
+          "left_sub": "上限は1年ごと",
+          "right": "2か月で8万マイル",
+          "icon": "a calendar with a red pin"
+        },
+        {
+          "left": "ポイントをBAへ",
+          "left_sub": "ブリティッシュ・エアウェイズ",
+          "right": "1,250pt→1,000Avios",
+          "icon": "a small airplane taking off over clouds"
+        },
+        {
+          "left": "羽田⇔那覇",
+          "left_sub": "ANA特典・片道1人・時期で変動",
+          "right": "8,000〜12,000マイル",
+          "icon": "a sunny Okinawa beach with a red shisa statue"
+        },
+        {
+          "left": "羽田⇔香港",
+          "left_sub": "BAのAviosで・税金と燃油は別",
+          "right": "片道12,500Avios〜",
+          "icon": "a small hong kong flag with a white flower on a short stick"
+        },
+        {
+          "left": "3歳以上の子ども",
+          "left_sub": "特典航空券は",
+          "right": "大人と同じマイル",
+          "icon": "a child holding a train ticket"
+        },
+        {
+          "left": "0〜1歳はひざの上",
+          "left_sub": "ANA国内線・大人1人に1人",
+          "right": "0マイル",
+          "icon": "a baby sleeping in a parent's arms"
+        }
+      ],
+      "arrow": false,
+      "note": "※2026年11月時点の目安。マイル数は時期・路線で変わります。税金・燃油サーチャージは別にかかります",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "ポイントで旅行した？"
+    }
+  ],
+  "caption": "家族4人の飛行機代、ポイントでまかなえるって知っていますか？\nわが家は約17万ポイントを、ANAとブリティッシュ・エアウェイズ（BA）に分けて移して、沖縄と香港ディズニーに行きました。\n\n✅ ANAへの移行は1年に4万マイルまで。12月と1月に分けると、2か月で8万マイル移せる\n✅ 香港はBAのAviosで、日本の航空会社の便を予約できる\n\n⚠️ 特典航空券のマイル数は時期と路線で変わります。税金・燃油サーチャージは別に現金でかかります。3歳以上の子どもは大人と同じマイルが必要です。\n\n💬 ポイントで旅行したことある？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#子連れ旅行",
+    "#ANAマイル",
+    "#ポイ活",
+    "#香港ディズニー"
+  ],
+  "review_notes": "【本人の実体験の回・11/29のカルーセルと同じテーマ】確認日 2026-11-28。出典：アメックス公式 提携航空会社への移行 https://www.americanexpress.com/ja-jp/point/mile-point/airline/index.html （ANA：メンバーシップ・リワード・プラス登録で40,000ポイント＝40,000マイルが1/1〜12/31の上限、参加費 年5,500円）／ANA国内線特典 https://www.ana.co.jp/ja/gb/amc/domestic-flight-awards/2025-2026 （東京⇔沖縄 片道 L8,000・R9,500・H12,000マイル。2024/10/27搭乗分から。小児は大人と同じマイル。2026/5/19搭乗分から取り扱い変更ありと告知）／羽田⇔香港 BA 片道12,500Avios https://www.aviosintelligence.com/jp/routes/HND-HKG （民間の集計サイト）。【確認してほしい点】①BAへの移行レート「1,250pt→1,000Avios」は公式ページの表が画像で文字確認できなかった。本人のカードでの実際のレートに直してください ②2026/5/19以降のANA国内線特典のマイル数（沖縄）が変わっていれば直してください ③本人の実際の内訳（何ポイントをANA・BAに、何マイルずつ使ったか、香港は何航空の便か、子どもの年齢はぼかす）を1〜2行入れると強くなります。今は公開のルールだけで作っています ④0〜1歳ひざの上0マイルは11/27の乗り物の投稿（ANAは2026年5月から2歳以上は座席が必要）に合わせました ⑤樹形図（tree）の指定でしたが、今の tree は教育費用（凡例が「公立・国立／私立」、総額に「円」が付く）に固定されていてポイントやマイルを表せないため pop にしました。tree で出したい場合は autopost/pop.py の tree に単位と凡例の設定を足す必要があります。ここに実体験を一言（いちばんうれしかったこと等）。"
+}

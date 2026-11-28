@@ -1,0 +1,60 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "20代で年収が上がる人と上がらない人",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "20代で差がつく",
+      "title": "年収が<span class=\"hl\">上がる人</span>と<br>上がらない人",
+      "sub": "国税庁｜20代後半の平均年収は約407万円",
+      "left": {
+        "label": "上がらない人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, staring at a payslip with a disappointed face"
+      },
+      "right": {
+        "label": "上がる人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, holding up a rising bar chart and grinning"
+      },
+      "rows": [
+        {
+          "ng": "頑張れば誰か見てる",
+          "ok": "成果を数字で伝える"
+        },
+        {
+          "ng": "言われた仕事だけ",
+          "ok": "1つ上の仕事を拾う"
+        },
+        {
+          "ng": "給料は会社が決める",
+          "ok": "評価の基準を聞く"
+        },
+        {
+          "ng": "転職サイトは見ない",
+          "ok": "自分の市場価値を知る"
+        },
+        {
+          "ng": "業界の相場を知らない",
+          "ok": "業種別の年収を調べる"
+        },
+        {
+          "ng": "飲み代に消える",
+          "ok": "スキルに投資する"
+        }
+      ],
+      "verdict": "年収は「頑張り」より「伝え方」",
+      "ask": "今年、年収上がった？"
+    }
+  ],
+  "caption": "同じくらい頑張ってるのに、同期と差がついてきたと感じる人へ。\n20代後半の平均年収は約407万円（国税庁）。20代前半の約277万円から、たった5年で100万円以上の差がつく時期です。\n\n✅ 頑張りは、数字にしないと伝わらない\n✅ 評価の基準は、聞いていい\n✅ 転職しなくても、自分の市場価値は知っておく\n\n年収が上がる人は、特別な才能より「伝え方」と「知っていること」が違います。\n今年、あなたの年収は上がりましたか？👇\n\n出典：国税庁「令和6年分 民間給与実態統計調査」\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#年収アップ",
+    "#20代",
+    "#キャリア",
+    "#転職",
+    "#シゴトの差"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：国税庁「令和6年分 民間給与実態統計調査」 https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan2024/pdf/R06_001.pdf ・第12表 https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan2024/pdf/R06_12.pdf 。年齢階層別の平均給与（1年勤続者・男女計）：20〜24歳2,771千円、25〜29歳4,069千円（第12表のPDFを読み取った数字。グラフ化の前に一度見てください）。「100万円以上の差」は277万→407万の差（約130万円）。将来の転職サービスの紹介につながる「市場価値」の行を入れた（今は紹介URLなし）。ここに実体験を一言（評価面談で伝えてよかったことなど）もよいです"
+}

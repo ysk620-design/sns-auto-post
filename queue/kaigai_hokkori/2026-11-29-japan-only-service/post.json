@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "海外では当たり前じゃない日本のサービス",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜サービス編",
+      "bubble": "これ全部\n日本だけ？",
+      "title": "海外では<span class=\"hl\">当たり前じゃない</span><br>日本のサービス",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "タクシーのドア",
+          "icon": "a black taxi with its rear door opening by itself",
+          "a": "日本：自動で開く",
+          "b": "海外：自分で開けるのがふつう"
+        },
+        {
+          "label": "お弁当の温め",
+          "icon": "a bento box inside a microwave with a warm glow",
+          "a": "日本：店員が温める",
+          "b": "海外：自分で or 温めない"
+        },
+        {
+          "label": "おしぼり",
+          "icon": "a rolled white wet towel on a small tray",
+          "a": "日本：席につくと出る",
+          "b": "海外：出ない店が多い"
+        },
+        {
+          "label": "再配達",
+          "icon": "a delivery person holding a cardboard box at a door",
+          "a": "日本：無料で何度でも",
+          "b": "海外：置き配や取りに行くのが多い"
+        },
+        {
+          "label": "配達の時間指定",
+          "icon": "a cardboard box next to a small alarm clock",
+          "a": "日本：2時間ごとに選べる",
+          "b": "海外：「この日のどこか」が多い"
+        },
+        {
+          "label": "新幹線の座席",
+          "icon": "a pair of blue train seats being rotated to face each other",
+          "a": "日本：くるっと回せる",
+          "b": "ヨーロッパ：半分が後ろ向きも"
+        },
+        {
+          "label": "ぬれた傘の袋",
+          "icon": "a wet umbrella sliding into a thin plastic sleeve",
+          "a": "日本：入口に置いてある",
+          "b": "海外：ほとんど見かけない"
+        },
+        {
+          "label": "ホテルの部屋着",
+          "icon": "a folded cotton robe and slippers on a hotel bed",
+          "a": "日本：置いてある宿が多い",
+          "b": "海外：ないのがふつう"
+        },
+        {
+          "label": "空港へ荷物を送る",
+          "icon": "a suitcase with a delivery tag on a counter",
+          "a": "日本：コンビニから送れる",
+          "b": "海外：自分で運ぶのがふつう"
+        }
+      ],
+      "summary": {
+        "label": "日本なら、ぜんぶ",
+        "big": "当たり前"
+      },
+      "note": "※国や店によって違います。日本の再配達の割合は約7.6%（国土交通省・2026年4月）",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "日本では当たり前すぎて気づかないけど、海外ではあまり見かけないサービス。\n\nタクシーのドアが勝手に開く、コンビニでお弁当を温めてくれる、宅配は2時間ごとに時間を選べて、留守でも無料で何度でも届けてくれる。\n日本の宅配の再配達は、今は約7.6%まで減っています。\n\n💬 海外で「日本ならやってくれるのに」と思ったことは？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本では当たり前",
+    "#おもてなし",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・11/29 18時台・タイル×「日本では当たり前、海外では〇〇」（plans の実験）】確認日 2026-11-28。海外側は数字のない一般的な言い方（「〜が多い」「ふつう」）にしている。再配達率約7.6%＝国土交通省 2026年4月期の調査（2026年7月10日発表。ECのミカタで確認 https://ecnomikata.com/ecnews/51084/ 、国交省の一覧 https://www.mlit.go.jp/seisakutokatsu/freight/re_delivery_research.html ）。新幹線の座席は東海道新幹線などの回転シート、ヨーロッパの高速鉄道は向かい合わせ・固定の席が多い（「半分が後ろ向きも」とぼかした）。"
+}

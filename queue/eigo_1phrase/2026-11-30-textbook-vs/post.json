@@ -1,0 +1,56 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：教科書英語vsネイティブの英語",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "中学で習った英語、実は…",
+      "bubble": "まちがいじゃ\nないけど…",
+      "title": "<span class=\"hl\">教科書英語</span>vs<br>ネイティブの英語",
+      "left": {
+        "label": "教科書どおり",
+        "icon": "a cute clay character with round glasses holding a textbook, stiff and nervous"
+      },
+      "right": {
+        "label": "ネイティブ",
+        "icon": "the same cute clay character with round glasses, relaxed, smiling and waving casually"
+      },
+      "rows": [
+        {
+          "ng": "I'm fine.",
+          "ok": "Pretty good!"
+        },
+        {
+          "ng": "I understand.",
+          "ok": "Makes sense."
+        },
+        {
+          "ng": "I'm full.",
+          "ok": "I'm stuffed."
+        },
+        {
+          "ng": "Once again?",
+          "ok": "Come again?"
+        },
+        {
+          "ng": "Very fun.",
+          "ok": "It's a blast!"
+        }
+      ],
+      "verdict": "通じる、でも右だと一気に距離が縮まる",
+      "ask": "いつもどっち派？"
+    }
+  ],
+  "caption": "How are you? に I'm fine, thank you. と返していませんか？\nまちがいではないけど、ネイティブはもっと軽く返します。\n\n✕ I'm fine. → ○ Pretty good!\n✕ I'm full. → ○ I'm stuffed.\n✕ Once again? → ○ Come again?\n\n💬 自分はどっち派？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#中学英語",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語"
+  ],
+  "review_notes": "【リールだけ・11/30 18時台・vs】左は「まちがいではないが教科書っぽい」言い方として出しています（verdict で「通じる」と明記）。1行の文字数が13字までなので、和訳は入れず caption で補足。キャラの絵は同じキャラで表情だけ変えています。"
+}

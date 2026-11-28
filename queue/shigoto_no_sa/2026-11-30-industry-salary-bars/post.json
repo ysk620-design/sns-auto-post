@@ -1,0 +1,94 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "業種別の平均年収ランキング（国税庁）",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "国税庁｜令和6年分の平均給与",
+      "title": "<span class=\"hl\">業種</span>で年収は<br>こんなに違う",
+      "bubble": "1位と最下位で\n約550万円の差",
+      "sub": "全体の平均は478万円。あなたの業界は上？下？",
+      "items": [
+        {
+          "name": "電気・ガス",
+          "value": "832万円",
+          "num": 832.4,
+          "note": "ダントツの1位",
+          "icon": "a power transmission tower with a small lightning bolt"
+        },
+        {
+          "name": "金融・保険",
+          "value": "702万円",
+          "num": 702.3,
+          "note": "銀行・保険会社",
+          "icon": "a bank building with a stack of gold coins"
+        },
+        {
+          "name": "情報通信",
+          "value": "660万円",
+          "num": 659.5,
+          "note": "IT・通信はここ",
+          "icon": "a laptop with a glowing wifi symbol"
+        },
+        {
+          "name": "製造（メーカー）",
+          "value": "568万円",
+          "num": 567.6,
+          "icon": "a factory with gears and a chimney"
+        },
+        {
+          "name": "建設",
+          "value": "565万円",
+          "num": 565.4,
+          "icon": "a yellow construction crane with a hard hat"
+        },
+        {
+          "name": "不動産",
+          "value": "496万円",
+          "num": 495.5,
+          "icon": "a small modern house with a key"
+        },
+        {
+          "name": "運輸・郵便",
+          "value": "488万円",
+          "num": 487.6,
+          "icon": "a delivery truck with cardboard boxes"
+        },
+        {
+          "name": "医療・福祉",
+          "value": "429万円",
+          "num": 429.0,
+          "note": "看護・介護など",
+          "icon": "a nurse cap with a red cross heart"
+        },
+        {
+          "name": "卸売・小売",
+          "value": "410万円",
+          "num": 409.6,
+          "icon": "a shopping basket full of groceries"
+        },
+        {
+          "name": "飲食・宿泊",
+          "value": "279万円",
+          "num": 279.3,
+          "note": "全業種で最下位",
+          "icon": "a chef hat with a steaming bowl of noodles"
+        }
+      ],
+      "note": "※1年を通じて勤めた人の平均給与（賞与こみ・正社員以外も含む）。全14業種から主な10業種を抜き出し",
+      "ask": "あなたの業界は何位？"
+    }
+  ],
+  "caption": "就活中の後輩と、同じ業界の同期に送ってあげて。\n同じように働いても、業種で平均年収はここまで違います。\n\n✅ 1位は電気・ガスで832万円\n✅ 最下位は飲食・宿泊で279万円。差は約550万円\n✅ 全体の平均は478万円\n\nもちろん平均なので、会社や職種、年齢でも大きく変わります。\n「自分の業界は思ったより高い・低い」と感じたら、それが次の一歩のヒントです。\nあなたの業界は何位でしたか？コメントで教えてください👇\n\n出典：国税庁「令和6年分 民間給与実態統計調査」\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#年収",
+    "#20代",
+    "#平均年収",
+    "#業界研究",
+    "#シゴトの差"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：国税庁「令和6年分 民間給与実態統計調査」 https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan2024/pdf/R06_001.pdf ・第12表 https://www.nta.go.jp/publication/statistics/kokuzeicho/minkan2024/pdf/R06_12.pdf 。1年勤続者の業種別平均給与（千円）：電気・ガス・熱供給・水道8,324／金融・保険7,023／情報通信6,595／製造5,676／建設5,654／学術研究・専門技術・教育5,493／不動産・物品賃貸4,955／複合サービス4,901／運輸・郵便4,876／医療・福祉4,290／卸売・小売4,096／サービス3,891／農林水産・鉱業3,479／宿泊・飲食2,793、全体4,775。本文で確認できたのは全体478万・電気ガス832万・金融702万・宿泊飲食279万。そのほかは第12表のPDFを読み取ったもので、業種の並びは国税庁の表の順番（建設→製造→卸小売→宿泊飲食→金融→不動産→運輸→電気ガス→情報通信→学術教育→医療福祉→複合→サービス→農林水産）に当てはめた。グラフ化の前に第12表で数字を一度見てください。10業種は「一般の人が業界として思い浮かべやすいもの」で選び、学術研究・教育、複合サービス、サービス業、農林水産・鉱業は外した（最下位の飲食・宿泊は残した）。ここに実体験を一言（自分の業界の体感など）もよいです"
+}

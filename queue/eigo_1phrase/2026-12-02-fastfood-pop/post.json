@@ -1,0 +1,94 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：注文の直訳しがちな英語",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "保存版｜ファストフード・レストラン",
+      "bubble": "注文で\n固まらない！",
+      "title": "それ、<span class=\"hl\">通じません</span><br>注文の言いかえ9選",
+      "head": [
+        "日本語",
+        "自然な英語"
+      ],
+      "items": [
+        {
+          "left": "おすすめは？",
+          "ng": "What is recommend?",
+          "right": "What do you recommend?",
+          "right_sub": "ワット ドゥ ユー レコメンド",
+          "icon": "a chef with a thumbs-up"
+        },
+        {
+          "left": "店内で",
+          "ng": "In the shop.",
+          "right": "For here.",
+          "right_sub": "フォー ヒア",
+          "icon": "a cozy restaurant table with a tray"
+        },
+        {
+          "left": "Mサイズで",
+          "ng": "M size, please.",
+          "right": "A medium, please.",
+          "right_sub": "ア ミーディアム プリーズ",
+          "icon": "three paper cups in small medium and large sizes"
+        },
+        {
+          "left": "セットにして",
+          "ng": "Set, please.",
+          "right": "Can I make it a combo?",
+          "right_sub": "キャナイ メイキット ア コンボ",
+          "icon": "a burger with fries and a drink on a tray"
+        },
+        {
+          "left": "氷少なめで",
+          "ng": "Little ice.",
+          "right": "Light ice, please.",
+          "right_sub": "ライト アイス プリーズ",
+          "icon": "a glass of cola with a few ice cubes"
+        },
+        {
+          "left": "辛さ控えめで",
+          "ng": "Spicy down.",
+          "right": "Not too spicy, please.",
+          "right_sub": "ノット トゥー スパイシー",
+          "icon": "a red chili pepper with a small sweat drop"
+        },
+        {
+          "left": "取り皿ください",
+          "ng": "Take plate, please.",
+          "right": "Can we get extra plates?",
+          "right_sub": "キャン ウィー ゲット エクストラ プレイツ",
+          "icon": "a stack of small white plates"
+        },
+        {
+          "left": "シェアします",
+          "ng": "We do share.",
+          "right": "We'll share.",
+          "right_sub": "ウィール シェア",
+          "icon": "two forks reaching for one big pizza"
+        },
+        {
+          "left": "ストローください",
+          "ng": "Straw, give me.",
+          "right": "Can I get a straw?",
+          "right_sub": "キャナイ ゲット ア ストロー",
+          "icon": "a striped paper straw in a cup"
+        }
+      ],
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
+    }
+  ],
+  "caption": "海外のお店で「Mサイズで」を M size, please. と言っていませんか？\n9つのうち、いくつ言えた？\n\n✕ M size, please. → ○ A medium, please.\n✕ Set, please. → ○ Can I make it a combo?\n✕ Little ice. → ○ Light ice, please.\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#旅行英語",
+    "#レストラン英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/2 18時台・pop】ファストフード・レストランの注文（plans の「レストランの場面」を1枚まとめに回したもの）。11/24 のカフェ・レストラン回とフレーズが重ならないようにしました（お会計・持ち帰り・おかわり等は使っていません）。「セット」は店により combo / meal と呼び方が違う。"
+}

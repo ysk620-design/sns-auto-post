@@ -1,0 +1,80 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "ボーナス50万円、手取りは約40万円（10万円はどこへ？）",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "冬のボーナス｜明細の見方",
+      "bubble": "思ったより\n少ない…",
+      "title": "ボーナス50万円<br><span class=\"hl\">10万円</span>はどこへ？",
+      "big_label": "額面50万円のボーナス、手取りは",
+      "big": "約40<small>万円</small>",
+      "sub": "引かれるのは社会保険料と所得税",
+      "head": [
+        "引かれるもの",
+        "50万円なら"
+      ],
+      "items": [
+        {
+          "left": "厚生年金",
+          "left_sub": "9.15%（会社と半分ずつ）",
+          "right": "−45,750円",
+          "icon": "an old couple sitting on a bench with a coin jar"
+        },
+        {
+          "left": "所得税",
+          "left_sub": "前月の給料で率が変わる",
+          "right": "−26,122円",
+          "icon": "a magnifying glass over a document"
+        },
+        {
+          "left": "健康保険",
+          "left_sub": "協会けんぽの全国平均",
+          "right": "−24,750円",
+          "icon": "a white first aid kit"
+        },
+        {
+          "left": "40歳以上は介護保険",
+          "left_sub": "0.81%",
+          "right": "−4,050円",
+          "icon": "a walking cane next to a cushion"
+        },
+        {
+          "left": "雇用保険",
+          "left_sub": "0.5%",
+          "right": "−2,500円",
+          "icon": "a briefcase with a necktie"
+        },
+        {
+          "left": "子ども・子育て支援金",
+          "left_sub": "2026年4月から",
+          "right": "−575円",
+          "icon": "a baby bottle with a small coin"
+        },
+        {
+          "left": "住民税",
+          "left_sub": "ボーナスからは引かれない",
+          "right": "0円",
+          "icon": "a green check mark"
+        }
+      ],
+      "rank": false,
+      "arrow": false,
+      "note": "※40歳未満・協会けんぽ・扶養1人・前月の給料（社会保険料を引いた後）30万円の例。会社や地域で変わります",
+      "bg": "a cozy Japanese living room in winter with a small Christmas tree and warm lights",
+      "ask": "明細ちゃんと見てる？"
+    }
+  ],
+  "caption": "ボーナス50万円、手取りはいくらか知っていますか？\n額面50万円でも、手取りは約40万円。約10万円が社会保険料と所得税で引かれます。\n\n✅ いちばん大きいのは厚生年金（約4.6万円）\n✅ 所得税の率は、前の月の給料と扶養の人数で変わる\n✅ 2026年4月からは「子ども・子育て支援金」も少し引かれている\n✅ 住民税はボーナスからは引かれない\n\nボーナスの使い道は「手取り」で考えるのが失敗しないコツです。\n\n⚠️ 40歳未満・協会けんぽ（全国平均）・扶養1人・前月の給料30万円（社会保険料を引いた後）の例です。会社の健康保険組合や地域で変わります。\n\n💬 ボーナスの明細、ちゃんと見てる？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#冬のボーナス",
+    "#手取り",
+    "#社会保険料",
+    "#給与明細"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：協会けんぽ 令和8年度保険料率 https://www.kyoukaikenpo.or.jp/lp/2026hokenryou/ （健康保険 全国平均9.90%、介護1.62%、子ども・子育て支援金0.23%、令和8年4月納付分から）／雇用保険 令和8年度 労働者負担5/1000 https://jsite.mhlw.go.jp/yamanashi-roudoukyoku/koyouhoken_R8.html ／厚生年金 18.3%（労使折半9.15%）／国税庁「賞与に対する源泉徴収税額の算出率の表（令和8年分）」 https://www.nta.go.jp/publication/pamph/gensen/zeigakuhyo2026/data/15-16.pdf （甲欄・扶養1人・前月の社会保険料等控除後の給与289千円以上346千円未満→6.126%）。【計算】健保500,000×4.95%＝24,750、支援金×0.115%＝575、厚年×9.15%＝45,750、雇用×0.5%＝2,500、合計73,575円。所得税（500,000−73,575）×6.126%＝26,122円。手取り500,000−73,575−26,122＝400,303円（約40万円）。引かれる合計99,697円（約10万円）。介護保険（40歳以上）500,000×0.81%＝4,050円は40歳未満の例には含めず、行で別に示した。【確認してほしい点】12/5のTier表と同じ「ボーナス50万円」の前提にそろえています。"
+}

@@ -1,0 +1,94 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：コンビニの直訳しがちな英語",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "保存版｜コンビニ",
+      "bubble": "海外のコンビニで\n固まらない！",
+      "title": "それ、<span class=\"hl\">通じません</span><br>コンビニの言いかえ9選",
+      "head": [
+        "日本語",
+        "自然な英語"
+      ],
+      "items": [
+        {
+          "left": "温めてください",
+          "ng": "Warm, please.",
+          "right": "Can you heat it up?",
+          "right_sub": "キャン ユー ヒーティタップ",
+          "icon": "a microwave oven with a bento box inside"
+        },
+        {
+          "left": "お箸ください",
+          "ng": "Chopstick, please.",
+          "right": "Can I get chopsticks?",
+          "right_sub": "キャナイ ゲット チョップスティックス",
+          "icon": "a pair of wooden chopsticks"
+        },
+        {
+          "left": "カード使えますか",
+          "ng": "Can I use card?",
+          "right": "Do you take cards?",
+          "right_sub": "ドゥ ユー テイク カーズ",
+          "icon": "a credit card with a small sparkle"
+        },
+        {
+          "left": "タッチ決済で",
+          "ng": "Touch, please.",
+          "right": "Can I tap to pay?",
+          "right_sub": "キャナイ タップ トゥ ペイ",
+          "icon": "a phone tapping a card reader with signal waves"
+        },
+        {
+          "left": "ちょうどあります",
+          "ng": "I have just money.",
+          "right": "I have exact change.",
+          "right_sub": "アイ ハヴ イグザクト チェンジ",
+          "icon": "a few shiny coins stacked neatly"
+        },
+        {
+          "left": "レシートいりません",
+          "ng": "Receipt is no.",
+          "right": "I'm good without it.",
+          "right_sub": "アイム グッド ウィザウティット",
+          "icon": "a long paper receipt with a small x mark"
+        },
+        {
+          "left": "電子レンジ",
+          "ng": "a range",
+          "right": "a microwave",
+          "right_sub": "ア マイクロウェイヴ",
+          "icon": "a microwave oven with a bento box inside"
+        },
+        {
+          "left": "肉まん",
+          "ng": "a meat man",
+          "right": "a pork bun",
+          "right_sub": "ア ポーク バン",
+          "icon": "a fluffy white steamed pork bun"
+        },
+        {
+          "left": "アメリカンドッグ",
+          "ng": "an American dog",
+          "right": "a corn dog",
+          "right_sub": "ア コーン ドッグ",
+          "icon": "a corn dog on a stick with ketchup"
+        }
+      ],
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります"
+    }
+  ],
+  "caption": "海外のコンビニで「温めてください」、英語で言えますか？\n9つのうち、いくつ言えた？\n\n✕ Warm, please. → ○ Can you heat it up?\n✕ a meat man → ○ a pork bun\n✕ an American dog → ○ a corn dog\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#旅行英語",
+    "#海外旅行英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・11/30 7時台・pop】コンビニの場面（plans の英語の場面テーマを1枚まとめに回したもの）。海外のコンビニでは温めをしない店も多いので、ネタとしての場面です。「レシートいりません」は I don't need the receipt. でも通じますが、11/27 の「袋はいりません（I don't need a bag.）」と形が同じなので、店員さんに返す軽い言い方 I'm good without it. にしました（レシートを差し出されたときに）。"
+}

@@ -1,0 +1,37 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "アトデカク（白い年賀状を年末まで寝かせる）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "008",
+      "name": "アトデカク",
+      "latin": "Postcardium procrastinans",
+      "group": "引出し棲み獣のなかま",
+      "hook_top": "年賀状、毎年<br>「今年こそ早めに」",
+      "hook_bottom": "結局30日。",
+      "feature": "引き出しに住み<br>白い<b>年賀状</b>の束をあたためる",
+      "ochi": "元日に届いた1枚を見て<br>やっと目を覚ます。",
+      "ask": "今年まだ1枚も…な人は🙋",
+      "voice": [
+        "年賀状、毎年、今年こそ早めに。結局、30日。",
+        "アトデカク。引き出しに住み、白い年賀状の束を、あたためる。",
+        "元日に届いた1枚を見て、やっと目を覚ます。"
+      ],
+      "plate": "a sleepy small creature shaped like a stack of blank white postcards, a soft folded paper body, drowsy eyes, tiny pen-like arms tucked in",
+      "scene": "an open wooden desk drawer in a Japanese home, a stack of blank white postcards, a sleepy small paper creature curled up on them in the center"
+    }
+  ],
+  "caption": "年賀状をまだ1枚も書いてない人に送ってあげて。\n\n虚構図鑑 No.008「アトデカク」\n机の引き出しに住み、白い年賀状の束をあたためて年末まで寝かせる。元日に届いた1枚を見て、やっと目を覚ます。\n\n🙋 今年まだ1枚も…な人はコメントに「🙋」\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#年賀状",
+    "#虚構図鑑"
+  ],
+  "review_notes": "7時の回。年賀状あるある。郵便の受付期間などの事実は書いていない（「30日」は、あるあるの言い方）"
+}

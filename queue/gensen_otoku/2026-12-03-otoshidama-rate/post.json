@@ -1,0 +1,74 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "お年玉の相場 学年別（小学校低学年は3,000円がいちばん多い）",
+  "slides": [
+    {
+      "layout": "podium",
+      "kicker": "親戚の子に、いくらあげる？",
+      "bubble": "学年×1,000円\nがちょうどいい？",
+      "title": "お年玉の<span class=\"hl\">相場</span><br>学年別",
+      "big_label": "小学校低学年で、いちばん多いのは",
+      "big": "3,000<small>円</small>",
+      "sub": "中学生までは5,000円、高校生から1万円が多い",
+      "items": [
+        {
+          "name": "大学生など",
+          "value": "1万円",
+          "num": 10000,
+          "note": "約3人に2人が1万円",
+          "icon": "a young adult with a backpack"
+        },
+        {
+          "name": "高校生",
+          "value": "1万円",
+          "num": 10000,
+          "note": "9,001〜1万円",
+          "icon": "a high school student with a school bag"
+        },
+        {
+          "name": "中学生",
+          "value": "5,000円",
+          "num": 5000,
+          "note": "4,001〜5,000円",
+          "icon": "a junior high school student in uniform"
+        },
+        {
+          "name": "小学校高学年",
+          "value": "5,000円",
+          "num": 5000,
+          "note": "4,001〜5,000円",
+          "icon": "an elementary school child with a red school backpack"
+        },
+        {
+          "name": "小学校低学年",
+          "value": "3,000円",
+          "num": 3000,
+          "note": "2,001〜3,000円",
+          "icon": "a small child holding a red new year envelope"
+        },
+        {
+          "name": "小学生未満",
+          "value": "〜1,000円",
+          "num": 1000,
+          "note": "1〜1,000円",
+          "icon": "a toddler holding a tiny envelope"
+        }
+      ],
+      "note": "※インテージの調査（2025年11月、15〜79歳5,000人）で、それぞれ「いちばん多かった金額」。平均ではありません",
+      "bg": "a cozy Japanese living room in winter with a small Christmas tree and warm lights",
+      "ask": "うちはいくら？"
+    }
+  ],
+  "caption": "お年玉、親戚の子にいくらあげるか迷っていませんか？\nいちばん多かった金額は、小学校低学年で3,000円、高学年と中学生で5,000円、高校生から1万円でした。\n\n✅ 小学生未満は1,000円まで\n✅ 大学生にも、約3人に2人が1万円\n✅ 「学年×1,000円」で考える家もある\n\n親戚の子が多いと、合計は意外と大きくなります。早めに新札も用意しておくと安心です。\n\n⚠️ 平均ではなく「いちばん多かった金額」です。家や地域で違います。\n\n💬 あなたの家はいくら？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#お年玉",
+    "#お年玉相場",
+    "#お正月準備",
+    "#子育てママ"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：All About https://allabout.co.jp/gm/gc/516484/ （インテージの調査、2025年11月19〜25日、全国15〜79歳5,000人。学年別の最多回答：小学生未満1〜1,000円、低学年2,001〜3,000円、高学年4,001〜5,000円、中学生4,001〜5,000円、高校生9,001〜1万円、大学生・専門学校生など9,001〜1万円で約3人に2人）。バーの長さは各金額帯の上限で描いています。「学年×1,000円」はよく言われる目安として「〜する家もある」の書き方にしています（調査の結果ではない）。【確認してほしい点】インテージの元の発表を目視で確認できるとより安心です。"
+}

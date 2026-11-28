@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "日本の家では当たり前、海外では驚かれること",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜家の中編",
+      "bubble": "お風呂が\nしゃべる！？",
+      "title": "日本の<span class=\"hl\">家</span>では当たり前<br>海外では驚かれること",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "玄関で靴を脱ぐ",
+          "icon": "shoes neatly lined up at a Japanese house entrance",
+          "a": "日本：必ず脱ぐ",
+          "b": "アメリカ：はいたままの家も多い"
+        },
+        {
+          "label": "毎日湯船",
+          "icon": "a deep bathtub with steaming hot water",
+          "a": "日本：肩までつかる",
+          "b": "海外：シャワーだけが多い"
+        },
+        {
+          "label": "お風呂がしゃべる",
+          "icon": "a small bath control panel on a tiled wall with a speaker",
+          "a": "日本：「お風呂が沸きました」",
+          "b": "海外：「家電が話す」と驚く"
+        },
+        {
+          "label": "洗濯物は外干し",
+          "icon": "laundry hanging on a balcony in the sun",
+          "a": "日本：ベランダに干す",
+          "b": "アメリカ：乾燥機が多い"
+        },
+        {
+          "label": "トイレとお風呂が別",
+          "icon": "two separate doors in a Japanese hallway",
+          "a": "日本：別の部屋が多い",
+          "b": "海外：同じ部屋がふつう"
+        },
+        {
+          "label": "トイレのスリッパ",
+          "icon": "a pair of plastic toilet slippers",
+          "a": "日本：専用にはき替える",
+          "b": "海外：「なぜ2回はき替える？」"
+        },
+        {
+          "label": "布団",
+          "icon": "a futon mattress laid on tatami",
+          "a": "日本：たたんでしまう",
+          "b": "海外：ベッドがふつう"
+        },
+        {
+          "label": "こたつ",
+          "icon": "a cozy Japanese kotatsu table with a quilt",
+          "a": "日本：冬のリビングの主役",
+          "b": "海外：家ごと暖めるのが多い"
+        },
+        {
+          "label": "年末の大掃除",
+          "icon": "a bucket, rubber gloves and a rag",
+          "a": "日本：家族で12月に",
+          "b": "海外：春に大掃除する国も"
+        }
+      ],
+      "summary": {
+        "label": "今夜の話は",
+        "big": "大掃除"
+      },
+      "note": "※国や家によって違います",
+      "ask": "あなたの家はいくつ？"
+    }
+  ],
+  "caption": "日本の家では当たり前なのに、海外の人に驚かれること。\n\n玄関で靴を脱ぐ、毎日湯船につかる、お風呂が「お風呂が沸きました」としゃべる。\nトイレのスリッパにはき替えるのは「なぜ2回もはき替えるの？」と不思議がられることも。\n\n今夜20時台は、年末の大掃除に驚いた留学生の話を出します🧹\n\n💬 あなたの家だけの「当たり前」は？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の家",
+    "#暮らしの知恵",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・12/4 7時台・タイル（日本では当たり前シリーズ）】同じ日の20時台のカルーセル（年末の大掃除）につなげる。数字は使わず、一般的な言い方（「〜が多い」）にした。こたつは12/2の冬のタイルとも重なるが、家の中の1マスとして入れた（気になるなら「網戸」などに差し替えを）。「春に大掃除する国も」は英語圏の spring cleaning の習慣から。"
+}

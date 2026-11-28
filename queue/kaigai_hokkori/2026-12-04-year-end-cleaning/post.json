@@ -1,0 +1,143 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-04",
+  "type": "story",
+  "title": "年末の大掃除と留学生",
+  "icon": "broom",
+  "burst": "SHINY!",
+  "top": "なぜ12月の日本人は…",
+  "big": "家じゅうを<br>みがくの？",
+  "big_size": 104,
+  "chat_title": "日本の<em>年末の大掃除</em>に<br>→ 海外の反応は…",
+  "art": {
+    "cast": "Lucas: a cheerful Brazilian exchange student in his early 20s with short wavy dark brown hair, tan skin, a yellow sweater and jeans. The host mother: a Japanese woman in her 50s with shoulder-length black hair, an apron and a headscarf. The host father: a Japanese man in his 50s with glasses and a gray sweatshirt.",
+    "cover": "In a Japanese family home at the end of December, Lucas holds a rag with wide surprised eyes as the host mother and father energetically scrub windows and the kitchen fan around him",
+    "end": "Lucas and the host family sit around a low table in a sparkling clean Japanese living room, slurping New Year's Eve buckwheat noodles together and smiling"
+  },
+  "scenes": [
+    {
+      "title": "12月の休みの朝",
+      "mood": "think",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#e8e2d4"
+      },
+      "prop": "broom",
+      "say": "え、休みなのに掃除？",
+      "nar": "ホームステイ先のお母さんが、<br>ゴム手袋とぞうきんを手渡してきた。",
+      "art": "In the entrance of a Japanese house, the host mother on the left cheerfully hands rubber gloves and a rag to Lucas on the right, who looks confused in his pajamas"
+    },
+    {
+      "title": "家族総出で",
+      "mood": "wow",
+      "prop": "broom",
+      "say": "窓も換気扇も全部！？",
+      "nar": "窓、網戸、換気扇、照明のかさまで。<br>ふだん見ない所を、一日かけてピカピカに。",
+      "art": "The host father scrubs a kitchen exhaust fan and the host mother wipes sliding glass doors; Lucas on the right holds a rag with his mouth wide open in surprise"
+    },
+    {
+      "title": "大掃除のわけ",
+      "mood": "love",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#e8e2d4"
+      },
+      "say": "神さまを迎えるため？",
+      "nar": "きれいな家で、新しい年の神さまを<br>迎えるため、と昔から言われている。",
+      "art": "The host mother on the left explains with a gentle smile, pointing at a small New Year decoration of pine branches; Lucas on the right listens with sparkling eyes"
+    },
+    {
+      "title": "大みそか",
+      "mood": "happy",
+      "say": "気持ちまでスッキリ！",
+      "nar": "ピカピカの部屋で年越しそば。<br>新しい年を迎える準備ができた。",
+      "art": "Lucas on the right stretches happily in a sparkling clean Japanese living room at night, holding a bowl of soba noodles, the host family smiling next to him"
+    }
+  ],
+  "comments": [
+    [
+      "🌏",
+      "米国の大学の日本文学の先生",
+      "神さまはどこにでもいる。そして、ほこりがきらい"
+    ],
+    [
+      "🌏",
+      "日本で働く外国人向けマガジン",
+      "大掃除を終えたときの気分は、本当に魔法みたい"
+    ],
+    [
+      "🌏",
+      "同じマガジン",
+      "ひとりでやると、驚くほどクタクタになるかも"
+    ],
+    [
+      "🌏",
+      "英字新聞のコラム",
+      "自分たちへの基準が、いかに低かったか思い知る"
+    ],
+    [
+      "🌏",
+      "日本の外国人のゆずり合いグループ",
+      "12月から2月は、ゆずりたい物がどっと集まる"
+    ]
+  ],
+  "stat": {
+    "l1": "年末に大掃除をする人",
+    "n1": "71.3%",
+    "l2": "そのうち自分で掃除する人",
+    "n2": "87.2%",
+    "msg": "ふだんできない所まで、1年分の感謝をこめて。<br>新しい年を、きれいな家で。",
+    "src": "出典：クロス・マーケティング「大掃除に関する調査」（2025年）"
+  },
+  "cta": "あなたが<br>大掃除でいちばん<br>苦手な場所は？",
+  "reel_script": {
+    "comments": [
+      [
+        "🌏",
+        "米国の大学の日本文学の先生",
+        "神さまは、ほこりがきらい"
+      ],
+      [
+        "🌏",
+        "外国人向けマガジン",
+        "終えた気分は、本当に魔法みたい"
+      ],
+      [
+        "🌏",
+        "英字新聞のコラム",
+        "自分たちの基準の低さを思い知る"
+      ]
+    ],
+    "nar": [
+      "なぜ12月の日本人は、家じゅうをピカピカにみがくの？",
+      "ホームステイ先のお母さんが、ゴム手袋とぞうきんを手渡してきた。",
+      "窓も網戸も換気扇も。ふだん見ない所を、一日かけてピカピカに。",
+      "きれいな家で、新しい年の神さまを迎えるため、と言われている。",
+      "ピカピカの部屋で年越しそば。気持ちまでスッキリ！",
+      "アメリカの大学の先生いわく、「神さまは、ほこりがきらい」",
+      "外国人向けのマガジンは、「終えた気分は、本当に魔法みたい」",
+      "英字新聞のコラムは、「自分たちの基準の低さを思い知る」",
+      "実は年末に大掃除をする人は、71.3パーセント。今も約7割なんです。",
+      "あなたが大掃除でいちばん苦手な場所は？　コメントで教えてね。"
+    ]
+  },
+  "caption": "12月、ホームステイ先でいきなり渡されたゴム手袋とぞうきん…🧹\n日本の年末の「大掃除」に、海外から来た人はびっくり。\n\nアメリカの大学で日本文学を教える先生いわく「神さまはどこにでもいる。そして、ほこりがきらい」。\n2025年の調査でも、年末に大掃除をする人は71.3%でした。\n\n💬 あなたが大掃除でいちばん苦手な場所は？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#大掃除",
+    "#年末の過ごし方",
+    "#ホームステイ",
+    "#海外のほっこり話"
+  ],
+  "sources": [
+    "Penn Today（ペンシルベニア大学 Linda Chance 准教授：The divinities are everywhere and in everything. They don't like dirt.） https://penntoday.upenn.edu/news/oosouji-japan-new-years",
+    "MUSUBI by Borderlink（the feeling of completing Osouji is truly magical／you may be surprised just how exhausting Osouji can be） https://www.borderlink.co.jp/magazine/2356/",
+    "The Japan Times 2011年（It just goes to show how low our standards for ourselves really are） https://www.japantimes.co.jp/community/2011/01/29/our-lives/o-soji-in-the-year-of-the-dust-bunnies",
+    "The Japan Times 2020年（Mottainai Japan の管理人：We do get a big intake of items from December to February） https://www.japantimes.co.jp/life/2020/12/13/lifestyle/osoji-year-end-cleaning",
+    "クロス・マーケティング 大掃除に関する調査（2025年11月28〜29日・1,100人：する71.3%・担当は自分87.2%） https://www.cross-m.co.jp/news/release/20251203",
+    "（参考）ダスキン 2025年末大掃除調査：実際の実施率50.5% https://www.oricon.co.jp/pressrelease/3048776/"
+  ],
+  "review_notes": "【出典・確認日：2026-11-28】「あるある」型の再現です。主人公ルーカス（ブラジルからの留学生）とホストファミリーは架空で、特定の人の実話には見せていません（海外の声の「だれの声か」は実在の記事の書き手・話し手）。海外の声は記事の文を短く訳したもの。Linda Chance 氏は国籍が書かれていないので 🌏 にしています。【数字】71.3%はクロス・マーケティングの2025年11月の調査で「大掃除をする」と答えた人（予定を含む）。担当が「自分」87.2%は複数回答なので「そのうち」と書いていますが、気になるなら l2 を「掃除するのは自分（複数回答）」に。なお、ダスキンの調査では「実際にした」人は2025年末で50.5%と低めです（年々減っている）。「約7割」と強めに見せるのはクロス・マーケティングの数字があるからで、ダスキンに合わせるなら「約半分」に変えてください。【読み方】「網戸（あみど）」「換気扇（かんきせん）」「71.3パーセント」を確認してください。系統：日本の習慣。ここに実体験を一言（大掃除でいちばん大変な場所など）を入れると共感が増えます。"
+}

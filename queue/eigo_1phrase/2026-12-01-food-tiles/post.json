@@ -1,0 +1,77 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：そのまま頼むと別物が出てくる食べ物",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "保存版｜海外で食べる前に",
+      "bubble": "シュークリームは\n靴ずみ!?",
+      "title": "そのまま頼むと<br><span class=\"hl\">別物が出てくる</span>食べ物",
+      "cols": 2,
+      "tiles": [
+        {
+          "label": "シュークリーム",
+          "a": "shoe cream＝靴ずみ",
+          "b": "◯ a cream puff",
+          "icon": "a cream puff pastry dusted with powdered sugar"
+        },
+        {
+          "label": "アイス",
+          "a": "ice＝氷が出てくる",
+          "b": "◯ ice cream",
+          "icon": "a scoop of vanilla ice cream in a cone"
+        },
+        {
+          "label": "ソフトクリーム",
+          "a": "soft cream＝？",
+          "b": "◯ soft serve",
+          "icon": "a swirl of soft serve ice cream in a cone"
+        },
+        {
+          "label": "サイダー",
+          "a": "英国ではりんごのお酒",
+          "b": "◯ a lemon-lime soda",
+          "icon": "a glass of fizzy clear soda with bubbles"
+        },
+        {
+          "label": "ハンバーグ",
+          "a": "パンにはさまって出る",
+          "b": "◯ a hamburger steak",
+          "icon": "a juicy hamburger steak on a plate with sauce"
+        },
+        {
+          "label": "ピーマン",
+          "a": "piment＝？",
+          "b": "◯ a green pepper",
+          "icon": "a shiny green bell pepper"
+        },
+        {
+          "label": "ポテチ",
+          "a": "英国で chips＝ポテト",
+          "b": "◯ 英国では crisps",
+          "icon": "a bag of potato chips spilling out"
+        },
+        {
+          "label": "プリン",
+          "a": "pudding＝デザート全般",
+          "b": "◯ a custard pudding",
+          "icon": "a wobbly custard pudding with caramel sauce"
+        }
+      ],
+      "note": "※国や店によって違います。アメリカの cider は甘いりんごジュースのことも",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "海外で「シュークリーム」を頼むと、靴ずみ（shoe cream）だと思われるかも。\n日本ではふつうの食べ物の名前、そのまま言うと別物が出てくることがあります。\n8つのうち、いくつ知ってた？\n\n✕ shoe cream → ○ a cream puff\n✕ ice → ○ ice cream\n✕ soft cream → ○ soft serve\n\n旅行好きの友だちに送ってあげて。\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#和製英語",
+    "#海外旅行英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【当たり狙い】「頼むと別物が出てくる」食べ物（tiles）。食べ物×旅行×ツッコミたくなる＝送りたくなる話題を狙いました。根拠：shoe cream は靴クリームの意味に聞こえる（シューは仏語の chou＝キャベツ）。イギリスの cider はりんご酒、アメリカの cider はりんごジュース系のことも。イギリスでは chips＝フライドポテト、ポテチ＝crisps。イギリスの pudding はデザート全般の意味でも使う。ハンバーグは hamburger steak、アメリカでは Salisbury steak が近い料理。"
+}

@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "日本では当たり前なのに海外ではNGなこと",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜マナー編",
+      "bubble": "知らないと\n海外で恥を\nかくかも",
+      "title": "日本では当たり前<br>海外では<span class=\"hl\">NG</span>なこと",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "麺をすする",
+          "icon": "a bowl of ramen with chopsticks lifting noodles",
+          "a": "日本：おいしいサイン",
+          "b": "欧米：音を立てるのは失礼"
+        },
+        {
+          "label": "鼻をすする",
+          "icon": "a box of tissues",
+          "a": "日本：人前でかむ方が失礼",
+          "b": "欧米：すする方が失礼"
+        },
+        {
+          "label": "お茶わんを持つ",
+          "icon": "a hand holding a rice bowl with chopsticks",
+          "a": "日本：持つのがマナー",
+          "b": "韓国：持ち上げないのがマナー"
+        },
+        {
+          "label": "チップなし",
+          "icon": "a restaurant bill folder with a pen",
+          "a": "日本：渡さないのがふつう",
+          "b": "アメリカ：15〜20%が目安"
+        },
+        {
+          "label": "「すみません！」",
+          "icon": "a waiter walking with a tray in a restaurant",
+          "a": "日本：大きな声で呼ぶ",
+          "b": "欧米：目で合図して待つ"
+        },
+        {
+          "label": "OKサイン",
+          "icon": "a hand making a circle with thumb and finger",
+          "a": "日本：OK・お金の意味",
+          "b": "ブラジル：失礼なしぐさ"
+        },
+        {
+          "label": "温泉ははだか",
+          "icon": "a steaming outdoor hot spring with rocks",
+          "a": "日本：水着は入れない所も",
+          "b": "海外：水着で入るのがふつう"
+        },
+        {
+          "label": "年齢を聞く",
+          "icon": "a birthday cake with candles",
+          "a": "日本：初対面でも聞く",
+          "b": "欧米：失礼と思われがち"
+        },
+        {
+          "label": "人前でマスク",
+          "icon": "a white disposable face mask",
+          "a": "日本：ふだんから着ける",
+          "b": "欧米：病気の人と思われがち"
+        }
+      ],
+      "summary": {
+        "label": "旅行の前に",
+        "big": "要チェック"
+      },
+      "note": "※国や人によって受け止め方は違います。チップは米国のレストランの目安",
+      "ask": "やったことある？"
+    }
+  ],
+  "caption": "日本では当たり前なのに、海外ではNGになること。知らないと、旅行先でちょっと恥ずかしい思いをするかも。\n\nラーメンをすするのは、欧米では「音を立てて失礼」と思われがち。\n逆に日本では人前で鼻をかむのが失礼でも、欧米では鼻をすする方が失礼とされます。\n韓国では、ご飯茶わんを持ち上げないのがマナーです。\n\n💬 海外旅行で「やっちゃった…」ことはある？\n📌 旅行の前に保存して見返そう\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#海外旅行",
+    "#マナー",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【当たり狙い】【リールだけの投稿・12/1 7時台・タイル（日本では当たり前シリーズ）】送りたくなる話題（海外旅行の前の人に）×広いテーマ×「知らないと恥をかく」。確認日 2026-11-28。どれも旅行ガイドなどでよく紹介される一般的なマナーで、国や人で違う（note に明記）。チップ15〜20%は11/26の投稿と同じ YouGov https://yougov.com/en-us/articles/49619-are-young-people-bad-tippers-how-americans-tip-restaurants 。ブラジルのOKサインは失礼なしぐさとされる（米国のニクソン元副大統領の逸話で有名）。「人前でマスク：欧米では病気の人と思われがち」はコロナ後に変わりつつある一般的な言い方。"
+}

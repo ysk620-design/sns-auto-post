@@ -1,0 +1,80 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "お金が2倍になるまで何年？（72の法則）",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "子どもにも教えたい｜72の法則",
+      "bubble": "72÷金利で\nすぐわかる！",
+      "title": "お金が<span class=\"hl\">2倍</span>になるまで<br>何年かかる？",
+      "big_label": "年3%で増えると、2倍になるまで",
+      "big": "約23<small>年</small>",
+      "sub": "72÷金利（%）で、だいたいの年数がわかる",
+      "items": [
+        {
+          "name": "年0.5%",
+          "value": "約139年",
+          "num": 139,
+          "note": "いまの大手の普通預金",
+          "icon": "a tired sleepy character resting on a pillow"
+        },
+        {
+          "name": "年1%",
+          "value": "約70年",
+          "num": 70,
+          "note": "72÷1＝72",
+          "icon": "a snail carrying a coin"
+        },
+        {
+          "name": "年1.2%",
+          "value": "約58年",
+          "num": 58,
+          "note": "高金利の普通預金",
+          "icon": "a bank card next to a small piggy bank"
+        },
+        {
+          "name": "年3%",
+          "value": "約23年",
+          "num": 23,
+          "note": "72÷3＝24",
+          "icon": "a small plant growing from coins"
+        },
+        {
+          "name": "年5%",
+          "value": "約14年",
+          "num": 14,
+          "note": "72÷5＝14.4",
+          "icon": "a tree with gold coins as leaves"
+        },
+        {
+          "name": "年7%",
+          "value": "約10年",
+          "num": 10,
+          "note": "72÷7＝10.3",
+          "icon": "a rocket made of coins"
+        },
+        {
+          "name": "借金 年15%",
+          "value": "約5年",
+          "num": 5,
+          "note": "リボ払いは借金が2倍",
+          "icon": "a gray rain cloud with a lightning bolt"
+        }
+      ],
+      "note": "※利息がずっと同じで、ついた利息もそのまま増やした（複利）ときの計算。税金は含みません。投資は元本割れもあります",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants"
+    }
+  ],
+  "caption": "お金が2倍になるまで、何年かかるか知っていますか？\n「72÷金利（%）」で、だいたいの年数がわかります。これが「72の法則」。年3%なら約23年、年0.5%だと約139年です。\n\n✅ 金利のちょっとの差が、年数では何十年もの差になる\n✅ 逆に、リボ払い（年15%）の借金は約5年で2倍にふくらむ\n\nお年玉の話のついでに、子どもと一緒に計算してみるのもおすすめです。\n\n⚠️ 利息がずっと同じとした計算です。投資は元本割れの可能性があり、利回りは約束されていません。\n\n💬 知ってた？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#72の法則",
+    "#お金の勉強",
+    "#複利",
+    "#金融教育"
+  ],
+  "review_notes": "確認日 2026-11-28。【計算】2倍になる年数＝log2÷log(1＋金利)。0.5%：138.98年、1%：69.66年、1.2%：58.11年、3%：23.45年、5%：14.21年、7%：10.24年、15%：4.96年。72の法則（72÷金利）は近似：72、60、24、14.4、10.3、4.8。表示は正確な計算の方を丸めた。年0.5%は3メガの普通預金（2026/11/2〜）、1.2%はあおぞら銀行BANK（100万円まで）https://www.watch.impress.co.jp/docs/news/2142489.html 。リボ払いの手数料は年15.0%前後のカードが多い（一般的な水準として。特定のカードではない）。"
+}

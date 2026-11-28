@@ -1,0 +1,74 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "世界の睡眠時間ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "OECDの調査から",
+      "title": "世界の<span class=\"hl\">睡眠時間</span><br>ランキング",
+      "bubble": "日本は\nなんと最下位",
+      "sub": "1位の中国と日本の差は、1日約1時間40分",
+      "bg": "a softly blurred cozy bedroom at night with a warm bedside lamp",
+      "items": [
+        {
+          "name": "中国",
+          "value": "9時間2分",
+          "num": 542,
+          "icon": "a small Chinese flag on a short stick"
+        },
+        {
+          "name": "米国",
+          "value": "8時間48分",
+          "num": 528,
+          "icon": "a small United States flag on a short stick"
+        },
+        {
+          "name": "スペイン",
+          "value": "8時間36分",
+          "num": 516,
+          "icon": "a small Spanish flag on a short stick",
+          "note": "昼寝の国"
+        },
+        {
+          "name": "フランス",
+          "value": "8時間33分",
+          "num": 513,
+          "icon": "a small French flag on a short stick"
+        },
+        {
+          "name": "英国",
+          "value": "8時間28分",
+          "num": 508,
+          "icon": "a small United Kingdom flag on a short stick"
+        },
+        {
+          "name": "韓国",
+          "value": "7時間51分",
+          "num": 471,
+          "icon": "a small South Korean flag on a short stick"
+        },
+        {
+          "name": "日本",
+          "value": "7時間22分",
+          "num": 442,
+          "icon": "a sleepy cat yawning on a pillow",
+          "note": "いちばん短い"
+        }
+      ],
+      "note": "※OECD「Gender Data Portal 2019」（nippon.com より）。1日の平均睡眠時間。調査の年は国ごとに違います",
+      "ask": "昨日は何時間寝た？"
+    }
+  ],
+  "caption": "世界の睡眠時間をくらべると、日本はなんと最下位。\n\n1位の中国は1日9時間2分、日本は7時間22分。その差は1日約1時間40分もあります。\nアメリカやヨーロッパの国も、8時間半前後。\n\n寝不足の人に送ってあげて😴\n\n💬 あなたは昨日、何時間寝た？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#睡眠",
+    "#睡眠不足",
+    "#世界ランキング",
+    "#海外と日本の違い"
+  ],
+  "review_notes": "【当たり狙い】【リールだけの投稿・12/4 18時台・横棒ランキング（plans では自由枠）】送りたくなる話題（寝不足の友だちに）×誰でも分かる広いテーマ×「日本は最下位」。確認日 2026-11-28。出典：nippon.com「睡眠不足大国ニッポン」 https://www.nippon.com/ja/japan-data/h00424/ （OECD Gender Data Portal 2019。中国542分・米国528分・スペイン516分・フランス513分・英国508分・韓国471分・日本442分）。記事は7か国だけ掲載で、ほかの国の数字はないので7位まで（「最下位」は「この中で」の意味。OECD の比較では日本がいちばん短いと記事に書かれている）。日本のマスの絵は国旗ではなく「眠そうな猫」にして目立たせた。「昼寝の国」はスペインのシエスタの一般的なイメージ。"
+}

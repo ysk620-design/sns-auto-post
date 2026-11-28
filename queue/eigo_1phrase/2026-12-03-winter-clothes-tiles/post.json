@@ -1,0 +1,83 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：冬服の和製英語",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "保存版｜冬服",
+      "bubble": "パンツは\n下着かも!?",
+      "title": "そのまま言うと<span class=\"hl\">通じない</span><br>冬服の英語9選",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "マフラー",
+          "a": "muffler＝車の消音器",
+          "b": "◯ a scarf",
+          "icon": "a cozy knitted red scarf"
+        },
+        {
+          "label": "トレーナー",
+          "a": "trainer＝コーチ",
+          "b": "◯ a sweatshirt",
+          "icon": "a plain gray crewneck sweatshirt"
+        },
+        {
+          "label": "ジャンパー",
+          "a": "英国 jumper＝セーター",
+          "b": "◯ a jacket",
+          "icon": "a casual zip-up jacket"
+        },
+        {
+          "label": "ハイネック",
+          "a": "high neck＝？",
+          "b": "◯ a turtleneck",
+          "icon": "a black turtleneck sweater"
+        },
+        {
+          "label": "ニット帽",
+          "a": "knit hat でも通じる",
+          "b": "◯ a beanie",
+          "icon": "a knitted beanie hat with a pom-pom"
+        },
+        {
+          "label": "カイロ",
+          "a": "Cairo＝エジプトの首都",
+          "b": "◯ a hand warmer",
+          "icon": "a small white heat pack hand warmer"
+        },
+        {
+          "label": "ダウン",
+          "a": "down＝下",
+          "b": "◯ a puffer jacket",
+          "icon": "a puffy down jacket"
+        },
+        {
+          "label": "ジーパン",
+          "a": "jeans pants は✕",
+          "b": "◯ jeans",
+          "icon": "a pair of blue jeans"
+        },
+        {
+          "label": "パンツ",
+          "a": "英国 pants＝下着",
+          "b": "◯ 米国 pants＝ズボン",
+          "icon": "a pair of folded trousers"
+        }
+      ],
+      "note": "※国や地域によって違います。英国ではズボンは trousers",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "寒くなってきた今の時期、「カイロ持ってる？」を英語で言えますか？\nCairo だとエジプトの首都に聞こえます。\n9つのうち、いくつ知ってた？\n\n✕ muffler → ○ a scarf\n✕ Cairo → ○ a hand warmer\n✕ trainer → ○ a sweatshirt\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#和製英語",
+    "#ファッション英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/3 21時台・tiles】冬服の和製英語（季節もの）。トレーナーは英国では trainers＝スニーカーの意味もある。パンツは米国ではズボン、英国では下着の意味になる（英国のズボンは trousers）。ニット帽は knit hat でも通じるので「でも通じる」と書きました。"
+}

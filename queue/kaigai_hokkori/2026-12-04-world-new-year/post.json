@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "世界の年越しの風習",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "大みそかまであと4週間",
+      "title": "世界の<span class=\"hl\">年越し</span><br>何をする？",
+      "bubble": "ぶどうを\n12秒で12粒！",
+      "sub": "年越しそばのように、世界にも縁起かつぎ",
+      "bg": "a softly blurred city skyline with colorful New Year fireworks at night",
+      "head": [
+        "国",
+        "年越しにすること"
+      ],
+      "items": [
+        {
+          "left": "日本",
+          "right": "年越しそばと除夜の鐘",
+          "icon": "a bowl of soba noodles with a long shrimp tempura",
+          "right_sub": "細く長く生きられるように"
+        },
+        {
+          "left": "スペイン",
+          "right": "鐘に合わせてぶどう12粒",
+          "icon": "twelve green grapes in a small glass bowl",
+          "right_sub": "1粒ずつ1年の幸せを願う"
+        },
+        {
+          "left": "イタリア",
+          "right": "レンズ豆を食べる",
+          "icon": "a bowl of lentils with sausage",
+          "right_sub": "豆がお金に見えるから"
+        },
+        {
+          "left": "ブラジル",
+          "right": "白い服で海へ",
+          "icon": "people in white clothes on a beach at night",
+          "right_sub": "波を7回とびこえる"
+        },
+        {
+          "left": "デンマーク",
+          "right": "いすからジャンプ",
+          "icon": "a person jumping off a chair at a party",
+          "right_sub": "0時に新しい年へ飛びこむ"
+        },
+        {
+          "left": "フィリピン",
+          "right": "丸い果物を12種類",
+          "icon": "a basket of round fruits like oranges and grapes",
+          "right_sub": "丸はお金の形"
+        },
+        {
+          "left": "スコットランド",
+          "right": "最初のお客さん",
+          "icon": "a tall dark haired man at a door holding coal",
+          "right_sub": "年明けの最初の客が運を運ぶ"
+        },
+        {
+          "left": "アメリカ",
+          "right": "カウントダウンでボール",
+          "icon": "a big glittering ball dropping at midnight",
+          "right_sub": "ニューヨークの名物"
+        },
+        {
+          "left": "ギリシャ",
+          "right": "玄関にザクロを割る",
+          "icon": "a red pomegranate splitting open on a doorstep",
+          "right_sub": "粒の多さは幸運の多さ"
+        },
+        {
+          "left": "韓国",
+          "right": "旧正月にトックク",
+          "icon": "a bowl of Korean rice cake soup",
+          "right_sub": "食べると1つ年をとる"
+        }
+      ],
+      "arrow": true,
+      "note": "※地域や家庭によって違います。韓国は旧正月（ソルラル）の習慣",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "年越しそばのように、世界にも年越しの縁起かつぎがあります。\n\nスペインでは、0時の鐘に合わせてぶどうを12粒。1粒ずつ1年の幸せを願って食べます。\nイタリアでは、お金に見えるレンズ豆を。\nデンマークでは、0時にいすから飛びおりて新しい年へ「ジャンプ」します。\n\n💬 あなたの家の年越しの決まりごとは？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#年越し",
+    "#世界の文化",
+    "#大みそか",
+    "#海外の行事"
+  ],
+  "review_notes": "【リールだけの投稿・12/4 22時台・pop（10選のリスト）】確認日 2026-11-28。各国の習慣は一般的に紹介されている内容（スペイン las doce uvas・イタリア lenticchie・ブラジル Réveillon の白い服と7つの波・デンマークのいすから飛びおりる・フィリピンの丸い果物12種類・スコットランド Hogmanay の first-footing・ニューヨークのボールドロップ・ギリシャのザクロ・韓国のトックク）。数字の調査はない。「除夜の鐘」も日本の行に入れた。"
+}
