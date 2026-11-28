@@ -252,8 +252,34 @@ def still_seconds(cfg: dict, day) -> float:
     return float(choices[idx])
 
 
-def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS) -> Path:
-    """縦長の1枚画像（1080×1920）をBGM付きのリールにする。"""
+FOLLOW_SECONDS = 1.6  # 最後の何秒にフォローのお誘いを出すか
+
+
+def follow_banner(text: str, theme: dict | None, out: Path) -> Path:
+    """リールの最後に重ねる「フォローすると…」の帯（透明の 1080×1920 の画像）。
+    黒い締めの画面にすると「終わった」と思われて離れられるので、本文の上に帯を重ねるだけにする。"""
+    from PIL import Image, ImageDraw, ImageFont
+
+    theme = theme or {}
+    main = theme.get("main", "#1f2a44")
+    soft = theme.get("accent_soft", "#ffd23f")
+    img = Image.new("RGBA", (1080, 1920), (0, 0, 0, 0))
+    d = ImageDraw.Draw(img)
+    font_path = find_font()
+    x0, y0, x1, y1 = 60, 1150, 1020, 1420
+    d.rounded_rectangle((x0 + 8, y0 + 12, x1 + 8, y1 + 12), 40, fill=(0, 0, 0, 90))
+    d.rounded_rectangle((x0, y0, x1, y1), 40, fill=main, outline=soft, width=8)
+    small = ImageFont.truetype(font_path, 50)
+    d.text((540, y0 + 66), "フォローすると", font=small, fill="#ffffff", anchor="mm")
+    big = _fit_font(d, text, font_path, 78, 44, x1 - x0 - 80)
+    d.text((540, y0 + 172), text, font=big, fill=soft, anchor="mm")
+    img.save(out)
+    return out
+
+
+def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS, follow: str = "",
+                    theme: dict | None = None) -> Path:
+    """縦長の1枚画像（1080×1920）をBGM付きのリールにする。follow があれば、最後に「フォローすると〇〇」の帯を重ねる。"""
     import numpy as np
     from scipy.io import wavfile
 
@@ -270,9 +296,19 @@ def make_still_reel(image: Path, out_path: Path, seconds: float = STILL_SECONDS)
         fade = int(SR * 0.6)
         bgm[-fade:] *= np.linspace(1, 0, fade)[:, None]
         wavfile.write(tmp / "bgm.wav", SR, (np.clip(bgm, -1, 1) * 32767).astype(np.int16))
+        base = "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2"
+        inputs = ["-loop", "1", "-i", str(image), "-i", str(tmp / "bgm.wav")]
+        if follow:
+            follow_banner(follow, theme, tmp / "follow.png")
+            inputs += ["-loop", "1", "-i", str(tmp / "follow.png")]
+            start = max(0.0, seconds - FOLLOW_SECONDS)
+            vf = ["-filter_complex",
+                  f"[0:v]{base}[b];[2:v]format=rgba[f];[b][f]overlay=0:0:enable='gte(t,{start:.2f})',format=yuv420p[v]",
+                  "-map", "[v]", "-map", "1:a"]
+        else:
+            vf = ["-vf", base + ",format=yuv420p"]
         subprocess.run(
-            [ffmpeg_exe(), "-y", "-loglevel", "error", "-loop", "1", "-i", str(image), "-i", str(tmp / "bgm.wav"),
-             "-vf", "scale=1080:1920:force_original_aspect_ratio=decrease,pad=1080:1920:(ow-iw)/2:(oh-ih)/2,format=yuv420p",
+            [ffmpeg_exe(), "-y", "-loglevel", "error", *inputs, *vf,
              "-t", str(seconds), "-r", "30", "-c:v", "libx264", "-preset", "veryfast", "-crf", "20",
              "-c:a", "aac", "-b:a", "128k", "-ar", "44100", "-shortest", "-movflags", "+faststart", str(out_path)],
             check=True,

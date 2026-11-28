@@ -163,9 +163,12 @@ def publish_reel_only(cfg: dict, post: posts.Post, now, dry_run: bool = False) -
                                     follow=cfg.get("matome_follow") or "")
         image = story_share.make_story_image(image, post.folder / "story.jpg", cfg.get("display_handle", "@" + handle),
                                              cfg.get("theme"))
+    elif post.data.get("slides", [{}])[0].get("layout") == "zukan" and (post.folder / "reel.mp4").exists():
+        pass  # 虚構図鑑：画像と一緒に作ってある読み上げ付きのリールをそのまま使う
     else:
         seconds = reel.still_seconds(cfg, post.date or now.date())
-        reel.make_still_reel(image, post.folder / "reel.mp4", seconds=seconds)
+        reel.make_still_reel(image, post.folder / "reel.mp4", seconds=seconds, follow=cfg.get("reel_follow") or "",
+                             theme=cfg.get("theme"))
     commit_and_push(f"画像を準備: {handle}/{post.id}")
     sha = git("rev-parse", "HEAD")
     raw = lambda f: f"https://raw.githubusercontent.com/{repo_slug()}/{sha}/{f.relative_to(ROOT).as_posix()}"  # noqa: E731
@@ -523,8 +526,11 @@ def main(argv=None) -> int:
         # 絵（1枚まとめの絵・漫画）が足りない投稿は、投稿の前に絵を作って作り直すかもしれない
         stale = {id(post) for cfg, post in due + due_only if post.needs_render(cfg) or art.missing_any(post.data, cfg)}
         needs_render = bool(stale) and not args.dry_run
-        needs_voice = not args.dry_run and any(
+        from . import zukan
+
+        needs_voice = not args.dry_run and (any(
             story.is_story(post.data) and id(post) in stale and story.reel_wanted(post.data, cfg) for cfg, post in due)
+            or any(zukan.is_zukan(post.data) and id(post) in stale for cfg, post in due_only))
         handles = dict.fromkeys(cfg["handle"] for cfg, _ in due + due_reels + due_only)
         set_output(
             due=str(bool(due or due_reels or due_only)).lower(),

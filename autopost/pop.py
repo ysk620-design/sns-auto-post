@@ -19,6 +19,9 @@ layout:
          unit / note / follow / bg / ask。同じ選択の続く部分は1本にまとまる
   tier   ティア表。title / kicker / bubble / sub / tiers（3〜6段。各 {rank, label, items: [{name, icon, note}]}） /
          note / follow / bg
+  vs     比べる型（〇〇な人 vs 〇〇な人）。title / kicker / bubble / sub / left・right（各 {label, icon}。left が
+         ダメな側・right が良い側。icon は同じキャラクターの説明＋表情やポーズ） / rows（3〜6行。各 {ng, ok}） /
+         verdict（一番下の結論ひとこと） / note / follow / bg / ask
 
 共通: title の「10選」「TOP10」の数字は自動で大きくなる。<span class="hl">…</span> は強調色の文字になる。
 icon / bg は英語の短い説明（例 "an empty wallet with a moth flying out"）。同じ説明の絵は使い回す。
@@ -267,3 +270,23 @@ def tree(b, i: int, s: dict) -> str:
     body = (f'<div class="pptree fitbox"><div class="tgrid">{heads}</div>{legend}'
             f'<div class="tbox"><svg viewBox="0 0 {W} 100" preserveAspectRatio="none">{svg}</svg>{divs}</div>{note}</div>')
     return _frame(b, s, "tree", _head(b, s) + body + _foot(b, s, s.get("ask") or "うちはどのルート？"))
+
+
+def vs(b, i: int, s: dict) -> str:
+    esc = b.esc
+    sides = ""
+    for key, cls in (("left", "ng"), ("right", "ok")):
+        side = s.get(key) or {}
+        icon = art.icon_uri(side.get("icon"), b.cfg)
+        pic = f'<div class="vspic">{_img(icon)}</div>' if icon else '<div class="vspic none"></div>'
+        sides += f'<div class="vsside {cls}">{pic}<b>{esc(side.get("label", ""))}</b></div>'
+        if key == "left":
+            sides += '<div class="vsmid">VS</div>'
+    rows = ""
+    for r in s["rows"]:
+        rows += (f'<div class="vsr"><div class="ng"><i>✕</i><span>{esc(r["ng"])}</span></div>'
+                 f'<div class="ok"><i>◯</i><span>{esc(r["ok"])}</span></div></div>')
+    verdict = f'<div class="vsverdict">{esc(s["verdict"])}</div>' if s.get("verdict") else ""
+    note = f'<p class="ppnote">{esc(s["note"])}</p>' if s.get("note") else ""
+    body = f'<div class="ppvs fitbox"><div class="vstop">{sides}</div><div class="vsrows">{rows}</div>{verdict}{note}</div>'
+    return _frame(b, s, "vs", _head(b, s) + body + _foot(b, s, s.get("ask") or "あなたはどっち？"))

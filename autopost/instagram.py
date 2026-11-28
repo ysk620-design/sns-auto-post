@@ -27,6 +27,10 @@ class Client:
         self.version = version or API_VERSION
         self.base = f"https://{host}/{self.version}"
         self.sleep = sleep
+        if self.ig_user_id in ("", "me") and self.token:
+            # 新しいアカウントで ig_user_id がまだ分からないときは、トークンから調べる
+            me = self._call("GET", "me", {"fields": "user_id,id"})
+            self.ig_user_id = str(me.get("user_id") or me.get("id") or "me")
 
     def _call(self, method: str, path: str, params: dict | None = None, retries: int = 3) -> dict:
         query = urllib.parse.urlencode({**(params or {}), "access_token": self.token})

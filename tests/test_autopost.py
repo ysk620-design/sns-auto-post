@@ -152,6 +152,9 @@ class DelayedReelTest(unittest.TestCase):
         self.root = Path(tempfile.mkdtemp())
         shutil.copytree(ROOT / "accounts", self.root / "accounts")
         self.accounts = config.load_accounts(self.root)
+        # 2026-11-28 からカルーセルの翌日リールは止めている（reel.enabled false）。仕組みのテストでは有効にして確かめる
+        for cfg in self.accounts.values():
+            cfg["reel"]["enabled"] = True
 
     def tearDown(self):
         shutil.rmtree(self.root)

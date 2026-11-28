@@ -1,0 +1,41 @@
+{
+  "handle": "kyokou_zukan",
+  "name": "虚構図鑑",
+  "ig_user_id": "17841469960174360",
+  "token_secret": "IG_TOKEN_KYOKOU_ZUKAN",
+  "enabled": false,
+  "post_hour_jst": 21,
+  "post_window_hours": 3,
+  "series": "虚構図鑑",
+  "reel": {
+    "enabled": false,
+    "delay_days": 1,
+    "post_hour_jst": 12,
+    "post_window_hours": 3,
+    "share_to_feed": false,
+    "credit": "ナレーション VOICEVOX:冥鳴ひまり",
+    "voice": {
+      "style_id": 14,
+      "speed": 1.0,
+      "intonation": 1.1,
+      "pause": 1.1,
+      "pitch": 0.0
+    }
+  },
+  "theme": {
+    "main": "#2b2118",
+    "base": "#ead7b0",
+    "accent": "#c8402f",
+    "accent_soft": "#ffe14a",
+    "muted": "#7a5a36",
+    "ink": "#3a2a1a",
+    "hot": "#c8402f"
+  },
+  "matome_follow": "フォローで毎日1種、新種がとどく",
+  "art": {
+    "style": "clay"
+  },
+  "reel_only_seconds": [
+    7
+  ]
+}
