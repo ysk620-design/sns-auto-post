@@ -1,17 +1,17 @@
 {
-  "hash": "354610d5980488d5",
+  "hash": "2c69c45fd3f7fdf3",
   "slides": 1,
   "zoom": [
     1
   ],
-  "rendered_at": "2026-11-28T15:58:40+09:00",
-  "reel_seconds": 9.08,
+  "rendered_at": "2026-11-28T16:41:19+09:00",
+  "reel_seconds": 11.5,
   "zukan": {
     "art": [
-      "plate-a-tiny-bean-shaped-creature-glowing-faint-red-a-018e73.jpg",
-      "scene-a-dim-bedroom-at-night-a-hand-holding-a-smartpho-9379fe.jpg"
+      "plate-a-tiny-glowing-red-battery-shaped-creature-with-9cc12a.jpg",
+      "scene-a-dim-desk-at-night-a-tiny-glowing-red-battery-s-17151a.jpg"
     ],
-    "opener": "",
+    "opener": "58aa02138c39",
     "code": "a0f1a4b00e6e"
   }
 }
