@@ -26,7 +26,8 @@
 - `icon` は**毎回同じキャラクターの説明から始めて、表情とポーズだけ変える**。キャラクターの説明（固定）：
   `a young Japanese office worker with short black hair and a navy suit`
   例：left → `…, slumped and sighing at a desk, gloomy`、right → `…, smiling and raising a hand confidently`
-- `rows` は3〜6行。各行は `ng`（ダメな側の口ぐせ・行動）と `ok`（良い側）を**同じ場面で言いかえる**形にする（18文字まで）
+- `rows` は3〜6行。各行は `ng`（ダメな側の口ぐせ・行動）と `ok`（良い側）を**同じ場面で言いかえる**形にする（13文字まで。1行に収まる長さ）
+- `title` は2行・20文字まで（3行になると下の結論が入らなくなる）
 - `verdict` に一番下の結論ひとこと（22文字まで。例「差は「言いかえ」から始まる」）
 - `ask` にコメントの問いかけ（例「あなたはどっち？」）
 

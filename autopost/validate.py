@@ -119,10 +119,10 @@ def _check_vs(i: int, s: dict, errors: list[str]) -> None:
         if not (isinstance(r, dict) and set(r) == {"ng", "ok"}):
             errors.append(f"{where} の{k}行目: {{\"ng\": …, \"ok\": …}} の形で書いてください")
             continue
-        _short(r.get("ng"), 18, f"{where} の{k}行目の ng", errors, True)
-        _short(r.get("ok"), 18, f"{where} の{k}行目の ok", errors, True)
+        _short(r.get("ng"), 13, f"{where} の{k}行目の ng", errors, True)
+        _short(r.get("ok"), 13, f"{where} の{k}行目の ok", errors, True)
     _short(s.get("verdict"), 22, f"{where} の verdict", errors)
-    _short(s.get("title"), 30, f"{where} の title", errors, True)
+    _short(s.get("title"), 20, f"{where} の title", errors, True)
 
 
 def _check_zukan(i: int, s: dict, errors: list[str]) -> None:

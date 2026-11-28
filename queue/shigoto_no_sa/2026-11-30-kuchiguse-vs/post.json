@@ -7,8 +7,8 @@
   "slides": [
     {
       "layout": "vs",
-      "kicker": "20代のうちに直したい",
-      "title": "上司が裏で<br>「使えない」と思う<span class=\"hl\">口ぐせ</span>",
+      "kicker": "上司は口に出さない",
+      "title": "「使えない」と<br>思われる<span class=\"hl\">口ぐせ</span>",
       "left": {
         "label": "使えない人",
         "icon": "a young Japanese office worker with short black hair and a navy suit, slumped and sighing at a desk, gloomy"
@@ -24,7 +24,7 @@
         },
         {
           "ng": "聞いてないです",
-          "ok": "確認不足でした、すぐやります"
+          "ok": "すぐ確認してやります"
         },
         {
           "ng": "ググれば出ますか？",
