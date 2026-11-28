@@ -23,6 +23,7 @@
 
 ### vs（比べる型）＝主力。週の半分以上
 - `left` がダメな側、`right` が良い側。`label` は「伸びない人／伸びる人」「消耗する人／評価される人」「辞める人／残る人」など、9文字まで
+- アイコンは同じキャラクターの平面イラスト（オレンジの背景）
 - `icon` は**毎回同じキャラクターの説明から始めて、表情とポーズだけ変える**。キャラクターの説明（固定）：
   `a young Japanese office worker with short black hair and a navy suit`
   例：left → `…, slumped and sighing at a desk, gloomy`、right → `…, smiling and raising a hand confidently`
