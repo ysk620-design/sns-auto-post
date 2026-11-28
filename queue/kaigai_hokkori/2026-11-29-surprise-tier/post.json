@@ -1,0 +1,103 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "外国人が驚いた日本のモノ Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "【異論求む】独断のTier表",
+      "title": "外国人が驚いた<br>日本の<span class=\"hl\">モノ</span>Tier表",
+      "bubble": "S は全部\n日本の日常！",
+      "bg": "a softly blurred cozy Japanese shopping street at dusk with warm lanterns",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "もう国に帰れない",
+          "items": [
+            {
+              "name": "温水トイレ",
+              "icon": "a modern white toilet seat with a small control panel",
+              "note": "お尻があたたかい"
+            },
+            {
+              "name": "自販機",
+              "icon": "a glowing Japanese drink vending machine at night",
+              "note": "外にずらり"
+            },
+            {
+              "name": "たまごサンド",
+              "icon": "a soft fluffy egg salad sandwich cut in half",
+              "note": "コンビニの味"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "思わず写真",
+          "items": [
+            {
+              "name": "いちご",
+              "icon": "a box of large shiny red strawberries",
+              "note": "大きくて甘い"
+            },
+            {
+              "name": "和牛",
+              "icon": "a sizzling marbled beef steak on a griddle",
+              "note": "口でとける"
+            },
+            {
+              "name": "給食",
+              "icon": "a Japanese school lunch tray with rice, soup, fish and milk",
+              "note": "子どもが配る"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "おみやげにしたい",
+          "items": [
+            {
+              "name": "消せるペン",
+              "icon": "a colorful erasable ballpoint pen with a rubber tip",
+              "note": "こすると消える"
+            },
+            {
+              "name": "日本の腕時計",
+              "icon": "an elegant silver wristwatch with a white dial",
+              "note": "職人の技"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "しくみに感動",
+          "items": [
+            {
+              "name": "無人の野菜売り場",
+              "icon": "a small wooden roadside vegetable stand with a coin box",
+              "note": "お金は箱へ"
+            },
+            {
+              "name": "落とし物",
+              "icon": "a brown leather wallet on a police box counter",
+              "note": "ちゃんと戻る"
+            }
+          ]
+        }
+      ],
+      "note": "※これまで紹介した海外の反応をもとにした独断のランクです",
+      "ask": "あなたのSはどれ？"
+    }
+  ],
+  "caption": "海外の人が日本で驚いたモノを、これまで紹介した話から独断でTier表にしました。\n\nSは「もう国に帰れない」レベルの3つ。温水トイレ、外にずらりと並ぶ自販機、コンビニのたまごサンド。\nどれも日本では当たり前すぎて、気づきにくいものばかりです。\n\n💬 あなたが外国人にすすめたいSランクは？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#ティア表",
+    "#日本の良いところ",
+    "#訪日外国人",
+    "#海外のほっこり話"
+  ],
+  "review_notes": "【リールだけの投稿・11/29 7時台・Tier表（独断）】18時が「日本では当たり前」タイルの実験なので、7時は別の型・別のテーマにした。数字は使わず、これまで posted/queue で紹介した話（温水トイレ・自販機・たまごサンド・いちご・和牛・給食・消せるペン・腕時計・無人の野菜売り場・財布の落とし物）から選んだ独断のランク（note に明記）。腕時計は会社名を出さず「日本の腕時計」に。"
+}

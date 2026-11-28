@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "日本旅行で1人いくら使う？国別ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "観光庁の調査｜2025年",
+      "title": "日本で<span class=\"hl\">一番お金を使う</span><br>国TOP10",
+      "bubble": "アメリカは\nなんと7位",
+      "sub": "平均は約23万円。韓国は約11万円",
+      "bg": "a softly blurred Japanese shopping street with souvenir shops and warm lights",
+      "items": [
+        {
+          "name": "ドイツ",
+          "value": "約39.2万円",
+          "num": 39.2,
+          "icon": "a small German flag on a short stick",
+          "note": "長く泊まる人が多い"
+        },
+        {
+          "name": "英国",
+          "value": "約39.1万円",
+          "num": 39.1,
+          "icon": "a small United Kingdom flag on a short stick",
+          "note": "差は約1千円"
+        },
+        {
+          "name": "豪州",
+          "value": "約38.7万円",
+          "num": 38.7,
+          "icon": "a small Australian flag on a short stick",
+          "note": "スキーでも人気"
+        },
+        {
+          "name": "スペイン",
+          "value": "約36.3万円",
+          "num": 36.3,
+          "icon": "a small Spanish flag on a short stick"
+        },
+        {
+          "name": "フランス",
+          "value": "約36.0万円",
+          "num": 36.0,
+          "icon": "a small French flag on a short stick"
+        },
+        {
+          "name": "イタリア",
+          "value": "約35.7万円",
+          "num": 35.7,
+          "icon": "a small Italian flag on a short stick"
+        },
+        {
+          "name": "米国",
+          "value": "約34.0万円",
+          "num": 34.0,
+          "icon": "a small United States flag on a short stick",
+          "note": "意外と7位"
+        },
+        {
+          "name": "カナダ",
+          "value": "約32.2万円",
+          "num": 32.2,
+          "icon": "a small Canadian flag on a short stick"
+        },
+        {
+          "name": "シンガポール",
+          "value": "約32.0万円",
+          "num": 32.0,
+          "icon": "a small Singapore flag on a short stick",
+          "note": "アジアで1位"
+        },
+        {
+          "name": "ロシア",
+          "value": "約30.7万円",
+          "num": 30.7,
+          "icon": "a small Russian flag on a short stick"
+        }
+      ],
+      "note": "※観光庁「インバウンド消費動向調査」2025年暦年の一般客1人当たり旅行支出。「その他」の国は除く",
+      "ask": "1位、予想できた？"
+    }
+  ],
+  "caption": "外国人が日本旅行で1人いくら使うのか、国別のランキング。1位はアメリカ…ではなく、ドイツで約39.2万円でした。\n\n2位の英国との差はわずか約1千円。上位はヨーロッパとオーストラリアがずらり。\n遠くから来る国ほど長く泊まるので、使うお金も多くなります。\n近い韓国は約11万円で、全体の平均は約23万円でした。\n\n💬 あなたが海外旅行で使った最高額は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#訪日外国人",
+    "#インバウンド",
+    "#日本旅行",
+    "#ランキング"
+  ],
+  "review_notes": "【リールだけの投稿・11/30 22時台・10位までの横棒】確認日 2026-11-28。出典：観光庁「インバウンド消費動向調査」2025年暦年の確報（一般客1人当たり旅行支出・円） https://www.mlit.go.jp/kankocho/content/002003329.pdf 。ドイツ392,251・英国391,320・オーストラリア386,512・（その他382,136は除外）・スペイン362,767・フランス359,869・イタリア357,002・米国339,708・カナダ322,489・シンガポール319,901・ロシア307,105。韓国105,058・全体平均228,782。「長く泊まる人が多い」「遠くから来る国ほど長く泊まる」は一般的な解釈（滞在日数の数字は未確認）。「スキーでも人気」も一般的な言い方。"
+}

@@ -1,0 +1,103 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "外国人が驚く日本の電車 Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "これまでの「海外の反応」から",
+      "title": "外国人が驚く<br>日本の<span class=\"hl\">電車</span>Tier表",
+      "bubble": "遅れたら\n証明書が出る！",
+      "bg": "a softly blurred Japanese train station platform at dusk with a train arriving",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "信じられない",
+          "items": [
+            {
+              "name": "遅延証明書",
+              "icon": "a small paper slip being handed over at a ticket gate",
+              "note": "遅れたら出る"
+            },
+            {
+              "name": "清掃7分",
+              "icon": "cleaning staff in uniforms standing in a row by a bullet train",
+              "note": "新幹線の早わざ"
+            },
+            {
+              "name": "指差し確認",
+              "icon": "a station staff in white gloves pointing down the tracks",
+              "note": "NYもまねした"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "感動した",
+          "items": [
+            {
+              "name": "早発のおわび",
+              "icon": "a clock on a station platform",
+              "note": "20秒でも謝る"
+            },
+            {
+              "name": "整列乗車",
+              "icon": "people lining up neatly at a train platform",
+              "note": "列にきちんと"
+            },
+            {
+              "name": "発車メロディ",
+              "icon": "musical notes floating over a train platform",
+              "note": "駅ごとに違う"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "便利！",
+          "items": [
+            {
+              "name": "回る座席",
+              "icon": "a pair of blue train seats being rotated",
+              "note": "向きを変えられる"
+            },
+            {
+              "name": "駅弁",
+              "icon": "a colorful bento box on a train table",
+              "note": "車内で食べる"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "最初はびっくり",
+          "items": [
+            {
+              "name": "満員電車",
+              "icon": "a very crowded commuter train with people squeezed together",
+              "note": "押す駅員さん"
+            },
+            {
+              "name": "女性専用車",
+              "icon": "a pink sign shape on a train platform floor with no text",
+              "note": "朝の時間帯"
+            }
+          ]
+        }
+      ],
+      "note": "※海外の反応をもとにした独断のランクです",
+      "ask": "あなたのSはどれ？"
+    }
+  ],
+  "caption": "海外の人が驚く日本の電車を、独断でTier表にしました。\n\nSは「信じられない」レベル。電車が遅れると、駅で遅延証明書がもらえる。新幹線の清掃は約7分。駅員さんの指差し確認は、ニューヨークの地下鉄もまねしました。\n\n💬 あなたが毎日乗る電車の「当たり前」は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の電車",
+    "#ティア表",
+    "#遅延証明書",
+    "#海外のほっこり話"
+  ],
+  "review_notes": "【リールだけの投稿・12/3 22時台・Tier表（独断）】plans の残りのカルーセル候補「遅延証明書」をここに入れた。ほかは過去の漫画の回（新幹線の清掃・電車の早発のおわび・11/30の指差し確認）から選んだ独断のランク（note に明記）。「清掃7分」「20秒でも謝る」は過去の回と同じ話（2017年のつくばエクスプレスの約20秒早発のおわび）。「押す駅員さん」は朝のラッシュの「押し屋」で、今は少ない（気になるなら「ぎゅうぎゅう」に）。女性専用車の絵は文字のない形にしている。"
+}

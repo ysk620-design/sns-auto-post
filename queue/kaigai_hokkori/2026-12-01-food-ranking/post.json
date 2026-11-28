@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "外国人が日本でいちばん満足した料理ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "観光庁の調査｜2025年",
+      "title": "外国人が日本で<br>いちばん<span class=\"hl\">満足した料理</span>",
+      "bubble": "寿司は3位！\n1位は？",
+      "sub": "ラーメンが寿司をおさえて2位",
+      "bg": "a softly blurred cozy Japanese izakaya counter with warm lights",
+      "items": [
+        {
+          "name": "肉料理",
+          "value": "32.5%",
+          "num": 32.5,
+          "icon": "a sizzling marbled beef steak on a griddle",
+          "note": "焼肉・すき焼きなど"
+        },
+        {
+          "name": "ラーメン",
+          "value": "19.7%",
+          "num": 19.7,
+          "icon": "a bowl of creamy pork bone ramen",
+          "note": "5人に1人"
+        },
+        {
+          "name": "寿司",
+          "value": "13.7%",
+          "num": 13.7,
+          "icon": "a wooden plate of assorted nigiri sushi"
+        },
+        {
+          "name": "魚料理",
+          "value": "9.7%",
+          "num": 9.7,
+          "icon": "a grilled salted fish on a plate",
+          "note": "刺身・焼き魚"
+        },
+        {
+          "name": "和食いろいろ",
+          "value": "5.5%",
+          "num": 5.5,
+          "icon": "a Japanese set meal tray with small dishes",
+          "note": "天ぷらなど"
+        },
+        {
+          "name": "そば・うどん",
+          "value": "4.4%",
+          "num": 4.4,
+          "icon": "a bowl of hot udon noodles with tempura"
+        },
+        {
+          "name": "粉もの",
+          "value": "3.3%",
+          "num": 3.3,
+          "icon": "a sizzling okonomiyaki pancake with sauce",
+          "note": "お好み焼きなど"
+        },
+        {
+          "name": "お菓子",
+          "value": "2.3%",
+          "num": 2.3,
+          "icon": "a plate of colorful Japanese sweets"
+        },
+        {
+          "name": "お酒",
+          "value": "0.8%",
+          "num": 0.8,
+          "icon": "a small ceramic sake bottle and cup"
+        },
+        {
+          "name": "果物",
+          "value": "0.4%",
+          "num": 0.4,
+          "icon": "a box of large shiny red strawberries"
+        }
+      ],
+      "note": "※観光庁「インバウンド消費動向調査」2025年。最も満足した飲食（全体）。「その他の料理」などは除く",
+      "ask": "あなたの1位は？"
+    }
+  ],
+  "caption": "外国人旅行者が日本でいちばん満足した料理。寿司は…3位でした。\n\n1位は焼肉やすき焼きなどの肉料理で32.5%。\n2位はラーメンで19.7%、5人に1人が「いちばん満足した」と答えています。\n\n💬 あなたが外国人に食べてほしい日本の料理は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#訪日外国人",
+    "#日本食",
+    "#ラーメン",
+    "#ランキング"
+  ],
+  "review_notes": "【リールだけの投稿・12/1 22時台・10位までの横棒】確認日 2026-11-28。出典：観光庁「インバウンド消費動向調査」2025年暦年の確報、最も満足した飲食（全国籍・地域） https://www.mlit.go.jp/kankocho/content/002003329.pdf 。肉料理32.5・ラーメン19.7・寿司13.7・魚料理9.7・その他日本料理5.5・（その他料理5.4は除外）・そば・うどん4.4・小麦粉料理3.3・菓子類2.3・（その他食料品・飲料1.7は除外）・酒0.8・（外国の料理0.6は除外）・果物0.4。除いた区分があるので順位は「この中での順」（note に明記）。「その他日本料理」を「和食いろいろ（天ぷらなど）」、「小麦粉料理」を「粉もの（お好み焼きなど）」と言いかえた。肉料理の「焼肉・すき焼きなど」も例として書いた（調査の内訳ではない）。"
+}

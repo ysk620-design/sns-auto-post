@@ -1,0 +1,37 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "テトメムシ（大掃除中に昔の漫画やアルバムを出して手を止めさせる）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "006",
+      "name": "テトメムシ",
+      "latin": "Manusistens nostalgicus",
+      "group": "懐古甲虫のなかま",
+      "hook_top": "大掃除中に<br>昔の漫画を読み始めた人",
+      "hook_bottom": "寄生されてます。",
+      "feature": "押し入れに潜み<br>古い<b>アルバム</b>をそっと出す",
+      "ochi": "気づくと夕方。<br>部屋は朝より散らかる。",
+      "ask": "読み始めちゃった人は📚",
+      "voice": [
+        "大掃除中に、昔の漫画を読み始めた人、寄生されてます。",
+        "テトメムシ。押し入れに潜み、古いアルバムを、そっと出す。",
+        "気づくと夕方。部屋は、朝より散らかる。"
+      ],
+      "plate": "a small round beetle creature with a shell patterned like an old photo album cover, curious big eyes, six tiny legs holding a faded photograph",
+      "scene": "a messy Japanese room during year-end cleaning, open boxes and old comics on the floor, a small round beetle with big eyes in the center on a photo album"
+    }
+  ],
+  "caption": "大掃除が毎年終わらない家族に送ってあげて。\n\n虚構図鑑 No.006「テトメムシ」\n押し入れの奥に潜み、大掃除の途中で古いアルバムや漫画をそっと出してくる。気づくと夕方で、部屋は朝より散らかっている。\n\n📚 読み始めちゃった人はコメントに「📚」\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#大掃除",
+    "#虚構図鑑"
+  ],
+  "review_notes": "7時の回。大掃除あるある。ここに実体験を一言（大掃除で手が止まったもの）を入れるとキャプションが強くなる"
+}

@@ -1,0 +1,143 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-30",
+  "type": "story",
+  "title": "駅員さんの指差し確認とニューヨーク",
+  "icon": "train",
+  "burst": "POINT!",
+  "top": "NYの地下鉄が…",
+  "big": "日本の駅員を<br>まねしてる！",
+  "big_size": 100,
+  "chat_title": "日本の<em>指差し確認</em>を<br>海外がまねしたら…",
+  "art": {
+    "cast": "Jake: a friendly American man in his 30s from New York with short curly black hair, light brown skin, a red hoodie, jeans and a gray backpack. The Japanese station staff: a young man in a navy uniform, white gloves and a cap. The New York subway conductor: a middle-aged woman with a dark blue uniform leaning out of a train window.",
+    "cover": "On a Japanese train station platform, Jake stares wide-eyed in amazement while the station staff in white gloves points sharply down the empty track with a serious face",
+    "end": "Jake and the Japanese station staff stand side by side on a platform, both pointing forward together with big smiles"
+  },
+  "scenes": [
+    {
+      "title": "東京の駅で",
+      "mood": "think",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#1f2a5a"
+      },
+      "prop": "train",
+      "say": "だれもいないのに…？",
+      "nar": "白い手ぶくろの駅員さんが、<br>何もない線路をビシッと指さした。",
+      "art": "A Japanese train station platform: the station staff on the left points down the track and calls out; Jake on the right tilts his head with a puzzled look"
+    },
+    {
+      "title": "指と声で確かめる",
+      "mood": "wow",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#1f2a5a"
+      },
+      "say": "ミスが減るの！？",
+      "nar": "指さして声に出すと、見落としが減る。<br>日本の鉄道で100年近く続く安全の知恵。",
+      "art": "Jake on the right reads his smartphone on the platform with wide surprised eyes, while in the background the station staff points at a signal light"
+    },
+    {
+      "title": "ニューヨークに帰ると",
+      "mood": "love",
+      "prop": "train",
+      "say": "NYでもやってる！",
+      "nar": "地下鉄の車掌さんが、ホームの<br>しま模様の板を毎駅ゆびさしている。",
+      "art": "A New York subway platform: the conductor leans out of the train window and points at a black and white striped board; Jake on the right points back excitedly"
+    },
+    {
+      "title": "指さす先に…",
+      "mood": "happy",
+      "say": "車掌さん、笑ってる！",
+      "nar": "指さす先で「がんばってるね」の紙を<br>かかげる動画も、ニューヨークで話題に。",
+      "art": "Jake on the right laughs while watching a video on his phone on a subway platform; a young man holds up a big blank paper sign toward a smiling conductor in the train window"
+    }
+  ],
+  "comments": [
+    [
+      "🇺🇸",
+      "ニューヨーク地下鉄の車掌（Reddit）",
+      "毎駅、ドアを開ける前にボードを指さすのが決まり"
+    ],
+    [
+      "🇺🇸",
+      "同じ車掌",
+      "何かあれば、まず「ボードを指さした？」と聞かれる"
+    ],
+    [
+      "🇨🇦",
+      "トロント地下鉄の指導員（現地紙）",
+      "はじめは、ぼくらにとってとても新しいことだった"
+    ],
+    [
+      "🌏",
+      "デザインのサイトの読者",
+      "変に見えるけど、たぶん効くんだと気づく"
+    ],
+    [
+      "🌏",
+      "車掌に看板を見せた動画の作り手",
+      "ちょっとおかしな決まりだから、車掌さんを笑顔にしたくて"
+    ]
+  ],
+  "stat": {
+    "l1": "指さして声に出すと、ミスは",
+    "n1": "約85%減",
+    "l2": "NYの地下鉄が取り入れたのは",
+    "n2": "1996年",
+    "msg": "日本生まれの安全の知恵が、<br>いまはトロントや台湾の鉄道でも。",
+    "src": "出典：鉄道総合技術研究所（1994年）、Mental Floss ほか"
+  },
+  "cta": "あなたが<br>思わず指さし確認<br>するものは？",
+  "reel_script": {
+    "comments": [
+      [
+        "🇺🇸",
+        "ニューヨーク地下鉄の車掌",
+        "毎駅、ボードを指さすのが決まり"
+      ],
+      [
+        "🇨🇦",
+        "トロント地下鉄の指導員",
+        "はじめは、とても新しいことだった"
+      ],
+      [
+        "🌏",
+        "デザインのサイトの読者",
+        "変に見えるけど、たぶん効く"
+      ]
+    ],
+    "nar": [
+      "ニューヨークの地下鉄が、日本の駅員さんをまねしてるって知ってた？",
+      "東京の駅で、駅員さんが何もない線路をビシッと指さした。",
+      "指さして声に出すと、見落としが減る。日本の鉄道の安全の知恵。",
+      "ニューヨークに帰ると、地下鉄の車掌さんも、毎駅ゆびさしていた。",
+      "指さす先で、はげましの紙をかかげる動画も話題になったんです。",
+      "ニューヨークの車掌さんは、「毎駅、ボードを指さすのが決まり」",
+      "トロントの指導員は、「はじめは、とても新しいことだった」",
+      "「変に見えるけど、たぶん効くんだと気づく」という声も。",
+      "実は、指さして声に出すと、ミスは約85パーセントも減るんです。",
+      "あなたが思わず指さし確認するものは？　コメントで教えてね。"
+    ]
+  },
+  "caption": "ニューヨークの地下鉄の車掌さんが、毎駅ホームの板を指さしているのを知っていますか？\n実はこれ、日本の駅員さんの「指差し確認」がもとなんです🚃\n\nニューヨークでは1996年から車掌さんの決まりに。トロントの地下鉄でも取り入れられました。\n日本の研究では、指さして声に出すとミスが約85%減ったそうです。\n\n💬 あなたが思わず指さし確認するものは？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#指差し確認",
+    "#駅員さん",
+    "#ニューヨーク地下鉄",
+    "#海外のほっこり話"
+  ],
+  "sources": [
+    "Wikipedia Pointing and calling（RTRI 1994年の研究で約85%減・NYは1996年・トロントやGO Transit・台湾） https://en.wikipedia.org/wiki/Pointing_and_calling",
+    "Mental Floss（NYの車掌はゼブラボードを指さす。1996年から。Reddit AMAの車掌の発言） https://www.mentalfloss.com/article/79767/what-are-subway-conductors-always-pointing",
+    "The Globe and Mail（トロント地下鉄の指導員 Neil Preece 氏の発言） https://theglobeandmail.com/canada/toronto/article-automation-will-mean-the-end-of-an-unusual-but-effective-safety/",
+    "99% Invisible（読者コメント Looks weird, until you realize that it probably works） https://99percentinvisible.org/article/motions-japanese-rail-workers-point-call-promote-safety/",
+    "Metro Magazine 2013年（NYの車掌に看板を見せる動画が4日で約100万回再生・MTAの職員からお礼。作り手の発言はWikipediaより） https://www.metro-magazine.com/news/humorous-signs-give-boost-to-nyc-subway-conductors",
+    "nippon.com（日本の指差喚呼の歴史） https://www.nippon.com/en/japan-topics/g02575/pointing-and-calling-japan%E2%80%99s-railway-safety-technique.html"
+  ],
+  "review_notes": "【出典・確認日：2026-11-28】実話をもとにした再現です。NYの地下鉄（MTA）が1996年から車掌にホームのしま模様の板（ゼブラボード）を指さすことを義務にしたこと、もとが日本の指差喚呼であること（Mental Floss・Wikipedia）、2013年に車掌へ面白い看板を見せる動画が話題になったこと（Metro Magazine）は記事どおり。主人公ジェイクは架空の旅行者で、「東京で見て、NYで気づく」流れは作った場面です（特定の人の実話には見せていません）。動画の看板の文字はわからないので、絵では白紙、説明は「がんばってるね」の紙としました（看板の文言が気になるなら「面白い紙」に）。海外の声は記事・コメントの文章を短く訳したもの。トロントの幹部は事故が約半分に減ったと話していますが、画面では使っていません。【数字】「約85%減」は鉄道総合技術研究所の1994年の実験（簡単な作業での誤り）。「100年近く」は蒸気機関車の時代（1900年代前半）に始まったという説明から。【読み方】「指差し確認（ゆびさしかくにん）」「85パーセント」を確認してください。系統：日本のしくみ（マナー）。ここに実体験を一言（家を出る前の「鍵よし！」など）を入れると親しみやすくなります。"
+}

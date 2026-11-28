@@ -1,0 +1,106 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：そのまま言うと危険な和製英語Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜カタカナ英語の危険度",
+      "bubble": "トランプって\n言ったら…",
+      "title": "そのまま言うと<br><span class=\"hl\">ヤバい</span>和製英語Tier表",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "別の意味に",
+          "items": [
+            {
+              "name": "トランプ",
+              "note": "cards",
+              "icon": "a fan of playing cards"
+            },
+            {
+              "name": "ストーブ",
+              "note": "heater",
+              "icon": "a cozy electric space heater"
+            },
+            {
+              "name": "フリマ",
+              "note": "flea market",
+              "icon": "a flea market stall with old toys and clothes"
+            },
+            {
+              "name": "マジック",
+              "note": "marker",
+              "icon": "a thick black marker pen"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "まず通じない",
+          "items": [
+            {
+              "name": "ナイター",
+              "note": "night game",
+              "icon": "a baseball stadium lit up at night"
+            },
+            {
+              "name": "フロントガラス",
+              "note": "windshield",
+              "icon": "a car windshield with a wiper"
+            },
+            {
+              "name": "パンク",
+              "note": "flat tire",
+              "icon": "a flat car tire"
+            },
+            {
+              "name": "ハンドル",
+              "note": "the wheel",
+              "icon": "a car steering wheel"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "惜しい",
+          "items": [
+            {
+              "name": "ホームページ",
+              "note": "website",
+              "icon": "a laptop showing a simple colorful website layout"
+            },
+            {
+              "name": "ガムテープ",
+              "note": "duct tape",
+              "icon": "a roll of silver duct tape"
+            },
+            {
+              "name": "オーダーメイド",
+              "note": "custom-made",
+              "icon": "a tailor measuring tape around a jacket"
+            },
+            {
+              "name": "クラクション",
+              "note": "the horn",
+              "icon": "a car horn button with sound waves"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。trump は「切り札」、stove はコンロ、handle は取っ手、free market は自由市場の意味",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "「トランプしよう」をそのまま英語で言うと、別の意味に聞こえるかも。\n日本語では当たり前のカタカナ英語、海外では通じないものを危険度順に並べました。\n\n✕ trump → ○ cards\n✕ stove → ○ heater\n✕ free market → ○ flea market\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#和製英語",
+    "#カタカナ英語",
+    "#英語フレーズ",
+    "#英語ティア表"
+  ],
+  "review_notes": "【当たり狙い】カタカナ英語の「危険度」Tier表（独断）。送りたくなる＝「トランプしよう」「ストーブつけて」が通じない驚き。trump は「切り札」の意味（人名にも聞こえる）、stove はアメリカではコンロ（薪ストーブなど wood stove はある）、handle は取っ手、free market は自由市場。flea market はノミの市が語源。フリーマーケットは9字に収まらないので「フリマ」にしました。"
+}

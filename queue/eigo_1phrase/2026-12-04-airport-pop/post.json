@@ -1,0 +1,95 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：空港・機内の直訳しがちな英語",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "保存版｜空港・機内",
+      "bubble": "年末年始の\n海外旅行に",
+      "title": "それ、<span class=\"hl\">通じません</span><br>空港の言いかえ9選",
+      "head": [
+        "日本語",
+        "自然な英語"
+      ],
+      "items": [
+        {
+          "left": "窓側の席",
+          "ng": "a window side seat",
+          "right": "a window seat",
+          "right_sub": "ア ウィンドウ シート",
+          "icon": "an airplane window seat with clouds outside"
+        },
+        {
+          "left": "通路側の席",
+          "ng": "a passage seat",
+          "right": "an aisle seat",
+          "right_sub": "アン アイル シート",
+          "icon": "an airplane aisle between rows of seats"
+        },
+        {
+          "left": "機内持ち込み",
+          "ng": "a bring-in bag",
+          "right": "a carry-on",
+          "right_sub": "ア キャリーオン",
+          "icon": "a small carry-on suitcase"
+        },
+        {
+          "left": "乗り継ぎです",
+          "ng": "I change plane.",
+          "right": "I have a connecting flight.",
+          "right_sub": "アイ ハヴ ア コネクティング フライト",
+          "icon": "two airplanes with a curved arrow between them"
+        },
+        {
+          "left": "席を倒しても？",
+          "ng": "Can I down my seat?",
+          "right": "Mind if I recline?",
+          "right_sub": "マインド イフ アイ リクライン",
+          "icon": "a reclining airplane seat"
+        },
+        {
+          "left": "搭乗口",
+          "ng": "a boarding mouth",
+          "right": "the gate",
+          "right_sub": "ザ ゲイト",
+          "icon": "an airport boarding gate"
+        },
+        {
+          "left": "手荷物受取所",
+          "ng": "baggage receive place",
+          "right": "baggage claim",
+          "right_sub": "バゲッジ クレイム",
+          "icon": "a luggage carousel with suitcases"
+        },
+        {
+          "left": "荷物が出てこない",
+          "ng": "My bag doesn't come out.",
+          "right": "My bag is missing.",
+          "right_sub": "マイ バッグ イズ ミッシング",
+          "icon": "an empty luggage carousel with a question mark"
+        },
+        {
+          "left": "時差ボケ",
+          "ng": "time difference boke",
+          "right": "jet lag",
+          "right_sub": "ジェット ラグ",
+          "icon": "a sleepy cute character with a globe and a clock"
+        }
+      ],
+      "note": "※読みは目安です。場面によって、ほかの言い方もあります",
+      "bg": "A bright airport departure hall with big windows and airplanes outside"
+    }
+  ],
+  "caption": "年末年始の海外旅行、空港や機内で困らないように。\n「時差ボケ」「通路側の席」、英語で言えますか？\n9つのうち、いくつ言えた？\n\n✕ a passage seat → ○ an aisle seat\n✕ a bring-in bag → ○ a carry-on\n✕ time difference boke → ○ jet lag\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#旅行英語",
+    "#海外旅行英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/4 18時台・pop】空港・機内の場面（plans の旅行の場面を1枚まとめに回したもの）。11/26 の旅行・ホテル回（フロント・スーツケースなど）と重ならないフレーズにしました。baggage claim の claim は「受け取る権利を主張する」の意味（11/14 の「クレーム」回とつながるので、ここに本人の一言があってもよい）。"
+}

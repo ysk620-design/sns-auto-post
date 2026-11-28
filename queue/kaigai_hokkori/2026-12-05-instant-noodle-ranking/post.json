@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "インスタント麺をいちばん食べる国ランキング",
+  "slides": [
+    {
+      "layout": "bars",
+      "kicker": "世界ラーメン協会｜2024年",
+      "title": "インスタント麺を<br>いちばん<span class=\"hl\">食べる国</span>",
+      "bubble": "発明した\n日本は何位？",
+      "sub": "1人が1年に食べる数。1位は週に約1.5食",
+      "bg": "a softly blurred cozy kitchen with a steaming bowl of instant noodles",
+      "items": [
+        {
+          "name": "ベトナム",
+          "value": "81食",
+          "num": 81,
+          "icon": "a small Vietnamese flag on a short stick",
+          "note": "1位"
+        },
+        {
+          "name": "韓国",
+          "value": "79食",
+          "num": 79,
+          "icon": "a small South Korean flag on a short stick",
+          "note": "わずか2食差"
+        },
+        {
+          "name": "タイ",
+          "value": "57食",
+          "num": 57,
+          "icon": "a small Thai flag on a short stick"
+        },
+        {
+          "name": "ネパール",
+          "value": "54食",
+          "num": 54,
+          "icon": "a small Nepalese flag on a short stick",
+          "note": "袋のままかじる"
+        },
+        {
+          "name": "インドネシア",
+          "value": "52食",
+          "num": 52,
+          "icon": "a small Indonesian flag on a short stick"
+        },
+        {
+          "name": "日本",
+          "value": "47食",
+          "num": 47.1,
+          "icon": "a cup of instant noodles with steam",
+          "note": "発明した国"
+        },
+        {
+          "name": "マレーシア",
+          "value": "47食",
+          "num": 47,
+          "icon": "a small Malaysian flag on a short stick"
+        },
+        {
+          "name": "台湾",
+          "value": "40食",
+          "num": 40,
+          "icon": "a small Taiwanese flag on a short stick"
+        },
+        {
+          "name": "フィリピン",
+          "value": "39食",
+          "num": 39,
+          "icon": "a small Philippine flag on a short stick"
+        },
+        {
+          "name": "中国・香港",
+          "value": "31食",
+          "num": 31,
+          "icon": "a small Chinese flag on a short stick",
+          "note": "総数は世界一"
+        }
+      ],
+      "note": "※世界ラーメン協会（WINA）2024年の1人あたり消費量（報道より）。日本とマレーシアは同じ47食",
+      "ask": "週に何回食べる？"
+    }
+  ],
+  "caption": "インスタントラーメンを1人がいちばん食べる国は、ベトナムで1年に81食でした。\n\n2位の韓国は79食で、わずか2食差。\nインスタントラーメンを発明した日本は47食で、6位でした。\n中国・香港は1人あたりでは31食ですが、食べる総数では世界一です。\n\n💬 あなたの推しのインスタント麺は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#インスタントラーメン",
+    "#カップ麺",
+    "#世界ランキング",
+    "#海外と日本の違い"
+  ],
+  "review_notes": "【リールだけの投稿・12/5 22時台・10位までの横棒】確認日 2026-11-28。出典：世界ラーメン協会（WINA）2024年の1人あたり消費量を報じた The Asia Business Daily（2025年10月9日） https://view.asiae.co.kr/en/article/2025100909525588071 。ベトナム81・韓国79・タイ57・ネパール54・インドネシア52・日本47・マレーシア47・台湾40・フィリピン39・中国/香港31。WINA の公式ページ（ https://instantnoodles.org/en/noodles/demand/table/ ）は確認日にメンテナンス中で開けなかった。日本とマレーシアは同じ47食で、棒の並びのために日本の num を 47.1 にしている（note に「同じ47食」と明記）。「総数は世界一」は WINA の総需要で中国・香港が1位であることから（数字は画像に出していない）。「ネパール：袋のままかじる」はネパールのスナック感覚の食べ方としてよく紹介される話（気になるなら削除を）。インスタントラーメンは1958年に日本で発明された。"
+}

@@ -1,0 +1,78 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：クリスマスの直訳しがちな英語",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "クリスマスに通じない英語8選",
+      "bubble": "そのまま言うと\n伝わらない！",
+      "title": "「ケンタッキー食べよ」<br>直訳すると<span class=\"hl\">州を食べる</span>",
+      "cols": 2,
+      "tiles": [
+        {
+          "label": "ケンタッキー",
+          "a": "Kentucky＝州の名前",
+          "b": "◯ Let's get KFC!",
+          "icon": "a bucket of fried chicken with a small santa hat"
+        },
+        {
+          "label": "クリぼっち",
+          "a": "bocchi は通じない",
+          "b": "◯ spending Christmas alone",
+          "icon": "a lonely cute character with a small cake at a table"
+        },
+        {
+          "label": "プレゼント交換",
+          "a": "present change",
+          "b": "◯ a gift exchange",
+          "icon": "two wrapped gift boxes with arrows between them"
+        },
+        {
+          "label": "イルミネーション",
+          "a": "△ 通じるけど硬い",
+          "b": "◯ Christmas lights",
+          "icon": "a string of colorful christmas lights"
+        },
+        {
+          "label": "サンタの靴下",
+          "a": "socks＝ふつうの靴下",
+          "b": "◯ a stocking",
+          "icon": "a red christmas stocking hanging on a fireplace"
+        },
+        {
+          "label": "ホールケーキ",
+          "a": "hole＝穴あき",
+          "b": "◯ a whole cake",
+          "icon": "a round strawberry shortcake with a candle"
+        },
+        {
+          "label": "クリスマスケーキ",
+          "a": "英国ではずっしり系",
+          "b": "英国の定番は濃厚なフルーツケーキ",
+          "icon": "a rich british fruitcake with white icing and holly"
+        },
+        {
+          "label": "職場でメリクリ",
+          "a": "宗教がいろいろな職場は",
+          "b": "◯ Happy holidays!",
+          "icon": "a festive office desk with a small christmas tree"
+        }
+      ],
+      "note": "※場面によって、ほかの言い方もあります",
+      "ask": "いくつ言えた？",
+      "bg": "A cozy snowy street at night with warm shop lights and a big decorated christmas tree"
+    }
+  ],
+  "caption": "クリスマスの英語、そのまま訳すと通じないもの多め。\n「ケンタッキー食べよう」を Let's eat Kentucky. と言うと、ケンタッキー州を食べることに。\n8つのうち、いくつ言えた？\n\n✕ Let's eat Kentucky. → ○ Let's get KFC!\n✕ present change → ○ a gift exchange\n✕ Christmas socks → ○ a stocking\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#クリスマス英語",
+    "#和製英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・11/29 7時台・tiles】クリスマスの直訳しがちな英語（季節もの）。「イルミネーション」は illumination でも意味は通じるので「△ 通じるけど硬い」と書きました。英国の Christmas cake はドライフルーツ入りの濃厚なケーキ（マジパンや白いアイシングがけ）が定番。アメリカの職場では、宗教に配慮して Happy holidays! もよく使われる（Merry Christmas! が間違いではない）。"
+}

@@ -1,0 +1,102 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "1枚まとめ：「了解」の英語Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜ふだん使いやすさ",
+      "bubble": "Roger は\nふざけてる？",
+      "title": "<span class=\"hl\">「了解！」</span>の英語<br>使いやすさTier表",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "毎日これ",
+          "items": [
+            {
+              "name": "Sure!",
+              "note": "いいよ",
+              "icon": "a thumbs-up hand"
+            },
+            {
+              "name": "Will do.",
+              "note": "やっておきます",
+              "icon": "a checklist with one item ticked"
+            },
+            {
+              "name": "Gotcha!",
+              "note": "了解！",
+              "icon": "a cute character giving a wink and finger guns"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "よく使う",
+          "items": [
+            {
+              "name": "You bet!",
+              "note": "もちろん！",
+              "icon": "a cute character jumping with joy"
+            },
+            {
+              "name": "Okay!",
+              "note": "オッケー",
+              "icon": "an ok hand gesture"
+            },
+            {
+              "name": "Noted.",
+              "note": "（仕事で）承知",
+              "icon": "a notebook with a pen"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "丁寧・接客",
+          "items": [
+            {
+              "name": "Certainly",
+              "note": "かしこまりました",
+              "icon": "a hotel clerk bowing politely"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "ネタっぽい",
+          "items": [
+            {
+              "name": "Roger.",
+              "note": "無線っぽい",
+              "icon": "a walkie-talkie radio"
+            },
+            {
+              "name": "Copy that",
+              "note": "映画っぽい",
+              "icon": "a pilot headset with a microphone"
+            },
+            {
+              "name": "Yes, sir!",
+              "note": "軍隊っぽい",
+              "icon": "a toy soldier saluting"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。Roger. や Copy that. を、わざとふざけて使う人もいます",
+      "ask": "いつもどれ使ってる？"
+    }
+  ],
+  "caption": "英語の「了解！」、Roger. と言っていませんか？\n通じるけど、無線や映画のセリフのように聞こえることも。\n\n○ Sure!（いいよ）\n○ Will do.（やっておきます）\n△ Roger.（無線っぽい）\n\n💬 あなたの「よく使う」はどれ？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#ビジネス英語",
+    "#日常英会話",
+    "#ネイティブ英語",
+    "#英語ティア表"
+  ],
+  "review_notes": "【リールだけ・12/3 18時台・tier（独断）】「了解」の言い方の独断Tier表。11/25 職場回の Got it. は重ならないよう入れていません（Gotcha! は別の言い方として採用）。Noted. は仕事のチャットやメールでよく使う一方、そっけなく聞こえることもある。"
+}

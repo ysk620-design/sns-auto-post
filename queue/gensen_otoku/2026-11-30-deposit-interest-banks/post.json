@@ -1,0 +1,81 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "100万円を普通預金に1年、利息は銀行で差がつく（最大1.2万円）",
+  "slides": [
+    {
+      "layout": "podium",
+      "kicker": "預けっぱなしは損",
+      "bubble": "3年前は\n10円だった！",
+      "title": "同じ100万円でも<br>利息は<span class=\"hl\">2倍以上</span>の差",
+      "big_label": "普通預金でも、いちばん高い銀行なら",
+      "big": "1.2<small>万円</small>",
+      "sub": "大手も年0.5%に。3年前の大手は年0.001%",
+      "items": [
+        {
+          "name": "あおぞら銀行",
+          "value": "12,000円",
+          "num": 12000,
+          "note": "100万円まで年1.2%",
+          "icon": "a bank card next to a small piggy bank"
+        },
+        {
+          "name": "auじぶん銀行",
+          "value": "5,100円",
+          "num": 5100,
+          "note": "年0.51%",
+          "icon": "a smartphone showing a banking app with coins"
+        },
+        {
+          "name": "大手3行",
+          "value": "5,000円",
+          "num": 5000,
+          "note": "11/2から年0.5%",
+          "icon": "a classic stone bank building"
+        },
+        {
+          "name": "ゆうちょ銀行",
+          "value": "5,000円",
+          "num": 5000,
+          "note": "11/9から年0.5%",
+          "icon": "a red japanese post box"
+        },
+        {
+          "name": "SBI新生銀行",
+          "value": "5,000円",
+          "num": 5000,
+          "note": "年0.5%",
+          "icon": "a stack of gold coins"
+        },
+        {
+          "name": "PayPay銀行",
+          "value": "4,000円",
+          "num": 4000,
+          "note": "年0.4%",
+          "icon": "a smartphone with a coin"
+        },
+        {
+          "name": "3年前の大手",
+          "value": "10円",
+          "num": 10,
+          "note": "年0.001%（2023年）",
+          "icon": "an empty wallet with a moth flying out"
+        }
+      ],
+      "note": "※2026年11月時点の普通預金金利（税引前）。実際は約20%の税金が引かれます。金利は変わることがあります",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "メイン口座はどこ？"
+    }
+  ],
+  "caption": "銀行に預けっぱなしのお金、利息がいくらつくか知っていますか？\n大手銀行の普通預金も、11月から年0.5%に。100万円を1年預けると5,000円（税引前）。3年前は年0.001%で、たった10円でした。\n\n✅ あおぞら銀行のBANKは100万円まで年1.2%（1万2,000円）\n✅ 子どものお年玉口座も、置き場所で利息が変わる\n\n⚠️ 税引前の金額で、実際は約20%の税金が引かれます。金利は今後も変わることがあります。\n\n💬 あなたのメイン口座はどこ？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#普通預金",
+    "#金利",
+    "#貯金術",
+    "#家計管理"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：Impress Watch 2026/9/20 https://www.watch.impress.co.jp/docs/news/2142489.html （3メガ 0.4→0.5% 11/2〜、ゆうちょ0.5% 11/9〜、楽天銀行0.5%、SBI新生0.5% 10/13〜、auじぶん0.51% 11/1〜、PayPay銀行（1万円以上）0.4% 11/1〜、あおぞら銀行 100万円まで1.2% 10/1〜・100万円超0.75%）。2023年の3メガ普通預金0.001%は、2024年3月のマイナス金利解除前の水準。【確認してほしい点】①9/20の記事以降、12月の日銀会合に向けて各行がさらに金利を変えていないか、投稿前に各行の公式で確認してください（特に楽天銀行の適用日） ②あおぞら銀行の1.2%はBANK（アプリの口座）の100万円までの部分。100万円ちょうどなら12,000円。③【計算】100万円×金利（税引前）。"
+}

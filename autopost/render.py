@@ -217,7 +217,9 @@ def main(argv=None) -> int:
 
         need = any(story.is_story(post.data) and story.reel_wanted(post.data, cfg)
                    and (args.all or post.needs_render(cfg) or art.story_missing(post.data)) for post, cfg in loaded)
-        need = need or any(zukan.is_zukan(post.data) and (args.all or post.needs_render(cfg)) for post, cfg in loaded)
+        # 図鑑も同じ（このあと挿絵・場面の絵ができると作り直しになり、読み上げが要る）
+        need = need or any(zukan.is_zukan(post.data) and (args.all or post.needs_render(cfg) or zukan.missing(post.data))
+                           for post, cfg in loaded)
         print(f"needs_voice={str(need).lower()}")
         if os.environ.get("GITHUB_OUTPUT"):
             with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:

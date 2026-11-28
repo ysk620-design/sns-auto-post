@@ -1,0 +1,111 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-30",
+  "type": "carousel",
+  "title": "サービスです",
+  "reel_title": "「サービスです」英語で言える？",
+  "slides": [
+    {
+      "layout": "cover",
+      "top": "無料のことを<br>「サービス」で",
+      "ng": "It's service.",
+      "bottom": "って言ってない？",
+      "sub": "service は「接客」のこと。<br>ネイティブには<b>「接客です」</b>と聞こえる<br>正解は<span class=\"hl\">場面で6つ</span>"
+    },
+    {
+      "layout": "callout",
+      "style": "ng",
+      "label": "✕ 直訳しがち",
+      "title": "It's service.",
+      "body": "それは接客（サービス業）です。",
+      "note": "英語の service は「接客・業務」の意味で、「無料・おまけ」の意味はありません。お店の人が言うと、仕事ぶりの話に聞こえます。"
+    },
+    {
+      "layout": "cards",
+      "title": "お店から無料で出すとき",
+      "cards": [
+        [
+          "It's on the house.",
+          "お店のおごりです（サービスです）"
+        ],
+        [
+          "It's free.",
+          "無料です"
+        ]
+      ],
+      "note": "on the house は「お店持ちで」。レストランやバーの定番です。"
+    },
+    {
+      "layout": "cards",
+      "title": "おまけを付けるとき",
+      "cards": [
+        [
+          "I threw in an extra one.",
+          "1つおまけしておきました"
+        ],
+        [
+          "It comes with a free drink.",
+          "ドリンクがサービスで付きます"
+        ]
+      ]
+    },
+    {
+      "layout": "cards",
+      "title": "お客として確かめるとき",
+      "cards": [
+        [
+          "Is this complimentary?",
+          "これってサービス（無料）ですか？"
+        ],
+        [
+          "Is this included?",
+          "これは料金に入っていますか？"
+        ]
+      ],
+      "note": "ホテルの水や朝食で使えます。complimentary は「無料の」の丁寧な言い方。"
+    },
+    {
+      "layout": "table",
+      "title": "「サービスです」早見表",
+      "rows": [
+        [
+          "お店のおごり",
+          "It's on the house."
+        ],
+        [
+          "無料です",
+          "It's free."
+        ],
+        [
+          "おまけした",
+          "I threw in an extra one."
+        ],
+        [
+          "付いてくる",
+          "It comes with a free drink."
+        ],
+        [
+          "無料か確認",
+          "Is this complimentary?"
+        ],
+        [
+          "料金込みか確認",
+          "Is this included?"
+        ]
+      ]
+    },
+    {
+      "layout": "quiz",
+      "question": "ホテルの部屋にある水。<br>「これって無料ですか？」と<br>丁寧に聞くなら？"
+    }
+  ],
+  "caption": "お店の「サービスです」を It's service. と言っていませんか？\n\n✕ It's service.（それは接客です）\n○ It's on the house.（お店のおごりです）\n○ Is this complimentary?（これって無料ですか？）\n\n言う側・聞く側、場面ごとの言い方をまとめました。\n\n💬 クイズの答えをコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#和製英語",
+    "#旅行英語",
+    "#英語フレーズ",
+    "#直訳しがちな英語"
+  ],
+  "review_notes": "自動化前の手動投稿 #07「サービスです」と同じ日本語を扱います（plans/2026-11-29.md で本人が決めたテーマなので、そのまま作成。中身は場面別に作り直し）。complimentary はホテル・飛行機で「無料の」の意味でよく使われる。【実体験】ここに実体験を一言（海外のお店でおまけしてもらった、など）。"
+}

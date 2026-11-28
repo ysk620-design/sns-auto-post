@@ -1,0 +1,37 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "ゴフンダケ（スヌーズの「あと5分」を1時間にのばす）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "004",
+      "name": "ゴフンダケ",
+      "latin": "Fungus quinqueminutalis",
+      "group": "寝坊菌類のなかま",
+      "hook_top": "「あと5分」が<br>1時間になるのは",
+      "hook_bottom": "これが生えてる。",
+      "feature": "目覚ましに生えて<br><b>5分</b>を1時間にのばす",
+      "ochi": "遅刻が確定すると<br>一瞬で消える。",
+      "ask": "今朝2回以上止めた人は⏰",
+      "voice": [
+        "あと5分が、1時間になるのは、これが生えてるから。",
+        "ゴフンダケ。目覚ましに生えて、5分を1時間にのばす。",
+        "遅刻が確定すると、一瞬で消える。"
+      ],
+      "plate": "a small mushroom creature with a pale cream cap shaped like an alarm clock bell, sleepy half-closed eyes, a tiny yawning mouth, stubby root feet",
+      "scene": "a dark bedroom on a winter morning, a smartphone alarm glowing on the pillow, a small cream mushroom creature with sleepy eyes growing from it in the center"
+    }
+  ],
+  "caption": "毎朝スヌーズ3回押してる人に送ってあげて。\n\n虚構図鑑 No.004「ゴフンダケ」\nスマホの目覚ましに生えて、「あと5分」を1時間にのばすキノコ。遅刻が確定した瞬間、跡形もなく消える。\n\n⏰ 今朝2回以上止めた人はコメントに「⏰」\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#二度寝",
+    "#虚構図鑑"
+  ],
+  "review_notes": "7時の回。冬の朝の二度寝あるある。前夜21時のフトンモドキと続けて「冬の朝」シリーズ感を出す"
+}

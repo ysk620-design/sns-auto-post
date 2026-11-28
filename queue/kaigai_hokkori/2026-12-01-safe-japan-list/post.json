@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "日本では当たり前、海外では驚かれる「安心」10選",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "日本では当たり前｜安心編",
+      "title": "日本では当たり前<br>海外では驚かれる<span class=\"hl\">安心</span>10選",
+      "bubble": "財布の7割が\n持ち主へ！",
+      "sub": "東京だけで、届いた現金は1年で約45億円",
+      "bg": "a softly blurred quiet Tokyo residential street at night with warm street lights",
+      "head": [
+        "日本の当たり前",
+        "海外の人の驚き"
+      ],
+      "items": [
+        {
+          "left": "落とした財布",
+          "right": "東京で約34万個が届く",
+          "icon": "a brown leather wallet",
+          "right_sub": "約7割が持ち主の元へ（2025年）"
+        },
+        {
+          "left": "落とした現金",
+          "right": "東京で約45億円が届く",
+          "icon": "a stack of yen coins and bills",
+          "right_sub": "約32億円が持ち主へ"
+        },
+        {
+          "left": "落としたスマホ",
+          "right": "約8割が持ち主へ",
+          "icon": "a smartphone lying on a bench",
+          "right_sub": "東京で約14万台が届く"
+        },
+        {
+          "left": "カフェの席取り",
+          "right": "スマホやかばんを置いたまま",
+          "icon": "a smartphone and a bag on a cafe table",
+          "right_sub": "海外では「盗んで」の合図に"
+        },
+        {
+          "left": "子どもだけで電車",
+          "right": "小学生がひとりで通学",
+          "icon": "a small child with a yellow hat on a train",
+          "right_sub": "海外では保護者の付きそいが多い"
+        },
+        {
+          "left": "電車で居眠り",
+          "right": "ぐっすり寝ても大丈夫",
+          "icon": "a person sleeping peacefully on a train seat",
+          "right_sub": "海外の旅行者がよく驚く"
+        },
+        {
+          "left": "夜のコンビニ",
+          "right": "24時間、明るく開いている",
+          "icon": "a brightly lit convenience store at night",
+          "right_sub": "夜中でも気軽に買い物"
+        },
+        {
+          "left": "無人の野菜売り場",
+          "right": "お金は箱に入れるだけ",
+          "icon": "a small wooden roadside vegetable stand with a coin box",
+          "right_sub": "店の人はいない"
+        },
+        {
+          "left": "外の自販機",
+          "right": "道ばたに、こわされずに並ぶ",
+          "icon": "a glowing Japanese drink vending machine on a street",
+          "right_sub": "海外では建物の中が多い"
+        },
+        {
+          "left": "置き配",
+          "right": "玄関の前に荷物を置くだけ",
+          "icon": "a cardboard box in front of an apartment door",
+          "right_sub": "海外では盗難が心配に"
+        }
+      ],
+      "arrow": true,
+      "note": "※数字は警視庁「遺失物取扱状況」2025年（東京都内）。海外の様子は国や地域で違います",
+      "ask": "いくつ当たり前だった？"
+    }
+  ],
+  "caption": "日本では当たり前なのに、海外の人に驚かれる「安心」。\n\n東京で1年に警察に届いた財布は約34万個。そのうち約7割が持ち主の元に戻っています。\n届いた現金はなんと約45億円、約32億円が持ち主へ。\nカフェの席にスマホを置いたまま席を立てるのも、日本ならではかもしれません。\n\n💬 あなたが落とし物を届けてもらったことは？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の治安",
+    "#落とし物",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・12/1 18時台・pop（10選のリスト）×「日本では当たり前、海外では〇〇」（plans の実験：横棒など別のデザイン×同テーマ）】ランキングの数字がそろうテーマではないので、横棒ではなく10選のリスト（pop）にした。確認日 2026-11-28。出典：警視庁「遺失物取扱状況」令和7年（2025年） https://www.keishicho.metro.tokyo.lg.jp/about_mpd/jokyo_tokei/kakushu/kaikei.html 。拾得現金4,508,824,075円・返還3,229,585,264円、財布類338,104点（返還226,993点＝約67%）、携帯電話類144,381点（返還119,516点＝約83%）。割合は届けられた数に対する返還の数で計算。ほかの行は数字のない一般的な言い方（「海外では〜が多い」）。財布の行は11/13の財布の話と少し重なるが、数字の切り口なので入れた。"
+}

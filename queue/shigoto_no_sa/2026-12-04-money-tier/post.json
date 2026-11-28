@@ -1,0 +1,119 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "20代のお金の使い道Tier表（独断）",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜20代のお金",
+      "title": "20代の<span class=\"hl\">お金の使い道</span><br>Tier表（独断）",
+      "bubble": "Dは今すぐ\nやめて！",
+      "sub": "将来の自分にお金が戻ってくる順",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "未来が増える",
+          "items": [
+            {
+              "name": "先取り貯金",
+              "note": "給料日に自動で",
+              "icon": "a piggy bank next to a calendar"
+            },
+            {
+              "name": "NISAで積立",
+              "note": "少額でも早く",
+              "icon": "a small plant growing out of a stack of coins"
+            },
+            {
+              "name": "資格・スキル",
+              "note": "年収に直結",
+              "icon": "a stack of books with a graduation cap"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "元が取れる",
+          "items": [
+            {
+              "name": "睡眠・健康",
+              "note": "体が資本",
+              "icon": "a soft pillow next to running shoes"
+            },
+            {
+              "name": "仕事の道具",
+              "note": "時短になる",
+              "icon": "a laptop on a desk with a comfortable office chair"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "楽しんでOK",
+          "items": [
+            {
+              "name": "旅行・体験",
+              "note": "思い出は残る",
+              "icon": "a suitcase with an airplane ticket"
+            },
+            {
+              "name": "趣味",
+              "note": "予算を決めて",
+              "icon": "a game controller and headphones"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "見直したい",
+          "items": [
+            {
+              "name": "毎日のコンビニ",
+              "note": "月1万円超えも",
+              "icon": "a convenience store bag with snacks and a coffee cup"
+            },
+            {
+              "name": "なんとなく飲み会",
+              "note": "断ってもOK",
+              "icon": "two beer mugs clinking"
+            },
+            {
+              "name": "使ってないサブスク",
+              "note": "毎月チェック",
+              "icon": "a smartphone showing many app icons with coins falling out"
+            }
+          ]
+        },
+        {
+          "rank": "D",
+          "label": "今すぐやめる",
+          "items": [
+            {
+              "name": "リボ払い",
+              "note": "手数料が高い",
+              "icon": "a credit card wrapped in heavy chains"
+            },
+            {
+              "name": "SNSの儲け話",
+              "note": "まず疑う",
+              "icon": "a smartphone with a suspicious bag of money popping out"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。リボ払いの手数料は年15%前後のことが多い（カード会社によって違います）",
+      "ask": "あなたのSは何？"
+    }
+  ],
+  "caption": "ボーナス前に、同期にも送ってあげて。\n20代のお金の使い道を、「将来の自分に戻ってくる順」で独断でランキングにしました。\n\n✅ S：先取り貯金・NISAで積立・資格やスキル\n✅ C：毎日のコンビニ（1日500円でも、月20日で1万円）\n✅ D：リボ払い・SNSの儲け話\n\n使うのが悪いわけではなく、楽しむお金はBで思いきり使えばOK。\nあなたのSは何？「これはSでしょ」もコメントで教えてください👇\n\n※独断のランキングです。投資は元本が減ることもあります\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#お金の勉強",
+    "#20代",
+    "#貯金",
+    "#新NISA",
+    "#シゴトの差"
+  ],
+  "review_notes": "確認日 2026-11-28。独断のTier表（タイトルと画像に「独断」と入れた）。リボ払いの手数料「年15%前後」は大手カード会社のショッピングリボの実質年率が15.0%前後に多いことによる一般的な目安（カード会社で違う旨を画像とキャプションに入れた）。「月1万円超えも」は1日500円×月20日の計算。【確認してほしい点】Tierの並び（とくにNISAをSに入れるか、資格をSにするか）は本人の考えに合わせて入れ替えてOK。ここに実体験を一言（自分のS・やめてよかったものなど）もよいです"
+}

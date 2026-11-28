@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "日本の学校では当たり前、海外では驚かれること",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜学校編",
+      "bubble": "上履きって\n日本だけ？",
+      "title": "日本の<span class=\"hl\">学校</span>では当たり前<br>海外では驚かれること",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "子どもだけで登校",
+          "icon": "two small children with backpacks walking to school together",
+          "a": "日本：歩いて集団登校",
+          "b": "アメリカ：歩き・自転車は約1割"
+        },
+        {
+          "label": "制服",
+          "icon": "a navy school uniform jacket on a hanger",
+          "a": "日本：中学からほぼ制服",
+          "b": "アメリカ：制服の公立校は約16%"
+        },
+        {
+          "label": "上履き",
+          "icon": "a pair of white indoor school shoes",
+          "a": "日本：校舎では履き替え",
+          "b": "海外：外の靴のままが多い"
+        },
+        {
+          "label": "ランドセル",
+          "icon": "a shiny red leather school backpack",
+          "a": "日本：6年間同じかばん",
+          "b": "海外：ふつうのリュックが多い"
+        },
+        {
+          "label": "運動会",
+          "icon": "children running a relay race with a baton on a school field",
+          "a": "日本：家族総出の一大行事",
+          "b": "海外：ない学校も多い"
+        },
+        {
+          "label": "入学式",
+          "icon": "a cherry blossom tree in front of a school gate",
+          "a": "日本：4月に式で始まる",
+          "b": "アメリカ：9月にそのまま始まる"
+        },
+        {
+          "label": "日直",
+          "icon": "a classroom blackboard with chalk and an eraser",
+          "a": "日本：子どもが号令",
+          "b": "海外：先生が進めるのがふつう"
+        },
+        {
+          "label": "リコーダー",
+          "icon": "a cream colored plastic recorder flute",
+          "a": "日本：小学生の必需品",
+          "b": "海外：学校によりけり"
+        },
+        {
+          "label": "夏休みの宿題",
+          "icon": "a stack of workbooks next to a morning glory pot",
+          "a": "日本：たっぷり出る",
+          "b": "アメリカ：休みは約2か月半"
+        }
+      ],
+      "summary": {
+        "label": "海外の人いわく",
+        "big": "アニメの世界"
+      },
+      "note": "※国・学校によって違います。アメリカの数字は米国教育統計センター・全米の調査（2017年・2021〜22年度）",
+      "ask": "なつかしいのはどれ？"
+    }
+  ],
+  "caption": "日本の学校では当たり前なのに、海外では驚かれること。\n\nアメリカでは、歩きや自転車で学校に行く小学生・中学生は約1割。制服がある公立校も約16%だけです。\n上履きに履き替える、日直が号令をかける、運動会は家族総出…どれも日本ならでは。\n\n💬 あなたの学校だけの「当たり前」は？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の学校",
+    "#学校あるある",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・11/30 7時台・タイル（日本では当たり前シリーズ）】確認日 2026-11-28。出典：アメリカの幼稚園〜8年生で歩き・自転車で通学は11%（2017年）＝National Center for Safe Routes to School 2026 Trends and Research https://www.walkbiketoschool.org/wp-content/uploads/2026/05/2026-Trends-and-Research.pdf ／アメリカの公立校で制服を義務にしているのは16.4%（2021〜22年度）＝NCES Digest table 233.60 https://nces.ed.gov/programs/digest/d23/tables/dt23_233.60.asp 。アメリカの夏休みは州や学区で違うが10〜11週間ほどが一般的（「約2か月半」）。「summary：海外の人いわく アニメの世界」は特定の発言ではなく、よく言われる感想としての言い方（気になるなら「日本だけ」などに）。給食・掃除は別の回で扱ったので外した。"
+}

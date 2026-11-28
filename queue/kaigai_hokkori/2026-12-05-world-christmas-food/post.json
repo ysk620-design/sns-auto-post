@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "世界のクリスマスの定番料理",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "クリスマスまであと20日",
+      "bubble": "日本だけ\nフライドチキン",
+      "title": "世界の<span class=\"hl\">クリスマス</span>の<br>定番料理",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "日本",
+          "icon": "a bucket of crispy fried chicken and a strawberry shortcake",
+          "a": "フライドチキン",
+          "b": "1974年の広告から広まった"
+        },
+        {
+          "label": "イギリス",
+          "icon": "a roast turkey and a round Christmas pudding",
+          "a": "ローストターキー",
+          "b": "デザートはクリスマスプディング"
+        },
+        {
+          "label": "ドイツ",
+          "icon": "a loaf of stollen dusted with powdered sugar",
+          "a": "シュトーレン",
+          "b": "少しずつ切って待つ"
+        },
+        {
+          "label": "イタリア",
+          "icon": "a tall dome shaped panettone",
+          "a": "パネトーネ",
+          "b": "ドーム形のふわふわパン"
+        },
+        {
+          "label": "フランス",
+          "icon": "a chocolate yule log cake",
+          "a": "ブッシュ・ド・ノエル",
+          "b": "薪の形のケーキ"
+        },
+        {
+          "label": "アメリカ",
+          "icon": "a glazed ham and gingerbread cookies",
+          "a": "ハムやターキー",
+          "b": "クッキーをサンタに置く"
+        },
+        {
+          "label": "メキシコ",
+          "icon": "steamed tamales wrapped in corn husks",
+          "a": "タマレス",
+          "b": "家族総出で包む"
+        },
+        {
+          "label": "フィリピン",
+          "icon": "a whole roasted pig on a festive table",
+          "a": "レチョン（豚の丸焼き）",
+          "b": "お祝いの主役"
+        },
+        {
+          "label": "オーストラリア",
+          "icon": "a plate of grilled prawns on a sunny beach",
+          "a": "エビやシーフード",
+          "b": "真夏なのでBBQも"
+        }
+      ],
+      "summary": {
+        "label": "日本のクリスマスイブは",
+        "big": "客数ふだんの約10倍"
+      },
+      "note": "※国や家庭によって違います。日本の客数は大手チェーンの発表（アラブニュース2025年12月）",
+      "ask": "あなたの家の定番は？"
+    }
+  ],
+  "caption": "世界のクリスマスの定番料理、日本はやっぱりフライドチキン。\n\n1974年のクリスマスの広告から広まったと言われていて、12月24日は大手チェーンのお客さんがふだんの約10倍になる日。\nイギリスはローストターキーとクリスマスプディング、ドイツはシュトーレン、フィリピンは豚の丸焼き「レチョン」。\nオーストラリアは真夏なので、エビやバーベキューも。\n\n💬 あなたの家のクリスマスの定番は？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#クリスマス",
+    "#クリスマス料理",
+    "#世界の文化",
+    "#フライドチキン"
+  ],
+  "review_notes": "【リールだけの投稿・12/5 18時台・タイル×別のテーマ（plans の実験：「日本すごい」ではない、ふつうの比較）】plans の残りのカルーセル候補「日本のクリスマスはケンタッキー」をここに入れた（店の名前は画像に出さず「フライドチキン」「大手チェーン」に）。確認日 2026-11-28。出典：Arab News（AFP）2025年12月3日 https://www.arabnews.com/node/2624851/offbeat （12月24日は客数がふだんの約10倍＝会社の2020年の説明、最初のクリスマスのキャンペーンは1974年・起源には諸説）。summary の big「客数ふだんの約10倍」は14文字以内。ほかの国は一般的に知られる定番料理。"
+}

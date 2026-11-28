@@ -1,0 +1,83 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：スマホ・ネットの和製英語",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "保存版｜スマホ・ネット",
+      "bubble": "毎日使うのに\n通じない！",
+      "title": "そのまま言うと<span class=\"hl\">通じない</span><br>スマホの英語9選",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "SNS",
+          "a": "通じにくい",
+          "b": "◯ social media",
+          "icon": "a smartphone with colorful heart and chat icons floating"
+        },
+        {
+          "label": "マナーモード",
+          "a": "manner mode＝？",
+          "b": "◯ silent mode",
+          "icon": "a smartphone with a muted bell"
+        },
+        {
+          "label": "スマホ",
+          "a": "sumaho＝？",
+          "b": "◯ my phone",
+          "icon": "a modern smartphone"
+        },
+        {
+          "label": "タッチパネル",
+          "a": "通じにくい",
+          "b": "◯ a touchscreen",
+          "icon": "a finger tapping a glowing screen"
+        },
+        {
+          "label": "ガラケー",
+          "a": "galakei＝？",
+          "b": "◯ a flip phone",
+          "icon": "an old flip phone"
+        },
+        {
+          "label": "充電切れた",
+          "a": "Charge is cut.",
+          "b": "◯ My phone died.",
+          "icon": "a smartphone with an empty red battery"
+        },
+        {
+          "label": "スクショ",
+          "a": "sukusho＝？",
+          "b": "◯ a screenshot",
+          "icon": "a smartphone screen with a camera flash"
+        },
+        {
+          "label": "ブラインドタッチ",
+          "a": "blind touch＝？",
+          "b": "◯ touch typing",
+          "icon": "hands typing on a keyboard"
+        },
+        {
+          "label": "ライブ配信",
+          "a": "live delivery",
+          "b": "◯ a livestream",
+          "icon": "a smartphone filming with a red live dot"
+        }
+      ],
+      "note": "※場面によって、ほかの言い方もあります",
+      "ask": "いくつ言えた？"
+    }
+  ],
+  "caption": "「スマホの充電切れた」、英語で言えますか？\nネイティブは My phone died.（スマホが死んだ）と言います。\n9つのうち、いくつ言えた？\n\n✕ SNS → ○ social media\n✕ manner mode → ○ silent mode\n✕ Charge is cut. → ○ My phone died.\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#和製英語",
+    "#カタカナ英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/4 7時台・tiles】スマホ・ネットの和製英語。SNS は英語圏でもまったく使わないわけではないが、日常では social media が一般的なので「通じにくい」としました。"
+}

@@ -1,0 +1,86 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "毎日のちょっとが18年でこうなる（1日300円で約197万円）",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "子どもが18歳になるまでに",
+      "bubble": "ちりつもが\nいちばん怖い",
+      "title": "毎日の<span class=\"hl\">ちょっと</span>が<br>18年でこうなる",
+      "big_label": "なんとなく毎日300円使うと、18年で",
+      "big": "約197<small>万円</small>",
+      "sub": "子どもの大学の入学金と1年分の学費くらい",
+      "head": [
+        "毎日のこれ",
+        "18年で"
+      ],
+      "items": [
+        {
+          "left": "たばこ1日1箱",
+          "left_sub": "1箱600円なら",
+          "right": "約394万円",
+          "icon": "an ashtray with a broken cigarette"
+        },
+        {
+          "left": "外食ランチ",
+          "left_sub": "お弁当より500円高い・平日だけ",
+          "right": "約216万円",
+          "icon": "a restaurant table setting with a bread basket and soup"
+        },
+        {
+          "left": "コンビニに寄る",
+          "left_sub": "毎日300円なら",
+          "right": "約197万円",
+          "icon": "a small convenience store shopping bag"
+        },
+        {
+          "left": "ペットボトル1本",
+          "left_sub": "1本160円なら",
+          "right": "約105万円",
+          "icon": "a plastic water bottle with a small coin beside it"
+        },
+        {
+          "left": "カフェのコーヒー",
+          "left_sub": "1杯150円なら",
+          "right": "約99万円",
+          "icon": "a takeaway coffee cup"
+        },
+        {
+          "left": "おやつ",
+          "left_sub": "毎日100円なら",
+          "right": "約66万円",
+          "icon": "a small bag of snacks"
+        },
+        {
+          "left": "使わないサブスク",
+          "left_sub": "月1,000円なら",
+          "right": "約22万円",
+          "icon": "a laptop on a desk with a crescent moon"
+        },
+        {
+          "left": "時間外のATM",
+          "left_sub": "220円を月4回なら",
+          "right": "約19万円",
+          "icon": "a cash machine with a clock"
+        }
+      ],
+      "rank": true,
+      "arrow": false,
+      "note": "※1日の金額×365日×18年（ランチは平日240日、ATMは月4回×12か月）で計算。値上がりは含みません",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "やめられないのは？"
+    }
+  ],
+  "caption": "毎日のちょっとした出費、18年続けるといくらになるか知っていますか？\nなんとなく毎日300円使うと、子どもが18歳になるまでに約197万円。私立大学の入学金と1年分の学費くらいです。\n\n✅ ペットボトル1本160円でも18年で約105万円\n✅ 時間外のATM手数料（220円を月4回）でも約19万円\n\nやめなくていいんです。「毎日」を「週3回」にするだけで、半分以上が残ります。\n\n⚠️ 値上がりは含まない、単純な計算です。\n\n💬 やめられない「毎日のこれ」は？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#節約術",
+    "#ちりつも",
+    "#貯金術",
+    "#家計管理"
+  ],
+  "review_notes": "確認日 2026-11-28。【計算】1日の金額×365×18。たばこ600×6,570＝3,942,000円、コンビニ300×6,570＝1,971,000円、ペットボトル160×6,570＝1,051,200円、コーヒー150×6,570＝985,500円、おやつ100×6,570＝657,000円。ランチ差500円×240日×18年＝2,160,000円。サブスク1,000×12×18＝216,000円。ATM 220×4×12×18＝190,080円。値段は「〜なら」の仮定（特定の店や銘柄ではない）。「私立大学の入学金と1年分の学費くらい」は文科省 令和7年度 私立大学の初年度納付金（文系 入学料約22万円＋授業料約85万円＋施設設備費約14万円＝約121万円、理系 約160万円）からの目安。【確認してほしい点】たばこの行は、子育て世帯向けに入れるか本人の判断で（外すなら7行で成り立ちます）。"
+}

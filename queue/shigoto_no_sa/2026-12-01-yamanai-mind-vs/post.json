@@ -1,0 +1,59 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-01",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "仕事で病む人と病まない人の考え方",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "真面目な人ほど要注意",
+      "title": "仕事で<span class=\"hl\">病まない人</span>の<br>最強マインド",
+      "left": {
+        "label": "病む人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, hugging his knees on the floor under a small dark rain cloud, exhausted"
+      },
+      "right": {
+        "label": "病まない人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, relaxed and smiling with a cup of coffee, calm and cheerful"
+      },
+      "rows": [
+        {
+          "ng": "怒られた＝自分はダメ",
+          "ok": "怒られた＝やり方の話"
+        },
+        {
+          "ng": "全部ちゃんとやらなきゃ",
+          "ok": "7割できたら合格"
+        },
+        {
+          "ng": "断ったら嫌われる",
+          "ok": "無理な日は断っていい"
+        },
+        {
+          "ng": "夜中までSlackを見る",
+          "ok": "通知は定時で切る"
+        },
+        {
+          "ng": "他人の評価が気になる",
+          "ok": "昨日の自分と比べる"
+        },
+        {
+          "ng": "休むと迷惑がかかる",
+          "ok": "休むのも仕事のうち"
+        }
+      ],
+      "verdict": "真面目な人ほど、力を抜いていい",
+      "ask": "あなたはどっち寄り？"
+    }
+  ],
+  "caption": "最近ちょっと疲れてそうな同期に、そっと送ってあげて。\n仕事で病みやすい人は、能力が低いわけではありません。むしろ真面目で、責任感が強い人ほど左側になりがちです。\n\n✅ 怒られたのは「あなた」ではなく「やり方」\n✅ 7割できたら合格\n✅ 休むのも仕事のうち\n\nひとつでも当てはまったら、今日は右側の考え方をひとつだけ試してみてください。\nあなたはどっち寄り？コメントで教えてください👇\n\n※つらさが続くときは、ひとりで抱えこまず、社内外の相談窓口や医療機関を頼ってください\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#メンタルケア",
+    "#仕事の悩み",
+    "#シゴトの差"
+  ],
+  "review_notes": "【当たり狙い】このジャンルで大きく伸びた言い方「病まない人の最強マインド」をそのままタイトルに使い、送りたくなる（同期に送る）・広い（20代の会社員みんな）・最初の1秒で止まる（病む／病まない）を乗せた。数字や制度の話はないので出典なし。キャプションの最後に相談窓口の一言を入れた（画像には入れていない）。ここに実体験を一言（しんどかった時期にやめた考え方など）もよいです"
+}

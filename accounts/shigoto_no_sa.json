@@ -3,7 +3,7 @@
   "name": "シゴトの差｜20代の働き方と年収",
   "ig_user_id": "17841442415024463",
   "token_secret": "IG_TOKEN_SHIGOTO_NO_SA",
-  "enabled": false,
+  "enabled": true,
   "post_hour_jst": 20,
   "post_window_hours": 3,
   "series": "シゴトの差",

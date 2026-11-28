@@ -1,0 +1,95 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 22,
+  "title": "世界のプレゼントを持ってくる人",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "クリスマスまであと3週間",
+      "title": "サンタだけじゃない！<br>世界の<span class=\"hl\">プレゼントを届ける人</span>",
+      "bubble": "魔女が\nくる国も！",
+      "sub": "オランダでは、12月5日の夜にもう届く",
+      "bg": "a softly blurred snowy European town square with a Christmas tree at night",
+      "head": [
+        "国",
+        "届けに来るのは"
+      ],
+      "items": [
+        {
+          "left": "日本",
+          "right": "サンタクロース",
+          "icon": "a friendly Santa Claus with a sack of presents",
+          "right_sub": "12月24日の夜"
+        },
+        {
+          "left": "オランダ",
+          "right": "シンタクラース",
+          "icon": "a white bearded bishop on a white horse",
+          "right_sub": "12月5日の夜、靴にお菓子"
+        },
+        {
+          "left": "イタリア",
+          "right": "魔女ベファーナ",
+          "icon": "a kind old witch on a broomstick with a sack",
+          "right_sub": "1月6日。悪い子には炭"
+        },
+        {
+          "left": "スペイン",
+          "right": "東方の三賢者",
+          "icon": "three kings on camels carrying gifts",
+          "right_sub": "1月6日にプレゼント"
+        },
+        {
+          "left": "ドイツ",
+          "right": "クリストキント",
+          "icon": "a golden angel child with small wings",
+          "right_sub": "南部などで。天使のような子"
+        },
+        {
+          "left": "ロシア",
+          "right": "ジェド・マロース",
+          "icon": "an old man in a long blue coat with a snow maiden",
+          "right_sub": "お正月に。孫娘といっしょ"
+        },
+        {
+          "left": "アイスランド",
+          "right": "13人のユール・ラッズ",
+          "icon": "thirteen funny little trolls in wool clothes",
+          "right_sub": "13晩、1人ずつやって来る"
+        },
+        {
+          "left": "フィンランド",
+          "right": "ヨウルプッキ",
+          "icon": "Santa Claus in a snowy Lapland forest with reindeer",
+          "right_sub": "玄関から来て手渡し"
+        },
+        {
+          "left": "アメリカ",
+          "right": "サンタクロース",
+          "icon": "a plate of cookies and a glass of milk by a fireplace",
+          "right_sub": "クッキーと牛乳でお出迎え"
+        },
+        {
+          "left": "オーストラリア",
+          "right": "サンタクロース",
+          "icon": "Santa Claus on a surfboard at a sunny beach",
+          "right_sub": "真夏のクリスマス"
+        }
+      ],
+      "arrow": true,
+      "note": "※地域や家庭によって違います",
+      "ask": "いくつ知ってた？"
+    }
+  ],
+  "caption": "クリスマスにプレゼントを届けてくれるのは、サンタクロースだけじゃありません。\n\nイタリアでは、1月6日にほうきに乗った魔女ベファーナがやって来ます（悪い子には炭！）。\nオランダでは、12月5日の夜にシンタクラースがもうお菓子を届けてくれるんです。\nアイスランドは、13人のいたずら好きな「ユール・ラッズ」が13晩かけて1人ずつ。\n\n💬 子どものころ、サンタさんに何をもらった？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#クリスマス",
+    "#サンタクロース",
+    "#世界の文化",
+    "#海外の行事"
+  ],
+  "review_notes": "【リールだけの投稿・12/2 22時台・pop（10選のリスト）】確認日 2026-11-28。各国の言い伝えは一般的に紹介されている内容（オランダ Sinterklaas の前夜祭は12月5日・イタリア La Befana は1月6日・スペイン Los Reyes Magos は1月6日・ドイツ南部などの Christkind・ロシア Ded Moroz と Snegurochka・アイスランド Jólasveinar 13人・フィンランド Joulupukki）。数字の調査はない。オーストラリアの「サーフボードのサンタ」は絵の説明だけ（よくあるイメージ）。"
+}

@@ -1,0 +1,37 @@
+{
+  "account": "kyokou_zukan",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "ツメタミズチ（冬のシャワー、最初の水が冷たいのはこいつのせい）",
+  "slides": [
+    {
+      "layout": "zukan",
+      "no": "008",
+      "name": "ツメタミズチ",
+      "latin": "Hydrodraco frigidus",
+      "group": "給湯竜のなかま",
+      "hook_top": "冬のシャワー<br>最初の水が冷たいのは",
+      "hook_bottom": "こいつの仕業。",
+      "feature": "給湯器の管に住み<br>最初の<b>30秒</b>だけ水を冷やす",
+      "ochi": "お湯になった瞬間<br>シャンプーが切れる。",
+      "ask": "今朝ヒャッてなった人は🥶",
+      "voice": [
+        "冬のシャワー、最初の水が冷たいのは、こいつの仕業。",
+        "ツメタミズチ。給湯器の管に住み、最初の30秒だけ、水を冷やす。",
+        "お湯になった瞬間、シャンプーが切れる。"
+      ],
+      "plate": "a small translucent pale blue water dragon creature with a slender coiled body, tiny frost crystals on its back, round shy eyes, little fins",
+      "scene": "a Japanese bathroom on a cold winter morning, water spraying from a shower head, a small translucent pale blue water dragon coiled in the stream in the center"
+    }
+  ],
+  "caption": "冬の朝のシャワーがつらい人に送ってあげて。\n\n虚構図鑑 No.008「ツメタミズチ」\n給湯器の管に住み、シャワーの最初の30秒だけ水を冷たくする小さな竜。お湯になった瞬間、シャンプーを切らす。\n\n🥶 今朝ヒャッてなった人はコメントに「🥶」\n\n【この絵の作り方】\n図鑑の挿絵は、AIにこんな英語の指示を出して作っています。\n「a small translucent pale blue water dragon creature with a slender coiled body, tiny frost crystals on its back, round shy eyes, little fins. Vintage natural history encyclopedia illustration, soft watercolor, plain aged parchment background, side view」\nコツは3つ。\n①色・形・目・手足を具体的に書く\n②「古い博物図鑑の挿絵」と画風を決める\n③背景は無地の紙にして、生き物だけを描かせる\n📖 フォローで毎日1種、新種がとどく\n\n※この図鑑に載っている生き物は、すべて創作です\nナレーション：VOICEVOX:冥鳴ひまり",
+  "hashtags": [
+    "#あるある",
+    "#架空生物",
+    "#創作",
+    "#AIイラスト",
+    "#虚構図鑑"
+  ],
+  "review_notes": "【作り方】今週の作り方の回。キャプションで挿絵の指示文（plate＋図鑑風の画風。autopost/zukan.py の PLATE_STYLE を短くしたもの）とコツを紹介。プロフィールのリンク（プロンプト集など）ができたら、キャプションに「ほかの指示文はプロフィールから」を足す。「コメントで生まれた新種」の回は、まだコメントが少ない1週目なので入れていない（来週から）"
+}

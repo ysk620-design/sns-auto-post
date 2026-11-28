@@ -1,0 +1,83 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "1枚まとめ：カタカナで言うと通じない英単語",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "ほとんどの日本人が言ってる",
+      "bubble": "カタカナのまま\nだと伝わらない",
+      "title": "カタカナで言うと<br><span class=\"hl\">通じない</span>英単語9選",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "ビタミン",
+          "a": "vitamin",
+          "b": "◯ ヴァイタミン",
+          "icon": "colorful vitamin capsules"
+        },
+        {
+          "label": "ウイルス",
+          "a": "virus",
+          "b": "◯ ヴァイラス",
+          "icon": "a cute round virus germ character"
+        },
+        {
+          "label": "アレルギー",
+          "a": "allergy",
+          "b": "◯ アラジー",
+          "icon": "a sneezing cute character with tissues"
+        },
+        {
+          "label": "エネルギー",
+          "a": "energy",
+          "b": "◯ エナジー",
+          "icon": "a lightning bolt full of energy"
+        },
+        {
+          "label": "ラベル",
+          "a": "label",
+          "b": "◯ レイボゥ",
+          "icon": "a blank price tag label on a string"
+        },
+        {
+          "label": "テーマ",
+          "a": "theme",
+          "b": "◯ シーム",
+          "icon": "a stack of colorful folders"
+        },
+        {
+          "label": "ヨーグルト",
+          "a": "yogurt",
+          "b": "◯ ヨウガート",
+          "icon": "a cup of yogurt with berries"
+        },
+        {
+          "label": "オーブン",
+          "a": "oven",
+          "b": "◯ アヴン",
+          "icon": "a kitchen oven with warm light inside"
+        },
+        {
+          "label": "スタジアム",
+          "a": "stadium",
+          "b": "◯ ステイディアム",
+          "icon": "a big round sports stadium"
+        }
+      ],
+      "note": "※読みは目安です（アメリカ英語）。vitamin はイギリスではヴィタミンに近い",
+      "ask": "いくつ言えた？"
+    }
+  ],
+  "caption": "「ビタミン」「アレルギー」、カタカナのまま言っていませんか？\nつづりは同じでも、英語の読み方はぜんぜん違います。\n9つのうち、いくつ言えた？\n\n✕ ビタミン → ○ ヴァイタミン（vitamin）\n✕ アレルギー → ○ アラジー（allergy）\n✕ テーマ → ○ シーム（theme）\n\n💬 いくつ言えたかコメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#英語発音",
+    "#カタカナ英語",
+    "#英語フレーズ",
+    "#それ通じません英語"
+  ],
+  "review_notes": "【リールだけ・12/2 7時台・tiles】カタカナ読みだと通じにくい単語（発音）。「日本人の9割」は根拠がないので kicker は「ほとんどの日本人が言ってる」にしました。アレルギー・エネルギー・テーマはドイツ語由来のカタカナ。読みはアメリカ英語の目安。"
+}

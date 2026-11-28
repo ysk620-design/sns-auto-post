@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 7,
+  "title": "日本の冬では当たり前、海外では珍しいもの",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜冬編",
+      "bubble": "こたつは\n海外の人の夢",
+      "title": "日本の<span class=\"hl\">冬</span>では当たり前<br>海外では珍しいもの",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "こたつ",
+          "icon": "a cozy Japanese kotatsu table with a quilt and mandarin oranges",
+          "a": "日本：冬の定番",
+          "b": "海外：「出られない」と話題"
+        },
+        {
+          "label": "使い捨てカイロ",
+          "icon": "a small white heat pack held in mittens",
+          "a": "日本：コンビニで買える",
+          "b": "海外：あまり見かけない国も"
+        },
+        {
+          "label": "あったか〜い自販機",
+          "icon": "a vending machine with hot canned drinks glowing warmly",
+          "a": "日本：温かい缶が出る",
+          "b": "海外：冷たい飲み物だけが多い"
+        },
+        {
+          "label": "おでん",
+          "icon": "a pot of oden with eggs, radish and fish cakes",
+          "a": "日本：コンビニのレジ横",
+          "b": "海外：コンビニで煮物は珍しい"
+        },
+        {
+          "label": "年賀状",
+          "icon": "a stack of New Year postcards with a red rope decoration",
+          "a": "日本：元日にまとめて届く",
+          "b": "海外：クリスマスカードが多い"
+        },
+        {
+          "label": "ゆず湯",
+          "icon": "yellow yuzu citrus fruits floating in a bath",
+          "a": "日本：冬至にお風呂へ",
+          "b": "海外：果物をお風呂に入れない"
+        },
+        {
+          "label": "クリスマスケーキ",
+          "icon": "a strawberry shortcake with white cream",
+          "a": "日本：いちごのショート",
+          "b": "海外：国ごとに焼き菓子"
+        },
+        {
+          "label": "忘年会",
+          "icon": "beer glasses raised over a table of Japanese dishes",
+          "a": "日本：会社や友だちで",
+          "b": "海外：年末パーティーはある"
+        },
+        {
+          "label": "みかんの箱買い",
+          "icon": "a cardboard box full of mandarin oranges",
+          "a": "日本：冬は箱で買う",
+          "b": "海外：箱買いは珍しい"
+        }
+      ],
+      "summary": {
+        "label": "日本の冬の、いちばんは",
+        "big": "こたつ"
+      },
+      "note": "※国や地域によって違います",
+      "ask": "冬にないと困るのは？"
+    }
+  ],
+  "caption": "日本の冬では当たり前なのに、海外では珍しいもの。\n\nこたつは、海外では「一度入ると出られない家具」として話題になることも。\n自販機で温かい缶の飲み物が出てくるのも、日本ならではです。\nいちごのショートケーキのクリスマスケーキも、実は日本らしいスタイル。\n\n💬 あなたが冬にないと困るものは？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の冬",
+    "#こたつ",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・12/2 7時台・タイル（日本では当たり前シリーズ）】確認日 2026-11-28。数字は使わず、一般的な言い方（「〜が多い」「珍しい」）にしている。温かい飲み物の自販機は11/26の自販機の話と少し重なるが、冬の1マスとして入れた。「こたつは海外の人の夢」（bubble）はよく言われる感想としての言い方。同じ日の20時台のカルーセルはコンビニおにぎりなので、コンビニの話は12/5の朝に回した。"
+}

@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-11-30",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "世界の「乾杯」の言葉",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "忘年会で使える｜世界の乾杯9選",
+      "bubble": "飲み会で\n言いたくなる",
+      "title": "イタリアの乾杯が<br><span class=\"hl\">ヤバい</span>件",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "日本",
+          "icon": "two glasses of beer clinking with foam",
+          "a": "カンパイ！",
+          "b": "もとは「杯を乾かす」"
+        },
+        {
+          "label": "韓国",
+          "icon": "two small green glass bottles and shot glasses",
+          "a": "コンベ！",
+          "b": "漢字で書くと日本と同じ「乾杯」"
+        },
+        {
+          "label": "中国",
+          "icon": "two small porcelain cups clinking",
+          "a": "ガンベイ！",
+          "b": "これも「乾杯」"
+        },
+        {
+          "label": "ドイツ",
+          "icon": "two big beer mugs clinking",
+          "a": "プロースト！",
+          "b": "目を見て乾杯するのがマナー"
+        },
+        {
+          "label": "フランス",
+          "icon": "two wine glasses clinking",
+          "a": "サンテ！",
+          "b": "意味は「健康に」"
+        },
+        {
+          "label": "イタリア",
+          "icon": "two sparkling wine flutes clinking",
+          "a": "チンチン！",
+          "b": "グラスが当たる音から"
+        },
+        {
+          "label": "スペイン",
+          "icon": "two glasses of red wine and a plate of tapas",
+          "a": "サルー！",
+          "b": "意味は「健康に」"
+        },
+        {
+          "label": "スウェーデン",
+          "icon": "two small glasses raised over a snowy table",
+          "a": "スコール！",
+          "b": "歌ってから飲むことも"
+        },
+        {
+          "label": "ロシア",
+          "icon": "two small crystal glasses clinking",
+          "a": "ザ・ズダローヴィエ！",
+          "b": "意味は「健康に」"
+        }
+      ],
+      "summary": {
+        "label": "いちばん多い意味は",
+        "big": "健康に"
+      },
+      "note": "※言い方は地域や場面で変わります。ロシアでは乾杯のときに長いあいさつをするのがふつう",
+      "ask": "いくつ言えた？"
+    }
+  ],
+  "caption": "忘年会シーズン。世界の「乾杯」の言葉、なんて言うか知っていますか？\n\n韓国は「コンベ」、中国は「ガンベイ」。漢字で書くとどちらも日本と同じ「乾杯」です。\nフランス・スペインなど、ヨーロッパでは「健康に」という意味の言葉が多いんです。\nイタリアの「チンチン」はグラスが当たる音から。\n\n💬 あなたの職場の乾杯のあいさつ、長い？短い？\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#乾杯",
+    "#忘年会",
+    "#世界の文化",
+    "#海外旅行"
+  ],
+  "review_notes": "【リールだけの投稿・11/30 18時台・タイル×別のテーマ（plans の実験：「日本すごい」ではない、ふつうの比較）】確認日 2026-11-28。各国の乾杯の言葉は一般的に知られている言い方（韓国 건배・中国 干杯・ドイツ Prost・フランス Santé・イタリア Cin cin・スペイン Salud・スウェーデン Skål・ロシア За здоровье）。ドイツの「目を見て乾杯」、スウェーデンの「乾杯の歌（snapsvisa）」はよく紹介される習慣。カタカナの読みの書き方（例：コンベ／コンベー、ザ・ズダローヴィエ）は好みで直してください。ロシアでは「За здоровье」は乾杯ではあまり使わないという説もあるので note に一言入れている。気になるならロシアを「ポーランド：ナ・ズドロヴィエ！」に差し替えを。"
+}

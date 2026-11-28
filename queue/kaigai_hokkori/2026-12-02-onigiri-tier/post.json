@@ -1,0 +1,103 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "外国人に食べてほしいおにぎりの具 Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "今夜の話はコンビニおにぎり",
+      "title": "外国人に食べてほしい<br><span class=\"hl\">おにぎりの具</span>Tier表",
+      "bubble": "異論は\nコメントで！",
+      "bg": "a softly blurred Japanese convenience store shelf with rice balls",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "まずはこれ",
+          "items": [
+            {
+              "name": "ツナマヨ",
+              "icon": "a triangle rice ball with tuna mayonnaise filling",
+              "note": "海外でも大人気"
+            },
+            {
+              "name": "鮭",
+              "icon": "a triangle rice ball with salmon flakes filling",
+              "note": "王道の味"
+            },
+            {
+              "name": "明太子",
+              "icon": "a triangle rice ball with spicy pink cod roe filling",
+              "note": "ピリ辛"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "慣れたらぜひ",
+          "items": [
+            {
+              "name": "昆布",
+              "icon": "a triangle rice ball with simmered kelp filling",
+              "note": "甘じょっぱい"
+            },
+            {
+              "name": "焼肉",
+              "icon": "a triangle rice ball with grilled beef filling",
+              "note": "肉好きに"
+            },
+            {
+              "name": "えびマヨ",
+              "icon": "a triangle rice ball with shrimp mayonnaise filling",
+              "note": "子どもも好き"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "通の味",
+          "items": [
+            {
+              "name": "おかか",
+              "icon": "a triangle rice ball with bonito flakes filling",
+              "note": "しょうゆ味"
+            },
+            {
+              "name": "赤飯",
+              "icon": "a triangle rice ball made of red bean rice",
+              "note": "お祝いの味"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "上級者向け",
+          "items": [
+            {
+              "name": "梅干し",
+              "icon": "a triangle rice ball with a red pickled plum",
+              "note": "すっぱい！"
+            },
+            {
+              "name": "納豆",
+              "icon": "a triangle rice ball with sticky fermented soybeans",
+              "note": "ねばねば"
+            }
+          ]
+        }
+      ],
+      "note": "※独断のランクです。好みは人それぞれ",
+      "ask": "あなたのSはどれ？"
+    }
+  ],
+  "caption": "外国人の友だちに、最初に食べてほしいおにぎりの具は？　独断でTier表にしました。\n\nSは、ツナマヨ・鮭・明太子。\n梅干しと納豆は、すっぱさとねばねばで好みが分かれやすいので「上級者向け」に。\n\n今夜20時台は、東京五輪の記者がおにぎりの包装に大苦戦した話を出します🍙\n\n💬 あなたのSランクの具は？　異論はコメントで！\n\n👤 日本のちょっといい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#おにぎり",
+    "#コンビニおにぎり",
+    "#ティア表",
+    "#日本のコンビニ"
+  ],
+  "review_notes": "【リールだけの投稿・12/2 18時台・Tier表（独断・plans では自由枠）】同じ日の20時台のカルーセル（おにぎりの包装）につなげる。数字は使わない独断のランク（note に明記）。「海外でも大人気」はツナマヨの一般的な言い方（調査の数字ではない）。気になるなら「定番」に。ここに実体験を一言（自分の好きな具）を入れるとコメントが増えそうです。"
+}

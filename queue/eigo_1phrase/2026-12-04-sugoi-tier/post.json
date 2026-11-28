@@ -1,0 +1,97 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：「すごい！」の英語Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜テンションの高さ",
+      "bubble": "Very good は\n先生っぽい？",
+      "title": "<span class=\"hl\">「すごい！」</span>の英語<br>テンションTier表",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "MAX",
+          "items": [
+            {
+              "name": "Awesome!",
+              "note": "最高！",
+              "icon": "a cute character with sparkling eyes and raised arms"
+            },
+            {
+              "name": "Amazing!",
+              "note": "すごすぎ！",
+              "icon": "colorful fireworks bursting"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "毎日使う",
+          "items": [
+            {
+              "name": "Nice!",
+              "note": "いいね！",
+              "icon": "a cute character giving a thumbs-up"
+            },
+            {
+              "name": "Cool!",
+              "note": "いいじゃん",
+              "icon": "a pair of sunglasses"
+            },
+            {
+              "name": "Wow!",
+              "note": "わあ！",
+              "icon": "a cute character with a wide open mouth and stars"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "若者っぽい",
+          "items": [
+            {
+              "name": "Sick!",
+              "note": "ヤバい！",
+              "icon": "a skateboard with flames"
+            },
+            {
+              "name": "Epic!",
+              "note": "神！",
+              "icon": "a shining golden trophy"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "言い方に注意",
+          "items": [
+            {
+              "name": "Great.",
+              "note": "棒読みは皮肉に",
+              "icon": "a cute character with a flat bored face"
+            },
+            {
+              "name": "Very good",
+              "note": "先生がほめる感じ",
+              "icon": "a gold star sticker on a notebook"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。言い方やトーンで印象は変わります",
+      "ask": "いつもどれ使ってる？"
+    }
+  ],
+  "caption": "英語の「すごい！」、Very good. ばかりになっていませんか？\n先生が生徒をほめるような響きになることも。\n\n○ Awesome!（最高！）\n○ Nice!（いいね！）\n△ Great.（棒読みだと皮肉っぽく）\n\n💬 あなたの「よく使う」はどれ？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語",
+    "#英語ティア表"
+  ],
+  "review_notes": "【リールだけ・12/4 21時台・tier（独断）】「すごい」の言い方の独断Tier表。Sick! は「病気」ではなくスラングで「最高」の意味（若い人向け）。Great. は平たく言うと皮肉に聞こえることがある、という一般的な説明。"
+}

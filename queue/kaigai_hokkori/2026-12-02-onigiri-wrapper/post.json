@@ -1,0 +1,140 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-02",
+  "type": "story",
+  "title": "五輪の記者とコンビニおにぎり",
+  "icon": "noren:おにぎり",
+  "burst": "HELP!",
+  "top": "五輪の記者がSOS！",
+  "big": "敵はコンビニの<br>おにぎり",
+  "big_size": 100,
+  "chat_title": "<em>おにぎりの包装</em>に<br>苦戦した記者 → 日本の反応は…",
+  "art": {
+    "cast": "Anna: a cheerful Canadian woman in her 30s with long straight blond hair in a ponytail, light skin, a red sports jacket and a press lanyard around her neck. The convenience store clerk: a young Japanese woman with a short black bob and a striped uniform apron.",
+    "cover": "Anna in a hotel room holds a triangle rice ball with torn plastic film and broken seaweed bits flying everywhere, eyes wide and mouth open in shock",
+    "end": "Anna smiles brightly and takes a big bite of a perfectly wrapped triangle rice ball with crisp seaweed, giving a thumbs up"
+  },
+  "scenes": [
+    {
+      "title": "東京五輪の取材中",
+      "mood": "happy",
+      "clerk": "happy",
+      "look": {
+        "hair": "#2b2b2b",
+        "shirt": "#4a7fc1"
+      },
+      "prop": "noren:おにぎり",
+      "say": "これがウワサのおにぎり！",
+      "nar": "2021年、東京五輪を取材していた<br>カナダの元スケート選手。",
+      "art": "Inside a bright Japanese convenience store, Anna on the right happily holds up a triangle rice ball in plastic film while the clerk on the left smiles behind the counter"
+    },
+    {
+      "title": "①を引いて…",
+      "mood": "sad",
+      "prop": "noren:おにぎり",
+      "say": "のりがバラバラ…",
+      "nar": "番号どおりに引いたつもりが、<br>のりはちぎれて、フィルムに残った。",
+      "art": "Anna on the right sits at a small hotel desk, pulling the film off a rice ball; the seaweed tears into pieces and stays stuck in the plastic; she looks frustrated"
+    },
+    {
+      "title": "日本語で「助けて」",
+      "mood": "think",
+      "prop": "phone",
+      "say": "助けてください！",
+      "nar": "SNSに動画をのせると、日本中から<br>手書きの開け方の絵まで届いた。",
+      "art": "Anna on the right types on her smartphone with a pleading face; floating around her are many small phone screens with hand-drawn arrow diagrams and smiling emoji faces, no text"
+    },
+    {
+      "title": "2日後",
+      "mood": "love",
+      "prop": "noren:おにぎり",
+      "say": "上手にできた！",
+      "nar": "コンビニも開け方の動画を公開。<br>きれいに開けて「日本、大好き」。",
+      "art": "Anna on the right proudly holds up a perfectly opened rice ball with crisp seaweed, beaming with joy, a small camera on a tripod recording her"
+    }
+  ],
+  "comments": [
+    [
+      "🇨🇦",
+      "カナダの元五輪選手（取材中のSNSで）",
+      "何がいけないのか教えて。お願い、助けて"
+    ],
+    [
+      "🇨🇦",
+      "同じ記者（2日後）",
+      "前よりずっと上手になったよ"
+    ],
+    [
+      "🇨🇦",
+      "同じ記者（放送の前に）",
+      "おにぎりを食べてから放送へ。日本のすてきな人たち、ありがとう"
+    ],
+    [
+      "🌏",
+      "東京の英語情報誌の編集者",
+      "のりはご飯と別に包まれているから、パリッと新鮮なまま"
+    ],
+    [
+      "🇺🇸",
+      "米国紙の五輪担当記者",
+      "コンビニは、それだけでひとつの食の世界"
+    ]
+  ],
+  "stat": {
+    "l1": "今の包装のもとができたのは",
+    "n1": "1986年",
+    "l2": "大手1社が売るおにぎりは年",
+    "n2": "約21億個",
+    "msg": "のりをパリッと食べてもらうための工夫。<br>日本人でも、ときどき失敗します。",
+    "src": "出典：セブン-イレブン・ジャパン（ウォーカープラス）、SoraNews24"
+  },
+  "cta": "あなたは<br>おにぎり、きれいに<br>開けられる？",
+  "reel_script": {
+    "comments": [
+      [
+        "🇨🇦",
+        "カナダの元五輪選手",
+        "お願い、助けて"
+      ],
+      [
+        "🇨🇦",
+        "同じ記者（2日後）",
+        "前よりずっと上手になったよ"
+      ],
+      [
+        "🌏",
+        "東京の英語情報誌の編集者",
+        "のりがパリッと新鮮なまま"
+      ]
+    ],
+    "nar": [
+      "オリンピックの記者が、コンビニのおにぎりに大苦戦？",
+      "2021年、東京オリンピックを取材していた、カナダの元スケート選手。",
+      "番号どおりに引いたつもりが、のりはバラバラ。",
+      "日本語で「助けてください」とのせると、開け方の絵が次々と届いた。",
+      "コンビニも動画を公開。2日後には、きれいに開けられるように。",
+      "最初は、「何がいけないのか教えて。お願い、助けて」",
+      "2日後には、「前よりずっと上手になったよ」",
+      "東京の英語情報誌も、「のりがパリッと新鮮なまま」とほめる包装です。",
+      "実はこの包装、もとができたのは1986年。今では大手1社だけで年約21億個も売れているんです。",
+      "あなたはおにぎり、きれいに開けられる？　コメントで教えてね。"
+    ]
+  },
+  "caption": "東京五輪を取材していたカナダの記者が、SNSで日本語の「助けてください」。\n相手は…コンビニのおにぎりの包装でした🍙\n\n日本中から開け方の絵が届き、コンビニも開け方の動画を公開。2日後には「前よりずっと上手になったよ」。\n日本人からも「実は自分もよく失敗する」という声が続々と。\n\n💬 あなたはおにぎり、きれいに開けられる？\n📌 保存して友だちにシェア\n🌏 海外が驚いた日本のいい話を毎日お届け → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#コンビニおにぎり",
+    "#東京五輪",
+    "#日本のコンビニ",
+    "#海外のほっこり話"
+  ],
+  "sources": [
+    "AOL（Today）：本人のSNSの発言（Please tell me what I'm doing wrong / Please help / 助けてください / Update: I am doing much better / 放送前におにぎりを食べた、日本のすてきな人たちありがとう）と元スピードスケート五輪選手・CBCの記者であること https://www.aol.com/open-japanese-rice-ball-former-181631207.html",
+    "SoraNews24：手書きの説明図・2日後の上達・日本からの返信 https://soranews24.com/2021/07/31/olympic-athletes-journey-from-onigiri-newbie-to-onigiri-expert-wins-hearts-at-the-tokyo-games/",
+    "SoraNews24：コンビニ公式が開け方の動画を公開（2021年7月29日） https://soranews24.com/2021/07/30/7-eleven-japan-creates-official-how-to-open-a-rice-ball-video-to-help-overseas-travelers%E3%80%90video%E3%80%91/",
+    "Time Out Tokyo（Kaila Imada：nori is wrapped separately... keeping it crisp and fresh） https://www.timeout.com/tokyo/shopping/genius-japanese-packaging-designs-that-make-life-easier",
+    "CNN（ニューヨーク・タイムズの記者 Andrew Keh：a conbini contains a culinary world unto itself） https://amp.cnn.com/cnn/travel/article/convenience-stores-konbini-tokyo-olympics",
+    "ウォーカープラス（1986年のカットテープ型が今の包装の原型・年間約21億個） https://www.walkerplus.com/article/1179363/"
+  ],
+  "review_notes": "【出典・確認日：2026-11-28】実話の再現です（2021年の東京五輪で、カナダの元スピードスケート五輪選手で放送局の記者のアナスタシア・ブクシスさんが、おにぎりの包装に苦戦する動画をのせ、日本語で「助けてください」。日本から説明の絵が届き、コンビニの公式アカウントも開け方の動画を公開、2日後に上達を報告）。絵の主人公は「Anna」という名前と見た目を作って描かせています（実在の人の顔は描かせていません）。会社名は画面に出さず、stat の出典だけに書きました。海外の声は本人のSNS・記事の文を短く訳したもの。【数字】1986年に包材メーカーと開発したカットテープ型が今の包装の原型、年間約21億個（どちらもセブン-イレブンの話としてウォーカープラスの記事で確認。公式サイトでは未確認）。「大手1社」としています。【読み方】「21億個（にじゅういちおくこ）」を確認してください。系統：日本のモノ。ここに実体験を一言（自分もよく失敗する、など）を入れると共感が増えます。"
+}

@@ -1,0 +1,87 @@
+{
+  "account": "kaigai_hokkori",
+  "date": "2026-12-03",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "日本では当たり前、海外にはない便利なもの",
+  "slides": [
+    {
+      "layout": "tiles",
+      "kicker": "日本では当たり前｜便利なもの編",
+      "bubble": "おみやげに\n買って帰る人も",
+      "title": "日本では当たり前<br>海外には<span class=\"hl\">ない便利なもの</span>",
+      "cols": 3,
+      "tiles": [
+        {
+          "label": "温水洗浄便座",
+          "icon": "a modern white toilet seat with a small control panel",
+          "a": "日本：約8割の家に",
+          "b": "海外：ホテルでも少ない国が多い"
+        },
+        {
+          "label": "ビニール傘",
+          "icon": "a clear plastic umbrella",
+          "a": "日本：コンビニで買える",
+          "b": "海外：透明の傘は珍しい"
+        },
+        {
+          "label": "消せるボールペン",
+          "icon": "a colorful erasable ballpoint pen",
+          "a": "日本：文房具の定番",
+          "b": "海外：「魔法のペン」と驚かれる"
+        },
+        {
+          "label": "お弁当のしょうゆ",
+          "icon": "a tiny fish shaped soy sauce container",
+          "a": "日本：魚の形の小さな入れ物",
+          "b": "海外：見たことない人が多い"
+        },
+        {
+          "label": "駅のコインロッカー",
+          "icon": "a row of coin lockers in a station",
+          "a": "日本：どの駅にもある",
+          "b": "海外：テロ対策で少ない国も"
+        },
+        {
+          "label": "自動の風呂わかし",
+          "icon": "a bathtub filling with steaming water",
+          "a": "日本：ボタンひとつ",
+          "b": "海外：シャワーだけが多い"
+        },
+        {
+          "label": "個包装のお菓子",
+          "icon": "small individually wrapped sweets in a bowl",
+          "a": "日本：1個ずつ包む",
+          "b": "海外：大袋がふつう"
+        },
+        {
+          "label": "炊飯器",
+          "icon": "a white rice cooker with steam",
+          "a": "日本：ほぼ1家に1台",
+          "b": "海外：鍋で炊く国も多い"
+        },
+        {
+          "label": "交通系ICカード",
+          "icon": "a contactless transit card touching a ticket gate",
+          "a": "日本：コンビニでも使える",
+          "b": "海外：交通だけの国が多い"
+        }
+      ],
+      "summary": {
+        "label": "海外の人の、おみやげの定番に",
+        "big": "日本の便利"
+      },
+      "note": "※国や地域によって違います。温水洗浄便座は内閣府「消費動向調査」（2人以上の世帯・約8割）",
+      "ask": "いくつ使ってる？"
+    }
+  ],
+  "caption": "日本では当たり前なのに、海外ではあまり見かけない便利なもの。\n\n温水洗浄便座は、日本では約8割の家にあります。\nコンビニで買えるビニール傘、こすると消えるボールペン、お弁当の魚の形のしょうゆ入れも、海外の人にはびっくりされることが多いんです。\n\n💬 海外に持っていきたい日本の便利なものは？\n\n🔜「日本では当たり前」シリーズ、毎日更新中\n👤 フォローで続きを → @kaigai_hokkori",
+  "hashtags": [
+    "#海外の反応",
+    "#日本の便利グッズ",
+    "#日本の良いところ",
+    "#カルチャーショック",
+    "#日本では当たり前シリーズ"
+  ],
+  "review_notes": "【リールだけの投稿・12/3 18時台・タイル×「日本では当たり前、海外では〇〇」（plans の実験）】11/29の「サービス」（人がしてくれること）に対して、こちらは「モノ」。確認日 2026-11-28。温水洗浄便座の普及率は内閣府「消費動向調査」2人以上の世帯で80%台（2018年3月に80.2%＝nippon.com https://www.nippon.com/ja/features/h00185/ 。最新の年度は内閣府 https://www.esri.cao.go.jp/jp/stat/shouhi/shouhi.html で確認を）。ほかは数字のない一般的な言い方。温水トイレ・消せるペンは過去の漫画の回と重なるが、1マスとして入れた。「駅のコインロッカー：テロ対策で少ない国も」はイギリスの駅などで言われる話（気になるなら「海外：少ない国が多い」に）。"
+}

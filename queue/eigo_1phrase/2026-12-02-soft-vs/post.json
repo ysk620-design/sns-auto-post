@@ -1,0 +1,60 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-12-02",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：キツく聞こえる英語vsやわらかい英語",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "悪気はないのに…",
+      "bubble": "その英語\n怒ってる？",
+      "title": "<span class=\"hl\">キツく聞こえる</span>英語<br>vs やわらかい英語",
+      "left": {
+        "label": "キツい",
+        "icon": "a cute clay character with crossed arms and a frowning face"
+      },
+      "right": {
+        "label": "やわらかい",
+        "icon": "the same cute clay character smiling gently with open hands"
+      },
+      "rows": [
+        {
+          "ng": "What?",
+          "ok": "Sorry?"
+        },
+        {
+          "ng": "You're wrong.",
+          "ok": "I'm not sure."
+        },
+        {
+          "ng": "Do it.",
+          "ok": "Could you?"
+        },
+        {
+          "ng": "Wait!",
+          "ok": "Hang on."
+        },
+        {
+          "ng": "I'm busy.",
+          "ok": "Can it wait?"
+        },
+        {
+          "ng": "Tell me.",
+          "ok": "Let me know."
+        }
+      ],
+      "verdict": "ひと言変えるだけで、角が立たない",
+      "ask": "言っちゃってたのある？"
+    }
+  ],
+  "caption": "聞き返すときに What? と言っていませんか？\n悪気はなくても、英語だと「は？」くらいキツく聞こえることがあります。\n\n✕ What? → ○ Sorry?\n✕ You're wrong. → ○ I'm not sure.\n✕ I'm busy. → ○ Can it wait?\n\n💬 自分はどっち派？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#ビジネス英語",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語"
+  ],
+  "review_notes": "【リールだけ・12/2 21時台・vs】強く聞こえがちな言い方と、やわらかい言いかえ。What? は言い方しだいでふつうにも使われるので、caption では「キツく聞こえることがある」としています。"
+}

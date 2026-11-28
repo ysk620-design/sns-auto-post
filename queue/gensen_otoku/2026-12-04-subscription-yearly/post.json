@@ -1,0 +1,79 @@
+{
+  "account": "gensen_otoku",
+  "date": "2026-12-04",
+  "type": "reel_only",
+  "post_hour_jst": 18,
+  "title": "Netflix値上げ、サブスクは年いくら？（3つで年4.3万円）",
+  "slides": [
+    {
+      "layout": "pop",
+      "kicker": "Netflixが値上げ｜見直しどき",
+      "bubble": "見てないのに\n払ってない？",
+      "title": "そのサブスク<br><span class=\"hl\">1年でいくら？</span>",
+      "big_label": "Netflix＋YouTube Premium＋プライムで",
+      "big": "年4.3<small>万円</small>",
+      "sub": "子どもが18歳になるまで続けると約77万円",
+      "head": [
+        "サービス（月額）",
+        "1年で"
+      ],
+      "items": [
+        {
+          "left": "Netflix プレミアム",
+          "left_sub": "月2,590円（300円アップ）",
+          "right": "31,080円",
+          "icon": "a big flat TV showing a movie with popcorn"
+        },
+        {
+          "left": "YouTube Premium",
+          "left_sub": "ファミリー 月2,280円",
+          "right": "27,360円",
+          "icon": "a family watching videos on a tablet together"
+        },
+        {
+          "left": "Netflix スタンダード",
+          "left_sub": "月1,790円（200円アップ）",
+          "right": "21,480円",
+          "icon": "a TV remote and a bowl of popcorn"
+        },
+        {
+          "left": "YouTube Premium",
+          "left_sub": "個人 月1,280円",
+          "right": "15,360円",
+          "icon": "a smartphone playing a video"
+        },
+        {
+          "left": "YouTube Music",
+          "left_sub": "Premium 月1,080円",
+          "right": "12,960円",
+          "icon": "headphones with music notes"
+        },
+        {
+          "left": "Netflix 広告つき",
+          "left_sub": "月990円（100円アップ）",
+          "right": "11,880円",
+          "icon": "a small TV with a play button"
+        },
+        {
+          "left": "Amazonプライム",
+          "left_sub": "年払い（月払いなら年7,200円）",
+          "right": "5,900円",
+          "icon": "a cardboard delivery box with a smile"
+        }
+      ],
+      "arrow": false,
+      "note": "※2026年11月時点の税込価格。YouTube PremiumはiPhoneのアプリから申し込むと高くなります",
+      "bg": "A bright and cozy Japanese living room with sunlight and green plants",
+      "ask": "サブスクいくつ入ってる？"
+    }
+  ],
+  "caption": "Netflixが値上げ。そのサブスク、1年でいくら払っているか知っていますか？\nNetflix スタンダード（月1,790円）、YouTube Premium（月1,280円）、Amazonプライム（年5,900円）の3つだけで年4.3万円。子どもが18歳になるまで続けると約77万円です。\n\n✅ Netflixは広告つき990円、スタンダード1,790円、プレミアム2,590円に\n✅ Amazonプライムは月払い（年7,200円）より年払い（5,900円）が1,300円安い\n✅ YouTube PremiumはiPhoneのアプリから申し込むと月1,680円\n\n見ていない月は止めて、見たいときだけ入るのもアリです。\n\n💬 あなたが入ってるサブスクはいくつ？コメントで教えてね\n\n📌 保存して、あとで見返してね\n👤 子育て世帯のお得を毎日発信中 → @gensen_otoku",
+  "hashtags": [
+    "#子育て家計",
+    "#サブスク",
+    "#固定費削減",
+    "#Netflix",
+    "#節約術"
+  ],
+  "review_notes": "確認日 2026-11-28。出典：PHILE WEB 2026/11/14 https://www.phileweb.com/sp/news/d-av/202611/14/66383.html （Netflix 広告つきスタンダード890→990円、スタンダード1,590→1,790円、プレミアム2,290→2,590円）／pricey 2026/10/7 https://www.pricey.jp/web/articles/4636 （YouTube Premium 個人1,280円・iOS 1,680円・ファミリー2,280円・YouTube Music Premium 1,080円）／Amazonプライム 月600円・年5,900円（2019年改定から変更なしを前提。https://netshop.impress.co.jp/node/11264 ）。【計算】1,790×12＋1,280×12＋5,900＝21,480＋15,360＋5,900＝42,740円。×18＝769,320円（約77万円）。【確認してほしい点】①Netflixの新料金がいつから（新規・既存）かは記事に書かれていなかったので、Netflixのヘルプで確認してください ②Amazonプライムの料金が2026年に変わっていないか公式で確認してください。"
+}

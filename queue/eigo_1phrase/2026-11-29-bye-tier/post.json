@@ -1,0 +1,92 @@
+{
+  "account": "eigo_1phrase",
+  "date": "2026-11-29",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "1枚まとめ：「さよなら」の英語Tier表",
+  "slides": [
+    {
+      "layout": "tier",
+      "kicker": "独断｜ネイティブがよく使う度",
+      "bubble": "Good-bye は\n重いかも？",
+      "title": "<span class=\"hl\">「バイバイ」</span>の英語<br>ネイティブ度Tier表",
+      "tiers": [
+        {
+          "rank": "S",
+          "label": "毎日これ",
+          "items": [
+            {
+              "name": "See ya!",
+              "note": "またね",
+              "icon": "a cute character waving goodbye with a big smile"
+            },
+            {
+              "name": "Bye!",
+              "note": "じゃあね",
+              "icon": "a waving hand"
+            },
+            {
+              "name": "Take care",
+              "note": "元気でね",
+              "icon": "a small heart held in two hands"
+            }
+          ]
+        },
+        {
+          "rank": "A",
+          "label": "友だち同士",
+          "items": [
+            {
+              "name": "Later!",
+              "note": "またあとで",
+              "icon": "a clock with a small arrow going forward"
+            },
+            {
+              "name": "Night!",
+              "note": "おやすみ〜",
+              "icon": "a crescent moon with tiny stars"
+            }
+          ]
+        },
+        {
+          "rank": "B",
+          "label": "かわいい響き",
+          "items": [
+            {
+              "name": "Bye-bye!",
+              "note": "子どもにも使う",
+              "icon": "a small child waving with a teddy bear"
+            }
+          ]
+        },
+        {
+          "rank": "C",
+          "label": "重く聞こえる",
+          "items": [
+            {
+              "name": "Good-bye",
+              "note": "しばらく会えない感",
+              "icon": "a train leaving a station platform"
+            },
+            {
+              "name": "Farewell",
+              "note": "もう会えない感",
+              "icon": "a single white flower"
+            }
+          ]
+        }
+      ],
+      "note": "※独断です。大人どうしの Bye-bye! もふつうにあります。Good-bye も言い方しだい",
+      "ask": "いつもどれ使ってる？"
+    }
+  ],
+  "caption": "英語の「バイバイ」、Good-bye ばかり使っていませんか？\nネイティブがふだん使うのは、もっと軽いひと言です。\n\n○ See ya!（またね）\n○ Take care.（元気でね）\n△ Good-bye.（しばらく会えないような響きに）\n\n💬 あなたの「よく使う」はどれ？コメントで\n📌 保存して明日さっそく使おう\n👤 日本人が直訳しがちな英語を毎日1つ → @eigo_1phrase",
+  "hashtags": [
+    "#英会話",
+    "#日常英会話",
+    "#英語フレーズ",
+    "#ネイティブ英語",
+    "#英語ティア表"
+  ],
+  "review_notes": "【リールだけ・11/29 21時台・tier（独断）】「さよなら」の言い方をネイティブがよく使う順に並べた独断のTier表。Good-bye は間違いではなく、ややあらたまった・しばらく会わない感じがある、という一般的な説明にとどめています。Farewell は手紙やお別れ会など特別な場面の言葉。"
+}

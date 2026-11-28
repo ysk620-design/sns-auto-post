@@ -1,0 +1,59 @@
+{
+  "account": "shigoto_no_sa",
+  "date": "2026-12-05",
+  "type": "reel_only",
+  "post_hour_jst": 21,
+  "title": "休日で回復する人と消耗する人",
+  "slides": [
+    {
+      "layout": "vs",
+      "kicker": "週末の過ごし方で差がつく",
+      "title": "休日で<span class=\"hl\">回復する人</span>と<br>消耗する人",
+      "left": {
+        "label": "消耗する人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, lying on a sofa scrolling a phone late at night, tired eyes"
+      },
+      "right": {
+        "label": "回復する人",
+        "icon": "a young Japanese office worker with short black hair and a navy suit, stretching in a sunny park, refreshed smile"
+      },
+      "rows": [
+        {
+          "ng": "昼まで寝だめ",
+          "ok": "いつもの時間に起きる"
+        },
+        {
+          "ng": "1日中スマホ",
+          "ok": "外を30分歩く"
+        },
+        {
+          "ng": "仕事のSlackをのぞく",
+          "ok": "通知を切る"
+        },
+        {
+          "ng": "予定を詰め込みすぎ",
+          "ok": "何もしない時間を作る"
+        },
+        {
+          "ng": "日曜の夜に月曜を憂う",
+          "ok": "月曜の最初の1個を決める"
+        },
+        {
+          "ng": "夜ふかしで動画",
+          "ok": "日曜は早めに寝る"
+        }
+      ],
+      "verdict": "月曜の調子は、土曜に決まる",
+      "ask": "休日、何してる？"
+    }
+  ],
+  "caption": "週末なのに疲れがとれない同期に送ってあげて。\n休んだはずなのに月曜がしんどいのは、休み方が「消耗する側」になっているからかもしれません。\n\n✅ 寝だめより、いつもの時間に起きる\n✅ 外を30分だけ歩く\n✅ 日曜の夜に「月曜の最初の1個」だけ決める\n\n明日の日曜、ひとつだけ右側を試してみてください。\nあなたは休日、何してる？コメントで教えてください👇\n\n📌 保存して見返してね\n👤 20代で差がつく考え方を毎日発信中 → @shigoto_no_sa",
+  "hashtags": [
+    "#仕事術",
+    "#20代",
+    "#休日の過ごし方",
+    "#社会人",
+    "#シゴトの差"
+  ],
+  "review_notes": "比べる型（vs）・考え方と行動。土曜の夜に出すので「明日の日曜」と書いた。数字・制度の話はないので出典なし。ここに実体験を一言（休日のリセット方法など）もよいです"
+}
